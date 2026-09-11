@@ -1,1 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Miss Ocean 2026</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#dff4ff;
+  color:#174b63;
+  overflow-x:hidden;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+#loading{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  background:linear-gradient(145deg,#c9edfc,#eaf9ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.loading-box{
+  width:82%;
+  max-width:420px;
+}
+
+.loading-title{
+  font-family:'Playfair Display',serif;
+  font-size:48px;
+  letter-spacing:2px;
+  color:#126080;
+  margin-bottom:25px;
+}
+
+.loading-number{
+  font-size:24px;
+  color:#477f94;
+  margin-bottom:20px;
+}
+
+.loading-bar{
+  height:9px;
+  width:100%;
+  background:rgba(255,255,255,.8);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.loading-progress{
+  height:100%;
+  width:0%;
+  background:#397e99;
+  border-radius:20px;
+  transition:width .05s linear;
+}
+
+.loading-text{
+  margin-top:18px;
+  color:#7197a7;
+  font-size:14px;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+#main{
+  display:none;
+  min-height:100vh;
+  padding-bottom:40px;
+}
+
+.container{
+  width:92%;
+  max-width:1000px;
+  margin:auto;
+}
+
+/* Header */
+
+.header{
+  text-align:center;
+  padding:35px 0 20px;
+}
+
+.logo-title{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  letter-spacing:2px;
+  color:#155a75;
+}
+
+.year{
+  font-family:'Playfair Display',serif;
+  font-size:23px;
+  margin-top:2px;
+  color:#4b8196;
+}
+
+/* =========================
+   ADVERTISEMENT
+========================= */
+
+.ad-scroll{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:4px 0 15px;
+  scrollbar-width:none;
+}
+
+.ad-scroll::-webkit-scrollbar{
+  display:none;
+}
+
+.ad-card{
+  flex:0 0 92%;
+  height:210px;
+  border-radius:24px;
+  overflow:hidden;
+  scroll-snap-align:start;
+  background:#c8eafa;
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 10px 30px rgba(55,110,135,.08);
+}
+
+.ad-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:25px 0 35px;
+}
+
+.nav-btn{
+  border:0;
+  background:rgba(255,255,255,.78);
+  border-radius:22px;
+  min-height:130px;
+  color:#28657e;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(55,110,135,.06);
+  transition:.2s;
+}
+
+.nav-btn:active{
+  transform:scale(.97);
+}
+
+.nav-icon{
+  font-size:31px;
+  display:block;
+  margin-bottom:13px;
+}
+
+.nav-btn span:last-child{
+  font-weight:700;
+  font-size:16px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+}
+
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  color:#155a75;
+  margin-bottom:5px;
+}
+
+.section-sub{
+  color:#7194a3;
+  margin-bottom:24px;
+}
+
+/* =========================
+   CONTESTANTS
+========================= */
+
+.contestant-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.contestant{
+  background:rgba(255,255,255,.82);
+  border-radius:24px;
+  padding:12px;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(45,100,125,.06);
+  transition:.2s;
+}
+
+.contestant:active{
+  transform:scale(.98);
+}
+
+.contestant-img{
+  width:100%;
+  aspect-ratio:1/1.12;
+  object-fit:cover;
+  border-radius:18px;
+  background:#c7eaf8;
+}
+
+.country{
+  margin-top:13px;
+  font-size:11px;
+  letter-spacing:2px;
+  color:#7797a4;
+  text-transform:uppercase;
+}
+
+.contestant-name{
+  font-family:'Playfair Display',serif;
+  font-size:23px;
+  color:#185b73;
+  margin-top:3px;
+}
+
+/* =========================
+   UPDATES
+========================= */
+
+.update-list{
+  display:grid;
+  gap:16px;
+}
+
+.update-card{
+  background:rgba(255,255,255,.86);
+  border-radius:24px;
+  overflow:hidden;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(45,100,125,.06);
+}
+
+.update-card img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  background:#c8eafa;
+}
+
+.update-content{
+  padding:20px;
+}
+
+.update-label{
+  font-size:11px;
+  letter-spacing:3px;
+  color:#7698a6;
+  margin-bottom:7px;
+}
+
+.update-title{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  color:#185b73;
+}
+
+.update-date{
+  margin-top:7px;
+  color:#7899a7;
+}
+
+/* =========================
+   RESULTS
+========================= */
+
+.result-list{
+  display:grid;
+  gap:16px;
+}
+
+.result-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  background:rgba(255,255,255,.88);
+  border-radius:24px;
+  padding:15px;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(45,100,125,.06);
+}
+
+.result-rank{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:#e0f4fc;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:23px;
+  flex:none;
+}
+
+.result-img{
+  width:78px;
+  height:78px;
+  border-radius:18px;
+  object-fit:cover;
+  background:#c8eafa;
+  flex:none;
+}
+
+.result-info{
+  min-width:0;
+}
+
+.result-name{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  color:#185b73;
+}
+
+.result-event{
+  margin-top:4px;
+  color:#7899a7;
+  font-size:14px;
+}
+
+.result-status{
+  margin-left:auto;
+  background:#e0f4fc;
+  padding:9px 12px;
+  border-radius:30px;
+  font-size:12px;
+  color:#39748b;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:5000;
+  background:rgba(20,75,95,.43);
+  backdrop-filter:blur(5px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:100%;
+  max-width:620px;
+  max-height:91vh;
+  overflow-y:auto;
+  background:#f8fdff;
+  border-radius:32px;
+  overflow-x:hidden;
+  position:relative;
+  box-shadow:0 20px 70px rgba(20,70,90,.22);
+}
+
+.modal-close{
+  position:absolute;
+  right:16px;
+  top:16px;
+  width:48px;
+  height:48px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.92);
+  color:#397185;
+  font-size:27px;
+  z-index:5;
+  cursor:pointer;
+}
+
+.modal-image{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  background:#c7eaf8;
+  display:block;
+}
+
+.modal-body{
+  padding:28px 28px 34px;
+}
+
+.modal-label{
+  font-size:12px;
+  letter-spacing:3px;
+  color:#7a9aa6;
+  margin-bottom:10px;
+}
+
+.modal-title{
+  font-family:'Playfair Display',serif;
+  font-size:40px;
+  line-height:1.15;
+  color:#185b73;
+  margin-bottom:20px;
+}
+
+.info-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:15px 0;
+  border-bottom:1px solid #dceef5;
+  color:#7897a4;
+}
+
+.info-row strong{
+  text-align:right;
+  color:#397085;
+}
+
+.modal-description{
+  margin-top:22px;
+  color:#688a98;
+  line-height:1.8;
+  font-size:16px;
+  white-space:pre-line;
+}
+
+/* Winner */
+
+.winner-box{
+  text-align:center;
+}
+
+.winner-crown{
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+.winner-name{
+  font-family:'Playfair Display',serif;
+  font-size:45px;
+  color:#155a75;
+  margin:10px 0;
+}
+
+.winner-event{
+  color:#7194a3;
+  font-size:15px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  text-align:center;
+  padding:50px 0 15px;
+  color:#7395a3;
+}
+
+.footer-title{
+  font-weight:700;
+  letter-spacing:3px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+  .loading-title{
+    font-size:40px;
+  }
+
+  .logo-title{
+    font-size:36px;
+  }
+
+  .nav{
+    gap:10px;
+  }
+
+  .nav-btn{
+    min-height:120px;
+    border-radius:20px;
+  }
+
+  .section-title{
+    font-size:36px;
+  }
+
+  .contestant-grid{
+    gap:12px;
+  }
+
+  .contestant{
+    border-radius:20px;
+    padding:9px;
+  }
+
+  .contestant-name{
+    font-size:20px;
+  }
+
+  .modal{
+    padding:14px;
+  }
+
+  .modal-box{
+    border-radius:27px;
+  }
+
+  .modal-image{
+    height:310px;
+  }
+
+  .modal-title{
+    font-size:34px;
+  }
+
+  .winner-name{
+    font-size:38px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     LOADING SCREEN
+========================= -->
+
+<div id="loading">
+
+  <div class="loading-box">
+
+    <div class="loading-title">
+      MISS OCEAN
+    </div>
+
+    <div class="loading-number">
+      <span id="loadNumber">1</span> / 100
+    </div>
+
+    <div class="loading-bar">
+      <div class="loading-progress" id="progress"></div>
+    </div>
+
+    <div class="loading-text">
+      Please wait...
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     MAIN WEBSITE
+========================= -->
+
+<div id="main">
+
+  <div class="container">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+      <div class="logo-title">
+        MISS OCEAN
+      </div>
+
+      <div class="year">
+        2026
+      </div>
+
+    </header>
+
+
+    <!-- ADVERTISEMENT -->
+
+    <div class="ad-scroll">
+
+      <div class="ad-card">
+        <img
+          src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
+          alt="Miss Ocean Advertisement">
+      </div>
+
+      <div class="ad-card">
+        <img
+          src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
+          alt="Miss Ocean Advertisement">
+      </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <div class="nav">
+
+      <button class="nav-btn" onclick="showSection('contestants')">
+        <span class="nav-icon">♛</span>
+        <span>Contestants</span>
+      </button>
+
+      <button class="nav-btn" onclick="showSection('updates')">
+        <span class="nav-icon">✦</span>
+        <span>Updates</span>
+      </button>
+
+      <button class="nav-btn" onclick="showSection('results')">
+        <span class="nav-icon">◇</span>
+        <span>Results</span>
+      </button>
+
+    </div>
+
+
+    <!-- =========================
+         CONTESTANTS
+    ========================= -->
+
+    <section id="contestants" class="section active">
+
+      <div class="section-title">
+        Contestants
+      </div>
+
+      <div class="section-sub">
+        Meet the official delegates of Miss Ocean 2026.
+      </div>
+
+      <div class="contestant-grid">
+
+        <!-- Contestant 1 -->
+
+        <div class="contestant"
+             onclick="openContestant(0)">
+
+          <img
+            class="contestant-img"
+            src="contestant1.jpg"
+            alt="Contestant">
+
+          <div class="country">
+            Myanmar
+          </div>
+
+          <div class="contestant-name">
+            Contestant Name
+          </div>
+
+        </div>
+
+
+        <!-- Contestant 2 -->
+
+        <div class="contestant"
+             onclick="openContestant(1)">
+
+          <img
+            class="contestant-img"
+            src="contestant2.jpg"
+            alt="Contestant">
+
+          <div class="country">
+            Thailand
+          </div>
+
+          <div class="contestant-name">
+            Contestant Name
+          </div>
+
+        </div>
+
+
+        <!-- Contestant 3 -->
+
+        <div class="contestant"
+             onclick="openContestant(2)">
+
+          <img
+            class="contestant-img"
+            src="contestant3.jpg"
+            alt="Contestant">
+
+          <div class="country">
+            Indonesia
+          </div>
+
+          <div class="contestant-name">
+            Contestant Name
+          </div>
+
+        </div>
+
+
+        <!-- Contestant 4 -->
+
+        <div class="contestant"
+             onclick="openContestant(3)">
+
+          <img
+            class="contestant-img"
+            src="contestant4.jpg"
+            alt="Contestant">
+
+          <div class="country">
+            Philippines
+          </div>
+
+          <div class="contestant-name">
+            Contestant Name
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         UPDATES
+    ========================= -->
+
+    <section id="updates" class="section">
+
+      <div class="section-title">
+        Updates
+      </div>
+
+      <div class="section-sub">
+        Official competition updates and events.
+      </div>
+
+
+      <div class="update-list">
+
+
+        <!-- SWIMSUIT -->
+
+        <div class="update-card"
+             onclick="openUpdate(0)">
+
+          <img
+            src="swimsuit.jpg"
+            alt="Swimsuit Competition">
+
+          <div class="update-content">
+
+            <div class="update-label">
+              SWIMSUIT
+            </div>
+
+            <div class="update-title">
+              Swimsuit Competition
+            </div>
+
+            <div class="update-date">
+              September 15, 2026
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- EVENING GOWN -->
+
+        <div class="update-card"
+             onclick="openUpdate(1)">
+
+          <img
+            src="evening-gown.jpg"
+            alt="Evening Gown">
+
+          <div class="update-content">
+
+            <div class="update-label">
+              EVENING GOWN
+            </div>
+
+            <div class="update-title">
+              Evening Gown Competition
+            </div>
+
+            <div class="update-date">
+              September 17, 2026
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TALENT -->
+
+        <div class="update-card"
+             onclick="openUpdate(2)">
+
+          <img
+            src="talent.jpg"
+            alt="Talent Competition">
+
+          <div class="update-content">
+
+            <div class="update-label">
+              TALENT
+            </div>
+
+            <div class="update-title">
+              Talent Competition
+            </div>
+
+            <div class="update-date">
+              September 19, 2026
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESULTS
+    ========================= -->
+
+    <section id="results" class="section">
+
+      <div class="section-title">
+        Results
+      </div>
+
+      <div class="section-sub">
+        Official competition results.
+      </div>
+
+
+      <div class="result-list">
+
+
+        <!-- RESULT 1 -->
+
+        <div class="result-card"
+             onclick="openResult(0)">
+
+          <div class="result-rank">
+            1
+          </div>
+
+          <img
+            class="result-img"
+            src="winner1.jpg"
+            alt="Winner">
+
+          <div class="result-info">
+
+            <div class="result-name">
+              Winner Name
+            </div>
+
+            <div class="result-event">
+              Swimsuit Competition
+            </div>
+
+          </div>
+
+          <div class="result-status">
+            Winner
+          </div>
+
+        </div>
+
+
+        <!-- RESULT 2 -->
+
+        <div class="result-card"
+             onclick="openResult(1)">
+
+          <div class="result-rank">
+            2
+          </div>
+
+          <img
+            class="result-img"
+            src="winner2.jpg"
+            alt="Winner">
+
+          <div class="result-info">
+
+            <div class="result-name">
+              Winner Name
+            </div>
+
+            <div class="result-event">
+              Evening Gown
+            </div>
+
+          </div>
+
+          <div class="result-status">
+            Winner
+          </div>
+
+        </div>
+
+
+        <!-- RESULT 3 -->
+
+        <div class="result-card"
+             onclick="openResult(2)">
+
+          <div class="result-rank">
+            3
+          </div>
+
+          <img
+            class="result-img"
+            src="winner3.jpg"
+            alt="Winner">
+
+          <div class="result-info">
+
+            <div class="result-name">
+              Winner Name
+            </div>
+
+            <div class="result-event">
+              Talent Competition
+            </div>
+
+          </div>
+
+          <div class="result-status">
+            Winner
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+      <div class="footer-title">
+        MISS OCEAN
+      </div>
+
+      <div>
+        Official Updates • 2026
+      </div>
+
+    </footer>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+
+    <button class="modal-close"
+            onclick="closeModal()">
+      ×
+    </button>
+
+    <img
+      id="modalImage"
+      class="modal-image"
+      src=""
+      alt="">
+
+    <div class="modal-body">
+
+      <div
+        id="modalLabel"
+        class="modal-label">
+      </div>
+
+      <div
+        id="modalTitle"
+        class="modal-title">
+      </div>
+
+      <div id="modalInfo"></div>
+
+      <div
+        id="modalDescription"
+        class="modal-description">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+/* =========================
+   5 SECOND LOADING
+========================= */
+
+let startTime = Date.now();
+
+function loadingAnimation(){
+
+  let elapsed = Date.now() - startTime;
+
+  let percent = Math.min(
+    100,
+    Math.floor((elapsed / 5000) * 100)
+  );
+
+  document.getElementById("loadNumber").textContent =
+    percent < 1 ? 1 : percent;
+
+  document.getElementById("progress").style.width =
+    percent + "%";
+
+  if(percent >= 100){
+
+    document.getElementById("loadNumber").textContent = "100";
+
+    setTimeout(function(){
+
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("main").style.display = "block";
+
+      startMusic();
+
+    },300);
+
+    return;
+  }
+
+  requestAnimationFrame(loadingAnimation);
+}
+
+requestAnimationFrame(loadingAnimation);
+
+
+/* =========================
+   MUSIC
+========================= */
+
+let music = document.createElement("video");
+
+music.src = "VID_20260911_192636_722.mp4";
+music.loop = true;
+music.autoplay = true;
+music.playsInline = true;
+music.preload = "auto";
+
+/*
+ Browser က audio autoplay ကို block လုပ်ရင်
+ muted ဖြင့်စတင်နိုင်အောင် fallback ထားထားသည်။
+*/
+
+music.volume = 1;
+
+document.body.appendChild(music);
+
+function startMusic(){
+
+  let playPromise = music.play();
+
+  if(playPromise !== undefined){
+
+    playPromise.catch(function(){
+
+      /*
+       Chrome / Android က အသံပါတဲ့ autoplay ကို
+       block လုပ်ထားနိုင်ပါတယ်။
+       Website ကို user တစ်ချက်နှိပ်ပြီးနောက်
+       အသံဖွင့်နိုင်အောင်ထားပါတယ်။
+      */
+
+      document.addEventListener(
+        "click",
+        function(){
+          music.muted = false;
+          music.volume = 1;
+          music.play().catch(()=>{});
+        },
+        {once:true}
+      );
+
+    });
+
+  }
+
+}
+
+
+/* =========================
+   SECTION SWITCH
+========================= */
+
+function showSection(section){
+
+  document.querySelectorAll(".section")
+    .forEach(function(item){
+      item.classList.remove("active");
+    });
+
+  document.getElementById(section)
+    .classList.add("active");
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================
+   CONTESTANT DATA
+========================= */
+
+const contestants = [
+
+  {
+    image:"contestant1.jpg",
+    country:"Myanmar",
+    name:"Contestant Name",
+    status:"Official Delegate",
+    age:"20",
+    city:"Yangon",
+    title:"Miss Ocean Myanmar 2026",
+    description:
+      "This is the official contestant information. Biography, achievements, city, age and other official information can be added here."
+  },
+
+  {
+    image:"contestant2.jpg",
+    country:"Thailand",
+    name:"Contestant Name",
+    status:"Official Delegate",
+    age:"21",
+    city:"Bangkok",
+    title:"Miss Ocean Thailand 2026",
+    description:
+      "This is the official contestant information. Biography, achievements, city, age and other official information can be added here."
+  },
+
+  {
+    image:"contestant3.jpg",
+    country:"Indonesia",
+    name:"Contestant Name",
+    status:"Official Delegate",
+    age:"22",
+    city:"Jakarta",
+    title:"Miss Ocean Indonesia 2026",
+    description:
+      "This is the official contestant information. Biography, achievements, city, age and other official information can be added here."
+  },
+
+  {
+    image:"contestant4.jpg",
+    country:"Philippines",
+    name:"Contestant Name",
+    status:"Official Delegate",
+    age:"21",
+    city:"Manila",
+    title:"Miss Ocean Philippines 2026",
+    description:
+      "This is the official contestant information. Biography, achievements, city, age and other official information can be added here."
+  }
+
+];
+
+
+/* =========================
+   OPEN CONTESTANT
+========================= */
+
+function openContestant(index){
+
+  const c = contestants[index];
+
+  document.getElementById("modalImage").src = c.image;
+
+  document.getElementById("modalLabel").textContent =
+    "OFFICIAL DELEGATE";
+
+  document.getElementById("modalTitle").textContent =
+    c.name;
+
+  document.getElementById("modalInfo").innerHTML = `
+
+    <div class="info-row">
+      <span>Country</span>
+      <strong>${c.country}</strong>
+    </div>
+
+    <div class="info-row">
+      <span>City</span>
+      <strong>${c.city}</strong>
+    </div>
+
+    <div class="info-row">
+      <span>Age</span>
+      <strong>${c.age}</strong>
+    </div>
+
+    <div class="info-row">
+      <span>Status</span>
+      <strong>${c.status}</strong>
+    </div>
+
+    <div class="info-row">
+      <span>Title</span>
+      <strong>${c.title}</strong>
+    </div>
+
+  `;
+
+  document.getElementById("modalDescription").textContent =
+    c.description;
+
+  openModal();
+
+}
+
+
+/* =========================
+   UPDATE DATA
+========================= */
+
+const updates = [
+
+  {
+    image:"swimsuit.jpg",
+    label:"SWIMSUIT",
+    title:"Swimsuit Competition",
+    date:"September 15, 2026",
+    time:"7:00 PM",
+    venue:"International Competition Stage",
+    description:
+`Each contestant will present a confident and elegant stage presentation.
+
+The judging will focus on presentation, confidence, stage presence and overall performance.
+
+Contestants must follow the official competition guidelines and arrive at the venue before the scheduled time.
+
+Further official instructions will be announced by the Miss Ocean organization.`
+  },
+
+  {
+    image:"evening-gown.jpg",
+    label:"EVENING GOWN",
+    title:"Evening Gown Competition",
+    date:"September 17, 2026",
+    time:"7:00 PM",
+    venue:"International Competition Stage",
+    description:
+`Contestants will present their official evening gown presentation.
+
+Judging will focus on elegance, confidence, presentation, stage presence and overall performance.
+
+All contestants must follow the official event guidelines.`
+  },
+
+  {
+    image:"talent.jpg",
+    label:"TALENT",
+    title:"Talent Competition",
+    date:"September 19, 2026",
+    time:"7:00 PM",
+    venue:"International Competition Stage",
+    description:
+`Contestants will showcase their individual talents on the Miss Ocean stage.
+
+Performance quality, confidence, creativity and overall stage presentation will be considered during judging.`
+  }
+
+];
+
+
+/* =========================
+   OPEN UPDATE
+========================= */
+
+function openUpdate(index){
+
+  const u = updates[index];
+
+  document.getElementById("modalImage").src =
+    u.image;
+
+  document.getElementById("modalLabel").textContent =
+    u.label;
+
+  document.getElementById("modalTitle").textContent =
+    u.title;
+
+  document.getElementById("modalInfo").innerHTML = `
+
+    <div class="info-row">
+      <span>Date</span>
+      <strong>${u.date}</strong>
+    </div>
+
+    <div class="info-row">
+      <span>Time</span>
+      <strong>${u.time}</strong>
+    </div>
+
+    <div class="info-row">
+      <span>Venue</span>
+      <strong>${u.venue}</strong>
+    </div>
+
+  `;
+
+  document.getElementById("modalDescription").textContent =
+    u.description;
+
+  openModal();
+
+}
+
+
+/* =========================
+   RESULTS DATA
+========================= */
+
+const results = [
+
+  {
+    image:"winner1.jpg",
+    name:"Winner Name",
+    country:"Myanmar",
+    event:"Swimsuit Competition",
+    rank:"1",
+    description:
+      "Official winner of the Miss Ocean 2026 Swimsuit Competition."
+  },
+
+  {
+    image:"winner2.jpg",
+    name:"Winner Name",
+    country:"Thailand",
+    event:"Evening Gown",
+    rank:"2",
+    description:
+      "Official winner of the Miss Ocean 2026 Evening Gown Competition."
+  },
+
+  {
+    image:"winner3.jpg",
+    name:"Winner Name",
+    country:"Indonesia",
+    event:"Talent Competition",
+    rank:"3",
+    description:
+      "Official winner of the Miss Ocean 2026 Talent Competition."
+  }
+
+];
+
+
+/* =========================
+   OPEN RESULT
+========================= */
+
+function openResult(index){
+
+  const r = results[index];
+
+  document.getElementById("modalImage").src =
+    r.image;
+
+  document.getElementById("modalLabel").textContent =
+    "OFFICIAL RESULT";
+
+  document.getElementById("modalTitle").textContent =
+    r.name;
+
+  document.getElementById("modalInfo").innerHTML = `
+
+    <div class="info-row">
+      <span>Placement</span>
+      <strong>${r.rank}</strong>
+    </div>
+
+    <div class="info-row">
+      <span>Country</span>
+      <strong>${r.country}</strong>
+    </div>
+
+    <div class="info-row">
+      <span>Competition</span>
+      <strong>${r.event}</strong>
+    </div>
+
+    <div class="info-row">
+      <span>Status</span>
+      <strong>Winner</strong>
+    </div>
+
+  `;
+
+  document.getElementById("modalDescription").textContent =
+    r.description;
+
+  openModal();
+
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+function openModal(){
+
+  document.getElementById("modal")
+    .classList.add("show");
+
+  document.body.style.overflow = "hidden";
+
+}
+
+
+function closeModal(){
+
+  document.getElementById("modal")
+    .classList.remove("show");
+
+  document.body.style.overflow = "";
+
+}
+
+
+/* Close by tapping outside */
+
+document.getElementById("modal")
+.addEventListener("click",function(e){
+
+  if(e.target === this){
+    closeModal();
+  }
+
+});
+
+
+/* Close with Android / keyboard Escape */
+
+document.addEventListener("keydown",function(e){
+
+  if(e.key === "Escape"){
+    closeModal();
+  }
+
+});
+
+</script>
+
+</body>
+</html>
