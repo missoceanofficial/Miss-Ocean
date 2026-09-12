@@ -1,2706 +1,1099 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- =========================
+     ADVERTISEMENT
+========================= -->
 
-<head>
+<section class="advertisement-section">
 
-<meta charset="UTF-8">
+  <div class="section-mini-title">MISS OCEAN</div>
+  <h2 class="section-title">Advertisement</h2>
+  <div class="title-line"></div>
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+  <div class="ad-slider">
 
-<title>Miss Ocean 2026</title>
+    <!-- 1. Popular Vote Top 5 -->
+    <div class="ad-card" onclick="openAd(
+      'Popular Vote Top 5',
+      'Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg'
+    )">
+      <img
+        src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
+        alt="Popular Vote Top 5"
+      >
+      <div class="ad-caption">
+        <span>POPULAR VOTE</span>
+        <strong>Popular Vote Top 5</strong>
+      </div>
+    </div>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+    <!-- 2. Official Account -->
+    <div class="ad-card" onclick="openAd(
+      'Miss Ocean Official Account',
+      'Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg'
+    )">
+      <img
+        src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
+        alt="Miss Ocean Official Account"
+      >
+      <div class="ad-caption">
+        <span>MISS OCEAN</span>
+        <strong>Miss Ocean Official Account</strong>
+      </div>
+    </div>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
-rel="stylesheet">
+
+    <!-- 3. Miss Ocean 2025 Winner -->
+    <div class="ad-card" onclick="openAd(
+      'Miss Ocean 2025 Winner',
+      'IMG_20260912_131710_045.jpg'
+    )">
+      <img
+        src="IMG_20260912_131710_045.jpg"
+        alt="Miss Ocean 2025 Winner"
+      >
+      <div class="ad-caption">
+        <span>MISS OCEAN 2025</span>
+        <strong>Miss Ocean 2025 Winner</strong>
+      </div>
+    </div>
+
+
+    <!-- 4. Project Poster -->
+    <div class="ad-card" onclick="openProjectPoster()">
+      <img
+        src="IMG_20260912_131934_287.jpg"
+        alt="Project Poster"
+      >
+      <div class="ad-caption">
+        <span>MISS OCEAN PROJECT</span>
+        <strong>Project Poster</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     UPDATES
+========================= -->
+
+<section id="updates" class="page-section">
+
+  <div class="section-mini-title">MISS OCEAN UPDATES</div>
+
+  <h2 class="section-title">Latest Updates</h2>
+
+  <div class="title-line"></div>
+
+
+  <!-- Popular Vote Top 5 -->
+
+  <div
+    class="update-card"
+    onclick="openUpdate(
+      'Popular Vote Top 5',
+      'Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg',
+      'ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။ အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို Vote ပေးလိုက်ပါ။'
+    )"
+  >
+
+    <div class="update-image">
+      <img
+        src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
+        alt="Popular Vote Top 5"
+      >
+    </div>
+
+    <div class="update-content">
+      <span>POPULAR VOTE</span>
+      <h3>Popular Vote Top 5</h3>
+      <p>
+        ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- Official Account -->
+
+  <div
+    class="update-card"
+    onclick="openUpdate(
+      'Miss Ocean Official Account',
+      'Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg',
+      'Miss Ocean ၏ Official Account မှ နောက်ဆုံးရသတင်းများနှင့် အရေးကြီးသော Updates များကို စောင့်ကြည့်နိုင်ပါသည်။'
+    )"
+  >
+
+    <div class="update-image">
+      <img
+        src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
+        alt="Miss Ocean Official Account"
+      >
+    </div>
+
+    <div class="update-content">
+      <span>OFFICIAL</span>
+      <h3>Miss Ocean Official Account</h3>
+      <p>
+        Miss Ocean ၏ Official Account
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- Miss Ocean 2025 Winner -->
+
+  <div
+    class="update-card"
+    onclick="openMissOcean2025()"
+  >
+
+    <div class="update-image">
+      <img
+        src="IMG_20260912_133011_088.jpg"
+        alt="Miss Ocean 2025 Winner"
+      >
+    </div>
+
+    <div class="update-content">
+      <span>MISS OCEAN 2025</span>
+      <h3>Miss Ocean 2025 Winner</h3>
+      <p>
+        Miss Ocean 2025 Winner
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- PROJECT POSTER -->
+
+  <div
+    class="update-card"
+    onclick="openProjectPoster()"
+  >
+
+    <div class="update-image">
+      <img
+        src="IMG_20260912_131934_287.jpg"
+        alt="Project Poster"
+      >
+    </div>
+
+    <div class="update-content">
+      <span>MISS OCEAN PROJECT</span>
+      <h3>Project Poster</h3>
+      <p>
+        Project Top 4 ပြိုင်ပွဲဝင်လေးများဖြစ်ပါတယ် ၊
+        ပုံရိပ်အချို့ကိုမြင်ယောင်ကြည့်ကြရအောင်
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- PROJECT WINNERS MOMENT -->
+
+  <div
+    class="update-card"
+    onclick="openProjectWinners()"
+  >
+
+    <div class="update-image">
+      <img
+        src="IMG_20260912_131934_287.jpg"
+        alt="Project Winners Moment"
+      >
+    </div>
+
+    <div class="update-content">
+      <span>PROJECT RESULTS</span>
+      <h3>Project Winners Moment</h3>
+      <p>
+        Project Winners Moment
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FULL SCREEN UPDATE MODAL
+========================= -->
+
+<div id="updateModal" class="full-modal">
+
+  <div class="full-modal-inner">
+
+    <button class="modal-close" onclick="closeUpdateModal()">×</button>
+
+    <div class="modal-brand">
+      MISS OCEAN
+    </div>
+
+    <div class="modal-image-wrap">
+      <img id="updateModalImage" src="" alt="">
+    </div>
+
+    <div class="modal-body">
+
+      <div class="modal-small-title">
+        MISS OCEAN UPDATE
+      </div>
+
+      <h2 id="updateModalTitle"></h2>
+
+      <div class="modal-line"></div>
+
+      <p id="updateModalText"></p>
+
+    </div>
+
+    <button
+      class="modal-close-bottom"
+      onclick="closeUpdateModal()"
+    >
+      CLOSE
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     PROJECT POSTER MODAL
+========================= -->
+
+<div id="projectPosterModal" class="full-modal">
+
+  <div class="full-modal-inner project-modal">
+
+    <button class="modal-close" onclick="closeProjectPoster()">×</button>
+
+    <div class="modal-brand">
+      MISS OCEAN
+    </div>
+
+    <div class="modal-small-title">
+      MISS OCEAN PROJECT
+    </div>
+
+    <h2>Project Poster</h2>
+
+    <div class="modal-line"></div>
+
+
+    <div class="project-poster-main">
+      <img
+        src="IMG_20260912_131934_287.jpg"
+        alt="Project Poster"
+      >
+    </div>
+
+
+    <div class="project-description">
+      <p>
+        Project Top 4 ပြိုင်ပွဲဝင်လေးများဖြစ်ပါတယ် ၊
+        ပုံရိပ်အချို့ကိုမြင်ယောင်ကြည့်ကြရအောင်
+      </p>
+    </div>
+
+
+    <!-- Project Top 4 image -->
+
+    <div class="project-extra-image">
+      <img
+        src="IMG_20260912_132024_973.jpg"
+        alt="Project Top 4"
+      >
+    </div>
+
+
+    <button
+      class="modal-close-bottom"
+      onclick="closeProjectPoster()"
+    >
+      CLOSE
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     PROJECT WINNERS MOMENT
+========================= -->
+
+<div id="projectWinnersModal" class="full-modal">
+
+  <div class="full-modal-inner">
+
+    <button class="modal-close" onclick="closeProjectWinners()">×</button>
+
+    <div class="modal-brand">
+      MISS OCEAN
+    </div>
+
+    <div class="modal-small-title">
+      PROJECT RESULTS
+    </div>
+
+    <h2>Project Winners Moment</h2>
+
+    <div class="modal-line"></div>
+
+
+    <!-- Winner 1 -->
+
+    <div class="winner-moment-card">
+
+      <img
+        src="IMG_20260912_132348_017.jpg"
+        alt="Project Winner Sittwe"
+      >
+
+      <div class="winner-moment-info">
+        <span>PROJECT WINNER</span>
+
+        <h3>
+          Sittwe
+        </h3>
+
+        <p>
+          Pyae Sai Maung
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- Winner 2 -->
+
+    <div class="winner-moment-card">
+
+      <img
+        src="IMG_20260912_132624_143.jpg"
+        alt="Project Winner Meiktila"
+      >
+
+      <div class="winner-moment-info">
+        <span>PROJECT WINNER</span>
+
+        <h3>
+          Meiktila
+        </h3>
+
+        <p>
+          Naung
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- Winner 3 -->
+
+    <div class="winner-moment-card">
+
+      <img
+        src="IMG_20260912_132818_365.jpg"
+        alt="Project Winner Hpakant"
+      >
+
+      <div class="winner-moment-info">
+        <span>PROJECT WINNER</span>
+
+        <h3>
+          Hpakant
+        </h3>
+
+        <p>
+          Chit Tu Tu
+        </p>
+      </div>
+
+    </div>
+
+
+    <button
+      class="modal-close-bottom"
+      onclick="closeProjectWinners()"
+    >
+      CLOSE
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     MISS OCEAN 2025 MODAL
+========================= -->
+
+<div id="missOcean2025Modal" class="full-modal">
+
+  <div class="full-modal-inner">
+
+    <button class="modal-close" onclick="closeMissOcean2025()">×</button>
+
+    <div class="modal-brand">
+      MISS OCEAN
+    </div>
+
+    <div class="modal-small-title">
+      OFFICIAL ARCHIVE
+    </div>
+
+    <h2>Miss Ocean 2025</h2>
+
+    <div class="modal-line"></div>
+
+
+    <div class="archive-grid">
+
+      <div class="archive-card">
+        <img
+          src="IMG_20260912_133051_561.jpg"
+          alt="Miss Ocean 2025"
+        >
+      </div>
+
+      <div class="archive-card">
+        <img
+          src="IMG_20260912_133128_876.jpg"
+          alt="Miss Ocean 2025"
+        >
+      </div>
+
+      <div class="archive-card">
+        <img
+          src="IMG_20260912_133210_986.jpg"
+          alt="Miss Ocean 2025"
+        >
+      </div>
+
+    </div>
+
+
+    <button
+      class="modal-close-bottom"
+      onclick="closeMissOcean2025()"
+    >
+      CLOSE
+    </button>
+
+  </div>
+
+</div>
 
 
 <style>
 
-/* =====================================================
-   RESET
-===================================================== */
+/* =========================
+   SECTION
+========================= */
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+.advertisement-section,
+.page-section{
+  width:100%;
+  max-width:1000px;
+  margin:0 auto;
+  padding:28px 18px;
+  box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+.section-mini-title{
+  font-family:"Montserrat",sans-serif;
+  font-size:11px;
+  letter-spacing:4px;
+  font-weight:600;
+  color:#7398a5;
+  text-transform:uppercase;
+  margin-bottom:8px;
 }
 
-body{
-    font-family:"DM Sans",sans-serif;
-    background:#dff4fb;
-    color:#285e73;
-    overflow-x:hidden;
+.section-title{
+  margin:0;
+  font-family:"Bodoni Moda","Times New Roman",serif;
+  font-size:38px;
+  line-height:1.1;
+  font-weight:600;
+  color:#175b73;
 }
 
-button{
-    font-family:"DM Sans",sans-serif;
-}
-
-
-/* =====================================================
-   LOADING SCREEN
-===================================================== */
-
-#loadingScreen{
-
-    position:fixed;
-    inset:0;
-
-    z-index:99999;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-    linear-gradient(
-        145deg,
-        #d8f2fa 0%,
-        #eefafd 50%,
-        #d1edf6 100%
-    );
-}
-
-.loadingInner{
-
-    width:90%;
-    max-width:430px;
-
-    text-align:center;
-}
-
-.loadingLogo{
-
-    width:110px;
-    height:110px;
-
-    object-fit:contain;
-
-    border-radius:50%;
-
-    margin-bottom:20px;
-
-    box-shadow:
-    0 15px 38px
-    rgba(40,100,120,.12);
-}
-
-.loadingSmall{
-
-    font-size:8px;
-
-    font-weight:600;
-
-    letter-spacing:3.4px;
-
-    color:#7899a5;
-
-    margin-bottom:10px;
-}
-
-.loadingTitle{
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:34px;
-
-    font-weight:400;
-
-    line-height:1.15;
-
-    color:#175b76;
-}
-
-.loadingNumber{
-
-    margin-top:25px;
-
-    font-size:30px;
-
-    font-weight:600;
-
-    color:#28677d;
-}
-
-.loadingBar{
-
-    width:100%;
-
-    height:3px;
-
-    margin-top:14px;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    background:
-    rgba(70,132,151,.15);
-}
-
-.loadingProgress{
-
-    width:0%;
-
-    height:100%;
-
-    background:#639dad;
-}
-
-.loadingText{
-
-    margin-top:12px;
-
-    font-size:7px;
-
-    font-weight:600;
-
-    letter-spacing:2.2px;
-
-    color:#8aa4ae;
+.title-line{
+  width:60px;
+  height:2px;
+  background:#76aebd;
+  margin:15px 0 25px;
 }
 
 
-/* =====================================================
-   HIDDEN MUSIC
-===================================================== */
+/* =========================
+   ADVERTISEMENT
+========================= */
 
-#music{
+.ad-slider{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  padding:2px 2px 12px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
 
-    position:fixed;
+.ad-slider::-webkit-scrollbar{
+  display:none;
+}
 
-    width:1px;
-    height:1px;
+.ad-card{
+  position:relative;
+  flex:0 0 88%;
+  height:190px;
+  overflow:hidden;
+  border-radius:20px;
+  background:#ccecf5;
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 12px 30px rgba(49,103,120,.10);
+  scroll-snap-align:start;
+  cursor:pointer;
+}
 
-    left:-9999px;
-    top:-9999px;
+.ad-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
 
-    opacity:0;
+.ad-caption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:35px 18px 16px;
+  background:linear-gradient(
+    transparent,
+    rgba(10,55,72,.78)
+  );
+  color:white;
+}
 
-    pointer-events:none;
+.ad-caption span{
+  display:block;
+  font-family:"Montserrat",sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+  margin-bottom:4px;
+  opacity:.9;
+}
+
+.ad-caption strong{
+  display:block;
+  font-family:"Montserrat",sans-serif;
+  font-size:16px;
+  font-weight:600;
 }
 
 
-/* =====================================================
-   WEBSITE
-===================================================== */
+/* =========================
+   UPDATE CARD
+========================= */
 
-#website{
+.update-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(255,255,255,.95);
+  border-radius:20px;
+  padding:12px;
+  margin-bottom:14px;
+  box-shadow:0 8px 25px rgba(45,105,124,.07);
+  cursor:pointer;
+  transition:.2s ease;
+}
 
-    display:none;
+.update-card:active{
+  transform:scale(.985);
+}
 
-    min-height:100vh;
+.update-image{
+  flex:0 0 115px;
+  height:105px;
+  overflow:hidden;
+  border-radius:15px;
+  background:#ccecf5;
+}
+
+.update-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.update-content{
+  min-width:0;
+}
+
+.update-content span{
+  font-family:"Montserrat",sans-serif;
+  font-size:9px;
+  letter-spacing:2.5px;
+  color:#7d9ca6;
+  font-weight:600;
+}
+
+.update-content h3{
+  margin:5px 0 5px;
+  color:#205f75;
+  font-family:"Montserrat",sans-serif;
+  font-size:17px;
+  line-height:1.25;
+  font-weight:600;
+}
+
+.update-content p{
+  margin:0;
+  color:#77919b;
+  font-family:"Montserrat",sans-serif;
+  font-size:12px;
+  line-height:1.6;
 }
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* =========================
+   FULL SCREEN MODAL
+========================= */
 
-.siteHeader{
-
-    padding:27px 18px 20px;
-
-    text-align:center;
+.full-modal{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:none;
+  overflow-y:auto;
+  background:#eefaff;
 }
 
-.headerLogo{
-
-    width:55px;
-    height:55px;
-
-    object-fit:contain;
-
-    border-radius:50%;
-
-    margin-bottom:11px;
+.full-modal.show{
+  display:block;
 }
 
-.headerSmall{
-
-    font-size:8px;
-
-    font-weight:600;
-
-    letter-spacing:3px;
-
-    color:#7d9ca7;
+.full-modal-inner{
+  min-height:100vh;
+  width:100%;
+  max-width:850px;
+  margin:0 auto;
+  padding:24px 18px 35px;
+  box-sizing:border-box;
+  background:#eefaff;
 }
 
-.mainTitle{
-
-    margin-top:8px;
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:39px;
-
-    font-weight:400;
-
-    line-height:1.15;
-
-    color:#175b76;
-
-    letter-spacing:.3px;
+.modal-brand{
+  text-align:center;
+  font-family:"Montserrat",sans-serif;
+  font-size:11px;
+  letter-spacing:5px;
+  font-weight:600;
+  color:#7299a5;
+  padding:8px 0 20px;
 }
 
-.titleDecoration{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin-top:15px;
+.modal-close{
+  position:fixed;
+  top:18px;
+  right:18px;
+  width:48px;
+  height:48px;
+  border:0;
+  border-radius:50%;
+  background:white;
+  color:#367184;
+  font-size:30px;
+  line-height:48px;
+  box-shadow:0 8px 25px rgba(40,90,105,.12);
+  z-index:100000;
 }
 
-.titleDecoration span{
-
-    width:39px;
-
-    height:1px;
-
-    background:#75a8b8;
+.modal-image-wrap{
+  width:100%;
+  max-height:70vh;
+  overflow:hidden;
+  border-radius:22px;
+  background:#ccecf5;
 }
 
-.titleDecoration i{
+.modal-image-wrap img{
+  display:block;
+  width:100%;
+  max-height:70vh;
+  object-fit:contain;
+}
 
-    width:6px;
-    height:6px;
+.modal-body{
+  padding:25px 4px 10px;
+}
 
-    border-radius:50%;
+.modal-small-title{
+  font-family:"Montserrat",sans-serif;
+  font-size:10px;
+  letter-spacing:4px;
+  color:#789ca8;
+  font-weight:600;
+  text-transform:uppercase;
+}
 
-    background:#75a8b8;
+.modal-body h2,
+.project-modal h2,
+.full-modal-inner > h2{
+  margin:8px 0 12px;
+  color:#175b73;
+  font-family:"Montserrat",sans-serif;
+  font-size:30px;
+  line-height:1.2;
+  font-weight:600;
+}
+
+.modal-line{
+  width:55px;
+  height:2px;
+  background:#75aebb;
+  margin:15px 0 20px;
+}
+
+.modal-body p,
+.project-description p{
+  font-family:"Montserrat",sans-serif;
+  color:#67838d;
+  font-size:14px;
+  line-height:1.9;
+}
+
+.modal-close-bottom{
+  display:block;
+  width:100%;
+  height:52px;
+  margin:30px auto 0;
+  border:1px solid #b7d6df;
+  border-radius:30px;
+  background:white;
+  color:#376e7d;
+  font-family:"Montserrat",sans-serif;
+  font-size:11px;
+  letter-spacing:3px;
+  font-weight:600;
 }
 
 
-/* =====================================================
-   ADVERTISEMENT SLIDER
-===================================================== */
+/* =========================
+   PROJECT POSTER
+========================= */
 
-.adWrapper{
-
-    width:100%;
-
-    overflow:hidden;
-
-    padding-bottom:21px;
+.project-poster-main{
+  width:100%;
+  overflow:hidden;
+  border-radius:20px;
+  background:#ccecf5;
 }
 
-.adSlider{
-
-    display:flex;
-
-    gap:12px;
-
-    overflow-x:auto;
-
-    padding:
-    2px
-    12px
-    7px;
-
-    scroll-snap-type:x mandatory;
-
-    -webkit-overflow-scrolling:touch;
-
-    scrollbar-width:none;
+.project-poster-main img{
+  display:block;
+  width:100%;
+  height:auto;
 }
 
-.adSlider::-webkit-scrollbar{
-    display:none;
+.project-extra-image{
+  margin-top:20px;
+  width:100%;
+  overflow:hidden;
+  border-radius:20px;
 }
 
-.adCard{
-
-    position:relative;
-
-    flex:0 0 88%;
-
-    height:158px;
-
-    overflow:hidden;
-
-    scroll-snap-align:center;
-
-    border-radius:18px;
-
-    border:1px solid
-    rgba(255,255,255,.95);
-
-    background:#c8e9f3;
-
-    box-shadow:
-    0 10px 27px
-    rgba(39,105,126,.08);
-
-    cursor:pointer;
+.project-extra-image img{
+  display:block;
+  width:100%;
+  height:auto;
 }
 
-.adCard img{
 
-    width:100%;
-    height:100%;
+/* =========================
+   PROJECT WINNERS
+========================= */
 
-    object-fit:cover;
-
-    display:block;
+.winner-moment-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:12px;
+  margin:0 0 14px;
+  border-radius:20px;
+  background:white;
+  border:1px solid #d9edf2;
+  box-shadow:0 8px 22px rgba(48,99,115,.07);
 }
 
-.adTap{
-
-    position:absolute;
-
-    right:10px;
-    bottom:10px;
-
-    padding:5px 9px;
-
-    border-radius:20px;
-
-    background:
-    rgba(255,255,255,.88);
-
-    color:#4d8191;
-
-    font-size:6px;
-
-    font-weight:700;
-
-    letter-spacing:1px;
+.winner-moment-card img{
+  width:125px;
+  height:145px;
+  object-fit:cover;
+  border-radius:15px;
+  background:#ccecf5;
+  flex-shrink:0;
 }
+
+.winner-moment-info span{
+  font-family:"Montserrat",sans-serif;
+  font-size:9px;
+  letter-spacing:2px;
+  color:#83a0a9;
+  font-weight:600;
+}
+
+.winner-moment-info h3{
+  margin:6px 0 3px;
+  color:#205f75;
+  font-family:"Montserrat",sans-serif;
+  font-size:20px;
+  font-weight:600;
+}
+
+.winner-moment-info p{
+  margin:0;
+  color:#718e98;
+  font-family:"Montserrat",sans-serif;
+  font-size:13px;
+}
+
+
+/* =========================
+   2025 ARCHIVE
+========================= */
+
+.archive-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:16px;
+}
+
+.archive-card{
+  overflow:hidden;
+  border-radius:20px;
+  background:white;
+  border:1px solid #d9edf2;
+  box-shadow:0 8px 25px rgba(48,99,115,.08);
+}
+
+.archive-card img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
 
 @media(min-width:700px){
 
-    .adCard{
+  .ad-card{
+    flex-basis:58%;
+    height:220px;
+  }
 
-        flex-basis:58%;
+  .archive-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
 
-        height:185px;
-    }
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.nav{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:10px;
-
-    padding:
-    5px
-    16px
-    26px;
-}
-
-.nav button{
-
-    min-height:88px;
-
-    border:1px solid
-    rgba(255,255,255,.95);
-
-    border-radius:17px;
-
-    background:
-    rgba(255,255,255,.57);
-
-    color:#7897a2;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 8px 22px
-    rgba(40,103,125,.04);
-
-    transition:.2s;
-}
-
-.nav button.active{
-
-    background:#ffffff;
-
-    color:#285e73;
-
-    box-shadow:
-    0 10px 25px
-    rgba(40,103,125,.09);
-}
-
-.nav button:active{
-
-    transform:scale(.98);
-}
-
-.navRoman{
-
-    display:block;
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:22px;
-
-    margin-bottom:8px;
-
-    color:#6694a3;
-}
-
-.navText{
-
-    display:block;
-
-    font-size:8px;
-
-    font-weight:700;
-
-    letter-spacing:.5px;
-}
-
-
-/* =====================================================
-   SECTIONS
-===================================================== */
-
-.section{
-
-    display:none;
-
-    padding:
-    0
-    18px
-    45px;
-}
-
-.section.active{
-    display:block;
-}
-
-.sectionIntro{
-
-    margin:
-    8px 0 21px;
-}
-
-.sectionEyebrow{
-
-    font-size:8px;
-
-    font-weight:600;
-
-    letter-spacing:3px;
-
-    color:#82a0aa;
-
-    margin-bottom:8px;
-}
-
-.sectionTitle{
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:29px;
-
-    line-height:1.3;
-
-    font-weight:400;
-
-    color:#175b76;
-}
-
-.sectionDescription{
-
-    margin-top:7px;
-
-    font-size:10px;
-
-    line-height:1.7;
-
-    color:#7d9ba5;
-}
-
-
-/* =====================================================
-   CONTESTANT GRID
-===================================================== */
-
-.contestantGrid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:14px;
-}
-
-.contestantCard{
-
-    background:#ffffff;
-
-    border:1px solid
-    rgba(255,255,255,.95);
-
-    border-radius:17px;
-
-    overflow:hidden;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 8px 24px
-    rgba(39,105,126,.06);
-}
-
-.contestantPhoto{
-
-    width:100%;
-
-    height:245px;
-
-    background:#c8e9f3;
-
-    overflow:hidden;
-}
-
-.contestantPhoto img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-}
-
-.contestantInfo{
-
-    padding:
-    12px
-    12px
-    15px;
-}
-
-.cardCity{
-
-    font-size:7px;
-
-    font-weight:700;
-
-    letter-spacing:1.4px;
-
-    color:#89a5af;
-
-    margin-bottom:4px;
-}
-
-.cardName{
-
-    font-size:14px;
-
-    line-height:1.35;
-
-    font-weight:600;
-
-    color:#285e73;
-}
-
-
-/* =====================================================
-   UPDATE LIST
-===================================================== */
-
-.updateList{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:15px;
-}
-
-.updateCard{
-
-    background:#ffffff;
-
-    border:1px solid
-    rgba(255,255,255,.95);
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 9px 27px
-    rgba(39,105,126,.07);
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.updateCard:active{
-
-    transform:scale(.99);
-}
-
-.updateImage{
-
-    width:100%;
-
-    height:225px;
-
-    background:#c8e9f3;
-
-    overflow:hidden;
-}
-
-.updateImage img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-}
-
-.updateContent{
-
-    padding:
-    18px
-    18px
-    21px;
-}
-
-.updateLabel{
-
-    font-size:7px;
-
-    font-weight:700;
-
-    letter-spacing:2.4px;
-
-    color:#86a2ac;
-
-    margin-bottom:8px;
-}
-
-.updateTitle{
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:21px;
-
-    line-height:1.35;
-
-    color:#175b76;
-
-    font-weight:400;
-
-    margin-bottom:11px;
-}
-
-.updateLine{
-
-    width:40px;
-
-    height:1px;
-
-    background:#75a8b8;
-
-    margin-bottom:13px;
-}
-
-.updateText{
-
-    font-size:11px;
-
-    line-height:1.85;
-
-    color:#688792;
-}
-
-
-/* =====================================================
-   RESULTS
-===================================================== */
-
-.resultsOnly{
-
-    min-height:350px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-}
-
-.resultsOcean{
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:33px;
-
-    font-weight:400;
-
-    color:#175b76;
-
-    letter-spacing:.4px;
-}
-
-.resultsSmallLine{
-
-    width:42px;
-
-    height:1px;
-
-    background:#75a8b8;
-
-    margin:16px auto;
-}
-
-
-/* =====================================================
-   FULL SCREEN VIEWER
-===================================================== */
-
-.viewer{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:10000;
-
-    display:none;
-
-    overflow-y:auto;
-
-    background:
-    linear-gradient(
-        180deg,
-        #dff4fb 0%,
-        #f8fdff 100%
-    );
-}
-
-.viewer.show{
-    display:block;
-}
-
-.viewerHeader{
-
-    position:sticky;
-
-    top:0;
-
-    z-index:20;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    min-height:73px;
-
-    padding:
-    10px
-    60px;
-
-    background:
-    rgba(223,244,251,.95);
-
-    backdrop-filter:blur(12px);
-
-    border-bottom:1px solid
-    rgba(91,147,163,.12);
-}
-
-.viewerLogo{
-
-    width:42px;
-    height:42px;
-
-    object-fit:contain;
-
-    border-radius:50%;
-
-    margin-right:10px;
-}
-
-.viewerBrand{
-
-    text-align:left;
-}
-
-.viewerBrandSmall{
-
-    font-size:6px;
-
-    font-weight:700;
-
-    letter-spacing:2.5px;
-
-    color:#7d9ca7;
-}
-
-.viewerBrandTitle{
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:17px;
-
-    color:#175b76;
-
-    line-height:1.2;
-}
-
-.viewerClose{
-
-    position:absolute;
-
-    right:15px;
-
-    top:13px;
-
-    width:46px;
-
-    height:46px;
-
-    border:0;
-
-    border-radius:50%;
-
-    background:#ffffff;
-
-    color:#397487;
-
-    font-size:28px;
-
-    line-height:1;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 8px 22px
-    rgba(40,103,125,.10);
-}
-
-.viewerContent{
-
-    width:100%;
-
-    max-width:850px;
-
-    margin:auto;
-
-    padding:
-    24px
-    16px
-    45px;
-}
-
-.viewerEyebrow{
-
-    text-align:center;
-
-    font-size:7px;
-
-    font-weight:700;
-
-    letter-spacing:3px;
-
-    color:#82a0aa;
-
-    margin-bottom:9px;
-}
-
-.viewerTitle{
-
-    text-align:center;
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:27px;
-
-    font-weight:400;
-
-    line-height:1.35;
-
-    color:#175b76;
-}
-
-.viewerRule{
-
-    width:45px;
-
-    height:1px;
-
-    background:#75a8b8;
-
-    margin:
-    15px
-    auto
-    22px;
-}
-
-.viewerText{
-
-    text-align:center;
-
-    font-size:11px;
-
-    line-height:1.8;
-
-    color:#668793;
-
-    max-width:620px;
-
-    margin:
-    0
-    auto
-    22px;
-}
-
-
-/* =====================================================
-   SINGLE IMAGE
-===================================================== */
-
-.singleViewerImage{
-
-    width:100%;
-
-    max-height:75vh;
-
-    object-fit:contain;
-
-    display:block;
-
-    margin:auto;
-
-    border-radius:18px;
-
-    background:#c8e9f3;
-
-    box-shadow:
-    0 14px 35px
-    rgba(39,105,126,.10);
-}
-
-
-/* =====================================================
-   MULTI IMAGE GALLERY
-===================================================== */
-
-.gallery{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:16px;
-}
-
-.galleryItem{
-
-    background:#ffffff;
-
-    border:1px solid #cce6ee;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 9px 25px
-    rgba(39,105,126,.06);
-}
-
-.galleryItem img{
-
-    width:100%;
-
-    max-height:650px;
-
-    object-fit:cover;
-
-    display:block;
-}
-
-.galleryCaption{
-
-    padding:
-    13px
-    15px
-    16px;
-
-    text-align:center;
-
-    font-size:10px;
-
-    font-weight:600;
-
-    line-height:1.5;
-
-    color:#397487;
-}
-
-
-/* =====================================================
-   PROJECT TWO IMAGE LAYOUT
-===================================================== */
-
-.projectPair{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:17px;
-}
-
-.projectImageBox{
-
-    background:#ffffff;
-
-    border:1px solid #cce6ee;
-
-    border-radius:19px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 9px 25px
-    rgba(39,105,126,.06);
-}
-
-.projectImageBox img{
-
-    width:100%;
-
-    display:block;
-
-    max-height:680px;
-
-    object-fit:cover;
-}
-
-.projectImageCaption{
-
-    padding:
-    13px
-    15px
-    16px;
-
-    text-align:center;
-
-    font-size:10px;
-
-    font-weight:600;
-
-    color:#397487;
-}
-
-
-/* =====================================================
-   VIEWER CLOSE BUTTON
-===================================================== */
-
-.viewerBottomClose{
-
-    display:block;
-
-    width:100%;
-
-    max-width:300px;
-
-    margin:
-    28px
-    auto
-    0;
-
-    padding:
-    13px
-    18px;
-
-    border:1px solid #bddce6;
-
-    border-radius:30px;
-
-    background:#ffffff;
-
-    color:#397487;
-
-    font-size:9px;
-
-    font-weight:700;
-
-    letter-spacing:1.2px;
-
-    cursor:pointer;
-}
-
-
-/* =====================================================
-   CONTESTANT DETAIL
-===================================================== */
-
-.contestantDetailImage{
-
-    width:100%;
-
-    max-height:72vh;
-
-    object-fit:cover;
-
-    border-radius:19px;
-
-    display:block;
-
-    background:#c8e9f3;
-}
-
-.detailIdentity{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:10px;
-
-    margin-top:18px;
-}
-
-.detailBox{
-
-    padding:
-    15px
-    12px;
-
-    text-align:center;
-
-    background:#ffffff;
-
-    border:1px solid #cce6ee;
-
-    border-radius:14px;
-}
-
-.detailBoxLabel{
-
-    font-size:6px;
-
-    font-weight:700;
-
-    letter-spacing:1.8px;
-
-    color:#8ba6b0;
-
-    margin-bottom:7px;
-}
-
-.detailBoxValue{
-
-    font-size:14px;
-
-    line-height:1.4;
-
-    font-weight:600;
-
-    color:#285e73;
-}
-
-.aboutBox{
-
-    margin-top:11px;
-
-    padding:18px;
-
-    background:#ffffff;
-
-    border:1px solid #cce6ee;
-
-    border-radius:15px;
-}
-
-.aboutLabel{
-
-    font-size:6px;
-
-    font-weight:700;
-
-    letter-spacing:2.3px;
-
-    color:#8ba6b0;
-
-    margin-bottom:9px;
-}
-
-.aboutText{
-
-    font-size:11px;
-
-    line-height:1.85;
-
-    color:#668793;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.siteFooter{
-
-    text-align:center;
-
-    padding:
-    4px
-    20px
-    35px;
-
-    font-size:7px;
-
-    font-weight:600;
-
-    letter-spacing:2px;
+  .update-image{
+    flex-basis:150px;
+    height:125px;
+  }
 
-    color:#88a3ad;
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* =========================
+   SMALL PHONE
+========================= */
 
 @media(max-width:380px){
 
-    .mainTitle{
-        font-size:34px;
-    }
+  .section-title{
+    font-size:32px;
+  }
 
-    .contestantPhoto{
-        height:215px;
-    }
+  .update-image{
+    flex-basis:100px;
+    height:95px;
+  }
 
-    .updateImage{
-        height:205px;
-    }
+  .update-content h3{
+    font-size:15px;
+  }
 
-    .viewerTitle{
-        font-size:24px;
-    }
-}
-
-
-@media(min-width:700px){
-
-    .contestantGrid{
-
-        grid-template-columns:
-        repeat(3,1fr);
-
-        max-width:1000px;
-
-        margin:auto;
-    }
-
-    .section{
-
-        max-width:1100px;
-
-        margin:auto;
-    }
-
-    .mainTitle{
-        font-size:46px;
-    }
-
-    .updateList{
-
-        max-width:760px;
-
-        margin:auto;
-    }
+  .winner-moment-card img{
+    width:105px;
+    height:125px;
+  }
 
 }
 
 </style>
 
-</head>
-
-
-<body>
-
-
-<!-- =====================================================
-     LOADING
-===================================================== -->
-
-<div id="loadingScreen">
-
-    <div class="loadingInner">
-
-        <img
-        class="loadingLogo"
-        src="IMG_20260912_123927_081.jpg"
-        alt="Miss Ocean Logo">
-
-        <div class="loadingSmall">
-            THE OFFICIAL ONLINE PAGEANT
-        </div>
-
-        <div class="loadingTitle">
-            MISS OCEAN
-        </div>
-
-        <div
-        class="loadingNumber"
-        id="loadingNumber">
-            1
-        </div>
-
-        <div class="loadingBar">
-
-            <div
-            class="loadingProgress"
-            id="loadingProgress">
-            </div>
-
-        </div>
-
-        <div class="loadingText">
-            PREPARING THE OFFICIAL UPDATE HUB
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     MUSIC
-===================================================== -->
-
-<video
-id="music"
-autoplay
-loop
-playsinline
-preload="auto">
-
-    <source
-    src="VID_20260912_122734_458.mp4"
-    type="video/mp4">
-
-</video>
-
-
-<!-- =====================================================
-     MAIN WEBSITE
-===================================================== -->
-
-<div id="website">
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header class="siteHeader">
-
-    <img
-    class="headerLogo"
-    src="IMG_20260912_123927_081.jpg"
-    alt="Miss Ocean Logo">
-
-    <div class="headerSmall">
-        THE OFFICIAL ONLINE PAGEANT
-    </div>
-
-    <div class="mainTitle">
-        MISS OCEAN
-    </div>
-
-    <div class="titleDecoration">
-
-        <span></span>
-
-        <i></i>
-
-        <span></span>
-
-    </div>
-
-</header>
-
-
-<!-- =====================================================
-     ADVERTISEMENTS
-===================================================== -->
-
-<div class="adWrapper">
-
-    <div class="adSlider">
-
-
-        <!-- AD 1 -->
-
-        <div
-        class="adCard"
-        onclick="openAd(
-        'MISS OCEAN OFFICIAL ACCOUNT',
-        'Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg'
-        )">
-
-            <img
-            src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
-            alt="Miss Ocean Official Account">
-
-            <div class="adTap">
-                VIEW
-            </div>
-
-        </div>
-
-
-        <!-- AD 2 -->
-
-        <div
-        class="adCard"
-        onclick="openAd(
-        'MISS OCEAN 2025 WINNER',
-        'IMG_20260912_131710_045.jpg'
-        )">
-
-            <img
-            src="IMG_20260912_131710_045.jpg"
-            alt="Miss Ocean 2025 Winner">
-
-            <div class="adTap">
-                VIEW
-            </div>
-
-        </div>
-
-
-        <!-- AD 3 -->
-
-        <div
-        class="adCard"
-        onclick="openAd(
-        'PROJECT POSTER',
-        'IMG_20260912_131934_287.jpg'
-        )">
-
-            <img
-            src="IMG_20260912_131934_287.jpg"
-            alt="Project Poster">
-
-            <div class="adTap">
-                VIEW
-            </div>
-
-        </div>
-
-
-        <!-- AD 4 -->
-
-        <div
-        class="adCard"
-        onclick="openAd(
-        'PROJECT WINNERS MOMENT',
-        'IMG_20260912_131934_287.jpg'
-        )">
-
-            <img
-            src="IMG_20260912_131934_287.jpg"
-            alt="Project Winners Moment">
-
-            <div class="adTap">
-                VIEW
-            </div>
-
-        </div>
-
-
-        <!-- AD 5 -->
-
-        <div
-        class="adCard"
-        onclick="openAd(
-        'MISS OCEAN 2025 WINNER',
-        'IMG_20260912_133011_088.jpg'
-        )">
-
-            <img
-            src="IMG_20260912_133011_088.jpg"
-            alt="Miss Ocean 2025 Winner">
-
-            <div class="adTap">
-                VIEW
-            </div>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     NAV
-===================================================== -->
-
-<nav class="nav">
-
-
-    <button
-    class="active"
-    onclick="openSection('contestants',this)">
-
-        <span class="navRoman">
-            I
-        </span>
-
-        <span class="navText">
-            CONTESTANTS
-        </span>
-
-    </button>
-
-
-    <button
-    onclick="openSection('updates',this)">
-
-        <span class="navRoman">
-            II
-        </span>
-
-        <span class="navText">
-            UPDATES
-        </span>
-
-    </button>
-
-
-    <button
-    onclick="openSection('results',this)">
-
-        <span class="navRoman">
-            III
-        </span>
-
-        <span class="navText">
-            RESULTS
-        </span>
-
-    </button>
-
-
-</nav>
-
-
-<!-- =====================================================
-     CONTESTANTS
-===================================================== -->
-
-<section
-id="contestants"
-class="section active">
-
-
-    <div class="sectionIntro">
-
-        <div class="sectionEyebrow">
-            MEET THE DELEGATES
-        </div>
-
-        <div class="sectionTitle">
-            Contestants
-        </div>
-
-        <div class="sectionDescription">
-            Discover the official delegates competing
-            in Miss Ocean 2026.
-        </div>
-
-    </div>
-
-
-    <div
-    class="contestantGrid"
-    id="contestantGrid">
-    </div>
-
-
-</section>
-
-
-<!-- =====================================================
-     UPDATES
-===================================================== -->
-
-<section
-id="updates"
-class="section">
-
-
-    <div class="sectionIntro">
-
-        <div class="sectionEyebrow">
-            MISS OCEAN 2026
-        </div>
-
-        <div class="sectionTitle">
-            Updates
-        </div>
-
-        <div class="sectionDescription">
-            Official updates from the Miss Ocean
-            online pageant.
-        </div>
-
-    </div>
-
-
-    <div class="updateList">
-
-
-        <!-- ============================================
-             POPULAR VOTE UPDATE
-        ============================================= -->
-
-        <div
-        class="updateCard"
-        onclick="openUpdate('popular')">
-
-            <div class="updateImage">
-
-                <img
-                src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
-                alt="Popular Vote Update">
-
-            </div>
-
-            <div class="updateContent">
-
-                <div class="updateLabel">
-                    OFFICIAL UPDATE
-                </div>
-
-                <div class="updateTitle">
-                    Popular Vote Update
-                </div>
-
-                <div class="updateLine"></div>
-
-                <div class="updateText">
-
-                    ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။
-                    အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို
-                    Vote ပေးလိုက်ပါ။
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ============================================
-             PROJECT TOP 4
-        ============================================= -->
-
-        <div
-        class="updateCard"
-        onclick="openUpdate('projectTop4')">
-
-            <div class="updateImage">
-
-                <img
-                src="IMG_20260912_131934_287.jpg"
-                alt="Project Poster">
-
-            </div>
-
-            <div class="updateContent">
-
-                <div class="updateLabel">
-                    PROJECT UPDATE
-                </div>
-
-                <div class="updateTitle">
-                    Project Poster + Project Top 4
-                </div>
-
-                <div class="updateLine"></div>
-
-                <div class="updateText">
-
-                    Project Top 4 ပြိုင်ပွဲဝင်လေးများဖြစ်ပါတယ် ၊
-                    ပုံရိပ်အချို့ကိုမြင်ယောင်ကြည့်ကြရအောင်
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ============================================
-             PROJECT WINNERS MOMENT
-        ============================================= -->
-
-        <div
-        class="updateCard"
-        onclick="openUpdate('projectWinners')">
-
-            <div class="updateImage">
-
-                <img
-                src="IMG_20260912_131934_287.jpg"
-                alt="Project Winners Moment">
-
-            </div>
-
-            <div class="updateContent">
-
-                <div class="updateLabel">
-                    WINNERS MOMENT
-                </div>
-
-                <div class="updateTitle">
-                    Project Winners Moment
-                </div>
-
-                <div class="updateLine"></div>
-
-                <div class="updateText">
-
-                    Official Project Winner moments
-                    from Miss Ocean.
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ============================================
-             MISS OCEAN 2025 WINNER
-        ============================================= -->
-
-        <div
-        class="updateCard"
-        onclick="openUpdate('miss2025')">
-
-            <div class="updateImage">
-
-                <img
-                src="IMG_20260912_133011_088.jpg"
-                alt="Miss Ocean 2025 Winner">
-
-            </div>
-
-            <div class="updateContent">
-
-                <div class="updateLabel">
-                    MISS OCEAN ARCHIVE
-                </div>
-
-                <div class="updateTitle">
-                    Miss Ocean 2025 Winner
-                </div>
-
-                <div class="updateLine"></div>
-
-                <div class="updateText">
-
-                    Miss Ocean 2025
-                    official memories and moments.
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-<!-- =====================================================
-     RESULTS
-===================================================== -->
-
-<section
-id="results"
-class="section">
-
-
-    <div class="sectionIntro">
-
-        <div class="sectionEyebrow">
-            MISS OCEAN 2026
-        </div>
-
-        <div class="sectionTitle">
-            Results
-        </div>
-
-    </div>
-
-
-    <div class="resultsOnly">
-
-        <div>
-
-            <div class="resultsOcean">
-                MISS OCEAN
-            </div>
-
-            <div class="resultsSmallLine"></div>
-
-        </div>
-
-    </div>
-
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer class="siteFooter">
-
-    MISS OCEAN • OFFICIAL ONLINE PAGEANT
-
-</footer>
-
-
-</div>
-
-
-<!-- =====================================================
-     FULL SCREEN VIEWER
-===================================================== -->
-
-<div
-id="viewer"
-class="viewer">
-
-
-    <div class="viewerHeader">
-
-
-        <img
-        class="viewerLogo"
-        src="IMG_20260912_123927_081.jpg"
-        alt="Miss Ocean Logo">
-
-
-        <div class="viewerBrand">
-
-            <div class="viewerBrandSmall">
-                OFFICIAL ONLINE PAGEANT
-            </div>
-
-            <div class="viewerBrandTitle">
-                MISS OCEAN
-            </div>
-
-        </div>
-
-
-        <button
-        class="viewerClose"
-        onclick="closeViewer()">
-
-            ×
-
-        </button>
-
-
-    </div>
-
-
-    <div
-    class="viewerContent"
-    id="viewerContent">
-    </div>
-
-
-</div>
-
 
 <script>
 
-/* =====================================================
-   CONTESTANT DATA
-===================================================== */
+/* =========================
+   UPDATE MODAL
+========================= */
 
-const contestants = [
+function openUpdate(title, image, text){
 
-    {
-        name:"Pyae Sai Maung",
-        city:"Sittwe",
-        image:"IMG_20260912_122016_208.jpg",
-        project:"တိရစ္ဆာန်များအပေါ် ညှဉ်းပန်းနှိပ်စက်မူလျော့ချရေး"
-    },
+  const modal =
+    document.getElementById("updateModal");
 
-    {
-        name:"Amara Lin Lin",
-        city:"Yangon South",
-        image:"IMG_20260912_123008_671.jpg",
-        project:"နှလုံးသားဖြင့် ခင်းသောလမ်း (The Path Paved with Heart )"
-    },
+  document.getElementById("updateModalTitle")
+    .textContent = title;
 
-    {
-        name:"Naung",
-        city:"Meiktila",
-        image:"IMG_20260912_123106_628.jpg",
-        project:"သက်ငယ်လုပ်သားလျော့ချရေးနှင်ကလေးငယ်တိုင်းပညာသင်ကြားနိုင်ရေးစီမံကိန်း"
-    },
+  document.getElementById("updateModalImage")
+    .src = image;
 
-    {
-        name:"Nan Cherry",
-        city:"Shwe Pyi Thar",
-        image:"IMG_20260912_123203_731.jpg",
-        project:"ရဲရင့်မှု၏ အရောင်များ"
-    },
+  document.getElementById("updateModalImage")
+    .alt = title;
 
-    {
-        name:"Chit Tu Tu",
-        city:"Hpakant",
-        image:"IMG_20260912_123257_302.jpg",
-        project:"HIV, community Awareness & prevention project"
-    },
+  document.getElementById("updateModalText")
+    .textContent = text;
 
-    {
-        name:"Luvisiyarna",
-        city:"Kyaikkhami",
-        image:"IMG_20260912_123401_345.jpg",
-        project:"သဘာ၀ပတ်၀န်းကျင်ထိန်းသိမ်းရေး"
-    },
+  modal.classList.add("show");
 
-    {
-        name:"Myawaddy",
-        city:"Lawi Mon",
-        image:"IMG_20260912_123455_423.jpg",
-        project:"ကာကွယ်ခြင်းဖြင့် စတင်တဲ့ လှပသော အနာဂတ်"
-    },
-
-    {
-        name:"Moe Yan",
-        city:"Mudon",
-        image:"IMG_20260912_123552_309.jpg",
-        project:"အိမ်မက်ဆီသို့ ခြေလှမ်းများ"
-    },
-
-    {
-        name:"Marrita",
-        city:"Htone Aing",
-        image:"IMG_20260912_123642_733.jpg",
-        project:"လူ့ပတ်၀န်းကျင် လူ့စည်းကမ်း"
-    },
-
-    {
-        name:"Htike Htike",
-        city:"Thamanya",
-        image:"IMG_20260912_123733_547.jpg",
-        project:"ကမ္ဘာမြေကြီးကို ချစ်ရင် ဒီကနေ စကြရအောင်လား"
-    },
-
-    {
-        name:"Iris",
-        city:"Yangon North",
-        image:"IMG_20260912_123824_414.jpg",
-        project:"အိမ်မက်များဆီသို့"
-    }
-
-];
+  document.body.style.overflow = "hidden";
+}
 
 
-/* =====================================================
-   DISPLAY CONTESTANTS
-===================================================== */
+function closeUpdateModal(){
 
-const contestantGrid =
-document.getElementById("contestantGrid");
+  document
+    .getElementById("updateModal")
+    .classList.remove("show");
+
+  document.body.style.overflow = "";
+}
 
 
-contestants.forEach(function(person,index){
+/* =========================
+   AD FULL SCREEN
+========================= */
 
-    contestantGrid.innerHTML += `
+function openAd(title, image){
 
-        <div
-        class="contestantCard"
-        onclick="showContestant(${index})">
+  openUpdate(
+    title,
+    image,
+    "Miss Ocean Official Online Pageant"
+  );
 
-            <div class="contestantPhoto">
+}
 
-                <img
-                src="${person.image}"
-                alt="${person.name}">
 
-            </div>
+/* =========================
+   PROJECT POSTER
+========================= */
 
-            <div class="contestantInfo">
+function openProjectPoster(){
 
-                <div class="cardCity">
-                    ${person.city.toUpperCase()}
-                </div>
+  document
+    .getElementById("projectPosterModal")
+    .classList.add("show");
 
-                <div class="cardName">
-                    ${person.name}
-                </div>
+  document.body.style.overflow = "hidden";
+}
 
-            </div>
 
-        </div>
+function closeProjectPoster(){
 
-    `;
+  document
+    .getElementById("projectPosterModal")
+    .classList.remove("show");
+
+  document.body.style.overflow = "";
+}
+
+
+/* =========================
+   PROJECT WINNERS
+========================= */
+
+function openProjectWinners(){
+
+  document
+    .getElementById("projectWinnersModal")
+    .classList.add("show");
+
+  document.body.style.overflow = "hidden";
+}
+
+
+function closeProjectWinners(){
+
+  document
+    .getElementById("projectWinnersModal")
+    .classList.remove("show");
+
+  document.body.style.overflow = "";
+}
+
+
+/* =========================
+   MISS OCEAN 2025
+========================= */
+
+function openMissOcean2025(){
+
+  document
+    .getElementById("missOcean2025Modal")
+    .classList.add("show");
+
+  document.body.style.overflow = "hidden";
+}
+
+
+function closeMissOcean2025(){
+
+  document
+    .getElementById("missOcean2025Modal")
+    .classList.remove("show");
+
+  document.body.style.overflow = "";
+}
+
+
+/* =========================
+   ESC KEY
+========================= */
+
+document.addEventListener("keydown", function(e){
+
+  if(e.key === "Escape"){
+
+    closeUpdateModal();
+    closeProjectPoster();
+    closeProjectWinners();
+    closeMissOcean2025();
+
+  }
 
 });
 
-
-/* =====================================================
-   SECTION SWITCH
-===================================================== */
-
-function openSection(id,button){
-
-    document
-    .querySelectorAll(".section")
-    .forEach(function(section){
-
-        section.classList.remove("active");
-
-    });
-
-
-    document
-    .getElementById(id)
-    .classList.add("active");
-
-
-    document
-    .querySelectorAll(".nav button")
-    .forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
-
-    button.classList.add("active");
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =====================================================
-   VIEWER
-===================================================== */
-
-const viewer =
-document.getElementById("viewer");
-
-const viewerContent =
-document.getElementById("viewerContent");
-
-
-function showViewer(content){
-
-    viewerContent.innerHTML =
-    content;
-
-    viewer.classList.add("show");
-
-    document.body.style.overflow =
-    "hidden";
-
-    viewer.scrollTop = 0;
-
-    window.scrollTo(0,0);
-
-}
-
-
-function closeViewer(){
-
-    viewer.classList.remove("show");
-
-    viewerContent.innerHTML = "";
-
-    document.body.style.overflow =
-    "";
-
-}
-
-
-/* =====================================================
-   ADVERTISEMENT VIEW
-===================================================== */
-
-function openAd(title,image){
-
-    showViewer(`
-
-        <div class="viewerEyebrow">
-            MISS OCEAN ADVERTISEMENT
-        </div>
-
-        <div class="viewerTitle">
-            ${title}
-        </div>
-
-        <div class="viewerRule"></div>
-
-        <img
-        class="singleViewerImage"
-        src="${image}"
-        alt="${title}">
-
-        <button
-        class="viewerBottomClose"
-        onclick="closeViewer()">
-
-            CLOSE
-
-        </button>
-
-    `);
-
-}
-
-
-/* =====================================================
-   UPDATE VIEWER
-===================================================== */
-
-function openUpdate(type){
-
-
-    /* ================================================
-       POPULAR VOTE
-    ================================================ */
-
-    if(type === "popular"){
-
-        showViewer(`
-
-            <div class="viewerEyebrow">
-                OFFICIAL UPDATE
-            </div>
-
-            <div class="viewerTitle">
-                Popular Vote Update
-            </div>
-
-            <div class="viewerRule"></div>
-
-            <img
-            class="singleViewerImage"
-            src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
-            alt="Popular Vote Update">
-
-            <div class="viewerText">
-
-                ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။
-                အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို
-                Vote ပေးလိုက်ပါ။
-
-            </div>
-
-            <button
-            class="viewerBottomClose"
-            onclick="closeViewer()">
-
-                CLOSE
-
-            </button>
-
-        `);
-
-    }
-
-
-    /* ================================================
-       PROJECT TOP 4
-    ================================================ */
-
-    if(type === "projectTop4"){
-
-        showViewer(`
-
-            <div class="viewerEyebrow">
-                OFFICIAL PROJECT UPDATE
-            </div>
-
-            <div class="viewerTitle">
-                Project Poster + Project Top 4
-            </div>
-
-            <div class="viewerRule"></div>
-
-            <div class="viewerText">
-
-                Project Top 4 ပြိုင်ပွဲဝင်လေးများဖြစ်ပါတယ် ၊
-                ပုံရိပ်အချို့ကိုမြင်ယောင်ကြည့်ကြရအောင်
-
-            </div>
-
-
-            <div class="projectPair">
-
-
-                <div class="projectImageBox">
-
-                    <img
-                    src="IMG_20260912_131934_287.jpg"
-                    alt="Project Poster">
-
-                    <div class="projectImageCaption">
-                        PROJECT POSTER
-                    </div>
-
-                </div>
-
-
-                <div class="projectImageBox">
-
-                    <img
-                    src="IMG_20260912_132024_973.jpg"
-                    alt="Project Top 4">
-
-                    <div class="projectImageCaption">
-                        PROJECT TOP 4
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <button
-            class="viewerBottomClose"
-            onclick="closeViewer()">
-
-                CLOSE
-
-            </button>
-
-        `);
-
-    }
-
-
-    /* ================================================
-       PROJECT WINNERS
-    ================================================ */
-
-    if(type === "projectWinners"){
-
-        showViewer(`
-
-            <div class="viewerEyebrow">
-                OFFICIAL WINNERS MOMENT
-            </div>
-
-            <div class="viewerTitle">
-                Project Winners Moment
-            </div>
-
-            <div class="viewerRule"></div>
-
-
-            <div class="gallery">
-
-
-                <div class="galleryItem">
-
-                    <img
-                    src="IMG_20260912_132348_017.jpg"
-                    alt="Project Winner - Sittwe - Pyae Sai Maung">
-
-                    <div class="galleryCaption">
-                        Project Winner - Sittwe - Pyae Sai Maung
-                    </div>
-
-                </div>
-
-
-                <div class="galleryItem">
-
-                    <img
-                    src="IMG_20260912_132624_143.jpg"
-                    alt="Project Winner - Meiktila - Naung">
-
-                    <div class="galleryCaption">
-                        Project Winner - Meiktila - Naung
-                    </div>
-
-                </div>
-
-
-                <div class="galleryItem">
-
-                    <img
-                    src="IMG_20260912_132818_365.jpg"
-                    alt="Hpakant - Chit Tu Tu">
-
-                    <div class="galleryCaption">
-                        Hpakant - Chit Tu Tu
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <button
-            class="viewerBottomClose"
-            onclick="closeViewer()">
-
-                CLOSE
-
-            </button>
-
-        `);
-
-    }
-
-
-    /* ================================================
-       MISS OCEAN 2025
-    ================================================ */
-
-    if(type === "miss2025"){
-
-        showViewer(`
-
-            <div class="viewerEyebrow">
-                OFFICIAL ARCHIVE
-            </div>
-
-            <div class="viewerTitle">
-                Miss Ocean 2025
-            </div>
-
-            <div class="viewerRule"></div>
-
-
-            <div class="gallery">
-
-
-                <div class="galleryItem">
-
-                    <img
-                    src="IMG_20260912_133051_561.jpg"
-                    alt="Miss Ocean 2025">
-
-                </div>
-
-
-                <div class="galleryItem">
-
-                    <img
-                    src="IMG_20260912_133128_876.jpg"
-                    alt="Miss Ocean 2025">
-
-                </div>
-
-
-                <div class="galleryItem">
-
-                    <img
-                    src="IMG_20260912_133210_986.jpg"
-                    alt="Miss Ocean 2025">
-
-                </div>
-
-
-            </div>
-
-
-            <button
-            class="viewerBottomClose"
-            onclick="closeViewer()">
-
-                CLOSE
-
-            </button>
-
-        `);
-
-    }
-
-}
-
-
-/* =====================================================
-   CONTESTANT VIEW
-===================================================== */
-
-function showContestant(index){
-
-    const person =
-    contestants[index];
-
-
-    showViewer(`
-
-        <div class="viewerEyebrow">
-            OFFICIAL CONTESTANT
-        </div>
-
-        <div class="viewerTitle">
-            ${person.name}
-        </div>
-
-        <div class="viewerRule"></div>
-
-
-        <img
-        class="contestantDetailImage"
-        src="${person.image}"
-        alt="${person.name}">
-
-
-        <div class="detailIdentity">
-
-
-            <div class="detailBox">
-
-                <div class="detailBoxLabel">
-                    CONTESTANT
-                </div>
-
-                <div class="detailBoxValue">
-                    ${person.name}
-                </div>
-
-            </div>
-
-
-            <div class="detailBox">
-
-                <div class="detailBoxLabel">
-                    REPRESENTATIVE CITY
-                </div>
-
-                <div class="detailBoxValue">
-                    ${person.city}
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="aboutBox">
-
-            <div class="aboutLabel">
-                PROJECT
-            </div>
-
-            <div class="aboutText">
-                ${person.project}
-            </div>
-
-        </div>
-
-
-        <button
-        class="viewerBottomClose"
-        onclick="closeViewer()">
-
-            CLOSE
-
-        </button>
-
-    `);
-
-}
-
-
-/* =====================================================
-   LOADING 1 → 100
-===================================================== */
-
-const loadingScreen =
-document.getElementById("loadingScreen");
-
-const website =
-document.getElementById("website");
-
-const loadingNumber =
-document.getElementById("loadingNumber");
-
-const loadingProgress =
-document.getElementById("loadingProgress");
-
-
-let number = 1;
-
-
-const loadingInterval =
-setInterval(function(){
-
-    loadingNumber.textContent =
-    number;
-
-    loadingProgress.style.width =
-    number + "%";
-
-
-    if(number >= 100){
-
-        clearInterval(
-            loadingInterval
-        );
-
-
-        setTimeout(function(){
-
-            loadingScreen.style.display =
-            "none";
-
-            website.style.display =
-            "block";
-
-
-            startMusic();
-
-        },150);
-
-    }
-
-
-    number++;
-
-},50);
-
-
-/* =====================================================
-   MUSIC
-===================================================== */
-
-const music =
-document.getElementById("music");
-
-
-function startMusic(){
-
-    music.muted = false;
-
-    music.volume = 1;
-
-
-    const playPromise =
-    music.play();
-
-
-    if(playPromise){
-
-        playPromise.catch(function(){
-
-            /*
-
-              Mobile browsers may block
-              sound autoplay.
-
-              A user tap will start it.
-
-            */
-
-        });
-
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE MUSIC FALLBACK
-===================================================== */
-
-document.addEventListener(
-    "pointerdown",
-    function(){
-
-        startMusic();
-
-    },
-    {once:false}
-);
-
-
-/* =====================================================
-   ESCAPE TO CLOSE
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Escape"){
-
-            closeViewer();
-
-        }
-
-    }
-);
-
 </script>
-
-
-</body>
-
-</html>
