@@ -1,970 +1,1461 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Miss Ocean 2026</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet">
+
 
 <style>
 
+/* =====================================================
+   MISS OCEAN 2026
+   CLEAN INTERNATIONAL PAGEANT DESIGN
+===================================================== */
+
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:"Cormorant Garamond",serif;
-  background:#dff4ff;
-  color:#245c73;
+    font-family:"DM Sans",sans-serif;
+    background:#dff4fb;
+    color:#285e73;
+    overflow-x:hidden;
 }
 
+button{
+    font-family:"DM Sans",sans-serif;
+}
+
+
 /* =====================================================
-   LOADING
+   LOADING SCREEN
 ===================================================== */
 
 #loadingScreen{
-  position:fixed;
-  inset:0;
-  z-index:999999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 
-  background:linear-gradient(
-    145deg,
-    #dff6ff,
-    #b9e5f8,
-    #eafaff
-  );
+    position:fixed;
+    inset:0;
+
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d8f2fa,
+            #eaf9fc,
+            #d4eef7
+        );
 }
 
-.loadingBox{
-  width:82%;
-  max-width:360px;
-  text-align:center;
+.loadingInner{
+    width:90%;
+    max-width:420px;
+
+    text-align:center;
 }
+
+
+/* Logo */
+
+.loadingLogo{
+    width:105px;
+    height:105px;
+
+    object-fit:contain;
+
+    border-radius:50%;
+
+    margin-bottom:22px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(38,104,125,.12);
+}
+
+
+/* Small text */
+
+.loadingSmall{
+    font-size:8px;
+    font-weight:600;
+
+    letter-spacing:3.5px;
+
+    color:#7898a5;
+
+    margin-bottom:10px;
+}
+
+
+/* Loading title */
 
 .loadingTitle{
-  font-family:"Cormorant Garamond",serif;
-  font-size:48px;
-  font-weight:700;
-  letter-spacing:4px;
-  color:#155b82;
+    font-family:"Libre Baskerville",serif;
+
+    font-size:34px;
+    font-weight:400;
+
+    letter-spacing:.5px;
+
+    color:#175b76;
 }
+
+
+/* Number */
 
 .loadingNumber{
-  margin-top:10px;
-  font-family:"Montserrat",sans-serif;
-  font-size:13px;
-  letter-spacing:2px;
-  color:#6b91a4;
+    margin-top:25px;
+
+    font-size:32px;
+    font-weight:600;
+
+    color:#28677d;
 }
 
+
+/* Progress */
+
 .loadingBar{
-  width:100%;
-  height:5px;
-  margin-top:20px;
-  background:rgba(255,255,255,.8);
-  border-radius:20px;
-  overflow:hidden;
+
+    width:100%;
+    height:3px;
+
+    margin-top:15px;
+
+    background:rgba(70,132,151,.15);
+
+    border-radius:20px;
+
+    overflow:hidden;
 }
 
 .loadingProgress{
-  width:0%;
-  height:100%;
-  background:#4d9bc1;
-  border-radius:20px;
-  transition:width .05s linear;
+
+    width:0%;
+    height:100%;
+
+    background:#5f9bad;
+
+    transition:width .04s linear;
 }
 
+
 .loadingText{
-  margin-top:11px;
-  font-family:"Montserrat",sans-serif;
-  font-size:10px;
-  color:#7898a7;
+    margin-top:12px;
+
+    font-size:7px;
+    font-weight:600;
+
+    letter-spacing:2.5px;
+
+    color:#8aa4ae;
 }
+
 
 /* =====================================================
    HIDDEN MUSIC
-   VIDEO FILE = AUDIO ONLY
 ===================================================== */
 
 #music{
-  position:fixed;
-  left:-9999px;
-  top:-9999px;
 
-  width:1px;
-  height:1px;
+    position:fixed;
 
-  opacity:0;
+    width:1px;
+    height:1px;
 
-  pointer-events:none;
+    left:-9999px;
+    top:-9999px;
+
+    opacity:0;
+
+    pointer-events:none;
 }
 
+
 /* =====================================================
-   WEBSITE
+   MAIN WEBSITE
 ===================================================== */
 
 #website{
-  display:none;
-  min-height:100vh;
-  padding-bottom:35px;
+    display:none;
+    min-height:100vh;
 }
+
 
 /* =====================================================
    HEADER
 ===================================================== */
 
-.header{
-  text-align:center;
-  padding:27px 15px 16px;
+.siteHeader{
+
+    padding:31px 18px 18px;
+
+    text-align:center;
 }
 
-.smallTitle{
-  font-family:"Cormorant Garamond",serif;
-  font-size:14px;
-  font-weight:500;
-  letter-spacing:4px;
-  color:#7199ad;
+.headerLogo{
+
+    width:52px;
+    height:52px;
+
+    object-fit:contain;
+
+    margin-bottom:13px;
+
+    border-radius:50%;
+}
+
+.headerSmall{
+
+    font-size:8px;
+    font-weight:600;
+
+    letter-spacing:3.2px;
+
+    color:#7b9aa6;
 }
 
 .mainTitle{
-  margin-top:1px;
 
-  font-family:"Cormorant Garamond",serif;
-  font-size:48px;
-  font-weight:700;
-  letter-spacing:4px;
+    margin-top:8px;
 
-  color:#155b82;
+    font-family:"Libre Baskerville",serif;
+
+    font-size:39px;
+    line-height:1.1;
+
+    font-weight:400;
+
+    letter-spacing:.4px;
+
+    color:#175b76;
 }
 
-.line{
-  width:65px;
-  height:2px;
-  margin:9px auto 0;
+.titleDecoration{
 
-  background:#63a9c9;
-  border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:15px;
 }
+
+.titleDecoration span{
+
+    width:38px;
+    height:1px;
+
+    background:#75a8b8;
+}
+
+.titleDecoration i{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#75a8b8;
+}
+
 
 /* =====================================================
-   ADVERTISEMENT
-   5 IMAGES + SIDE SWIPE
+   ADVERTISEMENT SLIDER
 ===================================================== */
 
 .adWrapper{
-  width:calc(100% - 28px);
-  max-width:850px;
 
-  margin:12px auto 22px;
+    width:100%;
 
-  overflow:hidden;
+    overflow:hidden;
+
+    padding:0 0 19px;
 }
 
 .adSlider{
-  display:flex;
-  gap:12px;
 
-  overflow-x:auto;
+    display:flex;
 
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
+    gap:12px;
 
-  scrollbar-width:none;
+    overflow-x:auto;
 
-  -webkit-overflow-scrolling:touch;
+    padding:2px 12px 7px;
+
+    scroll-snap-type:x mandatory;
+
+    -webkit-overflow-scrolling:touch;
+
+    scrollbar-width:none;
 }
 
 .adSlider::-webkit-scrollbar{
-  display:none;
+    display:none;
 }
 
 .adCard{
-  min-width:86%;
-  height:155px;
 
-  border-radius:18px;
-  overflow:hidden;
+    flex:0 0 88%;
 
-  scroll-snap-align:start;
+    height:155px;
 
-  background:#c9ebf8;
+    scroll-snap-align:center;
 
-  border:1px solid white;
+    overflow:hidden;
 
-  box-shadow:
-    0 8px 25px rgba(75,145,173,.10);
+    border-radius:18px;
 
-  flex-shrink:0;
+    border:1px solid
+            rgba(255,255,255,.95);
+
+    background:#c9eaf4;
+
+    box-shadow:
+        0 9px 24px
+        rgba(39,105,126,.08);
 }
 
 .adCard img{
-  width:100%;
-  height:100%;
 
-  display:block;
+    width:100%;
+    height:100%;
 
-  object-fit:cover;
+    object-fit:cover;
+
+    display:block;
 }
+
+@media(min-width:700px){
+
+    .adCard{
+        flex-basis:58%;
+        height:185px;
+    }
+}
+
 
 /* =====================================================
    NAVIGATION
 ===================================================== */
 
 .nav{
-  width:calc(100% - 28px);
-  max-width:850px;
 
-  margin:auto;
+    display:grid;
 
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:10px;
+
+    padding:5px 16px 24px;
 }
 
 .nav button{
-  border:1px solid white;
 
-  background:rgba(255,255,255,.72);
+    min-height:88px;
 
-  border-radius:16px;
+    border:1px solid
+           rgba(255,255,255,.95);
 
-  padding:13px 5px;
+    border-radius:17px;
 
-  color:#477c94;
+    background:rgba(255,255,255,.55);
 
-  font-family:"Cormorant Garamond",serif;
-  font-weight:600;
-  font-size:16px;
+    color:#7695a0;
 
-  cursor:pointer;
+    cursor:pointer;
+
+    transition:.2s;
+
+    box-shadow:
+        0 7px 20px
+        rgba(40,103,125,.045);
 }
 
 .nav button.active{
-  background:white;
 
-  color:#17618a;
+    background:#ffffff;
 
-  box-shadow:
-    0 7px 22px rgba(61,130,158,.12);
+    color:#285e73;
+
+    box-shadow:
+        0 10px 24px
+        rgba(40,103,125,.09);
 }
 
-.navIcon{
-  display:block;
+.navRoman{
 
-  font-family:"Cormorant Garamond",serif;
+    display:block;
 
-  font-size:23px;
+    font-family:"Libre Baskerville",serif;
 
-  margin-bottom:1px;
+    font-size:23px;
+
+    margin-bottom:8px;
+
+    color:#6795a4;
 }
+
+.navText{
+
+    display:block;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:.4px;
+}
+
 
 /* =====================================================
    CONTENT
 ===================================================== */
 
-.content{
-  width:calc(100% - 28px);
-  max-width:850px;
-
-  margin:27px auto;
-}
-
 .section{
-  display:none;
+
+    display:none;
+
+    padding:0 18px 45px;
 }
 
 .section.active{
-  display:block;
-
-  animation:fade .35s ease;
+    display:block;
 }
 
-.heading{
-  margin-bottom:17px;
+.sectionIntro{
+
+    margin:8px 0 18px;
 }
 
-.heading h2{
-  font-family:"Cormorant Garamond",serif;
+.sectionEyebrow{
 
-  font-size:40px;
-  font-weight:600;
+    font-size:8px;
+    font-weight:600;
 
-  line-height:1;
+    letter-spacing:3px;
 
-  color:#195f83;
+    color:#82a0aa;
+
+    margin-bottom:8px;
 }
 
-.heading p{
-  margin-top:5px;
+.sectionTitle{
 
-  font-family:"Cormorant Garamond",serif;
+    font-family:"Libre Baskerville",serif;
 
-  font-size:17px;
+    font-size:29px;
+    line-height:1.25;
 
-  color:#7597a8;
+    font-weight:400;
+
+    color:#175b76;
 }
+
+.sectionDescription{
+
+    margin-top:7px;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    color:#7c9ba6;
+}
+
 
 /* =====================================================
-   CONTESTANTS
+   CONTESTANT GRID
 ===================================================== */
 
-.contestants{
-  display:grid;
+.contestantGrid{
 
-  grid-template-columns:repeat(2,1fr);
+    display:grid;
 
-  gap:13px;
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:14px;
 }
 
-.contestant{
-  background:rgba(255,255,255,.86);
+.contestantCard{
 
-  border-radius:19px;
+    background:#ffffff;
 
-  overflow:hidden;
+    border:1px solid
+           rgba(255,255,255,.95);
 
-  border:1px solid white;
+    border-radius:17px;
 
-  box-shadow:
-    0 7px 22px rgba(61,130,158,.08);
+    overflow:hidden;
 
-  cursor:pointer;
+    cursor:pointer;
 
-  transition:.2s;
+    box-shadow:
+        0 8px 23px
+        rgba(39,105,126,.06);
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
 }
 
-.contestant:active{
-  transform:scale(.97);
+.contestantCard:active{
+
+    transform:scale(.98);
 }
 
 .contestantPhoto{
-  width:100%;
-  height:205px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #c5eafb,
-      #edfaff
-    );
+    width:100%;
+    height:245px;
 
-  overflow:hidden;
+    background:#c9eaf4;
+
+    overflow:hidden;
 }
 
 .contestantPhoto img{
-  width:100%;
-  height:100%;
 
-  display:block;
+    width:100%;
+    height:100%;
 
-  object-fit:cover;
-}
+    object-fit:cover;
 
-.photoText{
-  width:100%;
-  height:100%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-family:"Cormorant Garamond",serif;
-
-  font-size:17px;
-
-  color:#74a1b5;
+    display:block;
 }
 
 .contestantInfo{
-  padding:12px;
+
+    padding:12px 12px 14px;
 }
 
-.country{
-  font-family:"Montserrat",sans-serif;
+.cardCity{
 
-  font-size:9px;
+    font-size:7px;
+    font-weight:700;
 
-  letter-spacing:3px;
+    letter-spacing:1.5px;
 
-  color:#6d9bad;
+    color:#8aa5af;
+
+    margin-bottom:4px;
 }
 
-.contestantName{
-  margin-top:5px;
+.cardName{
 
-  font-family:"Cormorant Garamond",serif;
+    font-size:14px;
 
-  font-size:25px;
+    line-height:1.3;
 
-  font-weight:600;
+    font-weight:600;
 
-  line-height:1.05;
-
-  color:#205774;
+    color:#285e73;
 }
+
 
 /* =====================================================
-   COMPETITION
+   UPDATE CARDS
 ===================================================== */
 
-.competition{
-  background:rgba(255,255,255,.86);
+.updateList{
 
-  border-radius:19px;
+    display:grid;
 
-  overflow:hidden;
-
-  margin-bottom:15px;
-
-  border:1px solid white;
-
-  box-shadow:
-    0 7px 22px rgba(61,130,158,.08);
-
-  cursor:pointer;
+    gap:13px;
 }
 
-.competitionImage{
-  width:100%;
-  height:190px;
+.updateCard{
 
-  background:#c8eaf7;
+    display:flex;
 
-  overflow:hidden;
+    align-items:center;
+
+    gap:14px;
+
+    padding:13px;
+
+    background:#ffffff;
+
+    border-radius:17px;
+
+    border:1px solid
+           rgba(255,255,255,.95);
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 22px
+        rgba(39,105,126,.06);
 }
 
-.competitionImage img{
-  width:100%;
-  height:100%;
+.updateNumber{
 
-  display:block;
+    flex:0 0 48px;
 
-  object-fit:cover;
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:#e7f6fa;
+
+    font-family:"Libre Baskerville",serif;
+
+    font-size:17px;
+
+    color:#4e8799;
 }
 
-.competitionText{
-  padding:14px;
+.updateInfo{
+    min-width:0;
 }
 
-.competitionTag{
-  font-family:"Montserrat",sans-serif;
+.updateType{
 
-  font-size:8px;
+    font-size:7px;
+    font-weight:700;
 
-  letter-spacing:2px;
+    letter-spacing:2px;
 
-  color:#5c9bb6;
+    color:#86a2ac;
+
+    margin-bottom:5px;
 }
 
-.competitionText h3{
-  margin-top:5px;
+.updateTitle{
 
-  font-family:"Cormorant Garamond",serif;
+    font-size:16px;
 
-  font-size:27px;
+    line-height:1.3;
 
-  font-weight:600;
+    font-weight:600;
 
-  color:#185c7d;
+    color:#285e73;
 }
 
-.competitionText p{
-  margin-top:5px;
+.updateMeta{
 
-  font-family:"Cormorant Garamond",serif;
+    margin-top:5px;
 
-  font-size:15px;
+    font-size:9px;
 
-  color:#7596a6;
+    color:#8aa3ac;
 }
+
 
 /* =====================================================
-   RESULTS
+   RESULTS LIST
 ===================================================== */
 
-.result{
-  display:flex;
+.resultList{
 
-  align-items:center;
+    display:grid;
 
-  gap:11px;
-
-  background:rgba(255,255,255,.86);
-
-  border-radius:17px;
-
-  padding:12px;
-
-  margin-bottom:10px;
-
-  border:1px solid white;
-
-  cursor:pointer;
-
-  transition:.2s;
+    gap:13px;
 }
 
-.result:active{
-  transform:scale(.98);
+.resultCard{
+
+    padding:18px;
+
+    background:#ffffff;
+
+    border:1px solid
+           rgba(255,255,255,.95);
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 22px
+        rgba(39,105,126,.06);
 }
 
-.rank{
-  width:42px;
-  height:42px;
+.resultCardSmall{
 
-  border-radius:50%;
+    font-size:7px;
+    font-weight:700;
 
-  background:#e2f5fc;
+    letter-spacing:2.2px;
 
-  display:flex;
+    color:#86a2ac;
 
-  align-items:center;
-  justify-content:center;
-
-  font-family:"Cormorant Garamond",serif;
-
-  font-size:23px;
-
-  color:#277696;
-
-  flex-shrink:0;
+    margin-bottom:7px;
 }
 
-.resultPhoto{
-  width:58px;
-  height:58px;
+.resultCardTitle{
 
-  border-radius:13px;
+    font-family:"Libre Baskerville",serif;
 
-  overflow:hidden;
+    font-size:21px;
 
-  background:#d1edf8;
+    line-height:1.3;
 
-  flex-shrink:0;
+    font-weight:400;
+
+    color:#175b76;
 }
 
-.resultPhoto img{
-  width:100%;
-  height:100%;
+.resultCardText{
 
-  display:block;
+    margin-top:7px;
 
-  object-fit:cover;
+    font-size:9px;
+
+    color:#8aa3ac;
 }
 
-.resultInfo{
-  flex:1;
-}
-
-.resultInfo strong{
-  display:block;
-
-  font-family:"Cormorant Garamond",serif;
-
-  font-size:21px;
-
-  font-weight:600;
-
-  color:#205a77;
-}
-
-.resultInfo span{
-  display:block;
-
-  margin-top:3px;
-
-  font-family:"Cormorant Garamond",serif;
-
-  font-size:14px;
-
-  color:#7899aa;
-}
-
-.resultBadge{
-  padding:6px 9px;
-
-  border-radius:20px;
-
-  background:#e3f5fc;
-
-  color:#317e9d;
-
-  font-family:"Montserrat",sans-serif;
-
-  font-size:8px;
-}
 
 /* =====================================================
-   FULL SCREEN INFORMATION
+   FULL SCREEN MODAL
 ===================================================== */
 
 .modal{
-  position:fixed;
-  inset:0;
 
-  z-index:5000;
+    position:fixed;
 
-  background:rgba(23,68,95,.58);
+    inset:0;
 
-  display:none;
+    z-index:5000;
 
-  overflow-y:auto;
+    display:none;
 
-  padding:0;
+    overflow-y:auto;
+
+    background:#f5fcfe;
 }
 
 .modal.show{
-  display:block;
+    display:block;
 }
 
 .modalBox{
-  width:100%;
-  min-height:100vh;
 
-  background:#f8fdff;
+    width:100%;
 
-  animation:modalIn .25s ease;
+    min-height:100vh;
+
+    background:#f5fcfe;
 }
 
 .modalTop{
-  position:relative;
+
+    position:relative;
 }
 
 .modalImage{
-  width:100%;
 
-  height:65vh;
+    width:100%;
 
-  min-height:330px;
+    height:58vh;
 
-  background:
-    linear-gradient(
-      135deg,
-      #c6eafa,
-      #edfaff
-    );
+    min-height:350px;
 
-  overflow:hidden;
+    background:#c9eaf4;
+
+    overflow:hidden;
 }
 
 .modalImage img{
-  width:100%;
-  height:100%;
 
-  display:block;
+    width:100%;
+    height:100%;
 
-  object-fit:cover;
+    object-fit:cover;
+
+    display:block;
 }
 
-.close{
-  position:absolute;
+.closeButton{
 
-  top:15px;
-  right:15px;
+    position:absolute;
 
-  width:44px;
-  height:44px;
+    top:18px;
+    right:18px;
 
-  border:0;
+    width:47px;
+    height:47px;
 
-  border-radius:50%;
+    border:0;
 
-  background:rgba(255,255,255,.94);
+    border-radius:50%;
 
-  color:#3d7187;
+    background:rgba(255,255,255,.94);
 
-  font-family:Arial,sans-serif;
+    color:#397487;
 
-  font-size:28px;
+    font-size:29px;
 
-  cursor:pointer;
+    line-height:1;
 
-  z-index:3;
+    cursor:pointer;
 
-  box-shadow:
-    0 5px 20px rgba(0,0,0,.12);
+    box-shadow:
+        0 8px 25px
+        rgba(30,96,119,.12);
 }
 
 .modalContent{
-  padding:25px 22px 35px;
+
+    padding:28px 20px 42px;
+
+    max-width:700px;
+
+    margin:auto;
+
+    text-align:left;
 }
 
 .modalLabel{
-  font-family:"Montserrat",sans-serif;
 
-  font-size:9px;
+    font-size:7px;
+    font-weight:700;
 
-  letter-spacing:3px;
+    letter-spacing:3px;
 
-  color:#7199a8;
+    color:#82a0aa;
+
+    margin-bottom:9px;
 }
 
-.modalContent h2{
-  margin-top:7px;
+.modalTitle{
 
-  font-family:"Cormorant Garamond",serif;
+    font-family:"Libre Baskerville",serif;
 
-  font-size:42px;
+    font-size:30px;
 
-  line-height:1.05;
+    line-height:1.3;
 
-  font-weight:600;
+    font-weight:400;
 
-  color:#185a78;
+    color:#175b76;
 }
 
-.infoRow{
-  display:flex;
+.modalLine{
 
-  justify-content:space-between;
+    width:43px;
+    height:1px;
 
-  gap:20px;
+    margin:15px 0 20px;
 
-  padding:14px 0;
-
-  border-bottom:1px solid #deedf3;
-
-  font-family:"Cormorant Garamond",serif;
-
-  font-size:17px;
+    background:#75a8b8;
 }
 
-.infoRow span:first-child{
-  color:#89a3ae;
+
+/* =====================================================
+   CONTESTANT DETAIL
+===================================================== */
+
+.detailIdentity{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+    margin-top:18px;
 }
 
-.infoRow span:last-child{
-  color:#326d87;
+.detailBox{
 
-  font-weight:600;
+    padding:15px 12px;
 
-  text-align:right;
+    text-align:center;
+
+    background:#ffffff;
+
+    border:1px solid #cbe6ee;
+
+    border-radius:14px;
 }
 
-.descriptionTitle{
-  margin-top:21px;
+.detailBoxLabel{
 
-  font-family:"Cormorant Garamond",serif;
+    font-size:6px;
+    font-weight:700;
 
-  font-size:25px;
+    letter-spacing:1.8px;
 
-  color:#205e7b;
+    color:#8ba6b0;
+
+    margin-bottom:7px;
 }
 
-.modalDescription{
-  margin-top:9px;
+.detailBoxValue{
 
-  color:#668797;
+    font-size:15px;
 
-  font-family:"Cormorant Garamond",serif;
+    line-height:1.35;
 
-  font-size:17px;
+    font-weight:600;
 
-  line-height:1.75;
+    color:#285e73;
 }
+
+.aboutBox{
+
+    margin-top:11px;
+
+    padding:18px;
+
+    background:#ffffff;
+
+    border:1px solid #cbe6ee;
+
+    border-radius:15px;
+}
+
+.aboutLabel{
+
+    font-size:6px;
+    font-weight:700;
+
+    letter-spacing:2.5px;
+
+    color:#8ba6b0;
+
+    margin-bottom:9px;
+}
+
+.aboutTitle{
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#175b76;
+
+    margin-bottom:8px;
+}
+
+.aboutText{
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    color:#668793;
+}
+
+
+/* =====================================================
+   RESULT DETAIL PAGE
+===================================================== */
+
+.resultPageHeader{
+
+    text-align:center;
+
+    padding:36px 18px 18px;
+}
+
+.resultPageEyebrow{
+
+    font-size:7px;
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    color:#82a0aa;
+}
+
+.resultPageTitle{
+
+    margin-top:10px;
+
+    font-family:"Libre Baskerville",serif;
+
+    font-size:31px;
+
+    line-height:1.25;
+
+    font-weight:400;
+
+    color:#175b76;
+}
+
+.resultPageLine{
+
+    width:42px;
+    height:1px;
+
+    margin:16px auto;
+
+    background:#75a8b8;
+}
+
+
+/* Winner */
+
+.winnerArea{
+
+    padding:0 18px;
+}
+
+.winnerPhoto{
+
+    width:100%;
+
+    height:520px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:#c9eaf4;
+
+    border:1px solid
+           rgba(255,255,255,.95);
+
+    box-shadow:
+        0 12px 30px
+        rgba(39,105,126,.09);
+}
+
+.winnerPhoto img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.winnerCaption{
+
+    text-align:center;
+
+    padding:20px 10px 4px;
+}
+
+.winnerLabel{
+
+    font-size:7px;
+    font-weight:700;
+
+    letter-spacing:3.5px;
+
+    color:#86a2ac;
+}
+
+.winnerCity{
+
+    margin-top:8px;
+
+    font-family:"Libre Baskerville",serif;
+
+    font-size:34px;
+
+    line-height:1.2;
+
+    font-weight:400;
+
+    color:#175b76;
+}
+
+.winnerName{
+
+    margin-top:8px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    color:#628591;
+}
+
+
+/* Top 5 */
+
+.topFive{
+
+    padding:28px 18px 45px;
+}
+
+.topFiveHeading{
+
+    font-family:"Libre Baskerville",serif;
+
+    font-size:29px;
+
+    font-weight:400;
+
+    color:#175b76;
+
+    margin-bottom:16px;
+}
+
+.topItem{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:12px;
+
+    margin-bottom:12px;
+
+    background:#ffffff;
+
+    border:1px solid
+           rgba(255,255,255,.95);
+
+    border-radius:18px;
+
+    box-shadow:
+        0 7px 20px
+        rgba(39,105,126,.06);
+}
+
+.topRank{
+
+    flex:0 0 42px;
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#e7f6fa;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#4d8497;
+}
+
+.topPhoto{
+
+    flex:0 0 100px;
+
+    width:100px;
+    height:100px;
+
+    overflow:hidden;
+
+    border-radius:14px;
+
+    background:#c9eaf4;
+}
+
+.topPhoto img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.topDetails{
+
+    min-width:0;
+}
+
+.topPlace{
+
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:1.8px;
+
+    color:#8ba5af;
+
+    margin-bottom:6px;
+}
+
+.topPerson{
+
+    font-size:17px;
+
+    line-height:1.3;
+
+    font-weight:600;
+
+    color:#285e73;
+}
+
+.topCity{
+
+    margin-top:5px;
+
+    font-size:9px;
+
+    color:#7e9aa4;
+}
+
+
+/* Official statement */
+
+.officialStatement{
+
+    margin-top:25px;
+
+    padding:23px 18px;
+
+    text-align:center;
+
+    border-top:1px solid #c5e2eb;
+
+    border-bottom:1px solid #c5e2eb;
+}
+
+.officialStatementTitle{
+
+    font-family:"Libre Baskerville",serif;
+
+    font-size:19px;
+
+    line-height:1.55;
+
+    color:#175b76;
+}
+
+.officialStatementText{
+
+    margin-top:8px;
+
+    font-size:7px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    color:#86a2ac;
+}
+
+
+/* =====================================================
+   CLOSE BOTTOM
+===================================================== */
 
 .closeBottom{
-  width:100%;
 
-  margin-top:20px;
+    display:block;
 
-  border:0;
+    width:100%;
 
-  padding:13px;
+    max-width:300px;
 
-  border-radius:14px;
+    margin:28px auto 0;
 
-  background:#dff3fb;
+    padding:13px 18px;
 
-  color:#39758e;
+    border:1px solid #bddce6;
 
-  font-family:"Cormorant Garamond",serif;
+    border-radius:30px;
 
-  font-weight:600;
+    background:#ffffff;
 
-  font-size:17px;
+    color:#397487;
 
-  cursor:pointer;
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
 }
+
 
 /* =====================================================
    FOOTER
 ===================================================== */
 
-footer{
-  text-align:center;
+.siteFooter{
 
-  padding:22px 20px;
+    text-align:center;
 
-  color:#82a3b1;
+    padding:5px 20px 35px;
 
-  font-family:"Cormorant Garamond",serif;
+    font-size:7px;
 
-  font-size:15px;
+    font-weight:600;
 
-  letter-spacing:2px;
+    letter-spacing:2.2px;
+
+    color:#88a3ad;
 }
 
-footer strong{
-  color:#4b8ba7;
-}
 
 /* =====================================================
-   ANIMATION
+   RESPONSIVE
 ===================================================== */
 
-@keyframes fade{
+@media(max-width:380px){
 
-  from{
-    opacity:0;
-    transform:translateY(8px);
-  }
+    .mainTitle{
+        font-size:34px;
+    }
 
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+    .contestantPhoto{
+        height:215px;
+    }
 
+    .winnerPhoto{
+        height:450px;
+    }
+
+    .topPhoto{
+        flex-basis:90px;
+        width:90px;
+        height:90px;
+    }
+
+    .topPerson{
+        font-size:15px;
+    }
 }
 
-@keyframes modalIn{
 
-  from{
-    opacity:0;
-    transform:translateY(15px);
-  }
+@media(min-width:700px){
 
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+    .contestantGrid{
+        grid-template-columns:
+            repeat(3,1fr);
 
-}
+        max-width:1000px;
 
-/* =====================================================
-   MOBILE
-===================================================== */
+        margin:auto;
+    }
 
-@media(max-width:600px){
+    .section{
+        max-width:1100px;
+        margin:auto;
+    }
 
-  .mainTitle{
-    font-size:40px;
-  }
+    .winnerArea,
+    .topFive{
+        max-width:850px;
+        margin:auto;
+    }
 
-  .loadingTitle{
-    font-size:42px;
-  }
+    .winnerPhoto{
+        height:650px;
+    }
 
-  .contestants{
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-  }
-
-  .contestantPhoto{
-    height:175px;
-  }
-
-  .contestantName{
-    font-size:22px;
-  }
-
-  .heading h2{
-    font-size:37px;
-  }
-
-  .heading p{
-    font-size:16px;
-  }
-
-  .modalImage{
-    height:58vh;
-    min-height:300px;
-  }
-
-}
-
-@media(max-width:370px){
-
-  .contestants{
-    grid-template-columns:1fr;
-  }
-
-  .contestantPhoto{
-    height:220px;
-  }
-
+    .mainTitle{
+        font-size:46px;
+    }
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 
 <!-- =====================================================
-     VIDEO FILE
-     HIDDEN - AUDIO ONLY
-===================================================== -->
-
-<video
-  id="music"
-  autoplay
-  loop
-  muted
-  playsinline
-  preload="auto">
-
-  <source
-    src="VID_20260911_192636_722.mp4"
-    type="video/mp4">
-
-</video>
-
-
-<!-- =====================================================
-     LOADING
-     5 SECONDS
+     LOADING SCREEN
 ===================================================== -->
 
 <div id="loadingScreen">
 
-  <div class="loadingBox">
+    <div class="loadingInner">
 
-    <div class="loadingTitle">
-      MISS OCEAN
+        <img
+            class="loadingLogo"
+            src="IMG_20260912_123927_081.jpg"
+            alt="Miss Ocean Logo">
+
+        <div class="loadingSmall">
+            THE OFFICIAL ONLINE PAGEANT
+        </div>
+
+        <div class="loadingTitle">
+            MISS OCEAN
+        </div>
+
+        <div
+            class="loadingNumber"
+            id="loadingNumber">
+            1
+        </div>
+
+        <div class="loadingBar">
+
+            <div
+                class="loadingProgress"
+                id="loadingProgress">
+            </div>
+
+        </div>
+
+        <div class="loadingText">
+            PREPARING THE OFFICIAL UPDATE HUB
+        </div>
+
     </div>
-
-    <div class="loadingNumber">
-      <span id="loadingNumber">1</span> / 100
-    </div>
-
-    <div class="loadingBar">
-
-      <div
-        class="loadingProgress"
-        id="loadingProgress">
-      </div>
-
-    </div>
-
-    <div class="loadingText">
-      Please wait...
-    </div>
-
-  </div>
 
 </div>
+
+
+<!-- =====================================================
+     HIDDEN MUSIC
+===================================================== -->
+
+<video
+    id="music"
+    autoplay
+    loop
+    playsinline
+    preload="auto">
+
+    <source
+        src="VID_20260912_122734_458.mp4"
+        type="video/mp4">
+
+</video>
 
 
 <!-- =====================================================
@@ -974,1137 +1465,973 @@ footer strong{
 <div id="website">
 
 
-<header>
+    <!-- HEADER -->
 
-  <div class="header">
+    <header class="siteHeader">
 
-    <div class="smallTitle">
-      THE OFFICIAL UPDATE HUB
+        <img
+            class="headerLogo"
+            src="IMG_20260912_123927_081.jpg"
+            alt="Miss Ocean">
+
+        <div class="headerSmall">
+            THE OFFICIAL ONLINE PAGEANT
+        </div>
+
+        <div class="mainTitle">
+            MISS OCEAN
+        </div>
+
+        <div class="titleDecoration">
+
+            <span></span>
+            <i></i>
+            <span></span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         ADVERTISEMENT
+    ================================================= -->
+
+    <div class="adWrapper">
+
+        <div class="adSlider">
+
+            <div class="adCard">
+                <img
+                    src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
+                    alt="Advertisement 1">
+            </div>
+
+            <div class="adCard">
+                <img
+                    src="banner2.jpg"
+                    alt="Advertisement 2">
+            </div>
+
+            <div class="adCard">
+                <img
+                    src="banner3.jpg"
+                    alt="Advertisement 3">
+            </div>
+
+            <div class="adCard">
+                <img
+                    src="banner4.jpg"
+                    alt="Advertisement 4">
+            </div>
+
+            <div class="adCard">
+                <img
+                    src="banner5.jpg"
+                    alt="Advertisement 5">
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="mainTitle">
-      MISS OCEAN
-    </div>
-
-    <div class="line"></div>
-
-  </div>
-
-</header>
 
 
-<!-- =====================================================
-     5 ADVERTISEMENT IMAGES
-===================================================== -->
+    <!-- =================================================
+         NAVIGATION
+    ================================================= -->
 
-<div class="adWrapper">
+    <nav class="nav">
 
-  <div class="adSlider">
+        <button
+            class="active"
+            onclick="openSection('contestants',this)">
 
-    <div class="adCard">
+            <span class="navRoman">I</span>
 
-      <img
-        src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
-        alt="Miss Ocean Advertisement 1">
+            <span class="navText">
+                CONTESTANTS
+            </span>
 
-    </div>
-
-
-    <div class="adCard">
-
-      <img
-        src="banner2.jpg"
-        alt="Miss Ocean Advertisement 2">
-
-    </div>
+        </button>
 
 
-    <div class="adCard">
+        <button
+            onclick="openSection('updates',this)">
 
-      <img
-        src="banner3.jpg"
-        alt="Miss Ocean Advertisement 3">
+            <span class="navRoman">II</span>
 
-    </div>
+            <span class="navText">
+                UPDATES
+            </span>
 
-
-    <div class="adCard">
-
-      <img
-        src="banner4.jpg"
-        alt="Miss Ocean Advertisement 4">
-
-    </div>
+        </button>
 
 
-    <div class="adCard">
+        <button
+            onclick="openSection('results',this)">
 
-      <img
-        src="banner5.jpg"
-        alt="Miss Ocean Advertisement 5">
+            <span class="navRoman">III</span>
 
-    </div>
+            <span class="navText">
+                RESULTS
+            </span>
 
-  </div>
+        </button>
+
+    </nav>
+
+
+
+    <!-- =================================================
+         CONTESTANTS
+    ================================================= -->
+
+    <section
+        id="contestants"
+        class="section active">
+
+        <div class="sectionIntro">
+
+            <div class="sectionEyebrow">
+                MEET THE DELEGATES
+            </div>
+
+            <div class="sectionTitle">
+                Contestants
+            </div>
+
+            <div class="sectionDescription">
+                Discover the official delegates competing
+                in Miss Ocean 2026.
+            </div>
+
+        </div>
+
+
+        <div
+            class="contestantGrid"
+            id="contestantGrid">
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         UPDATES
+    ================================================= -->
+
+    <section
+        id="updates"
+        class="section">
+
+        <div class="sectionIntro">
+
+            <div class="sectionEyebrow">
+                MISS OCEAN 2026
+            </div>
+
+            <div class="sectionTitle">
+                Competition Updates
+            </div>
+
+            <div class="sectionDescription">
+                Follow the official competitions,
+                schedules and important announcements.
+            </div>
+
+        </div>
+
+
+        <div
+            class="updateList"
+            id="updateList">
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RESULTS
+    ================================================= -->
+
+    <section
+        id="results"
+        class="section">
+
+        <div class="sectionIntro">
+
+            <div class="sectionEyebrow">
+                MISS OCEAN 2026
+            </div>
+
+            <div class="sectionTitle">
+                Official Results
+            </div>
+
+            <div class="sectionDescription">
+                Explore the official results from each
+                Miss Ocean competition.
+            </div>
+
+        </div>
+
+
+        <div
+            class="resultList"
+            id="resultList">
+        </div>
+
+    </section>
+
+
+
+    <footer class="siteFooter">
+
+        MISS OCEAN • OFFICIAL ONLINE PAGEANT
+
+    </footer>
 
 </div>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
-
-<div class="nav">
-
-  <button
-    class="active"
-    onclick="openSection('contestants',this)">
-
-    <span class="navIcon">♛</span>
-
-    Contestants
-
-  </button>
-
-
-  <button
-    onclick="openSection('updates',this)">
-
-    <span class="navIcon">✦</span>
-
-    Updates
-
-  </button>
-
-
-  <button
-    onclick="openSection('results',this)">
-
-    <span class="navIcon">◈</span>
-
-    Results
-
-  </button>
-
-</div>
-
-
-<div class="content">
-
 
 <!-- =====================================================
-     CONTESTANTS
-===================================================== -->
-
-<section
-  id="contestants"
-  class="section active">
-
-  <div class="heading">
-
-    <h2>
-      Contestants
-    </h2>
-
-    <p>
-      Meet the official delegates of Miss Ocean 2026.
-    </p>
-
-  </div>
-
-
-  <div class="contestants">
-
-
-    <!-- CONTESTANT 1 -->
-
-    <div
-      class="contestant"
-      onclick="showContestant(
-      'Contestant Name',
-      'Myanmar',
-      'contestant1.jpg',
-      'Yangon',
-      '20',
-      'Official Delegate',
-      'This is the full official biography of the contestant. You can write her background, achievements, interests, education, pageant experience and other important information here.'
-      )">
-
-      <div class="contestantPhoto">
-
-        <img
-          src="contestant1.jpg"
-          alt="Contestant"
-          onerror="imageFallback(this)">
-
-        <div
-          class="photoText"
-          style="display:none">
-
-          Contestant Photo
-
-        </div>
-
-      </div>
-
-      <div class="contestantInfo">
-
-        <div class="country">
-          MYANMAR
-        </div>
-
-        <div class="contestantName">
-          Contestant Name
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- CONTESTANT 2 -->
-
-    <div
-      class="contestant"
-      onclick="showContestant(
-      'Contestant Name',
-      'Thailand',
-      'contestant2.jpg',
-      'Bangkok',
-      '21',
-      'Official Delegate',
-      'This is the full official biography of the contestant. You can write her background, achievements, interests, education, pageant experience and other important information here.'
-      )">
-
-      <div class="contestantPhoto">
-
-        <img
-          src="contestant2.jpg"
-          alt="Contestant"
-          onerror="imageFallback(this)">
-
-        <div
-          class="photoText"
-          style="display:none">
-
-          Contestant Photo
-
-        </div>
-
-      </div>
-
-      <div class="contestantInfo">
-
-        <div class="country">
-          THAILAND
-        </div>
-
-        <div class="contestantName">
-          Contestant Name
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- CONTESTANT 3 -->
-
-    <div
-      class="contestant"
-      onclick="showContestant(
-      'Contestant Name',
-      'Indonesia',
-      'contestant3.jpg',
-      'Jakarta',
-      '22',
-      'Official Delegate',
-      'This is the full official biography of the contestant. You can write her background, achievements, interests, education, pageant experience and other important information here.'
-      )">
-
-      <div class="contestantPhoto">
-
-        <img
-          src="contestant3.jpg"
-          alt="Contestant"
-          onerror="imageFallback(this)">
-
-        <div
-          class="photoText"
-          style="display:none">
-
-          Contestant Photo
-
-        </div>
-
-      </div>
-
-      <div class="contestantInfo">
-
-        <div class="country">
-          INDONESIA
-        </div>
-
-        <div class="contestantName">
-          Contestant Name
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- CONTESTANT 4 -->
-
-    <div
-      class="contestant"
-      onclick="showContestant(
-      'Contestant Name',
-      'Philippines',
-      'contestant4.jpg',
-      'Manila',
-      '21',
-      'Official Delegate',
-      'This is the full official biography of the contestant. You can write her background, achievements, interests, education, pageant experience and other important information here.'
-      )">
-
-      <div class="contestantPhoto">
-
-        <img
-          src="contestant4.jpg"
-          alt="Contestant"
-          onerror="imageFallback(this)">
-
-        <div
-          class="photoText"
-          style="display:none">
-
-          Contestant Photo
-
-        </div>
-
-      </div>
-
-      <div class="contestantInfo">
-
-        <div class="country">
-          PHILIPPINES
-        </div>
-
-        <div class="contestantName">
-          Contestant Name
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     UPDATES
-===================================================== -->
-
-<section
-  id="updates"
-  class="section">
-
-  <div class="heading">
-
-    <h2>
-      Competition Updates
-    </h2>
-
-    <p>
-      Tap a competition to view full details.
-    </p>
-
-  </div>
-
-
-  <!-- SWIMSUIT -->
-
-  <div
-    class="competition"
-    onclick="showCompetition(
-    'Swimsuit Competition',
-    'Swimsuit',
-    'swimsuit.jpg',
-    'September 15, 2026',
-    '7:00 PM',
-    'International Competition Stage',
-    'Individual Stage Presentation',
-    'Each contestant will present a confident and elegant stage presentation. The judging will focus on presentation, confidence, stage presence and overall performance.',
-    'Contestants must follow the official competition rules and stage instructions.'
-    )">
-
-    <div class="competitionImage">
-
-      <img
-        src="swimsuit.jpg"
-        alt="Swimsuit Competition"
-        onerror="imageFallback(this)">
-
-      <div
-        class="photoText"
-        style="display:none">
-
-        SWIMSUIT COMPETITION
-
-      </div>
-
-    </div>
-
-    <div class="competitionText">
-
-      <div class="competitionTag">
-        UPCOMING COMPETITION
-      </div>
-
-      <h3>
-        Swimsuit Competition
-      </h3>
-
-      <p>
-        September 15, 2026
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <!-- EVENING GOWN -->
-
-  <div
-    class="competition"
-    onclick="showCompetition(
-    'Evening Gown Competition',
-    'Evening Gown',
-    'evening-gown.jpg',
-    'September 17, 2026',
-    '8:00 PM',
-    'Main Stage',
-    'Individual Evening Gown Presentation',
-    'Contestants will showcase elegance, confidence and stage presence during the official evening gown presentation.',
-    'Contestants must follow the official stage instructions and arrive before the scheduled call time.'
-    )">
-
-    <div class="competitionImage">
-
-      <img
-        src="evening-gown.jpg"
-        alt="Evening Gown Competition"
-        onerror="imageFallback(this)">
-
-      <div
-        class="photoText"
-        style="display:none">
-
-        EVENING GOWN
-
-      </div>
-
-    </div>
-
-    <div class="competitionText">
-
-      <div class="competitionTag">
-        UPCOMING COMPETITION
-      </div>
-
-      <h3>
-        Evening Gown Competition
-      </h3>
-
-      <p>
-        September 17, 2026
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <!-- TALENT -->
-
-  <div
-    class="competition"
-    onclick="showCompetition(
-    'Talent Competition',
-    'Talent',
-    'talent.jpg',
-    'September 19, 2026',
-    '7:30 PM',
-    'Miss Ocean Stage',
-    'Individual Talent Presentation',
-    'Contestants will present their individual talents on the Miss Ocean stage.',
-    'Each contestant will receive an allocated performance time according to the official competition schedule.'
-    )">
-
-    <div class="competitionImage">
-
-      <img
-        src="talent.jpg"
-        alt="Talent Competition"
-        onerror="imageFallback(this)">
-
-      <div
-        class="photoText"
-        style="display:none">
-
-        TALENT COMPETITION
-
-      </div>
-
-    </div>
-
-    <div class="competitionText">
-
-      <div class="competitionTag">
-        UPCOMING COMPETITION
-      </div>
-
-      <h3>
-        Talent Competition
-      </h3>
-
-      <p>
-        September 19, 2026
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     RESULTS
-===================================================== -->
-
-<section
-  id="results"
-  class="section">
-
-  <div class="heading">
-
-    <h2>
-      Results
-    </h2>
-
-    <p>
-      Tap a result to view the full result.
-    </p>
-
-  </div>
-
-
-  <div
-    class="result"
-    onclick="showResult(
-    'Winner Name',
-    'Myanmar',
-    'winner1.jpg',
-    '1st Place',
-    'Swimsuit Competition',
-    'Winner',
-    'Winner of the Miss Ocean 2026 Swimsuit Competition. This section can contain the full official result, judging information and any special recognition.'
-    )">
-
-    <div class="rank">
-      1
-    </div>
-
-    <div class="resultPhoto">
-
-      <img
-        src="winner1.jpg"
-        alt="Winner"
-        onerror="this.style.display='none';">
-
-    </div>
-
-    <div class="resultInfo">
-
-      <strong>
-        Winner Name
-      </strong>
-
-      <span>
-        Myanmar • Swimsuit Competition
-      </span>
-
-    </div>
-
-    <div class="resultBadge">
-      WINNER
-    </div>
-
-  </div>
-
-</section>
-
-
-</div>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-  <strong>MISS OCEAN</strong>
-
-  <br>
-
-  Official Updates • 2026
-
-</footer>
-
-</div>
-
-
-<!-- =====================================================
-     FULL SCREEN MODAL
+     FULL SCREEN DETAIL MODAL
 ===================================================== -->
 
 <div
-  id="modal"
-  class="modal"
-  onclick="outsideClose(event)">
+    id="detailModal"
+    class="modal">
 
-  <div class="modalBox">
+    <div class="modalBox">
 
-    <div class="modalTop">
+        <div class="modalTop">
 
-      <div
-        class="modalImage"
-        id="modalImage">
-      </div>
+            <div class="modalImage">
 
-      <button
-        class="close"
-        onclick="closeModal()">
+                <img
+                    id="modalImage"
+                    src=""
+                    alt="">
 
-        ×
+            </div>
 
-      </button>
+            <button
+                class="closeButton"
+                onclick="closeModal()">
 
-    </div>
+                ×
 
+            </button>
 
-    <div class="modalContent">
-
-      <div
-        class="modalLabel"
-        id="modalLabel">
-      </div>
-
-      <h2
-        id="modalTitle">
-      </h2>
+        </div>
 
 
-      <div class="infoRow">
+        <div class="modalContent">
 
-        <span>
-          Country
-        </span>
+            <div
+                id="modalLabel"
+                class="modalLabel">
+            </div>
 
-        <span id="modalCountry">
-        </span>
+            <div
+                id="modalTitle"
+                class="modalTitle">
+            </div>
 
-      </div>
-
-
-      <div class="infoRow">
-
-        <span>
-          City
-        </span>
-
-        <span id="modalCity">
-        </span>
-
-      </div>
+            <div class="modalLine"></div>
 
 
-      <div class="infoRow">
-
-        <span>
-          Age
-        </span>
-
-        <span id="modalAge">
-        </span>
-
-      </div>
+            <div
+                id="modalBody">
+            </div>
 
 
-      <div class="infoRow">
+            <button
+                class="closeBottom"
+                onclick="closeModal()">
 
-        <span>
-          Status
-        </span>
+                CLOSE
 
-        <span id="modalStatus">
-        </span>
+            </button>
 
-      </div>
-
-
-      <div
-        class="descriptionTitle"
-        id="descriptionTitle">
-        Biography
-      </div>
-
-      <div
-        class="modalDescription"
-        id="modalDescription">
-      </div>
-
-
-      <button
-        class="closeBottom"
-        onclick="closeModal()">
-
-        Close
-
-      </button>
+        </div>
 
     </div>
-
-  </div>
 
 </div>
+
 
 
 <script>
 
 /* =====================================================
-   IMAGE FALLBACK
+   CONTESTANT DATA
 ===================================================== */
 
-function imageFallback(img){
+const contestants = [
 
-  img.style.display="none";
+    {
+        number:"01",
+        name:"Pyae Sai Maung",
+        city:"Sittwe",
+        image:"IMG_20260912_122016_208.jpg",
+        project:"တိရစ္ဆာန်များအပေါ် ညှဉ်းပန်းနှိပ်စက်မူလျော့ချရေး"
+    },
 
-  if(
-    img.nextElementSibling
-  ){
+    {
+        number:"02",
+        name:"Amara Lin Lin",
+        city:"Yangon South",
+        image:"IMG_20260912_123008_671.jpg",
+        project:"နှလုံးသားဖြင့် ခင်းသောလမ်း (The Path Paved with Heart )"
+    },
 
-    img.nextElementSibling.style.display="flex";
+    {
+        number:"03",
+        name:"Naung",
+        city:"Meiktila",
+        image:"IMG_20260912_123106_628.jpg",
+        project:"သက်ငယ်လုပ်သားလျော့ချရေးနှင်ကလေးငယ်တိုင်းပညာသင်ကြားနိုင်ရေးစီမံကိန်း"
+    },
 
-  }
+    {
+        number:"04",
+        name:"Nan Cherry",
+        city:"Shwe Pyi Thar",
+        image:"IMG_20260912_123203_731.jpg",
+        project:"ရဲရင့်မှု၏ အရောင်များ"
+    },
 
-}
+    {
+        number:"05",
+        name:"Chit Tu Tu",
+        city:"Hpakant",
+        image:"IMG_20260912_123257_302.jpg",
+        project:"HIV, community Awareness & prevention project"
+    },
 
+    {
+        number:"06",
+        name:"Luvisiyarna",
+        city:"Kyaikkhami",
+        image:"IMG_20260912_123401_345.jpg",
+        project:"သဘာ၀ပတ်၀န်းကျင်ထိန်းသိမ်းရေး"
+    },
 
-/* =====================================================
-   LOADING
-   EXACTLY 5 SECONDS
-===================================================== */
+    {
+        number:"07",
+        name:"Myawaddy",
+        city:"Lawi Mon",
+        image:"IMG_20260912_123455_423.jpg",
+        project:"ကာကွယ်ခြင်းဖြင့် စတင်တဲ့ လှပသော အနာဂတ်"
+    },
 
-const loadingScreen =
-  document.getElementById("loadingScreen");
+    {
+        number:"08",
+        name:"Moe Yan",
+        city:"Mudon",
+        image:"IMG_20260912_123552_309.jpg",
+        project:"အိမ်မက်ဆီသို့ ခြေလှမ်းများ"
+    },
 
-const website =
-  document.getElementById("website");
+    {
+        number:"09",
+        name:"Marrita",
+        city:"Htone Aing",
+        image:"IMG_20260912_123642_733.jpg",
+        project:"လူ့ပတ်၀န်းကျင် လူ့စည်းကမ်း"
+    },
 
-const loadingProgress =
-  document.getElementById("loadingProgress");
+    {
+        number:"10",
+        name:"Htike Htike",
+        city:"Thamanya",
+        image:"IMG_20260912_123733_547.jpg",
+        project:"ကမ္ဘာမြေကြီးကို ချစ်ရင် ဒီကနေ စကြရအောင်လား"
+    },
 
-const loadingNumber =
-  document.getElementById("loadingNumber");
-
-const music =
-  document.getElementById("music");
-
-let progress = 0;
-
-const loadingTimer =
-  setInterval(function(){
-
-    progress++;
-
-    loadingProgress.style.width =
-      progress + "%";
-
-    loadingNumber.textContent =
-      Math.max(1,progress);
-
-    if(progress >= 100){
-
-      clearInterval(loadingTimer);
-
-      setTimeout(function(){
-
-        loadingScreen.style.display="none";
-
-        website.style.display="block";
-
-        startMusic();
-
-      },50);
-
+    {
+        number:"11",
+        name:"Iris",
+        city:"Yangon North",
+        image:"IMG_20260912_123824_414.jpg",
+        project:"အိမ်မက်များဆီသို့"
     }
 
-  },50);
+];
 
 
 /* =====================================================
-   MUSIC
-   VIDEO IS NEVER SHOWN
+   UPDATE DATA
 ===================================================== */
 
-function startMusic(){
+const updates = [
 
-  music.muted=false;
+    {
+        number:"01",
+        type:"COMPETITION",
+        title:"Swimsuit Competition",
+        date:"Official Schedule",
+        description:
+        "The official Swimsuit Competition update, schedule and competition information."
+    },
 
-  music.volume=1;
+    {
+        number:"02",
+        type:"COMPETITION",
+        title:"Evening Gown Competition",
+        date:"Official Schedule",
+        description:
+        "The official Evening Gown Competition update, schedule and competition information."
+    },
 
-  const playPromise =
-    music.play();
-
-  if(playPromise){
-
-    playPromise.catch(function(){
-
-      /*
-        Some mobile browsers block
-        automatic sound.
-
-        The page will try again after
-        the first user touch.
-      */
-
-    });
-
-  }
-
-}
-
-
-/* Try music again after first touch */
-
-document.addEventListener(
-  "touchstart",
-  function(){
-
-    if(music.paused){
-
-      music.muted=false;
-
-      music.play().catch(function(){});
-
+    {
+        number:"03",
+        type:"COMPETITION",
+        title:"Talent Competition",
+        date:"Official Schedule",
+        description:
+        "The official Talent Competition update, schedule and competition information."
     }
 
-  },
-  {once:true}
-);
+];
 
 
 /* =====================================================
-   NAVIGATION
+   RESULT DATA
+
+   Winner + Top 5
+   Replace these contestants whenever official
+   results are announced.
 ===================================================== */
 
-function openSection(
-  sectionId,
-  button
-){
+const results = [
 
-  document
-    .querySelectorAll(".section")
-    .forEach(function(section){
+    {
+        title:"Swimsuit Winner",
+        winner:contestants[0],
 
-      section.classList.remove("active");
+        top5:[
+            contestants[0],
+            contestants[1],
+            contestants[2],
+            contestants[3],
+            contestants[4]
+        ]
+    },
+
+    {
+        title:"Evening Gown Winner",
+        winner:contestants[1],
+
+        top5:[
+            contestants[1],
+            contestants[0],
+            contestants[3],
+            contestants[5],
+            contestants[2]
+        ]
+    },
+
+    {
+        title:"Talent Winner",
+        winner:contestants[2],
+
+        top5:[
+            contestants[2],
+            contestants[6],
+            contestants[1],
+            contestants[7],
+            contestants[4]
+        ]
+    }
+
+];
+
+
+/* =====================================================
+   RENDER CONTESTANTS
+===================================================== */
+
+const contestantGrid =
+    document.getElementById("contestantGrid");
+
+
+contestants.forEach(function(person,index){
+
+    contestantGrid.innerHTML += `
+
+        <div
+            class="contestantCard"
+            onclick="showContestant(${index})">
+
+            <div class="contestantPhoto">
+
+                <img
+                    src="${person.image}"
+                    alt="${person.name}">
+
+            </div>
+
+            <div class="contestantInfo">
+
+                <div class="cardCity">
+                    ${person.city.toUpperCase()}
+                </div>
+
+                <div class="cardName">
+                    ${person.name}
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+});
+
+
+/* =====================================================
+   RENDER UPDATES
+===================================================== */
+
+const updateList =
+    document.getElementById("updateList");
+
+
+updates.forEach(function(update,index){
+
+    updateList.innerHTML += `
+
+        <div
+            class="updateCard"
+            onclick="showUpdate(${index})">
+
+            <div class="updateNumber">
+                ${update.number}
+            </div>
+
+            <div class="updateInfo">
+
+                <div class="updateType">
+                    ${update.type}
+                </div>
+
+                <div class="updateTitle">
+                    ${update.title}
+                </div>
+
+                <div class="updateMeta">
+                    ${update.date}
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+});
+
+
+/* =====================================================
+   RENDER RESULTS
+===================================================== */
+
+const resultList =
+    document.getElementById("resultList");
+
+
+results.forEach(function(result,index){
+
+    resultList.innerHTML += `
+
+        <div
+            class="resultCard"
+            onclick="showResult(${index})">
+
+            <div class="resultCardSmall">
+                OFFICIAL RESULT
+            </div>
+
+            <div class="resultCardTitle">
+                ${result.title}
+            </div>
+
+            <div class="resultCardText">
+                Winner + Official Top 5
+            </div>
+
+        </div>
+
+    `;
+
+});
+
+
+/* =====================================================
+   SECTION NAVIGATION
+===================================================== */
+
+function openSection(id,button){
+
+    document
+        .querySelectorAll(".section")
+        .forEach(function(section){
+
+            section.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+
+
+    document
+        .querySelectorAll(".nav button")
+        .forEach(function(btn){
+
+            btn.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   MODAL ELEMENTS
+===================================================== */
+
+const modal =
+    document.getElementById("detailModal");
+
+const modalImage =
+    document.getElementById("modalImage");
+
+const modalLabel =
+    document.getElementById("modalLabel");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalBody =
+    document.getElementById("modalBody");
+
+
+/* =====================================================
+   SAFE TEXT
+===================================================== */
+
+function safe(text){
+
+    return String(text)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   OPEN CONTESTANT
+===================================================== */
+
+function showContestant(index){
+
+    const person =
+        contestants[index];
+
+
+    modalImage.src =
+        person.image;
+
+    modalImage.alt =
+        person.name;
+
+
+    modalLabel.textContent =
+        "OFFICIAL CONTESTANT";
+
+
+    modalTitle.textContent =
+        person.name;
+
+
+    modalBody.innerHTML = `
+
+        <div class="detailIdentity">
+
+            <div class="detailBox">
+
+                <div class="detailBoxLabel">
+                    CONTESTANT
+                </div>
+
+                <div class="detailBoxValue">
+                    ${safe(person.name)}
+                </div>
+
+            </div>
+
+
+            <div class="detailBox">
+
+                <div class="detailBoxLabel">
+                    REPRESENTATIVE CITY
+                </div>
+
+                <div class="detailBoxValue">
+                    ${safe(person.city)}
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="aboutBox">
+
+            <div class="aboutLabel">
+                ABOUT THE CONTESTANT
+            </div>
+
+            <div class="aboutTitle">
+                Project
+            </div>
+
+            <div class="aboutText">
+                ${safe(person.project)}
+            </div>
+
+        </div>
+
+    `;
+
+
+    modal.classList.add("show");
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+/* =====================================================
+   OPEN UPDATE
+===================================================== */
+
+function showUpdate(index){
+
+    const update =
+        updates[index];
+
+
+    modalImage.src =
+        contestants[index % contestants.length].image;
+
+
+    modalLabel.textContent =
+        "MISS OCEAN COMPETITION";
+
+
+    modalTitle.textContent =
+        update.title;
+
+
+    modalBody.innerHTML = `
+
+        <div class="aboutBox">
+
+            <div class="aboutLabel">
+                OFFICIAL UPDATE
+            </div>
+
+            <div class="aboutTitle">
+                ${safe(update.date)}
+            </div>
+
+            <div class="aboutText">
+                ${safe(update.description)}
+            </div>
+
+        </div>
+
+    `;
+
+
+    modal.classList.add("show");
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+/* =====================================================
+   SHOW RESULT
+===================================================== */
+
+function showResult(index){
+
+    const result =
+        results[index];
+
+    const winner =
+        result.winner;
+
+
+    modalImage.src =
+        winner.image;
+
+    modalImage.alt =
+        winner.name;
+
+
+    modalLabel.textContent =
+        "MISS OCEAN OFFICIAL RESULTS";
+
+
+    modalTitle.textContent =
+        result.title;
+
+
+    let topHTML = "";
+
+
+    result.top5.forEach(function(person,position){
+
+        if(position === 0){
+            return;
+        }
+
+
+        topHTML += `
+
+            <div class="topItem">
+
+                <div class="topRank">
+                    ${position + 1}
+                </div>
+
+                <div class="topPhoto">
+
+                    <img
+                        src="${person.image}"
+                        alt="${person.name}">
+
+                </div>
+
+                <div class="topDetails">
+
+                    <div class="topPlace">
+                        ${position === 1 ? "SECOND PLACE" :
+                          position === 2 ? "THIRD PLACE" :
+                          position === 3 ? "FOURTH PLACE" :
+                          "FIFTH PLACE"}
+                    </div>
+
+                    <div class="topPerson">
+                        ${safe(person.name)}
+                    </div>
+
+                    <div class="topCity">
+                        ${safe(person.city)}
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
 
     });
 
 
-  document
-    .getElementById(sectionId)
-    .classList.add("active");
+    modalBody.innerHTML = `
 
+        <div class="winnerArea"
+             style="padding:0;">
 
-  document
-    .querySelectorAll(".nav button")
-    .forEach(function(btn){
+            <div class="winnerPhoto">
 
-      btn.classList.remove("active");
+                <img
+                    src="${winner.image}"
+                    alt="${winner.name}">
 
-    });
+            </div>
 
 
-  button.classList.add("active");
+            <div class="winnerCaption">
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+                <div class="winnerLabel">
+                    WINNER
+                </div>
 
-}
+                <div class="winnerCity">
+                    ${safe(winner.city)}
+                </div>
 
+                <div class="winnerName">
+                    ${safe(winner.name)}
+                </div>
 
-/* =====================================================
-   CONTESTANT INFORMATION
-===================================================== */
+            </div>
 
-function showContestant(
-  name,
-  country,
-  image,
-  city,
-  age,
-  status,
-  description
-){
+        </div>
 
-  const modal =
-    document.getElementById("modal");
 
-  const modalImage =
-    document.getElementById("modalImage");
+        <div class="topFive"
+             style="padding-left:0;padding-right:0;">
 
+            <div class="topFiveHeading">
+                Top 5
+            </div>
 
-  modalImage.innerHTML =
-    '<img src="' +
-    image +
-    '" alt="' +
-    name +
-    '" onerror="this.style.display=\'none\'">';
+            ${topHTML}
 
 
-  document.getElementById(
-    "modalLabel"
-  ).textContent =
-    country.toUpperCase();
+            <div class="officialStatement">
 
+                <div class="officialStatementTitle">
+                    This Official Miss Ocean
+                    ${safe(result.title)}
+                    Winners List
+                </div>
 
-  document.getElementById(
-    "modalTitle"
-  ).textContent =
-    name;
+                <div class="officialStatementText">
+                    MISS OCEAN 2026 • OFFICIAL RESULTS
+                </div>
 
+            </div>
 
-  document.getElementById(
-    "modalCountry"
-  ).textContent =
-    country;
+        </div>
 
+    `;
 
-  document.getElementById(
-    "modalCity"
-  ).textContent =
-    city;
 
+    modal.classList.add("show");
 
-  document.getElementById(
-    "modalAge"
-  ).textContent =
-    age;
-
-
-  document.getElementById(
-    "modalStatus"
-  ).textContent =
-    status;
-
-
-  document.getElementById(
-    "descriptionTitle"
-  ).textContent =
-    "Biography";
-
-
-  document.getElementById(
-    "modalDescription"
-  ).textContent =
-    description;
-
-
-  modal.classList.add("show");
-
-  document.body.style.overflow="hidden";
-
-}
-
-
-/* =====================================================
-   COMPETITION INFORMATION
-===================================================== */
-
-function showCompetition(
-  title,
-  category,
-  image,
-  date,
-  time,
-  venue,
-  format,
-  description,
-  rules
-){
-
-  const modal =
-    document.getElementById("modal");
-
-  const modalImage =
-    document.getElementById("modalImage");
-
-
-  modalImage.innerHTML =
-    '<img src="' +
-    image +
-    '" alt="' +
-    title +
-    '" onerror="this.style.display=\'none\'">';
-
-
-  document.getElementById(
-    "modalLabel"
-  ).textContent =
-    category.toUpperCase();
-
-
-  document.getElementById(
-    "modalTitle"
-  ).textContent =
-    title;
-
-
-  document.getElementById(
-    "modalCountry"
-  ).textContent =
-    date;
-
-
-  document.getElementById(
-    "modalCity"
-  ).textContent =
-    time;
-
-
-  document.getElementById(
-    "modalAge"
-  ).textContent =
-    venue;
-
-
-  document.getElementById(
-    "modalStatus"
-  ).textContent =
-    format;
-
-
-  document.getElementById(
-    "descriptionTitle"
-  ).textContent =
-    "Competition Details";
-
-
-  document.getElementById(
-    "modalDescription"
-  ).innerHTML =
-    description +
-    "<br><br><strong>Official Rules:</strong><br>" +
-    rules;
-
-
-  modal.classList.add("show");
-
-  document.body.style.overflow="hidden";
-
-}
-
-
-/* =====================================================
-   RESULT INFORMATION
-===================================================== */
-
-function showResult(
-  name,
-  country,
-  image,
-  place,
-  competition,
-  status,
-  description
-){
-
-  const modal =
-    document.getElementById("modal");
-
-  const modalImage =
-    document.getElementById("modalImage");
-
-
-  modalImage.innerHTML =
-    '<img src="' +
-    image +
-    '" alt="' +
-    name +
-    '" onerror="this.style.display=\'none\'">';
-
-
-  document.getElementById(
-    "modalLabel"
-  ).textContent =
-    competition.toUpperCase();
-
-
-  document.getElementById(
-    "modalTitle"
-  ).textContent =
-    name;
-
-
-  document.getElementById(
-    "modalCountry"
-  ).textContent =
-    country;
-
-
-  document.getElementById(
-    "modalCity"
-  ).textContent =
-    place;
-
-
-  document.getElementById(
-    "modalAge"
-  ).textContent =
-    competition;
-
-
-  document.getElementById(
-    "modalStatus"
-  ).textContent =
-    status;
-
-
-  document.getElementById(
-    "descriptionTitle"
-  ).textContent =
-    "Official Result";
-
-
-  document.getElementById(
-    "modalDescription"
-  ).textContent =
-    description;
-
-
-  modal.classList.add("show");
-
-  document.body.style.overflow="hidden";
+    document.body.style.overflow =
+        "hidden";
 
 }
 
@@ -2115,28 +2442,10 @@ function showResult(
 
 function closeModal(){
 
-  document
-    .getElementById("modal")
-    .classList.remove("show");
+    modal.classList.remove("show");
 
-  document.body.style.overflow="";
-
-}
-
-
-/* =====================================================
-   CLOSE BY OUTSIDE TAP
-===================================================== */
-
-function outsideClose(event){
-
-  if(
-    event.target.id === "modal"
-  ){
-
-    closeModal();
-
-  }
+    document.body.style.overflow =
+        "";
 
 }
 
@@ -2146,19 +2455,132 @@ function outsideClose(event){
 ===================================================== */
 
 document.addEventListener(
-  "keydown",
-  function(event){
+    "keydown",
+    function(event){
 
-    if(event.key === "Escape"){
+        if(event.key === "Escape"){
+            closeModal();
+        }
 
-      closeModal();
+    }
+);
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+const music =
+    document.getElementById("music");
+
+
+function startMusic(){
+
+    music.muted = false;
+
+    music.volume = 1;
+
+    const promise =
+        music.play();
+
+    if(promise){
+
+        promise.catch(function(){
+
+            /*
+              Mobile browsers may block
+              autoplay with sound.
+
+              A first tap will start it.
+            */
+
+        });
 
     }
 
-  }
+}
+
+
+/* =====================================================
+   LOADING 1 → 100
+   ABOUT 5 SECONDS
+===================================================== */
+
+const loadingScreen =
+    document.getElementById("loadingScreen");
+
+const website =
+    document.getElementById("website");
+
+const loadingNumber =
+    document.getElementById("loadingNumber");
+
+const loadingProgress =
+    document.getElementById("loadingProgress");
+
+
+let number = 1;
+
+
+/*
+   50ms × 100 ≈ 5 seconds
+*/
+
+const loadingInterval =
+    setInterval(function(){
+
+        loadingNumber.textContent =
+            number;
+
+        loadingProgress.style.width =
+            number + "%";
+
+
+        if(number >= 100){
+
+            clearInterval(
+                loadingInterval
+            );
+
+
+            setTimeout(function(){
+
+                loadingScreen.style.display =
+                    "none";
+
+                website.style.display =
+                    "block";
+
+
+                startMusic();
+
+
+            },150);
+
+        }
+
+
+        number++;
+
+    },50);
+
+
+/* =====================================================
+   AUTOPLAY FALLBACK
+===================================================== */
+
+document.addEventListener(
+    "pointerdown",
+    function(){
+
+        startMusic();
+
+    },
+    {once:false}
 );
 
 </script>
+
 
 </body>
 </html>
