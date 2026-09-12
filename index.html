@@ -11,11 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0;}
 
 html{
   scroll-behavior:smooth;
@@ -100,6 +96,7 @@ button{
   width:0%;
   height:100%;
   background:#639dad;
+  transition:width .05s linear;
 }
 
 .loadingText{
@@ -110,7 +107,12 @@ button{
   color:#8aa4ae;
 }
 
-/* Hidden audio/video */
+/* ================= MUSIC ================= */
+
+/*
+  MP4 is used only for audio.
+  Video itself is hidden.
+*/
 
 #music{
   position:fixed;
@@ -180,7 +182,7 @@ button{
   background:#75a8b8;
 }
 
-/* ================= ADVERTISEMENT ================= */
+/* ================= ADS ================= */
 
 .adWrapper{
   width:100%;
@@ -235,14 +237,7 @@ button{
   letter-spacing:1px;
 }
 
-@media(min-width:700px){
-  .adCard{
-    flex-basis:58%;
-    height:185px;
-  }
-}
-
-/* ================= NAVIGATION ================= */
+/* ================= NAV ================= */
 
 .nav{
   display:grid;
@@ -691,6 +686,11 @@ button{
 
 @media(min-width:700px){
 
+  .adCard{
+    flex-basis:58%;
+    height:185px;
+  }
+
   .contestantGrid{
     grid-template-columns:repeat(3,1fr);
   }
@@ -716,7 +716,7 @@ button{
 
 <body>
 
-<!-- ================= LOADING ================= -->
+<!-- ================= LOADING SCREEN ================= -->
 
 <div id="loadingScreen">
 
@@ -736,7 +736,10 @@ button{
       MISS OCEAN
     </div>
 
-    <div class="loadingNumber" id="loadingNumber">
+    <div
+      class="loadingNumber"
+      id="loadingNumber"
+    >
       1
     </div>
 
@@ -760,10 +763,9 @@ button{
 
 <video
   id="music"
-  autoplay
-  loop
-  playsinline
   preload="auto"
+  playsinline
+  loop
   aria-hidden="true"
 >
   <source
@@ -777,138 +779,672 @@ button{
 
 <div id="website">
 
-  <!-- HEADER -->
+<header class="siteHeader">
 
-  <header class="siteHeader">
+  <img
+    class="headerLogo"
+    src="IMG_20260912_123927_081.jpg"
+    alt="Miss Ocean Logo"
+  >
 
-    <img
-      class="headerLogo"
-      src="IMG_20260912_123927_081.jpg"
-      alt="Miss Ocean Logo"
+  <div class="headerSmall">
+    OFFICIAL ONLINE COMPETITION
+  </div>
+
+  <h1 class="mainTitle">
+    MISS OCEAN
+  </h1>
+
+  <div class="titleDecoration">
+    <span></span>
+    <i></i>
+    <span></span>
+  </div>
+
+</header>
+
+
+<!-- ================= ADS ================= -->
+
+<div class="adWrapper">
+
+  <div class="adSlider">
+
+    <div
+      class="adCard"
+      onclick="openAd(
+        'Popular Vote Top 5',
+        'Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg'
+      )"
     >
 
-    <div class="headerSmall">
-      OFFICIAL ONLINE COMPETITION
-    </div>
-
-    <h1 class="mainTitle">
-      MISS OCEAN
-    </h1>
-
-    <div class="titleDecoration">
-      <span></span>
-      <i></i>
-      <span></span>
-    </div>
-
-  </header>
-
-
-  <!-- ================= ADVERTISEMENT ================= -->
-
-  <div class="adWrapper">
-
-    <div class="adSlider">
-
-      <!-- 1 -->
-
-      <div
-        class="adCard"
-        onclick="openAd(
-          'Popular Vote Top 5',
-          'Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg'
-        )"
+      <img
+        src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
+        alt="Popular Vote Top 5"
       >
 
+      <div class="adTap">
+        VIEW
+      </div>
+
+    </div>
+
+
+    <div
+      class="adCard"
+      onclick="openAd(
+        'Miss Ocean Official Tiktok Account',
+        'Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg'
+      )"
+    >
+
+      <img
+        src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
+        alt="Miss Ocean Official Tiktok Account"
+      >
+
+      <div class="adTap">
+        VIEW
+      </div>
+
+    </div>
+
+
+    <div
+      class="adCard"
+      onclick="openAd(
+        'Miss Ocean 2025 Winner',
+        'IMG_20260912_131710_045.jpg'
+      )"
+    >
+
+      <img
+        src="IMG_20260912_131710_045.jpg"
+        alt="Miss Ocean 2025 Winner"
+      >
+
+      <div class="adTap">
+        VIEW
+      </div>
+
+    </div>
+
+
+    <div
+      class="adCard"
+      onclick="openProjectPoster()"
+    >
+
+      <img
+        src="IMG_20260912_131934_287.jpg"
+        alt="Project Poster"
+      >
+
+      <div class="adTap">
+        VIEW
+      </div>
+
+    </div>
+
+
+    <div
+      class="adCard"
+      onclick="openMissOcean2025()"
+    >
+
+      <img
+        src="IMG_20260912_133011_088.jpg"
+        alt="Miss Ocean 2025 Archive"
+      >
+
+      <div class="adTap">
+        VIEW
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= NAV ================= -->
+
+<div class="nav">
+
+  <button
+    class="active"
+    onclick="openSection('contestants',this)"
+  >
+    <span class="navRoman">I</span>
+    <span class="navText">CONTESTANTS</span>
+  </button>
+
+
+  <button
+    onclick="openSection('updates',this)"
+  >
+    <span class="navRoman">II</span>
+    <span class="navText">UPDATES</span>
+  </button>
+
+
+  <button
+    onclick="openSection('results',this)"
+  >
+    <span class="navRoman">III</span>
+    <span class="navText">RESULTS</span>
+  </button>
+
+</div>
+
+
+<!-- ================= CONTESTANTS ================= -->
+
+<section
+  id="contestants"
+  class="section active"
+>
+
+  <div class="sectionIntro">
+
+    <div class="sectionEyebrow">
+      MISS OCEAN 2026
+    </div>
+
+    <h2 class="sectionTitle">
+      Contestants
+    </h2>
+
+    <p class="sectionDescription">
+      Meet the contestants representing their cities in Miss Ocean 2026.
+    </p>
+
+  </div>
+
+
+  <div class="contestantGrid">
+
+
+    <div
+      class="contestantCard"
+      onclick="showContestant(
+        'Pyae Sai Maung',
+        'Sittwe',
+        'IMG_20260912_122016_208.jpg',
+        'တိရစ္ဆာန်များအပေါ် ညှဉ်းပန်းနှိပ်စက်မူလျော့ချရေး'
+      )"
+    >
+
+      <div class="contestantPhoto">
+        <img
+          src="IMG_20260912_122016_208.jpg"
+          alt="Pyae Sai Maung"
+        >
+      </div>
+
+      <div class="contestantInfo">
+        <div class="cardCity">SITTWE</div>
+        <div class="cardName">Pyae Sai Maung</div>
+      </div>
+
+    </div>
+
+
+    <div
+      class="contestantCard"
+      onclick="showContestant(
+        'Amara Lin Lin',
+        'Yangon South',
+        'IMG_20260912_123008_671.jpg',
+        'နှလုံးသားဖြင့် ခင်းသောလမ်း (The Path Paved with Heart )'
+      )"
+    >
+
+      <div class="contestantPhoto">
+        <img
+          src="IMG_20260912_123008_671.jpg"
+          alt="Amara Lin Lin"
+        >
+      </div>
+
+      <div class="contestantInfo">
+        <div class="cardCity">YANGON SOUTH</div>
+        <div class="cardName">Amara Lin Lin</div>
+      </div>
+
+    </div>
+
+
+    <div
+      class="contestantCard"
+      onclick="showContestant(
+        'Naung',
+        'Meiktila',
+        'IMG_20260912_123106_628.jpg',
+        'သက်ငယ်လုပ်သားလျော့ချရေးနှင်ကလေးငယ်တိုင်းပညာသင်ကြားနိုင်ရေးစီမံကိန်း'
+      )"
+    >
+
+      <div class="contestantPhoto">
+        <img
+          src="IMG_20260912_123106_628.jpg"
+          alt="Naung"
+        >
+      </div>
+
+      <div class="contestantInfo">
+        <div class="cardCity">MEIKTILA</div>
+        <div class="cardName">Naung</div>
+      </div>
+
+    </div>
+
+
+    <div
+      class="contestantCard"
+      onclick="showContestant(
+        'Nan Cherry',
+        'Shwe Pyi Thar',
+        'IMG_20260912_123203_731.jpg',
+        'ရဲရင့်မှု၏ အရောင်များ'
+      )"
+    >
+
+      <div class="contestantPhoto">
+        <img
+          src="IMG_20260912_123203_731.jpg"
+          alt="Nan Cherry"
+        >
+      </div>
+
+      <div class="contestantInfo">
+        <div class="cardCity">SHWE PYI THAR</div>
+        <div class="cardName">Nan Cherry</div>
+      </div>
+
+    </div>
+
+
+    <div
+      class="contestantCard"
+      onclick="showContestant(
+        'Chit Tu Tu',
+        'Hpakant',
+        'IMG_20260912_123257_302.jpg',
+        'HIV, community Awareness & prevention project'
+      )"
+    >
+
+      <div class="contestantPhoto">
+        <img
+          src="IMG_20260912_123257_302.jpg"
+          alt="Chit Tu Tu"
+        >
+      </div>
+
+      <div class="contestantInfo">
+        <div class="cardCity">HPAKANT</div>
+        <div class="cardName">Chit Tu Tu</div>
+      </div>
+
+    </div>
+
+
+    <div
+      class="contestantCard"
+      onclick="showContestant(
+        'Luvisiyarna',
+        'Kyaikkhami',
+        'IMG_20260912_123401_345.jpg',
+        'သဘာ၀ပတ်၀န်းကျင်ထိန်းသိမ်းရေး'
+      )"
+    >
+
+      <div class="contestantPhoto">
+        <img
+          src="IMG_20260912_123401_345.jpg"
+          alt="Luvisiyarna"
+        >
+      </div>
+
+      <div class="contestantInfo">
+        <div class="cardCity">KYAIKKHAMI</div>
+        <div class="cardName">Luvisiyarna</div>
+      </div>
+
+    </div>
+
+
+    <div
+      class="contestantCard"
+      onclick="showContestant(
+        'Myawaddy',
+        'Lawi Mon',
+        'IMG_20260912_123455_423.jpg',
+        'ကာကွယ်ခြင်းဖြင့် စတင်တဲ့ လှပသော အနာဂတ်'
+      )"
+    >
+
+      <div class="contestantPhoto">
+        <img
+          src="IMG_20260912_123455_423.jpg"
+          alt="Myawaddy"
+        >
+      </div>
+
+      <div class="contestantInfo">
+        <div class="cardCity">LAWI MON</div>
+        <div class="cardName">Myawaddy</div>
+      </div>
+
+    </div>
+
+
+    <div
+      class="contestantCard"
+      onclick="showContestant(
+        'Moe Yan',
+        'Mudon',
+        'IMG_20260912_123552_309.jpg',
+        'အိမ်မက်ဆီသို့ ခြေလှမ်းများ'
+      )"
+    >
+
+      <div class="contestantPhoto">
+        <img
+          src="IMG_20260912_123552_309.jpg"
+          alt="Moe Yan"
+        >
+      </div>
+
+      <div class="contestantInfo">
+        <div class="cardCity">MUDON</div>
+        <div class="cardName">Moe Yan</div>
+      </div>
+
+    </div>
+
+
+    <div
+      class="contestantCard"
+      onclick="showContestant(
+        'Marrita',
+        'Htone Aing',
+        'IMG_20260912_123642_733.jpg',
+        'လူ့ပတ်၀န်းကျင် လူ့စည်းကမ်း'
+      )"
+    >
+
+      <div class="contestantPhoto">
+        <img
+          src="IMG_20260912_123642_733.jpg"
+          alt="Marrita"
+        >
+      </div>
+
+      <div class="contestantInfo">
+        <div class="cardCity">HTONE AING</div>
+        <div class="cardName">Marrita</div>
+      </div>
+
+    </div>
+
+
+    <div
+      class="contestantCard"
+      onclick="showContestant(
+        'Htike Htike',
+        'Thamanya',
+        'IMG_20260912_123733_547.jpg',
+        'ကမ္ဘာမြေကြီးကို ချစ်ရင် ဒီကနေ စကြရအောင်လား'
+      )"
+    >
+
+      <div class="contestantPhoto">
+        <img
+          src="IMG_20260912_123733_547.jpg"
+          alt="Htike Htike"
+        >
+      </div>
+
+      <div class="contestantInfo">
+        <div class="cardCity">THAMANYA</div>
+        <div class="cardName">Htike Htike</div>
+      </div>
+
+    </div>
+
+
+    <div
+      class="contestantCard"
+      onclick="showContestant(
+        'Iris',
+        'Yangon North',
+        'IMG_20260912_123824_414.jpg',
+        'အိမ်မက်များဆီသို့'
+      )"
+    >
+
+      <div class="contestantPhoto">
+        <img
+          src="IMG_20260912_123824_414.jpg"
+          alt="Iris"
+        >
+      </div>
+
+      <div class="contestantInfo">
+        <div class="cardCity">YANGON NORTH</div>
+        <div class="cardName">Iris</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= UPDATES ================= -->
+
+<section
+  id="updates"
+  class="section"
+>
+
+  <div class="sectionIntro">
+
+    <div class="sectionEyebrow">
+      LATEST NEWS
+    </div>
+
+    <h2 class="sectionTitle">
+      Updates
+    </h2>
+
+    <p class="sectionDescription">
+      Latest updates and moments from Miss Ocean.
+    </p>
+
+  </div>
+
+
+  <div class="updateList">
+
+
+    <div
+      class="updateCard"
+      onclick="openAd(
+        'Popular Vote Top 5',
+        'Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg',
+        'ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည် ။ အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို Vote ပေးလိုက်ပါ ။'
+      )"
+    >
+
+      <div class="updateImage">
         <img
           src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
           alt="Popular Vote Top 5"
         >
+      </div>
 
-        <div class="adTap">
-          VIEW
+      <div class="updateContent">
+
+        <div class="updateLabel">
+          POPULAR VOTE
+        </div>
+
+        <div class="updateTitle">
+          Popular Vote Top 5
+        </div>
+
+        <div class="updateLine"></div>
+
+        <div class="updateText">
+          ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည် ။ အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို Vote ပေးလိုက်ပါ ။
         </div>
 
       </div>
 
+    </div>
 
-      <!-- 2 -->
 
-      <div
-        class="adCard"
-        onclick="openAd(
-          'Miss Ocean Official Tiktok Account',
-          'Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg'
-        )"
-      >
+    <div
+      class="updateCard"
+      onclick="openAd(
+        'Miss Ocean Official Tiktok Account',
+        'Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg'
+      )"
+    >
+
+      <div class="updateImage">
 
         <img
           src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
           alt="Miss Ocean Official Tiktok Account"
         >
 
-        <div class="adTap">
-          VIEW
+      </div>
+
+      <div class="updateContent">
+
+        <div class="updateLabel">
+          OFFICIAL ACCOUNT
+        </div>
+
+        <div class="updateTitle">
+          Miss Ocean Official Tiktok Account
+        </div>
+
+        <div class="updateLine"></div>
+
+        <div class="updateText">
+          Follow the official Miss Ocean Tiktok account for the latest updates, announcements and moments.
         </div>
 
       </div>
 
+    </div>
 
-      <!-- 3 -->
 
-      <div
-        class="adCard"
-        onclick="openAd(
-          'Miss Ocean 2025 Winner',
-          'IMG_20260912_131710_045.jpg'
-        )"
-      >
+    <div
+      class="updateCard"
+      onclick="openMissOceanWinner()"
+    >
+
+      <div class="updateImage">
 
         <img
           src="IMG_20260912_131710_045.jpg"
           alt="Miss Ocean 2025 Winner"
         >
 
-        <div class="adTap">
-          VIEW
+      </div>
+
+      <div class="updateContent">
+
+        <div class="updateLabel">
+          MISS OCEAN 2025
+        </div>
+
+        <div class="updateTitle">
+          Miss Ocean 2025 Winner
+        </div>
+
+        <div class="updateLine"></div>
+
+        <div class="updateText">
+          Miss Ocean 2025 winner moments.
         </div>
 
       </div>
 
+    </div>
 
-      <!-- 4 -->
 
-      <div
-        class="adCard"
-        onclick="openProjectPoster()"
-      >
+    <div
+      class="updateCard"
+      onclick="openProjectPoster()"
+    >
+
+      <div class="updateImage">
 
         <img
           src="IMG_20260912_131934_287.jpg"
           alt="Project Poster"
         >
 
-        <div class="adTap">
-          VIEW
+      </div>
+
+      <div class="updateContent">
+
+        <div class="updateLabel">
+          PROJECT
+        </div>
+
+        <div class="updateTitle">
+          Project Poster
+        </div>
+
+        <div class="updateLine"></div>
+
+        <div class="updateText">
+          Project Top 4 ပြိုင်ပွဲဝင်လေးများဖြစ်ပါတယ် ၊ ပုံရိပ်အချို့ကိုမြင်ယောင်ကြည့်ကြရအောင်
         </div>
 
       </div>
 
+    </div>
 
-      <!-- 5 -->
 
-      <div
-        class="adCard"
-        onclick="openMissOcean2025()"
-      >
+    <div
+      class="updateCard"
+      onclick="openProjectWinners()"
+    >
+
+      <div class="updateImage">
 
         <img
-          src="IMG_20260912_133011_088.jpg"
-          alt="Miss Ocean 2025 Archive"
+          src="IMG_20260912_131934_287.jpg"
+          alt="Project Winners Moment"
         >
 
-        <div class="adTap">
-          VIEW
+      </div>
+
+      <div class="updateContent">
+
+        <div class="updateLabel">
+          PROJECT MOMENT
+        </div>
+
+        <div class="updateTitle">
+          Project Winners Moment
+        </div>
+
+        <div class="updateLine"></div>
+
+        <div class="updateText">
+          Project Winner moments from Miss Ocean.
         </div>
 
       </div>
@@ -917,671 +1453,36 @@ button{
 
   </div>
 
+</section>
 
-  <!-- ================= NAVIGATION ================= -->
 
-  <div class="nav">
+<!-- ================= RESULTS ================= -->
 
-    <button
-      class="active"
-      onclick="openSection('contestants',this)"
-    >
-      <span class="navRoman">I</span>
-      <span class="navText">CONTESTANTS</span>
-    </button>
+<section
+  id="results"
+  class="section"
+>
 
-    <button
-      onclick="openSection('updates',this)"
-    >
-      <span class="navRoman">II</span>
-      <span class="navText">UPDATES</span>
-    </button>
+  <div class="resultsOnly">
 
-    <button
-      onclick="openSection('results',this)"
-    >
-      <span class="navRoman">III</span>
-      <span class="navText">RESULTS</span>
-    </button>
+    <div>
+
+      <div class="resultsOcean">
+        MISS OCEAN
+      </div>
+
+      <div class="resultsSmallLine"></div>
+
+    </div>
 
   </div>
 
-
-  <!-- ================= CONTESTANTS ================= -->
-
-  <section
-    id="contestants"
-    class="section active"
-  >
-
-    <div class="sectionIntro">
-
-      <div class="sectionEyebrow">
-        MISS OCEAN 2026
-      </div>
-
-      <h2 class="sectionTitle">
-        Contestants
-      </h2>
-
-      <p class="sectionDescription">
-        Meet the contestants representing their cities in Miss Ocean 2026.
-      </p>
-
-    </div>
-
-
-    <div class="contestantGrid">
-
-
-      <!-- 1 -->
-
-      <div
-        class="contestantCard"
-        onclick="showContestant(
-          'Pyae Sai Maung',
-          'Sittwe',
-          'IMG_20260912_122016_208.jpg',
-          'တိရစ္ဆာန်များအပေါ် ညှဉ်းပန်းနှိပ်စက်မူလျော့ချရေး'
-        )"
-      >
-
-        <div class="contestantPhoto">
-          <img
-            src="IMG_20260912_122016_208.jpg"
-            alt="Pyae Sai Maung"
-          >
-        </div>
-
-        <div class="contestantInfo">
-          <div class="cardCity">
-            SITTWE
-          </div>
-
-          <div class="cardName">
-            Pyae Sai Maung
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- 2 -->
-
-      <div
-        class="contestantCard"
-        onclick="showContestant(
-          'Amara Lin Lin',
-          'Yangon South',
-          'IMG_20260912_123008_671.jpg',
-          'နှလုံးသားဖြင့် ခင်းသောလမ်း (The Path Paved with Heart )'
-        )"
-      >
-
-        <div class="contestantPhoto">
-          <img
-            src="IMG_20260912_123008_671.jpg"
-            alt="Amara Lin Lin"
-          >
-        </div>
-
-        <div class="contestantInfo">
-          <div class="cardCity">
-            YANGON SOUTH
-          </div>
-
-          <div class="cardName">
-            Amara Lin Lin
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- 3 -->
-
-      <div
-        class="contestantCard"
-        onclick="showContestant(
-          'Naung',
-          'Meiktila',
-          'IMG_20260912_123106_628.jpg',
-          'သက်ငယ်လုပ်သားလျော့ချရေးနှင်ကလေးငယ်တိုင်းပညာသင်ကြားနိုင်ရေးစီမံကိန်း'
-        )"
-      >
-
-        <div class="contestantPhoto">
-          <img
-            src="IMG_20260912_123106_628.jpg"
-            alt="Naung"
-          >
-        </div>
-
-        <div class="contestantInfo">
-          <div class="cardCity">
-            MEIKTILA
-          </div>
-
-          <div class="cardName">
-            Naung
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- 4 -->
-
-      <div
-        class="contestantCard"
-        onclick="showContestant(
-          'Nan Cherry',
-          'Shwe Pyi Thar',
-          'IMG_20260912_123203_731.jpg',
-          'ရဲရင့်မှု၏ အရောင်များ'
-        )"
-      >
-
-        <div class="contestantPhoto">
-          <img
-            src="IMG_20260912_123203_731.jpg"
-            alt="Nan Cherry"
-          >
-        </div>
-
-        <div class="contestantInfo">
-          <div class="cardCity">
-            SHWE PYI THAR
-          </div>
-
-          <div class="cardName">
-            Nan Cherry
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- 5 -->
-
-      <div
-        class="contestantCard"
-        onclick="showContestant(
-          'Chit Tu Tu',
-          'Hpakant',
-          'IMG_20260912_123257_302.jpg',
-          'HIV, community Awareness & prevention project'
-        )"
-      >
-
-        <div class="contestantPhoto">
-          <img
-            src="IMG_20260912_123257_302.jpg"
-            alt="Chit Tu Tu"
-          >
-        </div>
-
-        <div class="contestantInfo">
-          <div class="cardCity">
-            HPAKANT
-          </div>
-
-          <div class="cardName">
-            Chit Tu Tu
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- 6 -->
-
-      <div
-        class="contestantCard"
-        onclick="showContestant(
-          'Luvisiyarna',
-          'Kyaikkhami',
-          'IMG_20260912_123401_345.jpg',
-          'သဘာ၀ပတ်၀န်းကျင်ထိန်းသိမ်းရေး'
-        )"
-      >
-
-        <div class="contestantPhoto">
-          <img
-            src="IMG_20260912_123401_345.jpg"
-            alt="Luvisiyarna"
-          >
-        </div>
-
-        <div class="contestantInfo">
-          <div class="cardCity">
-            KYAIKKHAMI
-          </div>
-
-          <div class="cardName">
-            Luvisiyarna
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- 7 -->
-
-      <div
-        class="contestantCard"
-        onclick="showContestant(
-          'Myawaddy',
-          'Lawi Mon',
-          'IMG_20260912_123455_423.jpg',
-          'ကာကွယ်ခြင်းဖြင့် စတင်တဲ့ လှပသော အနာဂတ်'
-        )"
-      >
-
-        <div class="contestantPhoto">
-          <img
-            src="IMG_20260912_123455_423.jpg"
-            alt="Myawaddy"
-          >
-        </div>
-
-        <div class="contestantInfo">
-          <div class="cardCity">
-            LAWI MON
-          </div>
-
-          <div class="cardName">
-            Myawaddy
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- 8 -->
-
-      <div
-        class="contestantCard"
-        onclick="showContestant(
-          'Moe Yan',
-          'Mudon',
-          'IMG_20260912_123552_309.jpg',
-          'အိမ်မက်ဆီသို့ ခြေလှမ်းများ'
-        )"
-      >
-
-        <div class="contestantPhoto">
-          <img
-            src="IMG_20260912_123552_309.jpg"
-            alt="Moe Yan"
-          >
-        </div>
-
-        <div class="contestantInfo">
-          <div class="cardCity">
-            MUDON
-          </div>
-
-          <div class="cardName">
-            Moe Yan
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- 9 -->
-
-      <div
-        class="contestantCard"
-        onclick="showContestant(
-          'Marrita',
-          'Htone Aing',
-          'IMG_20260912_123642_733.jpg',
-          'လူ့ပတ်၀န်းကျင် လူ့စည်းကမ်း'
-        )"
-      >
-
-        <div class="contestantPhoto">
-          <img
-            src="IMG_20260912_123642_733.jpg"
-            alt="Marrita"
-          >
-        </div>
-
-        <div class="contestantInfo">
-          <div class="cardCity">
-            HTONE AING
-          </div>
-
-          <div class="cardName">
-            Marrita
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- 10 -->
-
-      <div
-        class="contestantCard"
-        onclick="showContestant(
-          'Htike Htike',
-          'Thamanya',
-          'IMG_20260912_123733_547.jpg',
-          'ကမ္ဘာမြေကြီးကို ချစ်ရင် ဒီကနေ စကြရအောင်လား'
-        )"
-      >
-
-        <div class="contestantPhoto">
-          <img
-            src="IMG_20260912_123733_547.jpg"
-            alt="Htike Htike"
-          >
-        </div>
-
-        <div class="contestantInfo">
-          <div class="cardCity">
-            THAMANYA
-          </div>
-
-          <div class="cardName">
-            Htike Htike
-          </div>
-        </div>
-
-      </div>
-
-
-      <!-- 11 -->
-
-      <div
-        class="contestantCard"
-        onclick="showContestant(
-          'Iris',
-          'Yangon North',
-          'IMG_20260912_123824_414.jpg',
-          'အိမ်မက်များဆီသို့'
-        )"
-      >
-
-        <div class="contestantPhoto">
-          <img
-            src="IMG_20260912_123824_414.jpg"
-            alt="Iris"
-          >
-        </div>
-
-        <div class="contestantInfo">
-          <div class="cardCity">
-            YANGON NORTH
-          </div>
-
-          <div class="cardName">
-            Iris
-          </div>
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= UPDATES ================= -->
-
-  <section
-    id="updates"
-    class="section"
-  >
-
-    <div class="sectionIntro">
-
-      <div class="sectionEyebrow">
-        LATEST NEWS
-      </div>
-
-      <h2 class="sectionTitle">
-        Updates
-      </h2>
-
-      <p class="sectionDescription">
-        Latest updates and moments from Miss Ocean.
-      </p>
-
-    </div>
-
-
-    <div class="updateList">
-
-
-      <!-- UPDATE 1 -->
-
-      <div
-        class="updateCard"
-        onclick="openAd(
-          'Popular Vote Top 5',
-          'Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg',
-          'ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည် ။ အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို Vote ပေးလိုက်ပါ ။'
-        )"
-      >
-
-        <div class="updateImage">
-
-          <img
-            src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
-            alt="Popular Vote Top 5"
-          >
-
-        </div>
-
-        <div class="updateContent">
-
-          <div class="updateLabel">
-            POPULAR VOTE
-          </div>
-
-          <div class="updateTitle">
-            Popular Vote Top 5
-          </div>
-
-          <div class="updateLine"></div>
-
-          <div class="updateText">
-            ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည် ။ အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို Vote ပေးလိုက်ပါ ။
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- UPDATE 2 -->
-
-      <div
-        class="updateCard"
-        onclick="openAd(
-          'Miss Ocean Official Tiktok Account',
-          'Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg'
-        )"
-      >
-
-        <div class="updateImage">
-
-          <img
-            src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
-            alt="Miss Ocean Official Tiktok Account"
-          >
-
-        </div>
-
-        <div class="updateContent">
-
-          <div class="updateLabel">
-            OFFICIAL ACCOUNT
-          </div>
-
-          <div class="updateTitle">
-            Miss Ocean Official Tiktok Account
-          </div>
-
-          <div class="updateLine"></div>
-
-          <div class="updateText">
-            Follow the official Miss Ocean Tiktok account for the latest updates, announcements and moments.
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- UPDATE 3 -->
-
-      <div
-        class="updateCard"
-        onclick="openMissOceanWinner()"
-      >
-
-        <div class="updateImage">
-
-          <img
-            src="IMG_20260912_131710_045.jpg"
-            alt="Miss Ocean 2025 Winner"
-          >
-
-        </div>
-
-        <div class="updateContent">
-
-          <div class="updateLabel">
-            MISS OCEAN 2025
-          </div>
-
-          <div class="updateTitle">
-            Miss Ocean 2025 Winner
-          </div>
-
-          <div class="updateLine"></div>
-
-          <div class="updateText">
-            Miss Ocean 2025 winner moments.
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- UPDATE 4 -->
-
-      <div
-        class="updateCard"
-        onclick="openProjectPoster()"
-      >
-
-        <div class="updateImage">
-
-          <img
-            src="IMG_20260912_131934_287.jpg"
-            alt="Project Poster"
-          >
-
-        </div>
-
-        <div class="updateContent">
-
-          <div class="updateLabel">
-            PROJECT
-          </div>
-
-          <div class="updateTitle">
-            Project Poster
-          </div>
-
-          <div class="updateLine"></div>
-
-          <div class="updateText">
-            Project Top 4 ပြိုင်ပွဲဝင်လေးများဖြစ်ပါတယ် ၊ ပုံရိပ်အချို့ကိုမြင်ယောင်ကြည့်ကြရအောင်
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- UPDATE 5 -->
-
-      <div
-        class="updateCard"
-        onclick="openProjectWinners()"
-      >
-
-        <div class="updateImage">
-
-          <img
-            src="IMG_20260912_131934_287.jpg"
-            alt="Project Winners Moment"
-          >
-
-        </div>
-
-        <div class="updateContent">
-
-          <div class="updateLabel">
-            PROJECT MOMENT
-          </div>
-
-          <div class="updateTitle">
-            Project Winners Moment
-          </div>
-
-          <div class="updateLine"></div>
-
-          <div class="updateText">
-            Project Winner moments from Miss Ocean.
-          </div>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= RESULTS ================= -->
-
-  <section
-    id="results"
-    class="section"
-  >
-
-    <div class="resultsOnly">
-
-      <div>
-
-        <div class="resultsOcean">
-          MISS OCEAN
-        </div>
-
-        <div class="resultsSmallLine"></div>
-
-      </div>
-
-    </div>
-
-  </section>
+</section>
 
 </div>
 
 
-<!-- ================= FULL SCREEN VIEWER ================= -->
+<!-- ================= IMAGE VIEWER ================= -->
 
 <div
   id="imageViewer"
@@ -1661,7 +1562,7 @@ button{
 </div>
 
 
-<!-- ================= CONTESTANT DETAIL VIEWER ================= -->
+<!-- ================= CONTESTANT VIEWER ================= -->
 
 <div
   id="contestantViewer"
@@ -1765,7 +1666,7 @@ button{
 <script>
 
 /* =========================================================
-   LOADING 1 - 100
+   LOADING
 ========================================================= */
 
 const loadingScreen =
@@ -1779,7 +1680,6 @@ const loadingNumber =
 
 const loadingProgress =
   document.getElementById("loadingProgress");
-
 
 let count = 1;
 
@@ -1795,7 +1695,7 @@ const loader = setInterval(() => {
 
     clearInterval(loader);
 
-    loadingNumber.textContent = 100;
+    loadingNumber.textContent = "100";
     loadingProgress.style.width = "100%";
 
     setTimeout(() => {
@@ -1805,7 +1705,7 @@ const loader = setInterval(() => {
 
       startMusic();
 
-    },100);
+    },150);
 
     return;
   }
@@ -1818,40 +1718,149 @@ const loader = setInterval(() => {
 
 /* =========================================================
    MUSIC
+   VID_20260912_122734_458.mp4
 ========================================================= */
 
 const music =
   document.getElementById("music");
 
+let musicStarted = false;
+
+
+/*
+  Main music function
+*/
 
 function startMusic(){
 
-  music.muted = false;
-  music.volume = 1;
+  if(musicStarted){
+    return;
+  }
 
-  const p = music.play();
+  try{
 
-  if(p){
-    p.catch(() => {});
+    music.muted = false;
+    music.volume = 1;
+
+    /*
+      Make sure the browser has loaded
+      enough of the MP4.
+    */
+
+    music.load();
+
+    const playPromise =
+      music.play();
+
+    if(playPromise !== undefined){
+
+      playPromise
+        .then(() => {
+
+          musicStarted = true;
+
+        })
+        .catch(() => {
+
+          /*
+            Browser autoplay restriction.
+            User interaction fallback below.
+          */
+
+        });
+
+    }
+
+  }catch(error){
+
+    console.log(
+      "Music could not start:",
+      error
+    );
+
   }
 
 }
 
 
 /*
-  Browser autoplay policies can block audio with sound.
-  If that happens, the first tap/click on the page starts it.
+  Try music after loading screen.
 */
+
+setTimeout(() => {
+
+  startMusic();
+
+},5200);
+
+
+/*
+  Start music on first real user interaction
+  if browser blocked autoplay.
+*/
+
+function musicInteraction(){
+
+  if(musicStarted){
+    return;
+  }
+
+  music.muted = false;
+  music.volume = 1;
+
+  const promise =
+    music.play();
+
+  if(promise !== undefined){
+
+    promise
+      .then(() => {
+
+        musicStarted = true;
+
+        document.removeEventListener(
+          "pointerdown",
+          musicInteraction
+        );
+
+        document.removeEventListener(
+          "touchstart",
+          musicInteraction
+        );
+
+        document.removeEventListener(
+          "click",
+          musicInteraction
+        );
+
+      })
+      .catch(() => {});
+
+  }
+
+}
+
 
 document.addEventListener(
   "pointerdown",
-  startMusic,
-  {once:true}
+  musicInteraction,
+  {passive:true}
+);
+
+document.addEventListener(
+  "touchstart",
+  musicInteraction,
+  {passive:true}
+);
+
+document.addEventListener(
+  "click",
+  musicInteraction
 );
 
 
 /* =========================================================
-   SECTION NAVIGATION
+   NAVIGATION
 ========================================================= */
 
 function openSection(id,btn){
@@ -1859,22 +1868,29 @@ function openSection(id,btn){
   document
     .querySelectorAll(".section")
     .forEach(section => {
+
       section.classList.remove("active");
+
     });
 
 
   const target =
     document.getElementById(id);
 
+
   if(target){
+
     target.classList.add("active");
+
   }
 
 
   document
     .querySelectorAll(".nav button")
     .forEach(button => {
+
       button.classList.remove("active");
+
     });
 
 
@@ -1882,15 +1898,17 @@ function openSection(id,btn){
 
 
   window.scrollTo({
+
     top:0,
     behavior:"smooth"
+
   });
 
 }
 
 
 /* =========================================================
-   IMAGE VIEWER
+   VIEWER
 ========================================================= */
 
 const imageViewer =
@@ -1912,11 +1930,16 @@ const viewerGallery =
   document.getElementById("viewerGallery");
 
 
-function openAd(title,image,text=""){
+function openAd(
+  title,
+  image,
+  text=""
+){
 
   imageViewer.classList.add("show");
 
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow =
+    "hidden";
 
   viewerEyebrow.textContent =
     "MISS OCEAN OFFICIAL";
@@ -1939,11 +1962,16 @@ function openAd(title,image,text=""){
 }
 
 
-function openGallery(title,images,text=""){
+function openGallery(
+  title,
+  images,
+  text=""
+){
 
   imageViewer.classList.add("show");
 
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow =
+    "hidden";
 
   viewerEyebrow.textContent =
     "MISS OCEAN OFFICIAL";
@@ -1979,7 +2007,6 @@ function openGallery(title,images,text=""){
     img.alt =
       item.caption || title;
 
-
     box.appendChild(img);
 
 
@@ -2010,34 +2037,44 @@ function closeViewer(){
 
   imageViewer.classList.remove("show");
 
-  document.body.style.overflow = "";
+  document.body.style.overflow =
+    "";
 
-  viewerImage.src = "";
+  viewerImage.src =
+    "";
 
-  viewerGallery.innerHTML = "";
+  viewerGallery.innerHTML =
+    "";
 
 }
 
 
 /* =========================================================
-   ADVERTISEMENT / SPECIAL GALLERIES
+   SPECIAL GALLERIES
 ========================================================= */
 
 function openProjectPoster(){
 
   openGallery(
+
     "Project Poster",
+
     [
+
       {
         image:
         "IMG_20260912_131934_287.jpg"
       },
+
       {
         image:
         "IMG_20260912_132024_973.jpg"
       }
+
     ],
+
     "Project Top 4 ပြိုင်ပွဲဝင်လေးများဖြစ်ပါတယ် ၊ ပုံရိပ်အချို့ကိုမြင်ယောင်ကြည့်ကြရအောင်"
+
   );
 
 }
@@ -2046,8 +2083,11 @@ function openProjectPoster(){
 function openMissOcean2025(){
 
   openAd(
+
     "Miss Ocean 2025",
+
     "IMG_20260912_133011_088.jpg"
+
   );
 
 }
@@ -2056,21 +2096,28 @@ function openMissOcean2025(){
 function openMissOceanWinner(){
 
   openGallery(
+
     "Miss Ocean 2025",
+
     [
+
       {
         image:
         "IMG_20260912_133051_561.jpg"
       },
+
       {
         image:
         "IMG_20260912_133128_876.jpg"
       },
+
       {
         image:
         "IMG_20260912_133210_986.jpg"
       }
+
     ]
+
   );
 
 }
@@ -2079,27 +2126,37 @@ function openMissOceanWinner(){
 function openProjectWinners(){
 
   openGallery(
+
     "Project Winners Moment",
+
     [
+
       {
         image:
         "IMG_20260912_132348_017.jpg",
+
         caption:
         "Project Winner - Sittwe - Pyae Sai Maung"
       },
+
       {
         image:
         "IMG_20260912_132624_143.jpg",
+
         caption:
         "Project Winner - Meiktila - Naung"
       },
+
       {
         image:
         "IMG_20260912_132818_365.jpg",
+
         caption:
         "Hpakant - Chit Tu Tu"
       }
+
     ]
+
   );
 
 }
@@ -2122,7 +2179,9 @@ const contestantViewerName =
   document.getElementById("contestantViewerName");
 
 const contestantViewerDescription =
-  document.getElementById("contestantViewerDescription");
+  document.getElementById(
+    "contestantViewerDescription"
+  );
 
 
 function showContestant(
@@ -2169,7 +2228,7 @@ function closeContestant(){
 
 
 /* =========================================================
-   ESCAPE KEY
+   ESC KEY
 ========================================================= */
 
 document.addEventListener(
@@ -2188,7 +2247,7 @@ document.addEventListener(
 
 
 /* =========================================================
-   PREVENT BACKGROUND SCROLL WHILE VIEWER IS OPEN
+   CLOSE OUTSIDE VIEWER
 ========================================================= */
 
 imageViewer.addEventListener(
@@ -2196,7 +2255,9 @@ imageViewer.addEventListener(
   event => {
 
     if(event.target === imageViewer){
+
       closeViewer();
+
     }
 
   }
@@ -2208,7 +2269,9 @@ contestantViewer.addEventListener(
   event => {
 
     if(event.target === contestantViewer){
+
       closeContestant();
+
     }
 
   }
