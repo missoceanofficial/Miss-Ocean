@@ -23,9 +23,9 @@ rel="stylesheet">
 
 <style>
 
-/* ================================
+/* =====================================================
    RESET
-================================ */
+===================================================== */
 
 *{
     box-sizing:border-box;
@@ -49,9 +49,9 @@ button{
 }
 
 
-/* ================================
+/* =====================================================
    LOADING SCREEN
-================================ */
+===================================================== */
 
 #loadingScreen{
 
@@ -67,9 +67,9 @@ button{
     background:
     linear-gradient(
         145deg,
-        #d9f3fa 0%,
+        #d8f2fa 0%,
         #eefafd 50%,
-        #d4eff7 100%
+        #d1edf6 100%
     );
 }
 
@@ -83,18 +83,18 @@ button{
 
 .loadingLogo{
 
-    width:108px;
-    height:108px;
+    width:110px;
+    height:110px;
 
     object-fit:contain;
 
     border-radius:50%;
 
-    margin-bottom:21px;
+    margin-bottom:20px;
 
     box-shadow:
-    0 14px 35px
-    rgba(38,104,125,.13);
+    0 15px 38px
+    rgba(40,100,120,.12);
 }
 
 .loadingSmall{
@@ -103,9 +103,9 @@ button{
 
     font-weight:600;
 
-    letter-spacing:3.5px;
+    letter-spacing:3.4px;
 
-    color:#7898a5;
+    color:#7899a5;
 
     margin-bottom:10px;
 }
@@ -116,9 +116,9 @@ button{
 
     font-size:34px;
 
-    line-height:1.15;
-
     font-weight:400;
+
+    line-height:1.15;
 
     color:#175b76;
 }
@@ -127,7 +127,7 @@ button{
 
     margin-top:25px;
 
-    font-size:31px;
+    font-size:30px;
 
     font-weight:600;
 
@@ -140,14 +140,14 @@ button{
 
     height:3px;
 
-    margin-top:15px;
-
-    background:
-    rgba(70,132,151,.15);
+    margin-top:14px;
 
     border-radius:20px;
 
     overflow:hidden;
+
+    background:
+    rgba(70,132,151,.15);
 }
 
 .loadingProgress{
@@ -167,15 +167,15 @@ button{
 
     font-weight:600;
 
-    letter-spacing:2.4px;
+    letter-spacing:2.2px;
 
     color:#8aa4ae;
 }
 
 
-/* ================================
+/* =====================================================
    HIDDEN MUSIC
-================================ */
+===================================================== */
 
 #music{
 
@@ -193,9 +193,9 @@ button{
 }
 
 
-/* ================================
-   MAIN WEBSITE
-================================ */
+/* =====================================================
+   WEBSITE
+===================================================== */
 
 #website{
 
@@ -205,27 +205,27 @@ button{
 }
 
 
-/* ================================
+/* =====================================================
    HEADER
-================================ */
+===================================================== */
 
 .siteHeader{
 
-    padding:30px 18px 19px;
+    padding:27px 18px 20px;
 
     text-align:center;
 }
 
 .headerLogo{
 
-    width:54px;
-    height:54px;
+    width:55px;
+    height:55px;
 
     object-fit:contain;
 
     border-radius:50%;
 
-    margin-bottom:12px;
+    margin-bottom:11px;
 }
 
 .headerSmall{
@@ -234,9 +234,9 @@ button{
 
     font-weight:600;
 
-    letter-spacing:3.2px;
+    letter-spacing:3px;
 
-    color:#7b9aa6;
+    color:#7d9ca7;
 }
 
 .mainTitle{
@@ -247,13 +247,13 @@ button{
 
     font-size:39px;
 
-    line-height:1.1;
-
     font-weight:400;
+
+    line-height:1.15;
 
     color:#175b76;
 
-    letter-spacing:.2px;
+    letter-spacing:.3px;
 }
 
 .titleDecoration{
@@ -271,7 +271,7 @@ button{
 
 .titleDecoration span{
 
-    width:38px;
+    width:39px;
 
     height:1px;
 
@@ -281,7 +281,6 @@ button{
 .titleDecoration i{
 
     width:6px;
-
     height:6px;
 
     border-radius:50%;
@@ -290,9 +289,9 @@ button{
 }
 
 
-/* ================================
-   ADVERTISEMENT
-================================ */
+/* =====================================================
+   ADVERTISEMENT SLIDER
+===================================================== */
 
 .adWrapper{
 
@@ -300,7 +299,7 @@ button{
 
     overflow:hidden;
 
-    padding-bottom:20px;
+    padding-bottom:21px;
 }
 
 .adSlider{
@@ -329,35 +328,61 @@ button{
 
 .adCard{
 
+    position:relative;
+
     flex:0 0 88%;
 
-    height:155px;
-
-    scroll-snap-align:center;
+    height:158px;
 
     overflow:hidden;
+
+    scroll-snap-align:center;
 
     border-radius:18px;
 
     border:1px solid
     rgba(255,255,255,.95);
 
-    background:#c9eaf4;
+    background:#c8e9f3;
 
     box-shadow:
-    0 9px 24px
+    0 10px 27px
     rgba(39,105,126,.08);
+
+    cursor:pointer;
 }
 
 .adCard img{
 
     width:100%;
-
     height:100%;
 
-    display:block;
-
     object-fit:cover;
+
+    display:block;
+}
+
+.adTap{
+
+    position:absolute;
+
+    right:10px;
+    bottom:10px;
+
+    padding:5px 9px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.88);
+
+    color:#4d8191;
+
+    font-size:6px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
 }
 
 @media(min-width:700px){
@@ -371,9 +396,9 @@ button{
 }
 
 
-/* ================================
+/* =====================================================
    NAVIGATION
-================================ */
+===================================================== */
 
 .nav{
 
@@ -387,7 +412,7 @@ button{
     padding:
     5px
     16px
-    25px;
+    26px;
 }
 
 .nav button{
@@ -400,25 +425,17 @@ button{
     border-radius:17px;
 
     background:
-    rgba(255,255,255,.56);
+    rgba(255,255,255,.57);
 
-    color:#7695a0;
+    color:#7897a2;
 
     cursor:pointer;
 
     box-shadow:
-    0 7px 20px
-    rgba(40,103,125,.045);
+    0 8px 22px
+    rgba(40,103,125,.04);
 
-    transition:
-    background .2s,
-    color .2s,
-    transform .2s;
-}
-
-.nav button:active{
-
-    transform:scale(.98);
+    transition:.2s;
 }
 
 .nav button.active{
@@ -428,8 +445,13 @@ button{
     color:#285e73;
 
     box-shadow:
-    0 10px 24px
+    0 10px 25px
     rgba(40,103,125,.09);
+}
+
+.nav button:active{
+
+    transform:scale(.98);
 }
 
 .navRoman{
@@ -438,11 +460,11 @@ button{
 
     font-family:"Libre Baskerville",serif;
 
-    font-size:23px;
+    font-size:22px;
 
     margin-bottom:8px;
 
-    color:#6795a4;
+    color:#6694a3;
 }
 
 .navText{
@@ -457,9 +479,9 @@ button{
 }
 
 
-/* ================================
-   SECTION
-================================ */
+/* =====================================================
+   SECTIONS
+===================================================== */
 
 .section{
 
@@ -478,9 +500,7 @@ button{
 .sectionIntro{
 
     margin:
-    8px
-    0
-    20px;
+    8px 0 21px;
 }
 
 .sectionEyebrow{
@@ -517,13 +537,13 @@ button{
 
     line-height:1.7;
 
-    color:#7c9ba6;
+    color:#7d9ba5;
 }
 
 
-/* ================================
-   CONTESTANTS
-================================ */
+/* =====================================================
+   CONTESTANT GRID
+===================================================== */
 
 .contestantGrid{
 
@@ -549,17 +569,8 @@ button{
     cursor:pointer;
 
     box-shadow:
-    0 8px 23px
+    0 8px 24px
     rgba(39,105,126,.06);
-
-    transition:
-    transform .2s,
-    box-shadow .2s;
-}
-
-.contestantCard:active{
-
-    transform:scale(.985);
 }
 
 .contestantPhoto{
@@ -568,7 +579,7 @@ button{
 
     height:245px;
 
-    background:#c9eaf4;
+    background:#c8e9f3;
 
     overflow:hidden;
 }
@@ -576,7 +587,6 @@ button{
 .contestantPhoto img{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
@@ -598,9 +608,9 @@ button{
 
     font-weight:700;
 
-    letter-spacing:1.5px;
+    letter-spacing:1.4px;
 
-    color:#8aa5af;
+    color:#89a5af;
 
     margin-bottom:4px;
 }
@@ -617,9 +627,18 @@ button{
 }
 
 
-/* ================================
-   UPDATE CARD
-================================ */
+/* =====================================================
+   UPDATE LIST
+===================================================== */
+
+.updateList{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
 
 .updateCard{
 
@@ -633,17 +652,26 @@ button{
     overflow:hidden;
 
     box-shadow:
-    0 10px 28px
+    0 9px 27px
     rgba(39,105,126,.07);
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.updateCard:active{
+
+    transform:scale(.99);
 }
 
 .updateImage{
 
     width:100%;
 
-    height:235px;
+    height:225px;
 
-    background:#c9eaf4;
+    background:#c8e9f3;
 
     overflow:hidden;
 }
@@ -651,20 +679,19 @@ button{
 .updateImage img{
 
     width:100%;
-
     height:100%;
 
-    display:block;
-
     object-fit:cover;
+
+    display:block;
 }
 
 .updateContent{
 
     padding:
-    20px
     18px
-    23px;
+    18px
+    21px;
 }
 
 .updateLabel{
@@ -673,7 +700,7 @@ button{
 
     font-weight:700;
 
-    letter-spacing:2.5px;
+    letter-spacing:2.4px;
 
     color:#86a2ac;
 
@@ -684,15 +711,15 @@ button{
 
     font-family:"Libre Baskerville",serif;
 
-    font-size:23px;
+    font-size:21px;
 
-    line-height:1.3;
-
-    font-weight:400;
+    line-height:1.35;
 
     color:#175b76;
 
-    margin-bottom:12px;
+    font-weight:400;
+
+    margin-bottom:11px;
 }
 
 .updateLine{
@@ -703,22 +730,22 @@ button{
 
     background:#75a8b8;
 
-    margin-bottom:14px;
+    margin-bottom:13px;
 }
 
 .updateText{
 
-    font-size:12px;
+    font-size:11px;
 
-    line-height:1.9;
+    line-height:1.85;
 
-    color:#668793;
+    color:#688792;
 }
 
 
-/* ================================
+/* =====================================================
    RESULTS
-================================ */
+===================================================== */
 
 .resultsOnly{
 
@@ -731,28 +758,19 @@ button{
     justify-content:center;
 
     text-align:center;
-
-    padding:30px 10px;
-}
-
-.resultsOnlyInner{
-
-    width:100%;
 }
 
 .resultsOcean{
 
     font-family:"Libre Baskerville",serif;
 
-    font-size:34px;
-
-    line-height:1.2;
+    font-size:33px;
 
     font-weight:400;
 
-    letter-spacing:.5px;
-
     color:#175b76;
+
+    letter-spacing:.4px;
 }
 
 .resultsSmallLine{
@@ -761,114 +779,156 @@ button{
 
     height:1px;
 
-    margin:
-    16px
-    auto;
-
     background:#75a8b8;
+
+    margin:16px auto;
 }
 
 
-/* ================================
-   DETAIL MODAL
-================================ */
+/* =====================================================
+   FULL SCREEN VIEWER
+===================================================== */
 
-.modal{
+.viewer{
 
     position:fixed;
 
     inset:0;
 
-    z-index:5000;
+    z-index:10000;
 
     display:none;
 
     overflow-y:auto;
 
-    background:#f5fcfe;
+    background:
+    linear-gradient(
+        180deg,
+        #dff4fb 0%,
+        #f8fdff 100%
+    );
 }
 
-.modal.show{
+.viewer.show{
     display:block;
 }
 
-.modalBox{
+.viewerHeader{
 
-    width:100%;
+    position:sticky;
 
-    min-height:100vh;
+    top:0;
 
-    background:#f5fcfe;
+    z-index:20;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:73px;
+
+    padding:
+    10px
+    60px;
+
+    background:
+    rgba(223,244,251,.95);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid
+    rgba(91,147,163,.12);
 }
 
-.modalTop{
+.viewerLogo{
 
-    position:relative;
+    width:42px;
+    height:42px;
+
+    object-fit:contain;
+
+    border-radius:50%;
+
+    margin-right:10px;
 }
 
-.modalImage{
+.viewerBrand{
 
-    width:100%;
-
-    height:58vh;
-
-    min-height:350px;
-
-    background:#c9eaf4;
-
-    overflow:hidden;
+    text-align:left;
 }
 
-.modalImage img{
+.viewerBrandSmall{
 
-    width:100%;
+    font-size:6px;
 
-    height:100%;
+    font-weight:700;
 
-    display:block;
+    letter-spacing:2.5px;
 
-    object-fit:cover;
+    color:#7d9ca7;
 }
 
-.closeButton{
+.viewerBrandTitle{
+
+    font-family:"Libre Baskerville",serif;
+
+    font-size:17px;
+
+    color:#175b76;
+
+    line-height:1.2;
+}
+
+.viewerClose{
 
     position:absolute;
 
-    top:18px;
+    right:15px;
 
-    right:18px;
+    top:13px;
 
-    width:47px;
+    width:46px;
 
-    height:47px;
+    height:46px;
 
     border:0;
 
     border-radius:50%;
 
-    background:
-    rgba(255,255,255,.94);
+    background:#ffffff;
 
     color:#397487;
 
-    font-size:29px;
+    font-size:28px;
+
+    line-height:1;
 
     cursor:pointer;
+
+    box-shadow:
+    0 8px 22px
+    rgba(40,103,125,.10);
 }
 
-.modalContent{
+.viewerContent{
 
-    padding:
-    28px
-    20px
-    42px;
+    width:100%;
 
-    max-width:700px;
+    max-width:850px;
 
     margin:auto;
+
+    padding:
+    24px
+    16px
+    45px;
 }
 
-.modalLabel{
+.viewerEyebrow{
+
+    text-align:center;
 
     font-size:7px;
 
@@ -881,131 +941,199 @@ button{
     margin-bottom:9px;
 }
 
-.modalTitle{
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:30px;
-
-    line-height:1.35;
-
-    font-weight:400;
-
-    color:#175b76;
-}
-
-.modalLine{
-
-    width:43px;
-
-    height:1px;
-
-    margin:
-    15px
-    0
-    20px;
-
-    background:#75a8b8;
-}
-
-.detailIdentity{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:10px;
-
-    margin-top:18px;
-}
-
-.detailBox{
-
-    padding:
-    15px
-    12px;
+.viewerTitle{
 
     text-align:center;
 
-    background:#ffffff;
+    font-family:"Libre Baskerville",serif;
 
-    border:1px solid #cbe6ee;
+    font-size:27px;
 
-    border-radius:14px;
-}
-
-.detailBoxLabel{
-
-    font-size:6px;
-
-    font-weight:700;
-
-    letter-spacing:1.8px;
-
-    color:#8ba6b0;
-
-    margin-bottom:7px;
-}
-
-.detailBoxValue{
-
-    font-size:15px;
+    font-weight:400;
 
     line-height:1.35;
 
-    font-weight:600;
-
-    color:#285e73;
-}
-
-.aboutBox{
-
-    margin-top:11px;
-
-    padding:18px;
-
-    background:#ffffff;
-
-    border:1px solid #cbe6ee;
-
-    border-radius:15px;
-}
-
-.aboutLabel{
-
-    font-size:6px;
-
-    font-weight:700;
-
-    letter-spacing:2.5px;
-
-    color:#8ba6b0;
-
-    margin-bottom:9px;
-}
-
-.aboutTitle{
-
-    font-size:17px;
-
-    font-weight:600;
-
     color:#175b76;
-
-    margin-bottom:8px;
 }
 
-.aboutText{
+.viewerRule{
+
+    width:45px;
+
+    height:1px;
+
+    background:#75a8b8;
+
+    margin:
+    15px
+    auto
+    22px;
+}
+
+.viewerText{
+
+    text-align:center;
 
     font-size:11px;
 
     line-height:1.8;
 
     color:#668793;
+
+    max-width:620px;
+
+    margin:
+    0
+    auto
+    22px;
 }
 
-.closeBottom{
+
+/* =====================================================
+   SINGLE IMAGE
+===================================================== */
+
+.singleViewerImage{
+
+    width:100%;
+
+    max-height:75vh;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:auto;
+
+    border-radius:18px;
+
+    background:#c8e9f3;
+
+    box-shadow:
+    0 14px 35px
+    rgba(39,105,126,.10);
+}
+
+
+/* =====================================================
+   MULTI IMAGE GALLERY
+===================================================== */
+
+.gallery{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+}
+
+.galleryItem{
+
+    background:#ffffff;
+
+    border:1px solid #cce6ee;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 9px 25px
+    rgba(39,105,126,.06);
+}
+
+.galleryItem img{
+
+    width:100%;
+
+    max-height:650px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.galleryCaption{
+
+    padding:
+    13px
+    15px
+    16px;
+
+    text-align:center;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    line-height:1.5;
+
+    color:#397487;
+}
+
+
+/* =====================================================
+   PROJECT TWO IMAGE LAYOUT
+===================================================== */
+
+.projectPair{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:17px;
+}
+
+.projectImageBox{
+
+    background:#ffffff;
+
+    border:1px solid #cce6ee;
+
+    border-radius:19px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 9px 25px
+    rgba(39,105,126,.06);
+}
+
+.projectImageBox img{
+
+    width:100%;
+
+    display:block;
+
+    max-height:680px;
+
+    object-fit:cover;
+}
+
+.projectImageCaption{
+
+    padding:
+    13px
+    15px
+    16px;
+
+    text-align:center;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    color:#397487;
+}
+
+
+/* =====================================================
+   VIEWER CLOSE BUTTON
+===================================================== */
+
+.viewerBottomClose{
 
     display:block;
 
@@ -1034,20 +1162,128 @@ button{
 
     font-weight:700;
 
-    letter-spacing:1px;
+    letter-spacing:1.2px;
+
+    cursor:pointer;
 }
 
 
-/* ================================
+/* =====================================================
+   CONTESTANT DETAIL
+===================================================== */
+
+.contestantDetailImage{
+
+    width:100%;
+
+    max-height:72vh;
+
+    object-fit:cover;
+
+    border-radius:19px;
+
+    display:block;
+
+    background:#c8e9f3;
+}
+
+.detailIdentity{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:10px;
+
+    margin-top:18px;
+}
+
+.detailBox{
+
+    padding:
+    15px
+    12px;
+
+    text-align:center;
+
+    background:#ffffff;
+
+    border:1px solid #cce6ee;
+
+    border-radius:14px;
+}
+
+.detailBoxLabel{
+
+    font-size:6px;
+
+    font-weight:700;
+
+    letter-spacing:1.8px;
+
+    color:#8ba6b0;
+
+    margin-bottom:7px;
+}
+
+.detailBoxValue{
+
+    font-size:14px;
+
+    line-height:1.4;
+
+    font-weight:600;
+
+    color:#285e73;
+}
+
+.aboutBox{
+
+    margin-top:11px;
+
+    padding:18px;
+
+    background:#ffffff;
+
+    border:1px solid #cce6ee;
+
+    border-radius:15px;
+}
+
+.aboutLabel{
+
+    font-size:6px;
+
+    font-weight:700;
+
+    letter-spacing:2.3px;
+
+    color:#8ba6b0;
+
+    margin-bottom:9px;
+}
+
+.aboutText{
+
+    font-size:11px;
+
+    line-height:1.85;
+
+    color:#668793;
+}
+
+
+/* =====================================================
    FOOTER
-================================ */
+===================================================== */
 
 .siteFooter{
 
     text-align:center;
 
     padding:
-    5px
+    4px
     20px
     35px;
 
@@ -1055,15 +1291,15 @@ button{
 
     font-weight:600;
 
-    letter-spacing:2.2px;
+    letter-spacing:2px;
 
     color:#88a3ad;
 }
 
 
-/* ================================
+/* =====================================================
    MOBILE
-================================ */
+===================================================== */
 
 @media(max-width:380px){
 
@@ -1076,7 +1312,11 @@ button{
     }
 
     .updateImage{
-        height:215px;
+        height:205px;
+    }
+
+    .viewerTitle{
+        font-size:24px;
     }
 }
 
@@ -1104,12 +1344,13 @@ button{
         font-size:46px;
     }
 
-    .updateCard{
+    .updateList{
 
-        max-width:700px;
+        max-width:760px;
 
         margin:auto;
     }
+
 }
 
 </style>
@@ -1120,9 +1361,9 @@ button{
 <body>
 
 
-<!-- ================================================
+<!-- =====================================================
      LOADING
-================================================ -->
+===================================================== -->
 
 <div id="loadingScreen">
 
@@ -1165,9 +1406,9 @@ button{
 </div>
 
 
-<!-- ================================================
+<!-- =====================================================
      MUSIC
-================================================ -->
+===================================================== -->
 
 <video
 id="music"
@@ -1183,16 +1424,16 @@ preload="auto">
 </video>
 
 
-<!-- ================================================
-     WEBSITE
-================================================ -->
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
 
 <div id="website">
 
 
-<!-- ================================================
+<!-- =====================================================
      HEADER
-================================================ -->
+===================================================== -->
 
 <header class="siteHeader">
 
@@ -1222,66 +1463,111 @@ preload="auto">
 </header>
 
 
-<!-- ================================================
-     ADVERTISEMENT
-================================================ -->
+<!-- =====================================================
+     ADVERTISEMENTS
+===================================================== -->
 
 <div class="adWrapper">
 
     <div class="adSlider">
 
 
-        <!-- ADVERTISEMENT 1 -->
+        <!-- AD 1 -->
 
-        <div class="adCard">
+        <div
+        class="adCard"
+        onclick="openAd(
+        'MISS OCEAN OFFICIAL ACCOUNT',
+        'Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg'
+        )">
 
             <img
             src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
-            alt="Advertisement 1">
+            alt="Miss Ocean Official Account">
+
+            <div class="adTap">
+                VIEW
+            </div>
 
         </div>
 
 
-        <!-- ADVERTISEMENT 2 -->
+        <!-- AD 2 -->
 
-        <div class="adCard">
+        <div
+        class="adCard"
+        onclick="openAd(
+        'MISS OCEAN 2025 WINNER',
+        'IMG_20260912_131710_045.jpg'
+        )">
 
             <img
-            src="banner2.jpg"
-            alt="Advertisement 2">
+            src="IMG_20260912_131710_045.jpg"
+            alt="Miss Ocean 2025 Winner">
+
+            <div class="adTap">
+                VIEW
+            </div>
 
         </div>
 
 
-        <!-- ADVERTISEMENT 3 -->
+        <!-- AD 3 -->
 
-        <div class="adCard">
+        <div
+        class="adCard"
+        onclick="openAd(
+        'PROJECT POSTER',
+        'IMG_20260912_131934_287.jpg'
+        )">
 
             <img
-            src="banner3.jpg"
-            alt="Advertisement 3">
+            src="IMG_20260912_131934_287.jpg"
+            alt="Project Poster">
+
+            <div class="adTap">
+                VIEW
+            </div>
 
         </div>
 
 
-        <!-- ADVERTISEMENT 4 -->
+        <!-- AD 4 -->
 
-        <div class="adCard">
+        <div
+        class="adCard"
+        onclick="openAd(
+        'PROJECT WINNERS MOMENT',
+        'IMG_20260912_131934_287.jpg'
+        )">
 
             <img
-            src="banner4.jpg"
-            alt="Advertisement 4">
+            src="IMG_20260912_131934_287.jpg"
+            alt="Project Winners Moment">
+
+            <div class="adTap">
+                VIEW
+            </div>
 
         </div>
 
 
-        <!-- ADVERTISEMENT 5 -->
+        <!-- AD 5 -->
 
-        <div class="adCard">
+        <div
+        class="adCard"
+        onclick="openAd(
+        'MISS OCEAN 2025 WINNER',
+        'IMG_20260912_133011_088.jpg'
+        )">
 
             <img
-            src="banner5.jpg"
-            alt="Advertisement 5">
+            src="IMG_20260912_133011_088.jpg"
+            alt="Miss Ocean 2025 Winner">
+
+            <div class="adTap">
+                VIEW
+            </div>
 
         </div>
 
@@ -1291,9 +1577,9 @@ preload="auto">
 </div>
 
 
-<!-- ================================================
-     NAVIGATION
-================================================ -->
+<!-- =====================================================
+     NAV
+===================================================== -->
 
 <nav class="nav">
 
@@ -1344,9 +1630,9 @@ preload="auto">
 </nav>
 
 
-<!-- ================================================
+<!-- =====================================================
      CONTESTANTS
-================================================ -->
+===================================================== -->
 
 <section
 id="contestants"
@@ -1380,9 +1666,9 @@ class="section active">
 </section>
 
 
-<!-- ================================================
+<!-- =====================================================
      UPDATES
-================================================ -->
+===================================================== -->
 
 <section
 id="updates"
@@ -1400,46 +1686,171 @@ class="section">
         </div>
 
         <div class="sectionDescription">
-            Official updates from the Miss Ocean online pageant.
+            Official updates from the Miss Ocean
+            online pageant.
         </div>
 
     </div>
 
 
-    <!-- POPULAR VOTE UPDATE -->
-
-    <div class="updateCard">
+    <div class="updateList">
 
 
-        <div class="updateImage">
+        <!-- ============================================
+             POPULAR VOTE UPDATE
+        ============================================= -->
 
-            <img
-            src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
-            alt="Popular Vote Update">
+        <div
+        class="updateCard"
+        onclick="openUpdate('popular')">
+
+            <div class="updateImage">
+
+                <img
+                src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
+                alt="Popular Vote Update">
+
+            </div>
+
+            <div class="updateContent">
+
+                <div class="updateLabel">
+                    OFFICIAL UPDATE
+                </div>
+
+                <div class="updateTitle">
+                    Popular Vote Update
+                </div>
+
+                <div class="updateLine"></div>
+
+                <div class="updateText">
+
+                    ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။
+                    အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို
+                    Vote ပေးလိုက်ပါ။
+
+                </div>
+
+            </div>
 
         </div>
 
 
-        <div class="updateContent">
+        <!-- ============================================
+             PROJECT TOP 4
+        ============================================= -->
 
-            <div class="updateLabel">
-                OFFICIAL UPDATE
+        <div
+        class="updateCard"
+        onclick="openUpdate('projectTop4')">
+
+            <div class="updateImage">
+
+                <img
+                src="IMG_20260912_131934_287.jpg"
+                alt="Project Poster">
+
             </div>
 
+            <div class="updateContent">
 
-            <div class="updateTitle">
-                Popular Vote Update
+                <div class="updateLabel">
+                    PROJECT UPDATE
+                </div>
+
+                <div class="updateTitle">
+                    Project Poster + Project Top 4
+                </div>
+
+                <div class="updateLine"></div>
+
+                <div class="updateText">
+
+                    Project Top 4 ပြိုင်ပွဲဝင်လေးများဖြစ်ပါတယ် ၊
+                    ပုံရိပ်အချို့ကိုမြင်ယောင်ကြည့်ကြရအောင်
+
+                </div>
+
             </div>
 
+        </div>
 
-            <div class="updateLine"></div>
+
+        <!-- ============================================
+             PROJECT WINNERS MOMENT
+        ============================================= -->
+
+        <div
+        class="updateCard"
+        onclick="openUpdate('projectWinners')">
+
+            <div class="updateImage">
+
+                <img
+                src="IMG_20260912_131934_287.jpg"
+                alt="Project Winners Moment">
+
+            </div>
+
+            <div class="updateContent">
+
+                <div class="updateLabel">
+                    WINNERS MOMENT
+                </div>
+
+                <div class="updateTitle">
+                    Project Winners Moment
+                </div>
+
+                <div class="updateLine"></div>
+
+                <div class="updateText">
+
+                    Official Project Winner moments
+                    from Miss Ocean.
+
+                </div>
+
+            </div>
+
+        </div>
 
 
-            <div class="updateText">
+        <!-- ============================================
+             MISS OCEAN 2025 WINNER
+        ============================================= -->
 
-                ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။
-                အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို
-                Vote ပေးလိုက်ပါ။
+        <div
+        class="updateCard"
+        onclick="openUpdate('miss2025')">
+
+            <div class="updateImage">
+
+                <img
+                src="IMG_20260912_133011_088.jpg"
+                alt="Miss Ocean 2025 Winner">
+
+            </div>
+
+            <div class="updateContent">
+
+                <div class="updateLabel">
+                    MISS OCEAN ARCHIVE
+                </div>
+
+                <div class="updateTitle">
+                    Miss Ocean 2025 Winner
+                </div>
+
+                <div class="updateLine"></div>
+
+                <div class="updateText">
+
+                    Miss Ocean 2025
+                    official memories and moments.
+
+                </div>
 
             </div>
 
@@ -1452,9 +1863,9 @@ class="section">
 </section>
 
 
-<!-- ================================================
+<!-- =====================================================
      RESULTS
-================================================ -->
+===================================================== -->
 
 <section
 id="results"
@@ -1474,14 +1885,9 @@ class="section">
     </div>
 
 
-    <!--
-        RESULTS ARE EMPTY FOR NOW.
-        ONLY MISS OCEAN TEXT IS SHOWN.
-    -->
-
     <div class="resultsOnly">
 
-        <div class="resultsOnlyInner">
+        <div>
 
             <div class="resultsOcean">
                 MISS OCEAN
@@ -1497,9 +1903,9 @@ class="section">
 </section>
 
 
-<!-- ================================================
+<!-- =====================================================
      FOOTER
-================================================ -->
+===================================================== -->
 
 <footer class="siteFooter">
 
@@ -1511,76 +1917,52 @@ class="section">
 </div>
 
 
-<!-- ================================================
-     CONTESTANT DETAIL
-================================================ -->
+<!-- =====================================================
+     FULL SCREEN VIEWER
+===================================================== -->
 
 <div
-id="detailModal"
-class="modal">
+id="viewer"
+class="viewer">
 
 
-    <div class="modalBox">
+    <div class="viewerHeader">
 
 
-        <div class="modalTop">
+        <img
+        class="viewerLogo"
+        src="IMG_20260912_123927_081.jpg"
+        alt="Miss Ocean Logo">
 
 
-            <div class="modalImage">
+        <div class="viewerBrand">
 
-                <img
-                id="modalImage"
-                src=""
-                alt="">
-
+            <div class="viewerBrandSmall">
+                OFFICIAL ONLINE PAGEANT
             </div>
 
-
-            <button
-            class="closeButton"
-            onclick="closeModal()">
-
-                ×
-
-            </button>
-
+            <div class="viewerBrandTitle">
+                MISS OCEAN
+            </div>
 
         </div>
 
 
-        <div class="modalContent">
+        <button
+        class="viewerClose"
+        onclick="closeViewer()">
+
+            ×
+
+        </button>
 
 
-            <div
-            id="modalLabel"
-            class="modalLabel">
-            </div>
+    </div>
 
 
-            <div
-            id="modalTitle"
-            class="modalTitle">
-            </div>
-
-
-            <div class="modalLine"></div>
-
-
-            <div id="modalBody"></div>
-
-
-            <button
-            class="closeBottom"
-            onclick="closeModal()">
-
-                CLOSE
-
-            </button>
-
-
-        </div>
-
-
+    <div
+    class="viewerContent"
+    id="viewerContent">
     </div>
 
 
@@ -1589,9 +1971,9 @@ class="modal">
 
 <script>
 
-/* ================================================
+/* =====================================================
    CONTESTANT DATA
-================================================ */
+===================================================== */
 
 const contestants = [
 
@@ -1675,9 +2057,9 @@ const contestants = [
 ];
 
 
-/* ================================================
+/* =====================================================
    DISPLAY CONTESTANTS
-================================================ */
+===================================================== */
 
 const contestantGrid =
 document.getElementById("contestantGrid");
@@ -1699,7 +2081,6 @@ contestants.forEach(function(person,index){
 
             </div>
 
-
             <div class="contestantInfo">
 
                 <div class="cardCity">
@@ -1719,9 +2100,9 @@ contestants.forEach(function(person,index){
 });
 
 
-/* ================================================
+/* =====================================================
    SECTION SWITCH
-================================================ */
+===================================================== */
 
 function openSection(id,button){
 
@@ -1759,29 +2140,351 @@ function openSection(id,button){
 }
 
 
-/* ================================================
-   MODAL ELEMENTS
-================================================ */
+/* =====================================================
+   VIEWER
+===================================================== */
 
-const modal =
-document.getElementById("detailModal");
+const viewer =
+document.getElementById("viewer");
 
-const modalImage =
-document.getElementById("modalImage");
-
-const modalLabel =
-document.getElementById("modalLabel");
-
-const modalTitle =
-document.getElementById("modalTitle");
-
-const modalBody =
-document.getElementById("modalBody");
+const viewerContent =
+document.getElementById("viewerContent");
 
 
-/* ================================================
-   SHOW CONTESTANT
-================================================ */
+function showViewer(content){
+
+    viewerContent.innerHTML =
+    content;
+
+    viewer.classList.add("show");
+
+    document.body.style.overflow =
+    "hidden";
+
+    viewer.scrollTop = 0;
+
+    window.scrollTo(0,0);
+
+}
+
+
+function closeViewer(){
+
+    viewer.classList.remove("show");
+
+    viewerContent.innerHTML = "";
+
+    document.body.style.overflow =
+    "";
+
+}
+
+
+/* =====================================================
+   ADVERTISEMENT VIEW
+===================================================== */
+
+function openAd(title,image){
+
+    showViewer(`
+
+        <div class="viewerEyebrow">
+            MISS OCEAN ADVERTISEMENT
+        </div>
+
+        <div class="viewerTitle">
+            ${title}
+        </div>
+
+        <div class="viewerRule"></div>
+
+        <img
+        class="singleViewerImage"
+        src="${image}"
+        alt="${title}">
+
+        <button
+        class="viewerBottomClose"
+        onclick="closeViewer()">
+
+            CLOSE
+
+        </button>
+
+    `);
+
+}
+
+
+/* =====================================================
+   UPDATE VIEWER
+===================================================== */
+
+function openUpdate(type){
+
+
+    /* ================================================
+       POPULAR VOTE
+    ================================================ */
+
+    if(type === "popular"){
+
+        showViewer(`
+
+            <div class="viewerEyebrow">
+                OFFICIAL UPDATE
+            </div>
+
+            <div class="viewerTitle">
+                Popular Vote Update
+            </div>
+
+            <div class="viewerRule"></div>
+
+            <img
+            class="singleViewerImage"
+            src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
+            alt="Popular Vote Update">
+
+            <div class="viewerText">
+
+                ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။
+                အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို
+                Vote ပေးလိုက်ပါ။
+
+            </div>
+
+            <button
+            class="viewerBottomClose"
+            onclick="closeViewer()">
+
+                CLOSE
+
+            </button>
+
+        `);
+
+    }
+
+
+    /* ================================================
+       PROJECT TOP 4
+    ================================================ */
+
+    if(type === "projectTop4"){
+
+        showViewer(`
+
+            <div class="viewerEyebrow">
+                OFFICIAL PROJECT UPDATE
+            </div>
+
+            <div class="viewerTitle">
+                Project Poster + Project Top 4
+            </div>
+
+            <div class="viewerRule"></div>
+
+            <div class="viewerText">
+
+                Project Top 4 ပြိုင်ပွဲဝင်လေးများဖြစ်ပါတယ် ၊
+                ပုံရိပ်အချို့ကိုမြင်ယောင်ကြည့်ကြရအောင်
+
+            </div>
+
+
+            <div class="projectPair">
+
+
+                <div class="projectImageBox">
+
+                    <img
+                    src="IMG_20260912_131934_287.jpg"
+                    alt="Project Poster">
+
+                    <div class="projectImageCaption">
+                        PROJECT POSTER
+                    </div>
+
+                </div>
+
+
+                <div class="projectImageBox">
+
+                    <img
+                    src="IMG_20260912_132024_973.jpg"
+                    alt="Project Top 4">
+
+                    <div class="projectImageCaption">
+                        PROJECT TOP 4
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+            class="viewerBottomClose"
+            onclick="closeViewer()">
+
+                CLOSE
+
+            </button>
+
+        `);
+
+    }
+
+
+    /* ================================================
+       PROJECT WINNERS
+    ================================================ */
+
+    if(type === "projectWinners"){
+
+        showViewer(`
+
+            <div class="viewerEyebrow">
+                OFFICIAL WINNERS MOMENT
+            </div>
+
+            <div class="viewerTitle">
+                Project Winners Moment
+            </div>
+
+            <div class="viewerRule"></div>
+
+
+            <div class="gallery">
+
+
+                <div class="galleryItem">
+
+                    <img
+                    src="IMG_20260912_132348_017.jpg"
+                    alt="Project Winner - Sittwe - Pyae Sai Maung">
+
+                    <div class="galleryCaption">
+                        Project Winner - Sittwe - Pyae Sai Maung
+                    </div>
+
+                </div>
+
+
+                <div class="galleryItem">
+
+                    <img
+                    src="IMG_20260912_132624_143.jpg"
+                    alt="Project Winner - Meiktila - Naung">
+
+                    <div class="galleryCaption">
+                        Project Winner - Meiktila - Naung
+                    </div>
+
+                </div>
+
+
+                <div class="galleryItem">
+
+                    <img
+                    src="IMG_20260912_132818_365.jpg"
+                    alt="Hpakant - Chit Tu Tu">
+
+                    <div class="galleryCaption">
+                        Hpakant - Chit Tu Tu
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+            class="viewerBottomClose"
+            onclick="closeViewer()">
+
+                CLOSE
+
+            </button>
+
+        `);
+
+    }
+
+
+    /* ================================================
+       MISS OCEAN 2025
+    ================================================ */
+
+    if(type === "miss2025"){
+
+        showViewer(`
+
+            <div class="viewerEyebrow">
+                OFFICIAL ARCHIVE
+            </div>
+
+            <div class="viewerTitle">
+                Miss Ocean 2025
+            </div>
+
+            <div class="viewerRule"></div>
+
+
+            <div class="gallery">
+
+
+                <div class="galleryItem">
+
+                    <img
+                    src="IMG_20260912_133051_561.jpg"
+                    alt="Miss Ocean 2025">
+
+                </div>
+
+
+                <div class="galleryItem">
+
+                    <img
+                    src="IMG_20260912_133128_876.jpg"
+                    alt="Miss Ocean 2025">
+
+                </div>
+
+
+                <div class="galleryItem">
+
+                    <img
+                    src="IMG_20260912_133210_986.jpg"
+                    alt="Miss Ocean 2025">
+
+                </div>
+
+
+            </div>
+
+
+            <button
+            class="viewerBottomClose"
+            onclick="closeViewer()">
+
+                CLOSE
+
+            </button>
+
+        `);
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTESTANT VIEW
+===================================================== */
 
 function showContestant(index){
 
@@ -1789,23 +2492,24 @@ function showContestant(index){
     contestants[index];
 
 
-    modalImage.src =
-    person.image;
+    showViewer(`
+
+        <div class="viewerEyebrow">
+            OFFICIAL CONTESTANT
+        </div>
+
+        <div class="viewerTitle">
+            ${person.name}
+        </div>
+
+        <div class="viewerRule"></div>
 
 
-    modalImage.alt =
-    person.name;
+        <img
+        class="contestantDetailImage"
+        src="${person.image}"
+        alt="${person.name}">
 
-
-    modalLabel.textContent =
-    "OFFICIAL CONTESTANT";
-
-
-    modalTitle.textContent =
-    person.name;
-
-
-    modalBody.innerHTML = `
 
         <div class="detailIdentity">
 
@@ -1851,34 +2555,23 @@ function showContestant(index){
 
         </div>
 
-    `;
 
+        <button
+        class="viewerBottomClose"
+        onclick="closeViewer()">
 
-    modal.classList.add("show");
+            CLOSE
 
-    document.body.style.overflow =
-    "hidden";
+        </button>
 
-}
-
-
-/* ================================================
-   CLOSE MODAL
-================================================ */
-
-function closeModal(){
-
-    modal.classList.remove("show");
-
-    document.body.style.overflow =
-    "";
+    `);
 
 }
 
 
-/* ================================================
+/* =====================================================
    LOADING 1 → 100
-================================================ */
+===================================================== */
 
 const loadingScreen =
 document.getElementById("loadingScreen");
@@ -1934,9 +2627,9 @@ setInterval(function(){
 },50);
 
 
-/* ================================================
+/* =====================================================
    MUSIC
-================================================ */
+===================================================== */
 
 const music =
 document.getElementById("music");
@@ -1958,9 +2651,12 @@ function startMusic(){
         playPromise.catch(function(){
 
             /*
-              Some mobile browsers block
-              sound autoplay until the user
-              touches the page.
+
+              Mobile browsers may block
+              sound autoplay.
+
+              A user tap will start it.
+
             */
 
         });
@@ -1970,9 +2666,9 @@ function startMusic(){
 }
 
 
-/* ================================================
-   MOBILE AUTOPLAY FALLBACK
-================================================ */
+/* =====================================================
+   MOBILE MUSIC FALLBACK
+===================================================== */
 
 document.addEventListener(
     "pointerdown",
@@ -1985,9 +2681,9 @@ document.addEventListener(
 );
 
 
-/* ================================================
-   CLOSE MODAL WITH ESCAPE
-================================================ */
+/* =====================================================
+   ESCAPE TO CLOSE
+===================================================== */
 
 document.addEventListener(
     "keydown",
@@ -1995,7 +2691,7 @@ document.addEventListener(
 
         if(event.key === "Escape"){
 
-            closeModal();
+            closeViewer();
 
         }
 
