@@ -6,26 +6,25 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+content="width=device-width, initial-scale=1.0">
 
 <title>Miss Ocean 2026</title>
 
 <link rel="preconnect"
-      href="https://fonts.googleapis.com">
+href="https://fonts.googleapis.com">
 
 <link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+href="https://fonts.gstatic.com"
+crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
-      rel="stylesheet">
+rel="stylesheet">
 
 
 <style>
 
 /* =====================================================
-   MISS OCEAN 2026
-   CLEAN INTERNATIONAL PAGEANT DESIGN
+   BASIC
 ===================================================== */
 
 *{
@@ -51,14 +50,13 @@ button{
 
 
 /* =====================================================
-   LOADING SCREEN
+   LOADING
 ===================================================== */
 
 #loadingScreen{
 
     position:fixed;
     inset:0;
-
     z-index:99999;
 
     display:flex;
@@ -66,25 +64,24 @@ button{
     justify-content:center;
 
     background:
-        linear-gradient(
-            145deg,
-            #d8f2fa,
-            #eaf9fc,
-            #d4eef7
-        );
+    linear-gradient(
+        145deg,
+        #d8f2fa,
+        #eaf9fc,
+        #d4eef7
+    );
 }
 
 .loadingInner{
+
     width:90%;
     max-width:420px;
 
     text-align:center;
 }
 
-
-/* Logo */
-
 .loadingLogo{
+
     width:105px;
     height:105px;
 
@@ -95,14 +92,12 @@ button{
     margin-bottom:22px;
 
     box-shadow:
-        0 12px 35px
-        rgba(38,104,125,.12);
+    0 12px 35px
+    rgba(38,104,125,.12);
 }
 
-
-/* Small text */
-
 .loadingSmall{
+
     font-size:8px;
     font-weight:600;
 
@@ -113,24 +108,19 @@ button{
     margin-bottom:10px;
 }
 
-
-/* Loading title */
-
 .loadingTitle{
+
     font-family:"Libre Baskerville",serif;
 
     font-size:34px;
-    font-weight:400;
 
-    letter-spacing:.5px;
+    font-weight:400;
 
     color:#175b76;
 }
 
-
-/* Number */
-
 .loadingNumber{
+
     margin-top:25px;
 
     font-size:32px;
@@ -139,9 +129,6 @@ button{
     color:#28677d;
 }
 
-
-/* Progress */
-
 .loadingBar{
 
     width:100%;
@@ -149,7 +136,8 @@ button{
 
     margin-top:15px;
 
-    background:rgba(70,132,151,.15);
+    background:
+    rgba(70,132,151,.15);
 
     border-radius:20px;
 
@@ -162,12 +150,10 @@ button{
     height:100%;
 
     background:#5f9bad;
-
-    transition:width .04s linear;
 }
 
-
 .loadingText{
+
     margin-top:12px;
 
     font-size:7px;
@@ -200,11 +186,13 @@ button{
 
 
 /* =====================================================
-   MAIN WEBSITE
+   WEBSITE
 ===================================================== */
 
 #website{
+
     display:none;
+
     min-height:100vh;
 }
 
@@ -249,11 +237,10 @@ button{
     font-family:"Libre Baskerville",serif;
 
     font-size:39px;
+
     line-height:1.1;
 
     font-weight:400;
-
-    letter-spacing:.4px;
 
     color:#175b76;
 }
@@ -261,6 +248,7 @@ button{
 .titleDecoration{
 
     display:flex;
+
     justify-content:center;
     align-items:center;
 
@@ -289,7 +277,7 @@ button{
 
 
 /* =====================================================
-   ADVERTISEMENT SLIDER
+   ADS
 ===================================================== */
 
 .adWrapper{
@@ -335,13 +323,13 @@ button{
     border-radius:18px;
 
     border:1px solid
-            rgba(255,255,255,.95);
+    rgba(255,255,255,.95);
 
     background:#c9eaf4;
 
     box-shadow:
-        0 9px 24px
-        rgba(39,105,126,.08);
+    0 9px 24px
+    rgba(39,105,126,.08);
 }
 
 .adCard img{
@@ -357,14 +345,16 @@ button{
 @media(min-width:700px){
 
     .adCard{
+
         flex-basis:58%;
+
         height:185px;
     }
 }
 
 
 /* =====================================================
-   NAVIGATION
+   NAV
 ===================================================== */
 
 .nav{
@@ -372,7 +362,7 @@ button{
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+    repeat(3,1fr);
 
     gap:10px;
 
@@ -384,21 +374,22 @@ button{
     min-height:88px;
 
     border:1px solid
-           rgba(255,255,255,.95);
+    rgba(255,255,255,.95);
 
     border-radius:17px;
 
-    background:rgba(255,255,255,.55);
+    background:
+    rgba(255,255,255,.55);
 
     color:#7695a0;
 
     cursor:pointer;
 
-    transition:.2s;
-
     box-shadow:
-        0 7px 20px
-        rgba(40,103,125,.045);
+    0 7px 20px
+    rgba(40,103,125,.045);
+
+    transition:.2s;
 }
 
 .nav button.active{
@@ -408,8 +399,8 @@ button{
     color:#285e73;
 
     box-shadow:
-        0 10px 24px
-        rgba(40,103,125,.09);
+    0 10px 24px
+    rgba(40,103,125,.09);
 }
 
 .navRoman{
@@ -438,7 +429,7 @@ button{
 
 
 /* =====================================================
-   CONTENT
+   SECTIONS
 ===================================================== */
 
 .section{
@@ -474,6 +465,7 @@ button{
     font-family:"Libre Baskerville",serif;
 
     font-size:29px;
+
     line-height:1.25;
 
     font-weight:400;
@@ -494,7 +486,7 @@ button{
 
 
 /* =====================================================
-   CONTESTANT GRID
+   CONTESTANTS
 ===================================================== */
 
 .contestantGrid{
@@ -502,7 +494,7 @@ button{
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+    repeat(2,1fr);
 
     gap:14px;
 }
@@ -512,7 +504,7 @@ button{
     background:#ffffff;
 
     border:1px solid
-           rgba(255,255,255,.95);
+    rgba(255,255,255,.95);
 
     border-radius:17px;
 
@@ -521,22 +513,14 @@ button{
     cursor:pointer;
 
     box-shadow:
-        0 8px 23px
-        rgba(39,105,126,.06);
-
-    transition:
-        transform .2s,
-        box-shadow .2s;
-}
-
-.contestantCard:active{
-
-    transform:scale(.98);
+    0 8px 23px
+    rgba(39,105,126,.06);
 }
 
 .contestantPhoto{
 
     width:100%;
+
     height:245px;
 
     background:#c9eaf4;
@@ -562,6 +546,7 @@ button{
 .cardCity{
 
     font-size:7px;
+
     font-weight:700;
 
     letter-spacing:1.5px;
@@ -584,165 +569,69 @@ button{
 
 
 /* =====================================================
-   UPDATE CARDS
+   EMPTY UPDATE / RESULTS
 ===================================================== */
 
-.updateList{
+.emptySection{
 
-    display:grid;
-
-    gap:13px;
-}
-
-.updateCard{
+    min-height:240px;
 
     display:flex;
 
     align-items:center;
 
-    gap:14px;
-
-    padding:13px;
-
-    background:#ffffff;
-
-    border-radius:17px;
-
-    border:1px solid
-           rgba(255,255,255,.95);
-
-    cursor:pointer;
-
-    box-shadow:
-        0 8px 22px
-        rgba(39,105,126,.06);
-}
-
-.updateNumber{
-
-    flex:0 0 48px;
-
-    width:48px;
-    height:48px;
-
-    display:flex;
-    align-items:center;
     justify-content:center;
 
-    border-radius:14px;
+    text-align:center;
+}
 
-    background:#e7f6fa;
+.emptyInner{
+
+    width:100%;
+
+    padding:45px 20px;
+
+    border-top:1px solid
+    rgba(117,168,184,.22);
+
+    border-bottom:1px solid
+    rgba(117,168,184,.22);
+}
+
+.emptyMark{
 
     font-family:"Libre Baskerville",serif;
 
-    font-size:17px;
+    font-size:28px;
 
-    color:#4e8799;
+    color:#82a6b2;
+
+    margin-bottom:12px;
 }
 
-.updateInfo{
-    min-width:0;
+.emptyTitle{
+
+    font-family:"Libre Baskerville",serif;
+
+    font-size:20px;
+
+    color:#397487;
 }
 
-.updateType{
+.emptyText{
 
-    font-size:7px;
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    color:#86a2ac;
-
-    margin-bottom:5px;
-}
-
-.updateTitle{
-
-    font-size:16px;
-
-    line-height:1.3;
-
-    font-weight:600;
-
-    color:#285e73;
-}
-
-.updateMeta{
-
-    margin-top:5px;
+    margin-top:8px;
 
     font-size:9px;
 
-    color:#8aa3ac;
+    letter-spacing:1px;
+
+    color:#8aa4ae;
 }
 
 
 /* =====================================================
-   RESULTS LIST
-===================================================== */
-
-.resultList{
-
-    display:grid;
-
-    gap:13px;
-}
-
-.resultCard{
-
-    padding:18px;
-
-    background:#ffffff;
-
-    border:1px solid
-           rgba(255,255,255,.95);
-
-    border-radius:18px;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 8px 22px
-        rgba(39,105,126,.06);
-}
-
-.resultCardSmall{
-
-    font-size:7px;
-    font-weight:700;
-
-    letter-spacing:2.2px;
-
-    color:#86a2ac;
-
-    margin-bottom:7px;
-}
-
-.resultCardTitle{
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:21px;
-
-    line-height:1.3;
-
-    font-weight:400;
-
-    color:#175b76;
-}
-
-.resultCardText{
-
-    margin-top:7px;
-
-    font-size:9px;
-
-    color:#8aa3ac;
-}
-
-
-/* =====================================================
-   FULL SCREEN MODAL
+   MODAL
 ===================================================== */
 
 .modal{
@@ -815,19 +704,14 @@ button{
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.94);
+    background:
+    rgba(255,255,255,.94);
 
     color:#397487;
 
     font-size:29px;
 
-    line-height:1;
-
     cursor:pointer;
-
-    box-shadow:
-        0 8px 25px
-        rgba(30,96,119,.12);
 }
 
 .modalContent{
@@ -837,13 +721,12 @@ button{
     max-width:700px;
 
     margin:auto;
-
-    text-align:left;
 }
 
 .modalLabel{
 
     font-size:7px;
+
     font-weight:700;
 
     letter-spacing:3px;
@@ -869,6 +752,7 @@ button{
 .modalLine{
 
     width:43px;
+
     height:1px;
 
     margin:15px 0 20px;
@@ -885,7 +769,8 @@ button{
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+    1fr 1fr;
 
     gap:10px;
 
@@ -908,6 +793,7 @@ button{
 .detailBoxLabel{
 
     font-size:6px;
+
     font-weight:700;
 
     letter-spacing:1.8px;
@@ -944,6 +830,7 @@ button{
 .aboutLabel{
 
     font-size:6px;
+
     font-weight:700;
 
     letter-spacing:2.5px;
@@ -973,309 +860,6 @@ button{
     color:#668793;
 }
 
-
-/* =====================================================
-   RESULT DETAIL PAGE
-===================================================== */
-
-.resultPageHeader{
-
-    text-align:center;
-
-    padding:36px 18px 18px;
-}
-
-.resultPageEyebrow{
-
-    font-size:7px;
-    font-weight:700;
-
-    letter-spacing:3px;
-
-    color:#82a0aa;
-}
-
-.resultPageTitle{
-
-    margin-top:10px;
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:31px;
-
-    line-height:1.25;
-
-    font-weight:400;
-
-    color:#175b76;
-}
-
-.resultPageLine{
-
-    width:42px;
-    height:1px;
-
-    margin:16px auto;
-
-    background:#75a8b8;
-}
-
-
-/* Winner */
-
-.winnerArea{
-
-    padding:0 18px;
-}
-
-.winnerPhoto{
-
-    width:100%;
-
-    height:520px;
-
-    overflow:hidden;
-
-    border-radius:20px;
-
-    background:#c9eaf4;
-
-    border:1px solid
-           rgba(255,255,255,.95);
-
-    box-shadow:
-        0 12px 30px
-        rgba(39,105,126,.09);
-}
-
-.winnerPhoto img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-}
-
-.winnerCaption{
-
-    text-align:center;
-
-    padding:20px 10px 4px;
-}
-
-.winnerLabel{
-
-    font-size:7px;
-    font-weight:700;
-
-    letter-spacing:3.5px;
-
-    color:#86a2ac;
-}
-
-.winnerCity{
-
-    margin-top:8px;
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:34px;
-
-    line-height:1.2;
-
-    font-weight:400;
-
-    color:#175b76;
-}
-
-.winnerName{
-
-    margin-top:8px;
-
-    font-size:15px;
-
-    font-weight:500;
-
-    color:#628591;
-}
-
-
-/* Top 5 */
-
-.topFive{
-
-    padding:28px 18px 45px;
-}
-
-.topFiveHeading{
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:29px;
-
-    font-weight:400;
-
-    color:#175b76;
-
-    margin-bottom:16px;
-}
-
-.topItem{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    padding:12px;
-
-    margin-bottom:12px;
-
-    background:#ffffff;
-
-    border:1px solid
-           rgba(255,255,255,.95);
-
-    border-radius:18px;
-
-    box-shadow:
-        0 7px 20px
-        rgba(39,105,126,.06);
-}
-
-.topRank{
-
-    flex:0 0 42px;
-
-    width:42px;
-    height:42px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:#e7f6fa;
-
-    font-size:15px;
-
-    font-weight:600;
-
-    color:#4d8497;
-}
-
-.topPhoto{
-
-    flex:0 0 100px;
-
-    width:100px;
-    height:100px;
-
-    overflow:hidden;
-
-    border-radius:14px;
-
-    background:#c9eaf4;
-}
-
-.topPhoto img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-}
-
-.topDetails{
-
-    min-width:0;
-}
-
-.topPlace{
-
-    font-size:7px;
-
-    font-weight:700;
-
-    letter-spacing:1.8px;
-
-    color:#8ba5af;
-
-    margin-bottom:6px;
-}
-
-.topPerson{
-
-    font-size:17px;
-
-    line-height:1.3;
-
-    font-weight:600;
-
-    color:#285e73;
-}
-
-.topCity{
-
-    margin-top:5px;
-
-    font-size:9px;
-
-    color:#7e9aa4;
-}
-
-
-/* Official statement */
-
-.officialStatement{
-
-    margin-top:25px;
-
-    padding:23px 18px;
-
-    text-align:center;
-
-    border-top:1px solid #c5e2eb;
-
-    border-bottom:1px solid #c5e2eb;
-}
-
-.officialStatementTitle{
-
-    font-family:"Libre Baskerville",serif;
-
-    font-size:19px;
-
-    line-height:1.55;
-
-    color:#175b76;
-}
-
-.officialStatementText{
-
-    margin-top:8px;
-
-    font-size:7px;
-
-    font-weight:600;
-
-    letter-spacing:2px;
-
-    color:#86a2ac;
-}
-
-
-/* =====================================================
-   CLOSE BOTTOM
-===================================================== */
-
 .closeBottom{
 
     display:block;
@@ -1301,8 +885,6 @@ button{
     font-weight:700;
 
     letter-spacing:1px;
-
-    cursor:pointer;
 }
 
 
@@ -1327,7 +909,7 @@ button{
 
 
 /* =====================================================
-   RESPONSIVE
+   MOBILE
 ===================================================== */
 
 @media(max-width:380px){
@@ -1339,28 +921,15 @@ button{
     .contestantPhoto{
         height:215px;
     }
-
-    .winnerPhoto{
-        height:450px;
-    }
-
-    .topPhoto{
-        flex-basis:90px;
-        width:90px;
-        height:90px;
-    }
-
-    .topPerson{
-        font-size:15px;
-    }
 }
 
 
 @media(min-width:700px){
 
     .contestantGrid{
+
         grid-template-columns:
-            repeat(3,1fr);
+        repeat(3,1fr);
 
         max-width:1000px;
 
@@ -1368,18 +937,10 @@ button{
     }
 
     .section{
+
         max-width:1100px;
-        margin:auto;
-    }
 
-    .winnerArea,
-    .topFive{
-        max-width:850px;
         margin:auto;
-    }
-
-    .winnerPhoto{
-        height:650px;
     }
 
     .mainTitle{
@@ -1396,7 +957,7 @@ button{
 
 
 <!-- =====================================================
-     LOADING SCREEN
+     LOADING
 ===================================================== -->
 
 <div id="loadingScreen">
@@ -1404,9 +965,9 @@ button{
     <div class="loadingInner">
 
         <img
-            class="loadingLogo"
-            src="IMG_20260912_123927_081.jpg"
-            alt="Miss Ocean Logo">
+        class="loadingLogo"
+        src="IMG_20260912_123927_081.jpg"
+        alt="Miss Ocean Logo">
 
         <div class="loadingSmall">
             THE OFFICIAL ONLINE PAGEANT
@@ -1417,16 +978,16 @@ button{
         </div>
 
         <div
-            class="loadingNumber"
-            id="loadingNumber">
+        class="loadingNumber"
+        id="loadingNumber">
             1
         </div>
 
         <div class="loadingBar">
 
             <div
-                class="loadingProgress"
-                id="loadingProgress">
+            class="loadingProgress"
+            id="loadingProgress">
             </div>
 
         </div>
@@ -1441,19 +1002,19 @@ button{
 
 
 <!-- =====================================================
-     HIDDEN MUSIC
+     MUSIC
 ===================================================== -->
 
 <video
-    id="music"
-    autoplay
-    loop
-    playsinline
-    preload="auto">
+id="music"
+autoplay
+loop
+playsinline
+preload="auto">
 
     <source
-        src="VID_20260912_122734_458.mp4"
-        type="video/mp4">
+    src="VID_20260912_122734_458.mp4"
+    type="video/mp4">
 
 </video>
 
@@ -1465,247 +1026,278 @@ button{
 <div id="website">
 
 
-    <!-- HEADER -->
+<header class="siteHeader">
 
-    <header class="siteHeader">
+    <img
+    class="headerLogo"
+    src="IMG_20260912_123927_081.jpg"
+    alt="Miss Ocean Logo">
 
-        <img
-            class="headerLogo"
-            src="IMG_20260912_123927_081.jpg"
-            alt="Miss Ocean">
+    <div class="headerSmall">
+        THE OFFICIAL ONLINE PAGEANT
+    </div>
 
-        <div class="headerSmall">
-            THE OFFICIAL ONLINE PAGEANT
+    <div class="mainTitle">
+        MISS OCEAN
+    </div>
+
+    <div class="titleDecoration">
+
+        <span></span>
+        <i></i>
+        <span></span>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     ADS
+===================================================== -->
+
+<div class="adWrapper">
+
+    <div class="adSlider">
+
+        <div class="adCard">
+
+            <img
+            src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
+            alt="Advertisement">
+
         </div>
 
-        <div class="mainTitle">
-            MISS OCEAN
+        <div class="adCard">
+            <img
+            src="banner2.jpg"
+            alt="Advertisement">
         </div>
 
-        <div class="titleDecoration">
-
-            <span></span>
-            <i></i>
-            <span></span>
-
+        <div class="adCard">
+            <img
+            src="banner3.jpg"
+            alt="Advertisement">
         </div>
 
-    </header>
+        <div class="adCard">
+            <img
+            src="banner4.jpg"
+            alt="Advertisement">
+        </div>
+
+        <div class="adCard">
+            <img
+            src="banner5.jpg"
+            alt="Advertisement">
+        </div>
+
+    </div>
+
+</div>
 
 
+<!-- =====================================================
+     NAV
+===================================================== -->
 
-    <!-- =================================================
-         ADVERTISEMENT
-    ================================================= -->
+<nav class="nav">
 
-    <div class="adWrapper">
+    <button
+    class="active"
+    onclick="openSection('contestants',this)">
 
-        <div class="adSlider">
+        <span class="navRoman">
+            I
+        </span>
 
-            <div class="adCard">
-                <img
-                    src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
-                    alt="Advertisement 1">
+        <span class="navText">
+            CONTESTANTS
+        </span>
+
+    </button>
+
+
+    <button
+    onclick="openSection('updates',this)">
+
+        <span class="navRoman">
+            II
+        </span>
+
+        <span class="navText">
+            UPDATES
+        </span>
+
+    </button>
+
+
+    <button
+    onclick="openSection('results',this)">
+
+        <span class="navRoman">
+            III
+        </span>
+
+        <span class="navText">
+            RESULTS
+        </span>
+
+    </button>
+
+</nav>
+
+
+<!-- =====================================================
+     CONTESTANTS
+===================================================== -->
+
+<section
+id="contestants"
+class="section active">
+
+    <div class="sectionIntro">
+
+        <div class="sectionEyebrow">
+            MEET THE DELEGATES
+        </div>
+
+        <div class="sectionTitle">
+            Contestants
+        </div>
+
+        <div class="sectionDescription">
+            Discover the official delegates competing
+            in Miss Ocean 2026.
+        </div>
+
+    </div>
+
+
+    <div
+    class="contestantGrid"
+    id="contestantGrid">
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     UPDATES
+===================================================== -->
+
+<section
+id="updates"
+class="section">
+
+    <div class="sectionIntro">
+
+        <div class="sectionEyebrow">
+            MISS OCEAN 2026
+        </div>
+
+        <div class="sectionTitle">
+            Updates
+        </div>
+
+        <div class="sectionDescription">
+            Official competition updates will appear here.
+        </div>
+
+    </div>
+
+
+    <!-- EMPTY FOR NOW -->
+
+    <div class="emptySection">
+
+        <div class="emptyInner">
+
+            <div class="emptyMark">
+                —
             </div>
 
-            <div class="adCard">
-                <img
-                    src="banner2.jpg"
-                    alt="Advertisement 2">
+            <div class="emptyTitle">
+                No Updates Yet
             </div>
 
-            <div class="adCard">
-                <img
-                    src="banner3.jpg"
-                    alt="Advertisement 3">
-            </div>
-
-            <div class="adCard">
-                <img
-                    src="banner4.jpg"
-                    alt="Advertisement 4">
-            </div>
-
-            <div class="adCard">
-                <img
-                    src="banner5.jpg"
-                    alt="Advertisement 5">
+            <div class="emptyText">
+                OFFICIAL UPDATES WILL BE PUBLISHED HERE
             </div>
 
         </div>
 
     </div>
 
+</section>
 
 
-    <!-- =================================================
-         NAVIGATION
-    ================================================= -->
+<!-- =====================================================
+     RESULTS
+===================================================== -->
 
-    <nav class="nav">
+<section
+id="results"
+class="section">
 
-        <button
-            class="active"
-            onclick="openSection('contestants',this)">
+    <div class="sectionIntro">
 
-            <span class="navRoman">I</span>
+        <div class="sectionEyebrow">
+            MISS OCEAN 2026
+        </div>
 
-            <span class="navText">
-                CONTESTANTS
-            </span>
+        <div class="sectionTitle">
+            Results
+        </div>
 
-        </button>
+        <div class="sectionDescription">
+            Official competition results will appear here.
+        </div>
 
-
-        <button
-            onclick="openSection('updates',this)">
-
-            <span class="navRoman">II</span>
-
-            <span class="navText">
-                UPDATES
-            </span>
-
-        </button>
+    </div>
 
 
-        <button
-            onclick="openSection('results',this)">
+    <!-- EMPTY FOR NOW -->
 
-            <span class="navRoman">III</span>
+    <div class="emptySection">
 
-            <span class="navText">
-                RESULTS
-            </span>
+        <div class="emptyInner">
 
-        </button>
-
-    </nav>
-
-
-
-    <!-- =================================================
-         CONTESTANTS
-    ================================================= -->
-
-    <section
-        id="contestants"
-        class="section active">
-
-        <div class="sectionIntro">
-
-            <div class="sectionEyebrow">
-                MEET THE DELEGATES
+            <div class="emptyMark">
+                —
             </div>
 
-            <div class="sectionTitle">
-                Contestants
+            <div class="emptyTitle">
+                No Results Yet
             </div>
 
-            <div class="sectionDescription">
-                Discover the official delegates competing
-                in Miss Ocean 2026.
+            <div class="emptyText">
+                OFFICIAL RESULTS WILL BE PUBLISHED HERE
             </div>
 
         </div>
 
+    </div>
 
-        <div
-            class="contestantGrid"
-            id="contestantGrid">
-        </div>
-
-    </section>
+</section>
 
 
+<footer class="siteFooter">
 
-    <!-- =================================================
-         UPDATES
-    ================================================= -->
+    MISS OCEAN • OFFICIAL ONLINE PAGEANT
 
-    <section
-        id="updates"
-        class="section">
-
-        <div class="sectionIntro">
-
-            <div class="sectionEyebrow">
-                MISS OCEAN 2026
-            </div>
-
-            <div class="sectionTitle">
-                Competition Updates
-            </div>
-
-            <div class="sectionDescription">
-                Follow the official competitions,
-                schedules and important announcements.
-            </div>
-
-        </div>
-
-
-        <div
-            class="updateList"
-            id="updateList">
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         RESULTS
-    ================================================= -->
-
-    <section
-        id="results"
-        class="section">
-
-        <div class="sectionIntro">
-
-            <div class="sectionEyebrow">
-                MISS OCEAN 2026
-            </div>
-
-            <div class="sectionTitle">
-                Official Results
-            </div>
-
-            <div class="sectionDescription">
-                Explore the official results from each
-                Miss Ocean competition.
-            </div>
-
-        </div>
-
-
-        <div
-            class="resultList"
-            id="resultList">
-        </div>
-
-    </section>
-
-
-
-    <footer class="siteFooter">
-
-        MISS OCEAN • OFFICIAL ONLINE PAGEANT
-
-    </footer>
+</footer>
 
 </div>
 
 
-
 <!-- =====================================================
-     FULL SCREEN DETAIL MODAL
+     CONTESTANT DETAIL MODAL
 ===================================================== -->
 
 <div
-    id="detailModal"
-    class="modal">
+id="detailModal"
+class="modal">
 
     <div class="modalBox">
 
@@ -1714,15 +1306,16 @@ button{
             <div class="modalImage">
 
                 <img
-                    id="modalImage"
-                    src=""
-                    alt="">
+                id="modalImage"
+                src=""
+                alt="">
 
             </div>
 
+
             <button
-                class="closeButton"
-                onclick="closeModal()">
+            class="closeButton"
+            onclick="closeModal()">
 
                 ×
 
@@ -1734,26 +1327,22 @@ button{
         <div class="modalContent">
 
             <div
-                id="modalLabel"
-                class="modalLabel">
+            id="modalLabel"
+            class="modalLabel">
             </div>
 
             <div
-                id="modalTitle"
-                class="modalTitle">
+            id="modalTitle"
+            class="modalTitle">
             </div>
 
             <div class="modalLine"></div>
 
-
-            <div
-                id="modalBody">
-            </div>
-
+            <div id="modalBody"></div>
 
             <button
-                class="closeBottom"
-                onclick="closeModal()">
+            class="closeBottom"
+            onclick="closeModal()">
 
                 CLOSE
 
@@ -1766,17 +1355,15 @@ button{
 </div>
 
 
-
 <script>
 
 /* =====================================================
-   CONTESTANT DATA
+   CONTESTANTS
 ===================================================== */
 
 const contestants = [
 
     {
-        number:"01",
         name:"Pyae Sai Maung",
         city:"Sittwe",
         image:"IMG_20260912_122016_208.jpg",
@@ -1784,7 +1371,6 @@ const contestants = [
     },
 
     {
-        number:"02",
         name:"Amara Lin Lin",
         city:"Yangon South",
         image:"IMG_20260912_123008_671.jpg",
@@ -1792,7 +1378,6 @@ const contestants = [
     },
 
     {
-        number:"03",
         name:"Naung",
         city:"Meiktila",
         image:"IMG_20260912_123106_628.jpg",
@@ -1800,7 +1385,6 @@ const contestants = [
     },
 
     {
-        number:"04",
         name:"Nan Cherry",
         city:"Shwe Pyi Thar",
         image:"IMG_20260912_123203_731.jpg",
@@ -1808,7 +1392,6 @@ const contestants = [
     },
 
     {
-        number:"05",
         name:"Chit Tu Tu",
         city:"Hpakant",
         image:"IMG_20260912_123257_302.jpg",
@@ -1816,7 +1399,6 @@ const contestants = [
     },
 
     {
-        number:"06",
         name:"Luvisiyarna",
         city:"Kyaikkhami",
         image:"IMG_20260912_123401_345.jpg",
@@ -1824,7 +1406,6 @@ const contestants = [
     },
 
     {
-        number:"07",
         name:"Myawaddy",
         city:"Lawi Mon",
         image:"IMG_20260912_123455_423.jpg",
@@ -1832,7 +1413,6 @@ const contestants = [
     },
 
     {
-        number:"08",
         name:"Moe Yan",
         city:"Mudon",
         image:"IMG_20260912_123552_309.jpg",
@@ -1840,7 +1420,6 @@ const contestants = [
     },
 
     {
-        number:"09",
         name:"Marrita",
         city:"Htone Aing",
         image:"IMG_20260912_123642_733.jpg",
@@ -1848,739 +1427,7 @@ const contestants = [
     },
 
     {
-        number:"10",
         name:"Htike Htike",
         city:"Thamanya",
         image:"IMG_20260912_123733_547.jpg",
-        project:"ကမ္ဘာမြေကြီးကို ချစ်ရင် ဒီကနေ စကြရအောင်လား"
-    },
-
-    {
-        number:"11",
-        name:"Iris",
-        city:"Yangon North",
-        image:"IMG_20260912_123824_414.jpg",
-        project:"အိမ်မက်များဆီသို့"
-    }
-
-];
-
-
-/* =====================================================
-   UPDATE DATA
-===================================================== */
-
-const updates = [
-
-    {
-        number:"01",
-        type:"COMPETITION",
-        title:"Swimsuit Competition",
-        date:"Official Schedule",
-        description:
-        "The official Swimsuit Competition update, schedule and competition information."
-    },
-
-    {
-        number:"02",
-        type:"COMPETITION",
-        title:"Evening Gown Competition",
-        date:"Official Schedule",
-        description:
-        "The official Evening Gown Competition update, schedule and competition information."
-    },
-
-    {
-        number:"03",
-        type:"COMPETITION",
-        title:"Talent Competition",
-        date:"Official Schedule",
-        description:
-        "The official Talent Competition update, schedule and competition information."
-    }
-
-];
-
-
-/* =====================================================
-   RESULT DATA
-
-   Winner + Top 5
-   Replace these contestants whenever official
-   results are announced.
-===================================================== */
-
-const results = [
-
-    {
-        title:"Swimsuit Winner",
-        winner:contestants[0],
-
-        top5:[
-            contestants[0],
-            contestants[1],
-            contestants[2],
-            contestants[3],
-            contestants[4]
-        ]
-    },
-
-    {
-        title:"Evening Gown Winner",
-        winner:contestants[1],
-
-        top5:[
-            contestants[1],
-            contestants[0],
-            contestants[3],
-            contestants[5],
-            contestants[2]
-        ]
-    },
-
-    {
-        title:"Talent Winner",
-        winner:contestants[2],
-
-        top5:[
-            contestants[2],
-            contestants[6],
-            contestants[1],
-            contestants[7],
-            contestants[4]
-        ]
-    }
-
-];
-
-
-/* =====================================================
-   RENDER CONTESTANTS
-===================================================== */
-
-const contestantGrid =
-    document.getElementById("contestantGrid");
-
-
-contestants.forEach(function(person,index){
-
-    contestantGrid.innerHTML += `
-
-        <div
-            class="contestantCard"
-            onclick="showContestant(${index})">
-
-            <div class="contestantPhoto">
-
-                <img
-                    src="${person.image}"
-                    alt="${person.name}">
-
-            </div>
-
-            <div class="contestantInfo">
-
-                <div class="cardCity">
-                    ${person.city.toUpperCase()}
-                </div>
-
-                <div class="cardName">
-                    ${person.name}
-                </div>
-
-            </div>
-
-        </div>
-
-    `;
-
-});
-
-
-/* =====================================================
-   RENDER UPDATES
-===================================================== */
-
-const updateList =
-    document.getElementById("updateList");
-
-
-updates.forEach(function(update,index){
-
-    updateList.innerHTML += `
-
-        <div
-            class="updateCard"
-            onclick="showUpdate(${index})">
-
-            <div class="updateNumber">
-                ${update.number}
-            </div>
-
-            <div class="updateInfo">
-
-                <div class="updateType">
-                    ${update.type}
-                </div>
-
-                <div class="updateTitle">
-                    ${update.title}
-                </div>
-
-                <div class="updateMeta">
-                    ${update.date}
-                </div>
-
-            </div>
-
-        </div>
-
-    `;
-
-});
-
-
-/* =====================================================
-   RENDER RESULTS
-===================================================== */
-
-const resultList =
-    document.getElementById("resultList");
-
-
-results.forEach(function(result,index){
-
-    resultList.innerHTML += `
-
-        <div
-            class="resultCard"
-            onclick="showResult(${index})">
-
-            <div class="resultCardSmall">
-                OFFICIAL RESULT
-            </div>
-
-            <div class="resultCardTitle">
-                ${result.title}
-            </div>
-
-            <div class="resultCardText">
-                Winner + Official Top 5
-            </div>
-
-        </div>
-
-    `;
-
-});
-
-
-/* =====================================================
-   SECTION NAVIGATION
-===================================================== */
-
-function openSection(id,button){
-
-    document
-        .querySelectorAll(".section")
-        .forEach(function(section){
-
-            section.classList.remove("active");
-
-        });
-
-
-    document
-        .getElementById(id)
-        .classList.add("active");
-
-
-    document
-        .querySelectorAll(".nav button")
-        .forEach(function(btn){
-
-            btn.classList.remove("active");
-
-        });
-
-
-    button.classList.add("active");
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =====================================================
-   MODAL ELEMENTS
-===================================================== */
-
-const modal =
-    document.getElementById("detailModal");
-
-const modalImage =
-    document.getElementById("modalImage");
-
-const modalLabel =
-    document.getElementById("modalLabel");
-
-const modalTitle =
-    document.getElementById("modalTitle");
-
-const modalBody =
-    document.getElementById("modalBody");
-
-
-/* =====================================================
-   SAFE TEXT
-===================================================== */
-
-function safe(text){
-
-    return String(text)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
-
-}
-
-
-/* =====================================================
-   OPEN CONTESTANT
-===================================================== */
-
-function showContestant(index){
-
-    const person =
-        contestants[index];
-
-
-    modalImage.src =
-        person.image;
-
-    modalImage.alt =
-        person.name;
-
-
-    modalLabel.textContent =
-        "OFFICIAL CONTESTANT";
-
-
-    modalTitle.textContent =
-        person.name;
-
-
-    modalBody.innerHTML = `
-
-        <div class="detailIdentity">
-
-            <div class="detailBox">
-
-                <div class="detailBoxLabel">
-                    CONTESTANT
-                </div>
-
-                <div class="detailBoxValue">
-                    ${safe(person.name)}
-                </div>
-
-            </div>
-
-
-            <div class="detailBox">
-
-                <div class="detailBoxLabel">
-                    REPRESENTATIVE CITY
-                </div>
-
-                <div class="detailBoxValue">
-                    ${safe(person.city)}
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="aboutBox">
-
-            <div class="aboutLabel">
-                ABOUT THE CONTESTANT
-            </div>
-
-            <div class="aboutTitle">
-                Project
-            </div>
-
-            <div class="aboutText">
-                ${safe(person.project)}
-            </div>
-
-        </div>
-
-    `;
-
-
-    modal.classList.add("show");
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-/* =====================================================
-   OPEN UPDATE
-===================================================== */
-
-function showUpdate(index){
-
-    const update =
-        updates[index];
-
-
-    modalImage.src =
-        contestants[index % contestants.length].image;
-
-
-    modalLabel.textContent =
-        "MISS OCEAN COMPETITION";
-
-
-    modalTitle.textContent =
-        update.title;
-
-
-    modalBody.innerHTML = `
-
-        <div class="aboutBox">
-
-            <div class="aboutLabel">
-                OFFICIAL UPDATE
-            </div>
-
-            <div class="aboutTitle">
-                ${safe(update.date)}
-            </div>
-
-            <div class="aboutText">
-                ${safe(update.description)}
-            </div>
-
-        </div>
-
-    `;
-
-
-    modal.classList.add("show");
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-/* =====================================================
-   SHOW RESULT
-===================================================== */
-
-function showResult(index){
-
-    const result =
-        results[index];
-
-    const winner =
-        result.winner;
-
-
-    modalImage.src =
-        winner.image;
-
-    modalImage.alt =
-        winner.name;
-
-
-    modalLabel.textContent =
-        "MISS OCEAN OFFICIAL RESULTS";
-
-
-    modalTitle.textContent =
-        result.title;
-
-
-    let topHTML = "";
-
-
-    result.top5.forEach(function(person,position){
-
-        if(position === 0){
-            return;
-        }
-
-
-        topHTML += `
-
-            <div class="topItem">
-
-                <div class="topRank">
-                    ${position + 1}
-                </div>
-
-                <div class="topPhoto">
-
-                    <img
-                        src="${person.image}"
-                        alt="${person.name}">
-
-                </div>
-
-                <div class="topDetails">
-
-                    <div class="topPlace">
-                        ${position === 1 ? "SECOND PLACE" :
-                          position === 2 ? "THIRD PLACE" :
-                          position === 3 ? "FOURTH PLACE" :
-                          "FIFTH PLACE"}
-                    </div>
-
-                    <div class="topPerson">
-                        ${safe(person.name)}
-                    </div>
-
-                    <div class="topCity">
-                        ${safe(person.city)}
-                    </div>
-
-                </div>
-
-            </div>
-
-        `;
-
-    });
-
-
-    modalBody.innerHTML = `
-
-        <div class="winnerArea"
-             style="padding:0;">
-
-            <div class="winnerPhoto">
-
-                <img
-                    src="${winner.image}"
-                    alt="${winner.name}">
-
-            </div>
-
-
-            <div class="winnerCaption">
-
-                <div class="winnerLabel">
-                    WINNER
-                </div>
-
-                <div class="winnerCity">
-                    ${safe(winner.city)}
-                </div>
-
-                <div class="winnerName">
-                    ${safe(winner.name)}
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="topFive"
-             style="padding-left:0;padding-right:0;">
-
-            <div class="topFiveHeading">
-                Top 5
-            </div>
-
-            ${topHTML}
-
-
-            <div class="officialStatement">
-
-                <div class="officialStatementTitle">
-                    This Official Miss Ocean
-                    ${safe(result.title)}
-                    Winners List
-                </div>
-
-                <div class="officialStatementText">
-                    MISS OCEAN 2026 • OFFICIAL RESULTS
-                </div>
-
-            </div>
-
-        </div>
-
-    `;
-
-
-    modal.classList.add("show");
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-/* =====================================================
-   CLOSE MODAL
-===================================================== */
-
-function closeModal(){
-
-    modal.classList.remove("show");
-
-    document.body.style.overflow =
-        "";
-
-}
-
-
-/* =====================================================
-   ESC KEY
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Escape"){
-            closeModal();
-        }
-
-    }
-);
-
-
-/* =====================================================
-   MUSIC
-===================================================== */
-
-const music =
-    document.getElementById("music");
-
-
-function startMusic(){
-
-    music.muted = false;
-
-    music.volume = 1;
-
-    const promise =
-        music.play();
-
-    if(promise){
-
-        promise.catch(function(){
-
-            /*
-              Mobile browsers may block
-              autoplay with sound.
-
-              A first tap will start it.
-            */
-
-        });
-
-    }
-
-}
-
-
-/* =====================================================
-   LOADING 1 → 100
-   ABOUT 5 SECONDS
-===================================================== */
-
-const loadingScreen =
-    document.getElementById("loadingScreen");
-
-const website =
-    document.getElementById("website");
-
-const loadingNumber =
-    document.getElementById("loadingNumber");
-
-const loadingProgress =
-    document.getElementById("loadingProgress");
-
-
-let number = 1;
-
-
-/*
-   50ms × 100 ≈ 5 seconds
-*/
-
-const loadingInterval =
-    setInterval(function(){
-
-        loadingNumber.textContent =
-            number;
-
-        loadingProgress.style.width =
-            number + "%";
-
-
-        if(number >= 100){
-
-            clearInterval(
-                loadingInterval
-            );
-
-
-            setTimeout(function(){
-
-                loadingScreen.style.display =
-                    "none";
-
-                website.style.display =
-                    "block";
-
-
-                startMusic();
-
-
-            },150);
-
-        }
-
-
-        number++;
-
-    },50);
-
-
-/* =====================================================
-   AUTOPLAY FALLBACK
-===================================================== */
-
-document.addEventListener(
-    "pointerdown",
-    function(){
-
-        startMusic();
-
-    },
-    {once:false}
-);
-
-</script>
-
-
-</body>
-</html>
+        project:"ကမ္ဘာမြေကြီးကို ချစ်ရင် ဒီကနေ စကြရအောင်လား
