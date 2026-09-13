@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
 <title>Miss Ocean 2026</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+rel="stylesheet"
+>
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
 
 *{
 box-sizing:border-box;
@@ -34,666 +51,1204 @@ button{
 font-family:"DM Sans",sans-serif;
 }
 
-/* ================= LOADING ================= */
+
+/* =========================
+   LOADING
+========================= */
 
 #loadingScreen{
+
 position:fixed;
+
 inset:0;
+
 z-index:99999;
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
-background:linear-gradient(
+
+background:
+linear-gradient(
 145deg,
 #d8f2fa 0%,
 #eefafd 50%,
 #d1edf6 100%
 );
+
 }
 
 .loadingInner{
+
 width:90%;
+
 max-width:430px;
+
 text-align:center;
+
 }
 
 .loadingLogo{
+
 width:110px;
+
 height:110px;
+
 object-fit:contain;
+
 border-radius:50%;
+
 margin-bottom:20px;
-box-shadow:0 15px 38px rgba(40,100,120,.12);
+
+box-shadow:
+0 15px 38px
+rgba(40,100,120,.12);
+
 }
 
 .loadingSmall{
+
 font-size:8px;
+
 font-weight:600;
+
 letter-spacing:3.4px;
+
 color:#7899a5;
+
 margin-bottom:10px;
+
 }
 
 .loadingTitle{
+
 font-family:"Libre Baskerville",serif;
+
 font-size:34px;
+
 font-weight:400;
+
 line-height:1.15;
+
 color:#175b76;
+
 }
 
 .loadingNumber{
+
 margin-top:25px;
+
 font-size:30px;
+
 font-weight:600;
+
 color:#28677d;
+
 }
 
 .loadingBar{
+
 width:100%;
+
 height:3px;
+
 margin-top:14px;
+
 border-radius:20px;
+
 overflow:hidden;
-background:rgba(70,132,151,.15);
+
+background:
+rgba(70,132,151,.15);
+
 }
 
 .loadingProgress{
+
 width:0%;
+
 height:100%;
+
 background:#639dad;
+
 }
 
 .loadingText{
+
 margin-top:12px;
+
 font-size:7px;
+
 font-weight:600;
+
 letter-spacing:2.2px;
+
 color:#8aa4ae;
+
 }
 
-/* ================= MUSIC ================= */
+
+/* =========================
+   MUSIC
+========================= */
 
 #music{
+
 position:fixed;
+
 width:1px;
+
 height:1px;
+
 left:-9999px;
+
 top:-9999px;
+
 opacity:0;
+
 pointer-events:none;
+
 }
 
-/* ================= WEBSITE ================= */
+
+/* =========================
+   WEBSITE
+========================= */
 
 #website{
+
 display:none;
+
 min-height:100vh;
+
 }
 
+
+/* =========================
+   HEADER
+========================= */
+
 .siteHeader{
+
 padding:27px 18px 20px;
+
 text-align:center;
+
 }
 
 .headerLogo{
+
 width:55px;
+
 height:55px;
+
 object-fit:contain;
+
 border-radius:50%;
+
 margin-bottom:11px;
+
 }
 
 .headerSmall{
+
 font-size:8px;
+
 font-weight:600;
+
 letter-spacing:3px;
+
 color:#7d9ca7;
+
 }
 
 .mainTitle{
+
 margin-top:8px;
+
 font-family:"Libre Baskerville",serif;
+
 font-size:39px;
+
 font-weight:400;
+
 line-height:1.15;
+
 color:#175b76;
+
 letter-spacing:.3px;
+
 }
 
 .titleDecoration{
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
 gap:10px;
+
 margin-top:15px;
+
 }
 
 .titleDecoration span{
+
 width:39px;
+
 height:1px;
+
 background:#75a8b8;
+
 }
 
 .titleDecoration i{
+
 width:6px;
+
 height:6px;
+
 border-radius:50%;
+
 background:#75a8b8;
+
 }
 
-/* ================= ADS ================= */
+
+/* =========================
+   ADS
+========================= */
 
 .adWrapper{
+
 width:100%;
+
 overflow:hidden;
+
 padding-bottom:21px;
+
 }
 
 .adSlider{
+
 display:flex;
+
 gap:12px;
+
 overflow-x:auto;
+
 padding:2px 12px 7px;
+
 scroll-snap-type:x mandatory;
+
 -webkit-overflow-scrolling:touch;
+
 scrollbar-width:none;
+
 }
 
 .adSlider::-webkit-scrollbar{
+
 display:none;
+
 }
 
 .adCard{
+
 position:relative;
+
 flex:0 0 88%;
+
 height:158px;
+
 overflow:hidden;
+
 scroll-snap-align:center;
+
 border-radius:18px;
-border:1px solid rgba(255,255,255,.95);
+
+border:
+1px solid
+rgba(255,255,255,.95);
+
 background:#c8e9f3;
-box-shadow:0 10px 27px rgba(39,105,126,.08);
+
+box-shadow:
+0 10px 27px
+rgba(39,105,126,.08);
+
 cursor:pointer;
+
 }
 
 .adCard img{
+
 width:100%;
+
 height:100%;
+
 object-fit:cover;
+
 display:block;
+
 }
 
 .adTap{
+
 position:absolute;
+
 right:10px;
+
 bottom:10px;
+
 padding:5px 9px;
+
 border-radius:20px;
-background:rgba(255,255,255,.88);
+
+background:
+rgba(255,255,255,.88);
+
 color:#4d8191;
+
 font-size:6px;
+
 font-weight:700;
+
 letter-spacing:1px;
+
 }
 
-/* ================= NAV ================= */
+
+/* =========================
+   NAVIGATION
+========================= */
 
 .nav{
+
 display:grid;
-grid-template-columns:repeat(3,1fr);
+
+grid-template-columns:
+repeat(3,1fr);
+
 gap:10px;
-padding:5px 16px 26px;
+
+padding:
+5px 16px 26px;
+
 }
 
 .nav button{
+
 min-height:88px;
-border:1px solid rgba(255,255,255,.95);
+
+border:
+1px solid
+rgba(255,255,255,.95);
+
 border-radius:17px;
-background:rgba(255,255,255,.57);
+
+background:
+rgba(255,255,255,.57);
+
 color:#7897a2;
+
 cursor:pointer;
-box-shadow:0 8px 22px rgba(40,103,125,.04);
+
+box-shadow:
+0 8px 22px
+rgba(40,103,125,.04);
+
 transition:.2s;
+
 }
 
 .nav button.active{
+
 background:#ffffff;
+
 color:#285e73;
-box-shadow:0 10px 25px rgba(40,103,125,.09);
+
+box-shadow:
+0 10px 25px
+rgba(40,103,125,.09);
+
 }
 
 .nav button:active{
+
 transform:scale(.98);
+
 }
 
 .navRoman{
+
 display:block;
-font-family:"Libre Baskerville",serif;
+
+font-family:
+"Libre Baskerville",serif;
+
 font-size:22px;
+
 margin-bottom:8px;
+
 color:#6694a3;
+
 }
 
 .navText{
+
 display:block;
+
 font-size:8px;
+
 font-weight:700;
+
 letter-spacing:.5px;
+
 }
 
-/* ================= SECTION ================= */
+
+/* =========================
+   SECTION
+========================= */
 
 .section{
+
 display:none;
-padding:0 18px 45px;
+
+padding:
+0 18px 45px;
+
 }
 
 .section.active{
+
 display:block;
+
 }
 
 .sectionIntro{
-margin:8px 0 21px;
+
+margin:
+8px 0 21px;
+
 }
 
 .sectionEyebrow{
+
 font-size:8px;
+
 font-weight:600;
+
 letter-spacing:3px;
+
 color:#82a0aa;
+
 margin-bottom:8px;
+
 }
 
 .sectionTitle{
-font-family:"Libre Baskerville",serif;
+
+font-family:
+"Libre Baskerville",serif;
+
 font-size:29px;
+
 line-height:1.3;
+
 font-weight:400;
+
 color:#175b76;
+
 }
 
 .sectionDescription{
+
 margin-top:7px;
+
 font-size:10px;
+
 line-height:1.7;
+
 color:#7d9ba5;
+
 }
 
-/* ================= CONTESTANT ================= */
+
+/* =========================
+   CONTESTANTS
+========================= */
 
 .contestantGrid{
+
 display:grid;
-grid-template-columns:repeat(2,1fr);
+
+grid-template-columns:
+repeat(2,1fr);
+
 gap:14px;
+
 }
 
 .contestantCard{
+
 background:#fff;
-border:1px solid rgba(255,255,255,.95);
+
+border:
+1px solid
+rgba(255,255,255,.95);
+
 border-radius:17px;
+
 overflow:hidden;
+
 cursor:pointer;
-box-shadow:0 8px 24px rgba(39,105,126,.06);
+
+box-shadow:
+0 8px 24px
+rgba(39,105,126,.06);
+
 }
 
 .contestantPhoto{
+
 width:100%;
+
 height:245px;
+
 background:#c8e9f3;
+
 overflow:hidden;
+
 }
 
 .contestantPhoto img{
+
 width:100%;
+
 height:100%;
+
 object-fit:cover;
+
 display:block;
+
 }
 
 .contestantInfo{
-padding:12px 12px 15px;
+
+padding:
+12px 12px 15px;
+
 }
 
 .cardCity{
+
 font-size:7px;
+
 font-weight:700;
+
 letter-spacing:1.4px;
+
 color:#89a5af;
+
 margin-bottom:4px;
+
 }
 
 .cardName{
+
 font-size:14px;
+
 line-height:1.35;
+
 font-weight:600;
+
 color:#285e73;
+
 }
 
-/* ================= UPDATES ================= */
+
+/* =========================
+   UPDATES
+========================= */
 
 .updateList{
+
 display:flex;
+
 flex-direction:column;
+
 gap:15px;
+
 }
 
 .updateCard{
+
 background:#fff;
-border:1px solid rgba(255,255,255,.95);
+
+border:
+1px solid
+rgba(255,255,255,.95);
+
 border-radius:20px;
+
 overflow:hidden;
-box-shadow:0 9px 27px rgba(39,105,126,.07);
+
+box-shadow:
+0 9px 27px
+rgba(39,105,126,.07);
+
 cursor:pointer;
+
 }
 
 .updateImage{
+
 width:100%;
+
 height:225px;
+
 background:#c8e9f3;
+
 overflow:hidden;
+
 }
 
 .updateImage img{
+
 width:100%;
+
 height:100%;
+
 object-fit:cover;
+
 display:block;
+
 }
 
 .updateContent{
+
 padding:18px;
+
 }
 
 .updateLabel{
+
 font-size:7px;
+
 font-weight:700;
+
 letter-spacing:2.4px;
+
 color:#86a2ac;
+
 margin-bottom:8px;
+
 }
 
 .updateTitle{
-font-family:"Libre Baskerville",serif;
+
+font-family:
+"Libre Baskerville",serif;
+
 font-size:21px;
+
 line-height:1.35;
+
 color:#175b76;
+
 margin-bottom:11px;
+
 }
 
 .updateLine{
+
 width:40px;
+
 height:1px;
+
 background:#75a8b8;
+
 margin-bottom:13px;
+
 }
 
 .updateText{
+
 font-size:11px;
+
 line-height:1.85;
+
 color:#688792;
+
 }
 
-/* ================= RESULTS ================= */
+
+/* =========================
+   RESULTS
+========================= */
 
 .resultsOnly{
+
 min-height:350px;
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
 text-align:center;
+
 }
 
 .resultsOcean{
-font-family:"Libre Baskerville",serif;
+
+font-family:
+"Libre Baskerville",serif;
+
 font-size:33px;
+
 color:#175b76;
+
 }
 
 .resultsSmallLine{
+
 width:42px;
+
 height:1px;
+
 background:#75a8b8;
+
 margin:16px auto;
+
 }
 
-/* ================= VIEWER ================= */
+
+/* =========================
+   VIEWER
+========================= */
 
 .viewer{
+
 position:fixed;
+
 inset:0;
+
 z-index:100000;
+
 display:none;
+
 flex-direction:column;
+
 overflow-y:auto;
-background:linear-gradient(
+
+background:
+linear-gradient(
 145deg,
 #d8f2fa 0%,
 #eefafd 50%,
 #d1edf6 100%
 );
+
 }
 
 .viewer.show{
+
 display:flex;
+
 }
 
 .viewerHeader{
+
 display:flex;
+
 align-items:center;
+
 padding:18px 17px;
-background:rgba(255,255,255,.65);
-border-bottom:1px solid rgba(255,255,255,.9);
+
+background:
+rgba(255,255,255,.65);
+
+border-bottom:
+1px solid
+rgba(255,255,255,.9);
+
 }
 
 .viewerLogo{
+
 width:42px;
+
 height:42px;
+
 object-fit:contain;
+
 border-radius:50%;
+
 }
 
 .viewerBrand{
+
 margin-left:11px;
+
 flex:1;
+
 }
 
 .viewerBrandSmall{
+
 font-size:6px;
+
 letter-spacing:2px;
+
 font-weight:700;
+
 color:#86a1ab;
+
 }
 
 .viewerBrandTitle{
+
 margin-top:2px;
-font-family:"Libre Baskerville",serif;
+
+font-family:
+"Libre Baskerville",serif;
+
 font-size:15px;
+
 color:#175b76;
+
 }
 
 .viewerClose{
+
 width:38px;
+
 height:38px;
+
 border:0;
+
 border-radius:50%;
+
 background:#fff;
+
 color:#4f7f8e;
+
 font-size:25px;
+
 cursor:pointer;
+
 }
 
 .viewerContent{
+
 width:100%;
+
 max-width:850px;
+
 margin:auto;
-padding:25px 18px 40px;
+
+padding:
+25px 18px 40px;
+
 text-align:center;
+
 }
 
 .viewerEyebrow{
+
 font-size:7px;
+
 font-weight:700;
+
 letter-spacing:2.5px;
+
 color:#86a2ac;
+
 margin-bottom:9px;
+
 }
 
 .viewerTitle{
-font-family:"Libre Baskerville",serif;
+
+font-family:
+"Libre Baskerville",serif;
+
 font-size:26px;
+
 line-height:1.4;
+
 font-weight:400;
+
 color:#175b76;
+
 }
 
 .viewerRule{
+
 width:42px;
+
 height:1px;
+
 background:#75a8b8;
+
 margin:15px auto;
+
 }
 
 .viewerText{
+
 font-size:11px;
+
 line-height:1.9;
+
 color:#688792;
-margin:0 auto 20px;
+
+margin:
+0 auto 20px;
+
 max-width:680px;
+
 white-space:pre-line;
+
 }
 
 .singleViewerImage{
+
 width:100%;
+
 max-height:70vh;
+
 object-fit:contain;
+
 border-radius:16px;
+
 background:#c8e9f3;
+
 }
 
 .gallery{
+
 display:grid;
+
 grid-template-columns:1fr;
+
 gap:15px;
+
 }
 
 .galleryItem{
+
 background:#fff;
+
 border-radius:17px;
+
 padding:9px;
+
 }
 
 .galleryItem img{
+
 width:100%;
+
 max-height:65vh;
+
 object-fit:contain;
+
 border-radius:12px;
+
 }
 
 .galleryCaption{
-padding:10px 5px 4px;
+
+padding:
+10px 5px 4px;
+
 font-size:10px;
+
 color:#537987;
+
 }
 
-.viewerBottomClose{
-margin:22px auto 0;
-padding:11px 25px;
-border:1px solid rgba(255,255,255,.95);
-border-radius:30px;
-background:#fff;
-color:#4d8191;
-font-size:8px;
-font-weight:700;
-letter-spacing:2px;
-cursor:pointer;
-}
 
-/* ================= DETAIL ================= */
+/* =========================
+   DETAIL
+========================= */
 
 .detailImage{
+
 width:100%;
+
 max-height:68vh;
+
 object-fit:contain;
+
 background:#c8e9f3;
+
 border-radius:17px;
+
 margin-bottom:15px;
+
 }
 
 .detailBox{
+
 background:#fff;
+
 border-radius:18px;
+
 padding:15px;
+
 margin-bottom:14px;
+
 text-align:left;
+
 }
 
 .detailLabel{
+
 font-size:7px;
+
 font-weight:700;
+
 letter-spacing:2px;
+
 color:#88a4ae;
+
 margin-bottom:6px;
+
 }
 
 .detailValue{
+
 font-size:14px;
+
 font-weight:600;
+
 color:#285e73;
+
 line-height:1.55;
+
 }
 
 .detailDescription{
+
 font-size:11px;
+
 line-height:1.95;
+
 color:#688792;
+
 white-space:pre-line;
+
 }
 
-/* ================= MOBILE ================= */
+.viewerBottomClose{
+
+margin:
+22px auto 0;
+
+padding:
+11px 25px;
+
+border:
+1px solid
+rgba(255,255,255,.95);
+
+border-radius:30px;
+
+background:#fff;
+
+color:#4d8191;
+
+font-size:8px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+cursor:pointer;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:420px){
 
 .mainTitle{
+
 font-size:36px;
+
 }
 
 .contestantPhoto{
+
 height:225px;
+
 }
 
 .cardName{
+
 font-size:13px;
-}
 
 }
 
-/* ================= DESKTOP ================= */
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
 
 @media(min-width:700px){
 
 .adCard{
+
 flex-basis:58%;
+
 height:185px;
+
 }
 
 .contestantGrid{
-grid-template-columns:repeat(3,1fr);
+
+grid-template-columns:
+repeat(3,1fr);
+
 }
 
 .section{
+
 max-width:1000px;
+
 margin:auto;
+
 }
 
 .siteHeader{
+
 max-width:1000px;
+
 margin:auto;
+
 }
 
 .nav{
+
 max-width:700px;
+
 margin:auto;
+
 }
 
 }
@@ -701,10 +1256,13 @@ margin:auto;
 </style>
 </head>
 
+
 <body>
 
 
-<!-- ================= LOADING ================= -->
+<!-- ==================================================
+     LOADING
+================================================== -->
 
 <div id="loadingScreen">
 
@@ -749,14 +1307,15 @@ PREPARING THE OCEAN
 </div>
 
 
-<!-- ================= MUSIC ================= -->
+<!-- ==================================================
+     MUSIC
+================================================== -->
 
 <video
 id="music"
 preload="auto"
 playsinline
 loop
-aria-hidden="true"
 >
 
 <source
@@ -767,7 +1326,9 @@ type="video/mp4"
 </video>
 
 
-<!-- ================= WEBSITE ================= -->
+<!-- ==================================================
+     WEBSITE
+================================================== -->
 
 <div id="website">
 
@@ -789,15 +1350,21 @@ MISS OCEAN
 </h1>
 
 <div class="titleDecoration">
+
 <span></span>
+
 <i></i>
+
 <span></span>
+
 </div>
 
 </header>
 
 
-<!-- ================= ADS ================= -->
+<!-- ==================================================
+     ADS
+================================================== -->
 
 <div class="adWrapper">
 
@@ -894,12 +1461,16 @@ VIEW
 
 
 </div>
+
 </div>
 
 
-<!-- ================= NAV ================= -->
+<!-- ==================================================
+     NAV
+================================================== -->
 
 <div class="nav">
+
 
 <button
 class="active"
@@ -946,12 +1517,13 @@ RESULTS
 
 </button>
 
+
 </div>
 
 
-<!-- =====================================================
+<!-- ==================================================
      CONTESTANTS
-===================================================== -->
+================================================== -->
 
 <section
 id="contestants"
@@ -978,7 +1550,9 @@ Meet the contestants representing their cities in Miss Ocean 2026.
 <div class="contestantGrid">
 
 
-<!-- 1 SITTWE -->
+<!-- ==================================================
+     SITTWE
+================================================== -->
 
 <div
 class="contestantCard"
@@ -1023,7 +1597,9 @@ Pyae Sai Maung
 </div>
 
 
-<!-- 2 YANGON SOUTH -->
+<!-- ==================================================
+     YANGON SOUTH
+================================================== -->
 
 <div
 class="contestantCard"
@@ -1068,7 +1644,9 @@ Amara Lin Lin
 </div>
 
 
-<!-- 3 MEIKTILA -->
+<!-- ==================================================
+     MEIKTILA
+================================================== -->
 
 <div
 class="contestantCard"
@@ -1077,9 +1655,9 @@ onclick="showContestant(
 'Meiktila',
 'IMG_20260912_123106_628.jpg',
 'သက်ငယ်လုပ်သား လျော့ချရေးနှင့် ကလေးငယ်တိုင်း ပညာသင်ကြားနိုင်ရေး စီမံကိန်း',
-`ကျွန်မ ဒီ Project ကို လုပ်ဆောင်ရတဲ့ ရည်ရွယ်ချက်က မြန်မာနိုင်ငံရဲ့ နယ်ပယ်အသီးသီးမှာရှိကြတဲ့ မိဘမဲ့ကလေးငယ်များနဲ့ ပညာသင်ကြားခွင့် မရရှိကြတဲ့ ကလေးငယ်များ၊ တိုင်းရင်းသားလူငယ်များအတွက် အခွင့်အလမ်းများ ဖန်တီးပေးရန် ဖြစ်ပါတယ်။
+`ကျွန်မ ဒီ Project ကို လုပ်ဆောင်ရတဲ့ ရည်ရွယ်ချက်က မြန်မာနိုင်ငံရဲ့ နယ်ပယ်အသီးသီးမှာရှိကြတဲ့ မိဘမဲ့ကလေးငယ်များ၊ ပညာသင်ကြားခွင့် မရရှိကြတဲ့ ကလေးငယ်များနဲ့ တိုင်းရင်းသားလူငယ်များအတွက် အခွင့်အလမ်းတွေ ဖန်တီးပေးပြီး ရဲရင့်တဲ့ အနာဂတ်မျိုးဆက်သစ်တွေ ပေါ်ထွန်းလာစေရန် ဖြစ်ပါတယ်။
 
-ရဲရင့်တဲ့ အနာဂတ်မျိုးဆက်သစ်တွေ ပေါ်ထွန်းလာစေဖို့နဲ့ နိုင်ငံကို ပိုမိုတိုးတက်မြင့်မားအောင် စွမ်းဆောင်နိုင်တဲ့ ခေါင်းဆောင်ကောင်းတွေ ပေါ်ထွက်လာစေဖို့၊ ကလေးငယ်တိုင်း ကလေးသူငယ်အခွင့်အရေးတွေ ရရှိစေဖို့နဲ့ အနာဂတ်ကို တန်ဖိုးထားတတ်စေဖို့ ရည်ရွယ်ချက်နဲ့ လုပ်ဆောင်ခဲ့ရခြင်း ဖြစ်ပါတယ်ရှင်။`
+နိုင်ငံကို ပိုမိုတိုးတက်မြင့်မားအောင် စွမ်းဆောင်နိုင်တဲ့ ခေါင်းဆောင်ကောင်းတွေ ပေါ်ထွက်လာစေဖို့၊ ကလေးငယ်တိုင်း ကလေးသူငယ်အခွင့်အရေးတွေ ရရှိစေဖို့နဲ့ အနာဂတ်ကို တန်ဖိုးထားတတ်စေဖို့ ရည်ရွယ်ချက်နဲ့ လုပ်ဆောင်ခဲ့ရခြင်း ဖြစ်ပါတယ်ရှင်။`
 )"
 >
 
@@ -1107,7 +1685,9 @@ Naung
 </div>
 
 
-<!-- 4 SHWE PYI THAR -->
+<!-- ==================================================
+     SHWE PYI THAR
+================================================== -->
 
 <div
 class="contestantCard"
@@ -1118,19 +1698,11 @@ onclick="showContestant(
 'ရဲရင့်မှု၏ အရောင်များ',
 `ဒီ Project ဟာ LGBTQ+ community အတွင်းရှိ လူငယ်များ မိမိကိုယ်ကို ယုံကြည်မှုရှိလာစေရန်၊ လူမှုအသိုင်းအဝိုင်းအတွင်း အပြန်အလှန်လေးစားမှုနဲ့ နားလည်မှု ပိုမိုရရှိလာစေရန် ရည်ရွယ်ထားတဲ့ empowerment project တစ်ခု ဖြစ်ပါတယ်။
 
-လူတိုင်းဟာ မတူညီတဲ့ identity၊ dream နဲ့ personality တွေရှိကြပေမယ့် အားလုံးဟာ တန်းတူလေးစားမှုနဲ့ ချစ်ခြင်းမေတ္တာကို ရရှိထိုက်သူများ ဖြစ်ကြောင်း message ပေးချင်ပါတယ်။
+လူတိုင်းမှာ မတူညီတဲ့ identity၊ dream နဲ့ personality တွေရှိကြပေမယ့် အားလုံးဟာ တန်းတူလေးစားမှုနဲ့ ချစ်ခြင်းမေတ္တာကို ရရှိထိုက်သူများ ဖြစ်ကြောင်း message ပေးချင်ပါတယ်။
 
-ဒီ Project မှာ —
-• LGBTQ+ youth များအတွက် confidence workshop များ ပြုလုပ်ခြင်း
-• Anti-bullying awareness campaign များ ဖန်တီးခြင်း
-• Inspirational storytelling video များ မျှဝေခြင်း
-• Mental health & self-love discussions များ ပြုလုပ်ခြင်း
+ဒီ Project မှာ LGBTQ+ youth များအတွက် confidence workshops များပြုလုပ်ခြင်း၊ anti-bullying awareness campaigns များဖန်တီးခြင်း၊ inspirational storytelling videos များမျှဝေခြင်း၊ mental health နဲ့ self-love discussions များပြုလုပ်ခြင်းတို့ကို အဓိကထား ဆောင်ရွက်သွားမှာ ဖြစ်ပါတယ်။
 
-တို့ကို အဓိကထား ဆောင်ရွက်သွားမှာ ဖြစ်ပါတယ်။
-
-“True beauty begins when people are free to be themselves.”
-
-အလှတရားအစစ်ဆိုတာ လူတိုင်း မိမိကိုယ်ကို ယုံကြည်စွာ ရပ်တည်ရဲတဲ့အချိန်မှ စတင်လာတာ ဖြစ်ပါတယ်ရှင့်။`
+အလှတရားအစစ်ဆိုတာ လူတိုင်း မိမိကိုယ်ကို ယုံကြည်စွာ ရပ်တည်ရဲတဲ့အချိန်မှာ စတင်လာတာ ဖြစ်ပါတယ်ရှင့်။`
 )"
 >
 
@@ -1158,7 +1730,9 @@ Nan Cherry
 </div>
 
 
-<!-- 5 HPAKANT -->
+<!-- ==================================================
+     HPAKANT
+================================================== -->
 
 <div
 class="contestantCard"
@@ -1167,9 +1741,9 @@ onclick="showContestant(
 'Hpakant',
 'IMG_20260912_123257_302.jpg',
 'HIV၊ ရပ်ရွာအသိပညာပေးခြင်းနှင့် ကာကွယ်ရေး',
-`လူသားတိုင်း HIV အကြောင်း သိရှိနားလည်ပြီး ကာကွယ်နိုင်ရန်၊ HIV ရှိနေပါကလည်း ထိုသူများအနေဖြင့် ကျန်းမာရေးဝန်ဆောင်မှုများကို ရရှိနိုင်ပြီး လူသားချင်းစာနာစွာဖြင့် ဖေးမကူညီပေးနိုင်ရန် ရည်ရွယ်ထားတဲ့ Project ဖြစ်ပါတယ်။
+`လူသားတိုင်း HIV အကြောင်း သိရှိနားလည်ပြီး ကာကွယ်နိုင်ရန်နှင့် HIV ရှိနေသူများအနေဖြင့် လိုအပ်သော ကျန်းမာရေးဝန်ဆောင်မှုများ ရရှိနိုင်ရန် ရည်ရွယ်ထားပါတယ်။
 
-HIV နှင့်ပတ်သက်တဲ့ မှန်ကန်သောအသိပညာများ ပိုမိုရရှိလာစေပြီး အယူအဆမှားများနဲ့ ခွဲခြားဆက်ဆံမှုများကို လျော့ချနိုင်ရန်လည်း အဓိကထား ဆောင်ရွက်သွားမှာ ဖြစ်ပါတယ်။`
+ထို့အပြင် လူသားချင်းစာနာမှုဖြင့် ဖေးမကူညီပေးနိုင်ရန်၊ HIV နှင့်ပတ်သက်တဲ့ မှန်ကန်သောအသိပညာတွေ ပိုမိုရရှိလာစေရန်နဲ့ ခွဲခြားဆက်ဆံမှုတွေ လျော့နည်းလာစေရန်လည်း အဓိကထား ဆောင်ရွက်သွားမှာ ဖြစ်ပါတယ်။`
 )"
 >
 
@@ -1197,7 +1771,9 @@ Chit Tu Tu
 </div>
 
 
-<!-- 6 KYAIKKHAMI -->
+<!-- ==================================================
+     KYAIKKHAMI
+================================================== -->
 
 <div
 class="contestantCard"
@@ -1206,1137 +1782,4 @@ onclick="showContestant(
 'Kyaikkhami',
 'IMG_20260912_123401_345.jpg',
 'သဘာဝပတ်ဝန်းကျင် ထိန်းသိမ်းရေး',
-`သဘာဝပတ်ဝန်းကျင်ကို ထိန်းသိမ်းစောင့်ရှောက်ရန်နဲ့ လိုအပ်တဲ့နေရာတွေမှာ အသုံးပြုနိုင်ဖို့အတွက် တတ်နိုင်သလောက် ပါဝင်ကူညီဆောင်ရွက်နေပါတယ်။
-
-သဘာဝပတ်ဝန်းကျင်အတွက် လိုအပ်တဲ့နေရာတွေမှာ အသုံးပြုနိုင်ရန် လစဉ်အလှူငွေများကို တတ်နိုင်သလောက် ထောက်ပံ့ပေးနေပြီး ရေရှည်တည်တံ့တဲ့ သဘာဝပတ်ဝန်းကျင်တစ်ခု ဖြစ်ပေါ်လာစေရန် ရည်ရွယ်ပါတယ်။`
-)"
->
-
-<div class="contestantPhoto">
-
-<img
-src="IMG_20260912_123401_345.jpg"
-alt="Luvisiyarna"
->
-
-</div>
-
-<div class="contestantInfo">
-
-<div class="cardCity">
-KYAIKKHAMI
-</div>
-
-<div class="cardName">
-Luvisiyarna
-</div>
-
-</div>
-
-</div>
-
-
-<!-- 7 LAWI MON / MYAWADDY -->
-
-<div
-class="contestantCard"
-onclick="showContestant(
-'Myawaddy',
-'Lawi Mon',
-'IMG_20260912_123455_423.jpg',
-'ကာကွယ်ခြင်းဖြင့် စတင်တဲ့ လှပသော အနာဂတ်',
-`မင်္ဂလာပါရှင်။
-
-ဒီနေ့က ကျွန်မတို့ကမ္ဘာကြီးမှာ HIV နဲ့ပတ်သက်ပြီး ဆေးဝါးနည်းပညာတွေ ဘယ်လောက်ပဲ တိုးတက်နေပါစေ၊ လူတွေရဲ့ စိတ်ဓာတ်နဲ့ အသိပညာကြောင့် HIV ပိုးရှိသူတွေကို ဆေးကုသမှုခံယူဖို့ တွန့်ဆုတ်စေပြီး ရောဂါပြန့်ပွားမှုကို ပိုမိုဆိုးရွားစေနိုင်ပါတယ်။
-
-ဒီပြဿနာကို ဖြေရှင်းဖို့အတွက် အဓိကအချက် ၃ ချက်ရှိပါတယ်။
-
-ပထမချက် — အသိပညာပေးခြင်း
-ဒုတိယချက် — Undetectable = Untransmittable (U=U)
-တတိယချက် — တန်းတူညီမျှမှု
-
-ဒီအချက်သုံးချက်နဲ့ HIV ကို လျော့ချပြီး ကာကွယ်နိုင်ပါတယ်။
-
-ဒါကြောင့် HIV ကင်းစင်ပြီး လှပတဲ့အနာဂတ်တစ်ခုကို ကျွန်မနဲ့အတူတူ လျှောက်လှမ်းကြပါစို့။
-
-ကျေးဇူးအများကြီးတင်ပါတယ်ရှင်။`
-)"
->
-
-<div class="contestantPhoto">
-
-<img
-src="IMG_20260912_123455_423.jpg"
-alt="Myawaddy"
->
-
-</div>
-
-<div class="contestantInfo">
-
-<div class="cardCity">
-LAWI MON
-</div>
-
-<div class="cardName">
-Myawaddy
-</div>
-
-</div>
-
-</div>
-
-
-<!-- 8 MUDON -->
-
-<div
-class="contestantCard"
-onclick="showContestant(
-'Moe Yan',
-'Mudon',
-'IMG_20260912_123552_309.jpg',
-'အိပ်မက်ဆီသို့ ခြေလှမ်းများ',
-`အိပ်မက်တစ်ခုကို အကောင်အထည်ဖော်နိုင်ရန် ကြိုးစားခဲ့တဲ့ လွန်ခဲ့သော ၇ နှစ်တာခရီးစဉ်ကို ဖော်ပြထားတဲ့ Project ဖြစ်ပါတယ်။
-
-ဒီ Project မှာ အိပ်မက်ကို စတင်ခဲ့တဲ့အချိန်ကနေ ယနေ့အထိ ကြုံတွေ့ခဲ့ရတဲ့ အခက်အခဲတွေ၊ ကြိုးစားအားထုတ်မှုတွေနဲ့ အတွေ့အကြုံတွေကို ပြန်လည်ဖော်ပြထားပါတယ်။
-
-အဓိကရည်ရွယ်ချက်ကတော့ အခက်အခဲတွေရှိပေမယ့် ကိုယ့်ရဲ့အိပ်မက်ကို မစွန့်လွှတ်ဘဲ ဆက်လက်ကြိုးစားသွားရင် ရည်မှန်းချက်ကို ရောက်ရှိနိုင်တယ်ဆိုတဲ့ message ကို ပေးချင်တာ ဖြစ်ပါတယ်။
-
-ဒီ Project က အတိတ်ကအတွေ့အကြုံတွေကို ပြန်လည်သုံးသပ်ပြီး အနာဂတ်အိပ်မက်တွေအတွက် ဆက်လက်ကြိုးစားဖို့ အားပေးတဲ့ Project တစ်ခု ဖြစ်ပါတယ်။`
-)"
->
-
-<div class="contestantPhoto">
-
-<img
-src="IMG_20260912_123552_309.jpg"
-alt="Moe Yan"
->
-
-</div>
-
-<div class="contestantInfo">
-
-<div class="cardCity">
-MUDON
-</div>
-
-<div class="cardName">
-Moe Yan
-</div>
-
-</div>
-
-</div>
-
-
-<!-- 9 HTONE AING -->
-
-<div
-class="contestantCard"
-onclick="showContestant(
-'Marrita',
-'Htone Aing',
-'IMG_20260912_123642_733.jpg',
-'လူ့ပတ်ဝန်းကျင်နှင့် လူ့စည်းကမ်း',
-`ကျွန်မက လက်ရှိအချိန်မှာ သဘာဝပတ်ဝန်းကျင်ကို အကျိုးပြုစေမယ့် လုပ်ငန်းတွေမှာ ပါဝင်လုပ်ဆောင်နေပါတယ်ရှင်။
-
-သဘာဝပတ်ဝန်းကျင်အတွက် လိုအပ်တဲ့နေရာတွေမှာ အသုံးပြုနိုင်ဖို့အတွက် ကျွန်မတတ်နိုင်သလောက် လစဉ်အလှူငွေတွေကို ထောက်ပံ့ပေးနေပါတယ်ရှင်။
-
-လူ့ပတ်ဝန်းကျင်နဲ့ လူ့စည်းကမ်းကို တန်ဖိုးထားပြီး သဘာဝပတ်ဝန်းကျင်ကို ထိန်းသိမ်းစောင့်ရှောက်နိုင်ဖို့ လူတိုင်းမှာ တာဝန်ရှိတယ်လို့ ယုံကြည်ပါတယ်။`
-)"
->
-
-<div class="contestantPhoto">
-
-<img
-src="IMG_20260912_123642_733.jpg"
-alt="Marrita"
->
-
-</div>
-
-<div class="contestantInfo">
-
-<div class="cardCity">
-HTONE AING
-</div>
-
-<div class="cardName">
-Marrita
-</div>
-
-</div>
-
-</div>
-
-
-<!-- 10 THAMANYA -->
-
-<div
-class="contestantCard"
-onclick="showContestant(
-'Htike Htike',
-'Thamanya',
-'IMG_20260912_123733_547.jpg',
-'ကမ္ဘာမြေကြီးကို ချစ်ရင် ဒီကနေ စကြရအောင်လား',
-'ကမ္ဘာမြေကြီးကို ချစ်ရင် ဒီကနေ စကြရအောင်လား'
-)"
->
-
-<div class="contestantPhoto">
-
-<img
-src="IMG_20260912_123733_547.jpg"
-alt="Htike Htike"
->
-
-</div>
-
-<div class="contestantInfo">
-
-<div class="cardCity">
-THAMANYA
-</div>
-
-<div class="cardName">
-Htike Htike
-</div>
-
-</div>
-
-</div>
-
-
-<!-- 11 YANGON NORTH -->
-
-<div
-class="contestantCard"
-onclick="showContestant(
-'Iris',
-'Yangon North',
-'IMG_20260912_123824_414.jpg',
-'To The Dreams',
-`“To The Dreams” သည် အိပ်မက်တစ်ခုကို အကောင်အထည်ဖော်နိုင်ရန် ကြိုးစားခဲ့တဲ့ လွန်ခဲ့သော ၇ နှစ်တာ ခရီးစဉ်ကို ဖော်ပြထားတဲ့ Project ဖြစ်ပါတယ်။
-
-ဒီ Project မှာ အိပ်မက်ကို စတင်ခဲ့တဲ့အချိန်ကနေ ယနေ့အထိ ကြုံတွေ့ခဲ့ရတဲ့ အခက်အခဲတွေ၊ ကြိုးစားအားထုတ်မှုတွေနဲ့ အတွေ့အကြုံတွေကို ပြန်လည်ဖော်ပြထားပါတယ်။
-
-အဓိကရည်ရွယ်ချက်ကတော့ အခက်အခဲတွေရှိပေမယ့် ကိုယ့်ရဲ့အိပ်မက်ကို မစွန့်လွှတ်ဘဲ ဆက်လက်ကြိုးစားသွားရင် ရည်မှန်းချက်ကို ရောက်ရှိနိုင်တယ်ဆိုတဲ့ message ကို ပေးချင်တာ ဖြစ်ပါတယ်။
-
-Conclusion:
-ဒီ Project က အတိတ်ကအတွေ့အကြုံတွေကို ပြန်လည်သုံးသပ်ပြီး အနာဂတ်အိပ်မက်တွေအတွက် ဆက်လက်ကြိုးစားဖို့ အားပေးတဲ့ Project တစ်ခု ဖြစ်ပါတယ်။`
-)"
->
-
-<div class="contestantPhoto">
-
-<img
-src="IMG_20260912_123824_414.jpg"
-alt="Iris"
->
-
-</div>
-
-<div class="contestantInfo">
-
-<div class="cardCity">
-YANGON NORTH
-</div>
-
-<div class="cardName">
-Iris
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ================= UPDATES ================= -->
-
-<section
-id="updates"
-class="section"
->
-
-<div class="sectionIntro">
-
-<div class="sectionEyebrow">
-LATEST NEWS
-</div>
-
-<h2 class="sectionTitle">
-Updates
-</h2>
-
-<p class="sectionDescription">
-Latest updates and moments from Miss Ocean.
-</p>
-
-</div>
-
-
-<div class="updateList">
-
-
-<div
-class="updateCard"
-onclick="openAd(
-'Popular Vote Top 5',
-'Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg',
-'ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။ အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို Vote ပေးလိုက်ပါ။'
-)"
->
-
-<div class="updateImage">
-
-<img
-src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
->
-
-</div>
-
-<div class="updateContent">
-
-<div class="updateLabel">
-POPULAR VOTE
-</div>
-
-<div class="updateTitle">
-Popular Vote Top 5
-</div>
-
-<div class="updateLine"></div>
-
-<div class="updateText">
-ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။ အခုဘဲ သင်နှစ်သက်သော ပြိုင်ပွဲဝင်အလှမယ်ကို Vote ပေးလိုက်ပါ။
-</div>
-
-</div>
-
-</div>
-
-
-<div
-class="updateCard"
-onclick="openAd(
-'Miss Ocean Official Tiktok Account',
-'Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg'
-)"
->
-
-<div class="updateImage">
-
-<img
-src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
->
-
-</div>
-
-<div class="updateContent">
-
-<div class="updateLabel">
-OFFICIAL ACCOUNT
-</div>
-
-<div class="updateTitle">
-Miss Ocean Official Tiktok Account
-</div>
-
-<div class="updateLine"></div>
-
-<div class="updateText">
-Follow the official Miss Ocean Tiktok account for the latest updates, announcements and moments.
-</div>
-
-</div>
-
-</div>
-
-
-<div
-class="updateCard"
-onclick="openMissOceanWinner()"
->
-
-<div class="updateImage">
-
-<img
-src="IMG_20260912_131710_045.jpg"
->
-
-</div>
-
-<div class="updateContent">
-
-<div class="updateLabel">
-MISS OCEAN 2025
-</div>
-
-<div class="updateTitle">
-Miss Ocean 2025 Winner
-</div>
-
-<div class="updateLine"></div>
-
-<div class="updateText">
-Miss Ocean 2025 winner moments.
-</div>
-
-</div>
-
-</div>
-
-
-<div
-class="updateCard"
-onclick="openProjectPoster()"
->
-
-<div class="updateImage">
-
-<img
-src="IMG_20260912_131934_287.jpg"
->
-
-</div>
-
-<div class="updateContent">
-
-<div class="updateLabel">
-PROJECT
-</div>
-
-<div class="updateTitle">
-Project Poster
-</div>
-
-<div class="updateLine"></div>
-
-<div class="updateText">
-Project Top 4 ပြိုင်ပွဲဝင်လေးများဖြစ်ပါတယ်၊ ပုံရိပ်အချို့ကို မြင်ယောင်ကြည့်ကြရအောင်။
-</div>
-
-</div>
-
-</div>
-
-
-<div
-class="updateCard"
-onclick="openProjectWinners()"
->
-
-<div class="updateImage">
-
-<img
-src="IMG_20260912_131934_287.jpg"
->
-
-</div>
-
-<div class="updateContent">
-
-<div class="updateLabel">
-PROJECT MOMENT
-</div>
-
-<div class="updateTitle">
-Project Winners Moment
-</div>
-
-<div class="updateLine"></div>
-
-<div class="updateText">
-Project Winner moments from Miss Ocean.
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ================= RESULTS ================= -->
-
-<section
-id="results"
-class="section"
->
-
-<div class="resultsOnly">
-
-<div>
-
-<div class="resultsOcean">
-MISS OCEAN
-</div>
-
-<div class="resultsSmallLine"></div>
-
-</div>
-
-</div>
-
-</section>
-
-
-</div>
-
-
-<!-- ================= IMAGE VIEWER ================= -->
-
-<div
-id="imageViewer"
-class="viewer"
->
-
-<div class="viewerHeader">
-
-<img
-class="viewerLogo"
-src="IMG_20260912_123927_081.jpg"
->
-
-<div class="viewerBrand">
-
-<div class="viewerBrandSmall">
-OFFICIAL
-</div>
-
-<div class="viewerBrandTitle">
-MISS OCEAN
-</div>
-
-</div>
-
-<button
-class="viewerClose"
-onclick="closeViewer()"
->
-×
-</button>
-
-</div>
-
-
-<div class="viewerContent">
-
-<div
-class="viewerEyebrow"
-id="viewerEyebrow"
-></div>
-
-<h2
-class="viewerTitle"
-id="viewerTitle"
-></h2>
-
-<div class="viewerRule"></div>
-
-<p
-class="viewerText"
-id="viewerText"
-></p>
-
-<img
-class="singleViewerImage"
-id="viewerImage"
->
-
-<div
-id="viewerGallery"
-class="gallery"
-></div>
-
-<button
-class="viewerBottomClose"
-onclick="closeViewer()"
->
-CLOSE
-</button>
-
-</div>
-
-</div>
-
-
-<!-- ================= CONTESTANT VIEWER ================= -->
-
-<div
-id="contestantViewer"
-class="viewer"
->
-
-<div class="viewerHeader">
-
-<img
-class="viewerLogo"
-src="IMG_20260912_123927_081.jpg"
->
-
-<div class="viewerBrand">
-
-<div class="viewerBrandSmall">
-MISS OCEAN 2026
-</div>
-
-<div class="viewerBrandTitle">
-CONTESTANT
-</div>
-
-</div>
-
-<button
-class="viewerClose"
-onclick="closeContestant()"
->
-×
-</button>
-
-</div>
-
-
-<div class="viewerContent">
-
-
-<img
-id="contestantViewerImage"
-class="detailImage"
->
-
-
-<div class="detailBox">
-
-<div class="detailLabel">
-REPRESENTATIVE CITY
-</div>
-
-<div
-id="contestantViewerCity"
-class="detailValue"
-></div>
-
-</div>
-
-
-<div class="detailBox">
-
-<div class="detailLabel">
-CONTESTANT
-</div>
-
-<div
-id="contestantViewerName"
-class="detailValue"
-></div>
-
-</div>
-
-
-<div class="detailBox">
-
-<div class="detailLabel">
-PROJECT TITLE
-</div>
-
-<div
-id="contestantViewerProject"
-class="detailValue"
-></div>
-
-</div>
-
-
-<div class="detailBox">
-
-<div class="detailLabel">
-PROJECT DESCRIPTION
-</div>
-
-<div
-id="contestantViewerDescription"
-class="detailDescription"
-></div>
-
-</div>
-
-
-<button
-class="viewerBottomClose"
-onclick="closeContestant()"
->
-CLOSE
-</button>
-
-</div>
-
-</div>
-
-
-<script>
-
-/* ================= LOADING ================= */
-
-const loadingScreen =
-document.getElementById("loadingScreen");
-
-const website =
-document.getElementById("website");
-
-const loadingNumber =
-document.getElementById("loadingNumber");
-
-const loadingProgress =
-document.getElementById("loadingProgress");
-
-let count=1;
-
-const loader=setInterval(()=>{
-
-count++;
-
-loadingNumber.textContent=count;
-
-loadingProgress.style.width=count+"%";
-
-if(count>=100){
-
-clearInterval(loader);
-
-setTimeout(()=>{
-
-loadingScreen.style.display="none";
-
-website.style.display="block";
-
-startMusic();
-
-},150);
-
-}
-
-},50);
-
-
-/* ================= MUSIC ================= */
-
-const music =
-document.getElementById("music");
-
-let musicStarted=false;
-
-
-function startMusic(){
-
-if(musicStarted)return;
-
-music.muted=false;
-
-music.volume=1;
-
-const playPromise=music.play();
-
-if(playPromise){
-
-playPromise.then(()=>{
-
-musicStarted=true;
-
-}).catch(()=>{
-
-});
-
-}
-
-}
-
-
-/*
-  Browser တွေက sound autoplay
-  ပိတ်ထားနိုင်တာကြောင့် user interaction
-  ဖြစ်တဲ့အချိန်မှာ ပြန်စမ်းဖွင့်မယ်။
-*/
-
-function musicInteraction(){
-
-if(musicStarted)return;
-
-music.muted=false;
-
-music.volume=1;
-
-const promise=music.play();
-
-if(promise){
-
-promise.then(()=>{
-
-musicStarted=true;
-
-document.removeEventListener(
-"pointerdown",
-musicInteraction
-);
-
-document.removeEventListener(
-"touchstart",
-musicInteraction
-);
-
-document.removeEventListener(
-"click",
-musicInteraction
-);
-
-}).catch(()=>{});
-
-}
-
-}
-
-
-document.addEventListener(
-"pointerdown",
-musicInteraction,
-{passive:true}
-);
-
-document.addEventListener(
-"touchstart",
-musicInteraction,
-{passive:true}
-);
-
-document.addEventListener(
-"click",
-musicInteraction
-);
-
-
-/* ================= NAV ================= */
-
-function openSection(id,btn){
-
-document
-.querySelectorAll(".section")
-.forEach(section=>{
-section.classList.remove("active");
-});
-
-document
-.getElementById(id)
-.classList.add("active");
-
-document
-.querySelectorAll(".nav button")
-.forEach(button=>{
-button.classList.remove("active");
-});
-
-btn.classList.add("active");
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-/* ================= IMAGE VIEWER ================= */
-
-const imageViewer =
-document.getElementById("imageViewer");
-
-const viewerTitle =
-document.getElementById("viewerTitle");
-
-const viewerEyebrow =
-document.getElementById("viewerEyebrow");
-
-const viewerText =
-document.getElementById("viewerText");
-
-const viewerImage =
-document.getElementById("viewerImage");
-
-const viewerGallery =
-document.getElementById("viewerGallery");
-
-
-function openAd(title,image,text=""){
-
-imageViewer.classList.add("show");
-
-document.body.style.overflow="hidden";
-
-viewerEyebrow.textContent=
-"MISS OCEAN OFFICIAL";
-
-viewerTitle.textContent=title;
-
-viewerText.textContent=text;
-
-viewerImage.style.display="block";
-
-viewerGallery.innerHTML="";
-
-viewerImage.src=image;
-
-}
-
-
-function openGallery(title,images,text=""){
-
-imageViewer.classList.add("show");
-
-document.body.style.overflow="hidden";
-
-viewerEyebrow.textContent=
-"MISS OCEAN OFFICIAL";
-
-viewerTitle.textContent=title;
-
-viewerText.textContent=text;
-
-viewerImage.style.display="none";
-
-viewerGallery.innerHTML="";
-
-
-images.forEach(item=>{
-
-const box=document.createElement("div");
-
-box.className="galleryItem";
-
-const img=document.createElement("img");
-
-img.src=item.image;
-
-box.appendChild(img);
-
-if(item.caption){
-
-const caption=document.createElement("div");
-
-caption.className="galleryCaption";
-
-caption.textContent=item.caption;
-
-box.appendChild(caption);
-
-}
-
-viewerGallery.appendChild(box);
-
-});
-
-}
-
-
-function closeViewer(){
-
-imageViewer.classList.remove("show");
-
-document.body.style.overflow="";
-
-viewerImage.src="";
-
-viewerGallery.innerHTML="";
-
-}
-
-
-/* ================= PROJECT GALLERIES ================= */
-
-function openProjectPoster(){
-
-openGallery(
-"Project Poster",
-[
-{
-image:"IMG_20260912_131934_287.jpg"
-},
-{
-image:"IMG_20260912_132024_973.jpg"
-}
-],
-"Project Top 4 ပြိုင်ပွဲဝင်လေးများဖြစ်ပါတယ်။"
-);
-
-}
-
-
-function openMissOcean2025(){
-
-openAd(
-"Miss Ocean 2025",
-"IMG_20260912_133011_088.jpg"
-);
-
-}
-
-
-function openMissOceanWinner(){
-
-openGallery(
-"Miss Ocean 2025",
-[
-{
-image:"IMG_20260912_133051_561.jpg"
-},
-{
-image:"IMG_20260912_133128_876.jpg"
-},
-{
-image:"IMG_20260912_133210_986.jpg"
-}
-]
-);
-
-}
-
-
-function openProjectWinners(){
-
-openGallery(
-"Project Winners Moment",
-[
-{
-image:"IMG_20260912_132348_017.jpg",
-caption:"Project Winner - Sittwe - Pyae Sai Maung"
-},
-{
-image:"IMG_20260912_132624_143.jpg",
-caption:"Project Winner - Meiktila - Naung"
-},
-{
-image:"IMG_20260912_132818_365.jpg",
-caption:"Hpakant - Chit Tu Tu"
-}
-]
-);
-
-}
-
-
-/* ================= CONTESTANT VIEWER ================= */
-
-const contestantViewer =
-document.getElementById("contestantViewer");
-
-const contestantViewerImage =
-document.getElementById("contestantViewerImage");
-
-const contestantViewerCity =
-document.getElementById("contestantViewerCity");
-
-const contestantViewerName =
-document.getElementById("contestantViewerName");
-
-const contestantViewerProject =
-document.getElementById("contestantViewerProject");
-
-const contestantViewerDescription =
-document.getElementById(
-"contestantViewerDescription"
-);
-
-
-function showContestant(
-name,
-city,
-image,
-project,
-description
-){
-
-contestantViewer.classList.add("show");
-
-document.body.style.overflow="hidden";
-
-contestantViewerImage.src=image;
-
-contestantViewerImage.alt=name;
-
-contestantViewerCity.textContent=city;
-
-contestantViewerName.textContent=name;
-
-contestantViewerProject.textContent=project;
-
-contestantViewerDescription.textContent=description;
-
-}
-
-
-function closeContestant(){
-
-contestantViewer.classList.remove("show");
-
-document.body.style.overflow="";
-
-contestantViewerImage.src="";
-
-}
-
-
-/* ================= ESC ================= */
-
-document.addEventListener(
-"keydown",
-event=>{
-
-if(event.key==="Escape"){
-
-closeViewer();
-
-closeContestant();
-
-}
-
-});
-
-
-/* ================= OUTSIDE CLICK ================= */
-
-imageViewer.addEventListener(
-"click",
-event=>{
-
-if(event.target===imageViewer){
-
-closeViewer();
-
-}
-
-});
-
-
-contestantViewer.addEventListener(
-"click",
-event=>{
-
-if(event.target===contestantViewer){
-
-closeContestant();
-
-}
-
-});
-
-</script>
-
-</body>
-</html>
+`သဘာဝပတ်ဝန်းကျင်သည် လူသားတို့အတွက် အသက်ရှင်နေထိုင်ရေးတွင် အရေးပါသော အရာတစ်ခု ဖြစ်ပါတယ
