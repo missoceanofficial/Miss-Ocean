@@ -28,7 +28,6 @@ href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&fami
 rel="stylesheet"
 >
 
-
 <style>
 
 *{
@@ -545,7 +544,7 @@ margin-top:5px;
 
 
 /* =========================
-WINNER 2025 GALLERY
+WINNER 2025
 ========================= */
 
 .winner2025Gallery{
@@ -559,6 +558,7 @@ margin-top:20px;
 background:#fff;
 border-radius:17px;
 padding:9px;
+box-shadow:0 8px 24px rgba(39,105,126,.06);
 }
 
 .winner2025Item img{
@@ -973,13 +973,14 @@ ADVERTISEMENT
 
 <div
 class="adCard"
-data-ad-title="Miss Ocean Final Evening Gown"
-data-ad-image="IMG_20260913_185237_340.png"
+data-ad-title="THE BEST CITY DIRECTOR VOTING WINNER"
+data-ad-image="Screenshot_2026-09-14-20-36-37-251_com.ss.android.ugc.trill-edit.jpg"
+data-ad-text="Ocean Event Production - City Director KO Khant"
 >
 
 <img
-src="IMG_20260913_185237_340.png"
-alt="Miss Ocean Final Evening Gown"
+src="Screenshot_2026-09-14-20-36-37-251_com.ss.android.ugc.trill-edit.jpg"
+alt="THE BEST CITY DIRECTOR VOTING WINNER"
 >
 
 <div class="adTap">
@@ -1190,21 +1191,21 @@ Latest updates and moments from Miss Ocean.
 
 
 <!-- ==================================================
-FINAL EVENING GOWN
+CITY DIRECTOR WINNER UPDATE
 ================================================== -->
 
 <div
 class="updateCard"
-data-ad-title="Miss Ocean Final Evening Gown"
-data-ad-image="IMG_20260913_185237_340.png"
-data-ad-text="16 September | 7:00 PM&#10;&#10;Tiktok - @missoceanofficial"
+data-ad-title="THE BEST CITY DIRECTOR VOTING WINNER"
+data-ad-image="Screenshot_2026-09-14-20-36-37-251_com.ss.android.ugc.trill-edit.jpg"
+data-ad-text="Ocean Event Production - City Director KO Khant"
 >
 
 <div class="updateImage">
 
 <img
-src="IMG_20260913_185237_340.png"
-alt="Miss Ocean Final Evening Gown"
+src="Screenshot_2026-09-14-20-36-37-251_com.ss.android.ugc.trill-edit.jpg"
+alt="THE BEST CITY DIRECTOR VOTING WINNER"
 >
 
 </div>
@@ -1216,19 +1217,13 @@ MISS OCEAN UPDATE
 </div>
 
 <div class="updateTitle">
-Miss Ocean Final Evening Gown
+THE BEST CITY DIRECTOR VOTING WINNER
 </div>
 
 <div class="updateLine"></div>
 
 <div class="updateText">
-
-16 September | 7:00 PM
-
-<br><br>
-
-Tiktok - @missoceanofficial
-
+Ocean Event Production - City Director KO Khant
 </div>
 
 </div>
@@ -1526,8 +1521,8 @@ id="viewerClose"
 
 
 <div
-id="viewerContent"
 class="viewerContent"
+id="viewerContent"
 ></div>
 
 </div>
@@ -1540,7 +1535,7 @@ class="viewerContent"
 CONTESTANTS DATA
 ================================================== */
 
-const contestantsData = [
+const contestants = [
 
 {
 city:"Sittwe",
@@ -1629,9 +1624,7 @@ image:"IMG_20260912_123552_309.jpg",
 project:"အိပ်မက်ဆီသို့ ခြေလှမ်းများ",
 description:`မိုးတို့မြို့မှာရှိတဲ့ ကလေးတွေရဲ့ အိပ်မက်တွေကို တတ်နိုင်သလောက် အကောင်အထည်ဖော်ပေးဖို့ ရည်ရွယ်ထားတဲ့ Project လေး ဖြစ်ပါတယ်။
 
-ကလေးတွေရဲ့ စိတ်ကူးအိပ်မက်တွေနဲ့ သူတို့စိတ်ဝင်စားတဲ့ အရာတွေကို အကောင်အထည်ဖော်နိုင်အောင် အခွင့်အလမ်းတွေ ဖန်တီးပေးသွားမှာ ဖြစ်ပါတယ်။
-
-Catwalk၊ Make-up အစရှိတဲ့ ကလေးတွေရဲ့ စိတ်ဝင်စားမှုနဲ့ အိပ်မက်တွေကို အကောင်အထည်ဖော်နိုင်ဖို့ လိုအပ်သလို ကူညီပံ့ပိုးပေးခြင်းဟာ ဒီ Project ရဲ့ အဓိကရည်ရွယ်ချက် ဖြစ်ပါတယ်။`
+ကလေးတွေရဲ့ စိတ်ကူးအိပ်မက်တွေနဲ့ သူတို့စိတ်ဝင်စားတဲ့ အရာတွေကို အကောင်အထည်ဖော်နိုင်အောင် အခွင့်အလမ်းတွေ ဖန်တီးပေးသွားမှာ ဖြစ်ပါတယ်။`
 },
 
 {
@@ -1678,7 +1671,7 @@ CONTESTANT CARDS
 const contestantGrid =
 document.getElementById("contestantGrid");
 
-contestantsData.forEach((person,index)=>{
+contestants.forEach((person,index)=>{
 
 const card =
 document.createElement("div");
@@ -1728,31 +1721,36 @@ contestantGrid.appendChild(card);
 NAVIGATION
 ================================================== */
 
-document
-.querySelectorAll(".nav button")
-.forEach(button=>{
+const navButtons =
+document.querySelectorAll(".nav button");
+
+const sections =
+document.querySelectorAll(".section");
+
+navButtons.forEach(button=>{
 
 button.addEventListener(
 "click",
 ()=>{
 
-document
-.querySelectorAll(".nav button")
-.forEach(btn=>{
+navButtons.forEach(btn=>{
 btn.classList.remove("active");
 });
 
-document
-.querySelectorAll(".section")
-.forEach(section=>{
+sections.forEach(section=>{
 section.classList.remove("active");
 });
 
 button.classList.add("active");
 
-document
-.getElementById(button.dataset.section)
-.classList.add("active");
+const target =
+document.getElementById(
+button.dataset.section
+);
+
+if(target){
+target.classList.add("active");
+}
 
 window.scrollTo({
 top:0,
@@ -1779,15 +1777,11 @@ const viewerClose =
 document.getElementById("viewerClose");
 
 
-function showViewer(html){
-
-viewerContent.innerHTML =
-html;
+function openViewer(){
 
 viewer.classList.add("show");
 
-document.body.style.overflow =
-"hidden";
+document.body.style.overflow="hidden";
 
 }
 
@@ -1796,11 +1790,9 @@ function closeViewer(){
 
 viewer.classList.remove("show");
 
-document.body.style.overflow =
-"";
+document.body.style.overflow="";
 
-viewerContent.innerHTML =
-"";
+viewerContent.innerHTML="";
 
 }
 
@@ -1811,22 +1803,8 @@ closeViewer
 );
 
 
-viewer.addEventListener(
-"click",
-e=>{
-
-if(e.target === viewer){
-
-closeViewer();
-
-}
-
-}
-);
-
-
 /* ==================================================
-ADS
+ADVERTISEMENT CLICK
 ================================================== */
 
 document
@@ -1848,38 +1826,19 @@ return;
 }
 
 const title =
-card.dataset.adTitle ||
-"Miss Ocean";
+card.dataset.adTitle || "";
 
 const image =
-card.dataset.adImage;
+card.dataset.adImage || "";
 
-showViewer(`
+const text =
+card.dataset.adText || "";
 
-<div class="viewerEyebrow">
-MISS OCEAN
-</div>
-
-<div class="viewerTitle">
-${title}
-</div>
-
-<div class="viewerRule"></div>
-
-<img
-class="singleViewerImage"
-src="${image}"
-alt="${title}"
->
-
-<button
-class="viewerBottomClose"
-onclick="closeViewer()"
->
-CLOSE
-</button>
-
-`);
+openSingleContent(
+title,
+image,
+text
+);
 
 }
 );
@@ -1888,7 +1847,7 @@ CLOSE
 
 
 /* ==================================================
-UPDATE CARDS
+UPDATE CLICK
 ================================================== */
 
 document
@@ -1910,20 +1869,40 @@ return;
 }
 
 const title =
-card.dataset.adTitle ||
-"Miss Ocean";
+card.dataset.adTitle || "";
 
 const image =
-card.dataset.adImage;
+card.dataset.adImage || "";
 
 const text =
-card.dataset.adText ||
-"";
+card.dataset.adText || "";
 
-showViewer(`
+openSingleContent(
+title,
+image,
+text
+);
+
+}
+);
+
+});
+
+
+/* ==================================================
+SINGLE VIEWER
+================================================== */
+
+function openSingleContent(
+title,
+image,
+text
+){
+
+viewerContent.innerHTML = `
 
 <div class="viewerEyebrow">
-MISS OCEAN UPDATE
+MISS OCEAN 2026
 </div>
 
 <div class="viewerTitle">
@@ -1949,318 +1928,9 @@ onclick="closeViewer()"
 CLOSE
 </button>
 
-`);
-
-}
-);
-
-});
-
-
-/* ==================================================
-GALLERIES
-================================================== */
-
-const galleries = {
-
-
-/* =========================
-WINNER 2025
-========================= */
-
-winner2025:{
-
-title:"Miss Ocean Winner 2025",
-
-items:[
-
-{
-image:"IMG_20260912_133051_561.jpg",
-caption:"Miss Ocean Winner 2025"
-},
-
-{
-image:"IMG_20260912_133128_876.jpg",
-caption:"Miss Ocean Winner 2025"
-},
-
-{
-image:"IMG_20260912_133210_986.jpg",
-caption:"Miss Ocean Winner 2025"
-}
-
-]
-
-},
-
-
-/* =========================
-PROJECT POSTER
-========================= */
-
-poster:{
-
-title:"Project Poster",
-
-items:[
-
-{
-image:"IMG_20260912_131934_287.jpg",
-caption:"Miss Ocean Project"
-},
-
-{
-image:"IMG_20260912_132024_973.jpg",
-caption:"Miss Ocean Project"
-}
-
-]
-
-},
-
-
-/* =========================
-PROJECT WINNERS TOP 3
-========================= */
-
-projectWinners:{
-
-title:"Project Winner Top 3",
-
-items:[
-
-{
-image:"IMG_20260912_132348_017.jpg",
-name:"Sittwe - Pyae Sai Maung",
-project:"တိရစ္ဆာန်များအပေါ် ညှဉ်းပန်းနှိပ်စက်မှု လျော့ချရေး"
-},
-
-{
-image:"IMG_20260912_132624_143.jpg",
-name:"Meiktila - Naung",
-project:"သက်ငယ်လုပ်သား လျော့ချရေးနှင့် ကလေးငယ်တိုင်း ပညာသင်ကြားနိုင်ရေး စီမံကိန်း"
-},
-
-{
-image:"IMG_20260912_132818_365.jpg",
-name:"Hpakant - Chit Tu Tu",
-project:"HIV ၊ ရပ်ရွာအသိပညာပေးခြင်းနှင့် ကာကွယ်ရေး"
-}
-
-]
-
-}
-
-};
-
-
-/* ==================================================
-OPEN GALLERY
-================================================== */
-
-function openGallery(type){
-
-const gallery =
-galleries[type];
-
-if(!gallery){
-
-return;
-
-}
-
-
-/* =========================================
-MISS OCEAN WINNER 2025
-========================================= */
-
-if(type === "winner2025"){
-
-let html = `
-
-<div class="viewerEyebrow">
-MISS OCEAN 2025
-</div>
-
-<div class="viewerTitle">
-Miss Ocean Winner 2025
-</div>
-
-<div class="viewerRule"></div>
-
-<div class="winner2025Gallery">
 `;
 
-gallery.items.forEach(item=>{
-
-html += `
-
-<div class="winner2025Item">
-
-<img
-src="${item.image}"
-alt="Miss Ocean Winner 2025"
->
-
-<div class="winner2025Caption">
-Miss Ocean Winner 2025
-</div>
-
-</div>
-
-`;
-
-});
-
-
-html += `
-
-</div>
-
-<button
-class="viewerBottomClose"
-onclick="closeViewer()"
->
-CLOSE
-</button>
-
-`;
-
-showViewer(html);
-
-return;
-
-}
-
-
-/* =========================================
-PROJECT WINNERS
-========================================= */
-
-if(type === "projectWinners"){
-
-let html = `
-
-<div class="viewerEyebrow">
-MISS OCEAN 2026
-</div>
-
-<div class="projectTopTitle">
-Project Winner Top 3
-</div>
-
-<div class="projectSubtitle">
-Beautiful Moments
-</div>
-
-<div class="viewerRule"></div>
-
-<div class="projectWinnerGallery">
-`;
-
-
-gallery.items.forEach(item=>{
-
-html += `
-
-<div class="projectWinnerItem">
-
-<img
-src="${item.image}"
-alt="${item.name}"
->
-
-<div class="projectWinnerName">
-${item.name}
-</div>
-
-<div class="projectWinnerProject">
-${item.project}
-</div>
-
-</div>
-
-`;
-
-});
-
-
-html += `
-
-</div>
-
-<button
-class="viewerBottomClose"
-onclick="closeViewer()"
->
-CLOSE
-</button>
-
-`;
-
-showViewer(html);
-
-return;
-
-}
-
-
-/* =========================================
-NORMAL GALLERY
-========================================= */
-
-let html = `
-
-<div class="viewerEyebrow">
-MISS OCEAN
-</div>
-
-<div class="viewerTitle">
-${gallery.title}
-</div>
-
-<div class="viewerRule"></div>
-
-<div class="gallery">
-`;
-
-
-gallery.items.forEach(item=>{
-
-html += `
-
-<div class="galleryItem">
-
-<img
-src="${item.image}"
-alt="${item.caption}"
->
-
-<div class="galleryCaption">
-${item.caption}
-</div>
-
-</div>
-
-`;
-
-});
-
-
-html += `
-
-</div>
-
-<button
-class="viewerBottomClose"
-onclick="closeViewer()"
->
-CLOSE
-</button>
-
-`;
-
-showViewer(html);
+openViewer();
 
 }
 
@@ -2272,25 +1942,25 @@ CONTESTANT DETAIL
 function openContestant(index){
 
 const person =
-contestantsData[index];
+contestants[index];
 
-showViewer(`
+viewerContent.innerHTML = `
 
 <div class="viewerEyebrow">
 MISS OCEAN 2026
 </div>
-
-<img
-class="detailImage"
-src="${person.image}"
-alt="${person.name}"
->
 
 <div class="viewerTitle">
 ${person.name}
 </div>
 
 <div class="viewerRule"></div>
+
+<img
+class="detailImage"
+src="${person.image}"
+alt="${person.name}"
+>
 
 
 <div class="detailBox">
@@ -2352,7 +2022,192 @@ onclick="closeViewer()"
 CLOSE
 </button>
 
-`);
+`;
+
+openViewer();
+
+}
+
+
+/* ==================================================
+GALLERIES
+================================================== */
+
+const galleries = {
+
+
+/* PROJECT WINNERS TOP 3 */
+
+projectWinners:{
+
+title:"Project Winner Top 3",
+
+subtitle:"Beautiful Moments",
+
+items:[
+
+{
+image:"IMG_20260912_132348_017.jpg",
+name:"Sittwe - Pyae Sai Maung"
+},
+
+{
+image:"IMG_20260912_132624_143.jpg",
+name:"Meiktila - Naung"
+},
+
+{
+image:"IMG_20260912_132818_365.jpg",
+name:"Hpakant - Chit Tu Tu"
+}
+
+]
+
+},
+
+
+/* MISS OCEAN WINNER 2025 */
+
+winner2025:{
+
+title:"Miss Ocean Winner 2025",
+
+subtitle:"",
+
+items:[
+
+{
+image:"IMG_20260912_133051_561.jpg",
+name:"Miss Ocean Winner 2025"
+},
+
+{
+image:"IMG_20260912_133128_876.jpg",
+name:"Miss Ocean Winner 2025"
+},
+
+{
+image:"IMG_20260912_133210_986.jpg",
+name:"Miss Ocean Winner 2025"
+}
+
+]
+
+},
+
+
+/* PROJECT POSTER */
+
+poster:{
+
+title:"Project Poster",
+
+subtitle:"",
+
+items:[
+
+{
+image:"IMG_20260912_131934_287.jpg",
+name:"Miss Ocean Project Poster"
+},
+
+{
+image:"IMG_20260912_132024_973.jpg",
+name:"Miss Ocean Project"
+}
+
+]
+
+}
+
+};
+
+
+/* ==================================================
+OPEN GALLERY
+================================================== */
+
+function openGallery(type){
+
+const data =
+galleries[type];
+
+if(!data){
+return;
+}
+
+
+let html = `
+
+<div class="viewerEyebrow">
+MISS OCEAN 2026
+</div>
+
+<div class="projectTopTitle">
+${data.title}
+</div>
+`;
+
+
+if(data.subtitle){
+
+html += `
+
+<div class="projectSubtitle">
+${data.subtitle}
+</div>
+
+`;
+
+}
+
+
+html += `
+
+<div class="projectWinnerGallery">
+`;
+
+
+data.items.forEach(item=>{
+
+html += `
+
+<div class="projectWinnerItem">
+
+<img
+src="${item.image}"
+alt="${item.name}"
+>
+
+<div class="projectWinnerName">
+${item.name}
+</div>
+
+</div>
+
+`;
+
+});
+
+
+html += `
+
+</div>
+
+<button
+class="viewerBottomClose"
+onclick="closeViewer()"
+>
+CLOSE
+</button>
+
+`;
+
+
+viewerContent.innerHTML =
+html;
+
+openViewer();
 
 }
 
@@ -2360,19 +2215,6 @@ CLOSE
 /* ==================================================
 LOADING
 ================================================== */
-
-let loadingNumber =
-1;
-
-const loadingNumberElement =
-document.getElementById(
-"loadingNumber"
-);
-
-const loadingProgress =
-document.getElementById(
-"loadingProgress"
-);
 
 const loadingScreen =
 document.getElementById(
@@ -2384,29 +2226,43 @@ document.getElementById(
 "website"
 );
 
+const loadingNumber =
+document.getElementById(
+"loadingNumber"
+);
+
+const loadingProgress =
+document.getElementById(
+"loadingProgress"
+);
+
 const music =
 document.getElementById(
 "music"
 );
 
 
-const loadingInterval =
+let loadingValue = 1;
+
+
+const loadingTimer =
 setInterval(()=>{
 
-loadingNumber++;
+loadingValue++;
 
-loadingNumberElement.textContent =
-loadingNumber;
+loadingNumber.textContent =
+loadingValue;
 
 loadingProgress.style.width =
-loadingNumber + "%";
+loadingValue + "%";
 
 
-if(loadingNumber >= 100){
+if(loadingValue >= 100){
 
 clearInterval(
-loadingInterval
+loadingTimer
 );
+
 
 setTimeout(()=>{
 
@@ -2430,7 +2286,7 @@ website.style.display =
 
 /* MUSIC */
 
-music.volume = 1;
+music.volume=1;
 
 const playPromise =
 music.play();
@@ -2470,7 +2326,7 @@ music.play().catch(()=>{});
 
 
 /* ==================================================
-ESC KEY
+ESC CLOSE
 ================================================== */
 
 document.addEventListener(
@@ -2478,7 +2334,7 @@ document.addEventListener(
 event=>{
 
 if(
-event.key === "Escape" &&
+event.key==="Escape" &&
 viewer.classList.contains("show")
 ){
 
@@ -2491,7 +2347,7 @@ closeViewer();
 
 
 /* ==================================================
-FINAL FALLBACK
+FALLBACK
 ================================================== */
 
 setTimeout(()=>{
