@@ -1,859 +1,1095 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 
 <meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
 >
 
 <title>Miss Ocean 2026</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link
-rel="preconnect"
-href="https://fonts.googleapis.com"
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
 >
 
 <link
-rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet"
 >
 
-<link
-href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
-rel="stylesheet"
->
 
 <style>
 
+/* ==================================================
+   GLOBAL
+================================================== */
+
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:"DM Sans",sans-serif;
-background:#dff4fb;
-color:#285e73;
-overflow-x:hidden;
+    font-family:"DM Sans",sans-serif;
+    background:#dff4fb;
+    color:#285e73;
+    overflow-x:hidden;
 }
 
 button{
-font-family:"DM Sans",sans-serif;
+    font-family:"DM Sans",sans-serif;
 }
 
 
-/* =========================
-LOADING
-========================= */
+/* ==================================================
+   LOADING SCREEN
+================================================== */
 
 #loadingScreen{
-position:fixed;
-inset:0;
-z-index:99999;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(
-145deg,
-#d8f2fa 0%,
-#eefafd 50%,
-#d1edf6 100%
-);
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        145deg,
+        #d8f2fa 0%,
+        #eefafd 50%,
+        #d1edf6 100%
+    );
 }
 
 .loadingInner{
-width:90%;
-max-width:430px;
-text-align:center;
+    width:90%;
+    max-width:430px;
+    text-align:center;
 }
 
 .loadingLogo{
-width:110px;
-height:110px;
-object-fit:contain;
-border-radius:50%;
-margin-bottom:20px;
-box-shadow:0 15px 38px rgba(40,100,120,.12);
+    width:110px;
+    height:110px;
+
+    object-fit:contain;
+    border-radius:50%;
+
+    margin-bottom:20px;
+
+    box-shadow:
+    0 15px 38px
+    rgba(40,100,120,.12);
 }
 
 .loadingSmall{
-font-size:8px;
-font-weight:600;
-letter-spacing:3.4px;
-color:#7899a5;
-margin-bottom:10px;
+    font-size:8px;
+    font-weight:600;
+
+    letter-spacing:3.4px;
+
+    color:#7899a5;
+
+    margin-bottom:10px;
 }
 
 .loadingTitle{
-font-family:"Libre Baskerville",serif;
-font-size:34px;
-font-weight:400;
-line-height:1.15;
-color:#175b76;
+    font-family:"Libre Baskerville",serif;
+
+    font-size:34px;
+    font-weight:400;
+
+    line-height:1.15;
+
+    color:#175b76;
 }
 
 .loadingNumber{
-margin-top:25px;
-font-size:30px;
-font-weight:600;
-color:#28677d;
+    margin-top:25px;
+
+    font-size:30px;
+    font-weight:600;
+
+    color:#28677d;
 }
 
 .loadingBar{
-width:100%;
-height:3px;
-margin-top:14px;
-border-radius:20px;
-overflow:hidden;
-background:rgba(70,132,151,.15);
+    width:100%;
+    height:3px;
+
+    margin-top:14px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:
+    rgba(70,132,151,.15);
 }
 
 .loadingProgress{
-width:1%;
-height:100%;
-background:#639dad;
+    width:1%;
+    height:100%;
+
+    background:#639dad;
 }
 
 .loadingText{
-margin-top:12px;
-font-size:7px;
-font-weight:600;
-letter-spacing:2.2px;
-color:#8aa4ae;
+    margin-top:12px;
+
+    font-size:7px;
+    font-weight:600;
+
+    letter-spacing:2.2px;
+
+    color:#8aa4ae;
 }
 
 
-/* =========================
-MUSIC
-========================= */
+/* ==================================================
+   MUSIC
+================================================== */
 
 #music{
-position:fixed;
-width:1px;
-height:1px;
-left:-9999px;
-top:-9999px;
-opacity:0;
-pointer-events:none;
+    position:fixed;
+
+    width:1px;
+    height:1px;
+
+    left:-9999px;
+    top:-9999px;
+
+    opacity:0;
+
+    pointer-events:none;
 }
 
 
-/* =========================
-WEBSITE
-========================= */
+/* ==================================================
+   WEBSITE
+================================================== */
 
 #website{
-display:none;
-min-height:100vh;
+    display:none;
+    min-height:100vh;
 }
 
 
-/* =========================
-HEADER
-========================= */
+/* ==================================================
+   HEADER
+================================================== */
 
 .siteHeader{
-padding:27px 18px 20px;
-text-align:center;
+    padding:27px 18px 20px;
+
+    text-align:center;
 }
 
 .headerLogo{
-width:55px;
-height:55px;
-object-fit:contain;
-border-radius:50%;
-margin-bottom:11px;
+    width:55px;
+    height:55px;
+
+    object-fit:contain;
+
+    border-radius:50%;
+
+    margin-bottom:11px;
 }
 
 .headerSmall{
-font-size:8px;
-font-weight:600;
-letter-spacing:3px;
-color:#7d9ca7;
+    font-size:8px;
+    font-weight:600;
+
+    letter-spacing:3px;
+
+    color:#7d9ca7;
 }
 
 .mainTitle{
-margin-top:8px;
-font-family:"Libre Baskerville",serif;
-font-size:39px;
-font-weight:400;
-line-height:1.15;
-color:#175b76;
+    margin-top:8px;
+
+    font-family:"Libre Baskerville",serif;
+
+    font-size:39px;
+    font-weight:400;
+
+    line-height:1.15;
+
+    color:#175b76;
 }
 
 .titleDecoration{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-margin-top:15px;
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:15px;
 }
 
 .titleDecoration span{
-width:39px;
-height:1px;
-background:#75a8b8;
+    width:39px;
+    height:1px;
+
+    background:#75a8b8;
 }
 
 .titleDecoration i{
-width:6px;
-height:6px;
-border-radius:50%;
-background:#75a8b8;
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#75a8b8;
 }
 
 
-/* =========================
-ADVERTISEMENT
-========================= */
+/* ==================================================
+   ADVERTISEMENT
+================================================== */
 
 .adWrapper{
-width:100%;
-overflow:hidden;
-padding-bottom:21px;
+    width:100%;
+
+    overflow:hidden;
+
+    padding-bottom:21px;
 }
 
 .adSlider{
-display:flex;
-gap:12px;
-overflow-x:auto;
-padding:2px 12px 7px;
-scroll-snap-type:x mandatory;
--webkit-overflow-scrolling:touch;
-scrollbar-width:none;
+    display:flex;
+
+    gap:12px;
+
+    overflow-x:auto;
+
+    padding:
+    2px 12px 7px;
+
+    scroll-snap-type:x mandatory;
+
+    -webkit-overflow-scrolling:touch;
+
+    scrollbar-width:none;
 }
 
 .adSlider::-webkit-scrollbar{
-display:none;
+    display:none;
 }
 
 .adCard{
-position:relative;
-flex:0 0 88%;
-height:158px;
-overflow:hidden;
-scroll-snap-align:center;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.95);
-background:#c8e9f3;
-box-shadow:0 10px 27px rgba(39,105,126,.08);
-cursor:pointer;
+    position:relative;
+
+    flex:0 0 88%;
+
+    height:158px;
+
+    overflow:hidden;
+
+    scroll-snap-align:center;
+
+    border-radius:18px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.95);
+
+    background:#c8e9f3;
+
+    box-shadow:
+    0 10px 27px
+    rgba(39,105,126,.08);
+
+    cursor:pointer;
 }
 
 .adCard img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
 }
 
 .adTap{
-position:absolute;
-right:10px;
-bottom:10px;
-padding:5px 9px;
-border-radius:20px;
-background:rgba(255,255,255,.88);
-color:#4d8191;
-font-size:6px;
-font-weight:700;
-letter-spacing:1px;
+    position:absolute;
+
+    right:10px;
+    bottom:10px;
+
+    padding:5px 9px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.88);
+
+    color:#4d8191;
+
+    font-size:6px;
+    font-weight:700;
+
+    letter-spacing:1px;
 }
 
 
-/* =========================
-NAV
-========================= */
+/* ==================================================
+   NAVIGATION
+================================================== */
 
 .nav{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-padding:5px 16px 26px;
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:10px;
+
+    padding:
+    5px 16px 26px;
 }
 
 .nav button{
-min-height:88px;
-border:1px solid rgba(255,255,255,.95);
-border-radius:17px;
-background:rgba(255,255,255,.57);
-color:#7897a2;
-cursor:pointer;
-box-shadow:0 8px 22px rgba(40,103,125,.04);
-transition:.2s;
+    min-height:88px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.95);
+
+    border-radius:17px;
+
+    background:
+    rgba(255,255,255,.57);
+
+    color:#7897a2;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 22px
+    rgba(40,103,125,.04);
+
+    transition:.2s;
 }
 
 .nav button.active{
-background:#fff;
-color:#285e73;
-box-shadow:0 10px 25px rgba(40,103,125,.09);
+    background:#ffffff;
+
+    color:#285e73;
+
+    box-shadow:
+    0 10px 25px
+    rgba(40,103,125,.09);
 }
 
 .nav button:active{
-transform:scale(.98);
+    transform:scale(.98);
 }
 
 .navRoman{
-display:block;
-font-family:"Libre Baskerville",serif;
-font-size:22px;
-margin-bottom:8px;
-color:#6694a3;
+    display:block;
+
+    font-family:
+    "Libre Baskerville",serif;
+
+    font-size:22px;
+
+    margin-bottom:8px;
+
+    color:#6694a3;
 }
 
 .navText{
-display:block;
-font-size:8px;
-font-weight:700;
-letter-spacing:.5px;
+    display:block;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
 }
 
 
-/* =========================
-SECTION
-========================= */
+/* ==================================================
+   SECTIONS
+================================================== */
 
 .section{
-display:none;
-padding:0 18px 45px;
+    display:none;
+
+    padding:
+    0 18px 45px;
 }
 
 .section.active{
-display:block;
+    display:block;
 }
 
 .sectionIntro{
-margin:8px 0 21px;
+    margin:
+    8px 0 21px;
 }
 
 .sectionEyebrow{
-font-size:8px;
-font-weight:600;
-letter-spacing:3px;
-color:#82a0aa;
-margin-bottom:8px;
+    font-size:8px;
+
+    font-weight:600;
+
+    letter-spacing:3px;
+
+    color:#82a0aa;
+
+    margin-bottom:8px;
 }
 
 .sectionTitle{
-font-family:"Libre Baskerville",serif;
-font-size:29px;
-line-height:1.3;
-font-weight:400;
-color:#175b76;
+    font-family:
+    "Libre Baskerville",serif;
+
+    font-size:29px;
+
+    line-height:1.3;
+
+    font-weight:400;
+
+    color:#175b76;
 }
 
 .sectionDescription{
-margin-top:7px;
-font-size:10px;
-line-height:1.7;
-color:#7d9ba5;
+    margin-top:7px;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    color:#7d9ba5;
 }
 
 
-/* =========================
-CONTESTANTS
-========================= */
+/* ==================================================
+   CONTESTANTS
+================================================== */
 
 .contestantGrid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:14px;
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:14px;
 }
 
 .contestantCard{
-background:#fff;
-border:1px solid rgba(255,255,255,.95);
-border-radius:17px;
-overflow:hidden;
-cursor:pointer;
-box-shadow:0 8px 24px rgba(39,105,126,.06);
+    background:#fff;
+
+    border:
+    1px solid
+    rgba(255,255,255,.95);
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 24px
+    rgba(39,105,126,.06);
 }
 
 .contestantPhoto{
-width:100%;
-height:245px;
-background:#c8e9f3;
-overflow:hidden;
+    width:100%;
+
+    height:245px;
+
+    background:#c8e9f3;
+
+    overflow:hidden;
 }
 
 .contestantPhoto img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
 }
 
 .contestantInfo{
-padding:12px 12px 15px;
+    padding:
+    12px 12px 15px;
 }
 
 .cardCity{
-font-size:7px;
-font-weight:700;
-letter-spacing:1.4px;
-color:#89a5af;
-margin-bottom:4px;
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:1.4px;
+
+    color:#89a5af;
+
+    margin-bottom:4px;
 }
 
 .cardName{
-font-size:14px;
-line-height:1.35;
-font-weight:600;
-color:#285e73;
+    font-size:14px;
+
+    line-height:1.35;
+
+    font-weight:600;
+
+    color:#285e73;
 }
 
 
-/* =========================
-UPDATES
-========================= */
+/* ==================================================
+   UPDATES
+================================================== */
 
 .updateList{
-display:flex;
-flex-direction:column;
-gap:15px;
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
 }
 
 .updateCard{
-background:#fff;
-border:1px solid rgba(255,255,255,.95);
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 9px 27px rgba(39,105,126,.07);
-cursor:pointer;
+    background:#fff;
+
+    border:
+    1px solid
+    rgba(255,255,255,.95);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 9px 27px
+    rgba(39,105,126,.07);
+
+    cursor:pointer;
 }
 
 .updateImage{
-width:100%;
-height:225px;
-background:#c8e9f3;
-overflow:hidden;
+    width:100%;
+
+    height:225px;
+
+    background:#c8e9f3;
+
+    overflow:hidden;
 }
 
 .updateImage img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
 }
 
 .updateContent{
-padding:18px;
+    padding:18px;
 }
 
 .updateLabel{
-font-size:7px;
-font-weight:700;
-letter-spacing:2.4px;
-color:#86a2ac;
-margin-bottom:8px;
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:2.4px;
+
+    color:#86a2ac;
+
+    margin-bottom:8px;
 }
 
 .updateTitle{
-font-family:"Libre Baskerville",serif;
-font-size:21px;
-line-height:1.35;
-color:#175b76;
-margin-bottom:11px;
+    font-family:
+    "Libre Baskerville",serif;
+
+    font-size:21px;
+
+    line-height:1.35;
+
+    color:#175b76;
+
+    margin-bottom:11px;
 }
 
 .updateLine{
-width:40px;
-height:1px;
-background:#75a8b8;
-margin-bottom:13px;
+    width:40px;
+    height:1px;
+
+    background:#75a8b8;
+
+    margin-bottom:13px;
 }
 
 .updateText{
-font-size:11px;
-line-height:1.85;
-color:#688792;
+    font-size:11px;
+
+    line-height:1.85;
+
+    color:#688792;
 }
 
 
-/* =========================
-PROJECT WINNERS
-========================= */
-
-.projectTopTitle{
-font-family:"Libre Baskerville",serif;
-font-size:26px;
-line-height:1.35;
-color:#175b76;
-text-align:center;
-}
-
-.projectSubtitle{
-font-size:10px;
-letter-spacing:2px;
-font-weight:600;
-color:#7d9ca7;
-text-align:center;
-margin-top:7px;
-}
-
-.projectWinnerGallery{
-display:flex;
-flex-direction:column;
-gap:16px;
-margin-top:20px;
-}
-
-.projectWinnerItem{
-background:#fff;
-border-radius:17px;
-padding:9px;
-box-shadow:0 8px 24px rgba(39,105,126,.06);
-}
-
-.projectWinnerItem img{
-width:100%;
-height:auto;
-max-height:70vh;
-object-fit:contain;
-display:block;
-border-radius:12px;
-background:#c8e9f3;
-}
-
-.projectWinnerName{
-font-size:13px;
-font-weight:700;
-color:#285e73;
-text-align:center;
-margin-top:12px;
-line-height:1.45;
-}
-
-.projectWinnerProject{
-font-size:10px;
-line-height:1.7;
-color:#688792;
-text-align:center;
-margin-top:5px;
-}
-
-
-/* =========================
-WINNER 2025
-========================= */
-
-.winner2025Gallery{
-display:flex;
-flex-direction:column;
-gap:16px;
-margin-top:20px;
-}
-
-.winner2025Item{
-background:#fff;
-border-radius:17px;
-padding:9px;
-box-shadow:0 8px 24px rgba(39,105,126,.06);
-}
-
-.winner2025Item img{
-width:100%;
-height:auto;
-max-height:70vh;
-object-fit:contain;
-display:block;
-border-radius:12px;
-background:#c8e9f3;
-}
-
-.winner2025Caption{
-padding:11px 5px 4px;
-font-size:11px;
-font-weight:700;
-color:#537987;
-text-align:center;
-}
-
-
-/* =========================
-RESULTS
-========================= */
+/* ==================================================
+   RESULTS
+================================================== */
 
 .resultsOnly{
-min-height:350px;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+    min-height:350px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
 }
 
 .resultsOcean{
-font-family:"Libre Baskerville",serif;
-font-size:33px;
-color:#175b76;
+    font-family:
+    "Libre Baskerville",serif;
+
+    font-size:33px;
+
+    color:#175b76;
 }
 
 .resultsSmallLine{
-width:42px;
-height:1px;
-background:#75a8b8;
-margin:16px auto;
+    width:42px;
+    height:1px;
+
+    background:#75a8b8;
+
+    margin:16px auto;
 }
 
 
-/* =========================
-VIEWER
-========================= */
+/* ==================================================
+   VIEWER
+================================================== */
 
 .viewer{
-position:fixed;
-inset:0;
-z-index:100000;
-display:none;
-flex-direction:column;
-overflow-y:auto;
-background:linear-gradient(
-145deg,
-#d8f2fa 0%,
-#eefafd 50%,
-#d1edf6 100%
-);
+    position:fixed;
+
+    inset:0;
+
+    z-index:100000;
+
+    display:none;
+
+    flex-direction:column;
+
+    overflow-y:auto;
+
+    background:
+    linear-gradient(
+        145deg,
+        #d8f2fa 0%,
+        #eefafd 50%,
+        #d1edf6 100%
+    );
 }
 
 .viewer.show{
-display:flex;
+    display:flex;
 }
 
 .viewerHeader{
-display:flex;
-align-items:center;
-padding:18px 17px;
-background:rgba(255,255,255,.65);
-border-bottom:1px solid rgba(255,255,255,.9);
+    display:flex;
+
+    align-items:center;
+
+    padding:
+    18px 17px;
+
+    background:
+    rgba(255,255,255,.65);
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.9);
 }
 
 .viewerLogo{
-width:42px;
-height:42px;
-object-fit:contain;
-border-radius:50%;
+    width:42px;
+    height:42px;
+
+    object-fit:contain;
+
+    border-radius:50%;
 }
 
 .viewerBrand{
-margin-left:11px;
-flex:1;
+    margin-left:11px;
+
+    flex:1;
 }
 
 .viewerBrandSmall{
-font-size:6px;
-letter-spacing:2px;
-font-weight:700;
-color:#86a1ab;
+    font-size:6px;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+    color:#86a1ab;
 }
 
 .viewerBrandTitle{
-margin-top:2px;
-font-family:"Libre Baskerville",serif;
-font-size:15px;
-color:#175b76;
+    margin-top:2px;
+
+    font-family:
+    "Libre Baskerville",serif;
+
+    font-size:15px;
+
+    color:#175b76;
 }
 
 .viewerClose{
-width:38px;
-height:38px;
-border:0;
-border-radius:50%;
-background:#fff;
-color:#4f7f8e;
-font-size:25px;
-cursor:pointer;
+    width:38px;
+    height:38px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:#4f7f8e;
+
+    font-size:25px;
+
+    cursor:pointer;
 }
 
 .viewerContent{
-width:100%;
-max-width:850px;
-margin:auto;
-padding:25px 18px 40px;
-text-align:center;
+    width:100%;
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:
+    25px 18px 40px;
+
+    text-align:center;
 }
 
 .viewerEyebrow{
-font-size:7px;
-font-weight:700;
-letter-spacing:2.5px;
-color:#86a2ac;
-margin-bottom:9px;
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:2.5px;
+
+    color:#86a2ac;
+
+    margin-bottom:9px;
 }
 
 .viewerTitle{
-font-family:"Libre Baskerville",serif;
-font-size:26px;
-line-height:1.4;
-font-weight:400;
-color:#175b76;
+    font-family:
+    "Libre Baskerville",serif;
+
+    font-size:26px;
+
+    line-height:1.4;
+
+    font-weight:400;
+
+    color:#175b76;
 }
 
 .viewerRule{
-width:42px;
-height:1px;
-background:#75a8b8;
-margin:15px auto;
+    width:42px;
+    height:1px;
+
+    background:#75a8b8;
+
+    margin:15px auto;
 }
 
 .viewerText{
-font-size:11px;
-line-height:1.9;
-color:#688792;
-margin:0 auto 20px;
-max-width:680px;
-white-space:pre-line;
+    font-size:11px;
+
+    line-height:1.9;
+
+    color:#688792;
+
+    margin:
+    0 auto 20px;
+
+    max-width:680px;
+
+    white-space:pre-line;
 }
 
 .singleViewerImage{
-width:100%;
-max-height:70vh;
-object-fit:contain;
-border-radius:16px;
-background:#c8e9f3;
+    width:100%;
+
+    max-height:70vh;
+
+    object-fit:contain;
+
+    border-radius:16px;
+
+    background:#c8e9f3;
 }
 
+
+/* ==================================================
+   GALLERY
+================================================== */
+
 .gallery{
-display:grid;
-grid-template-columns:1fr;
-gap:15px;
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:15px;
 }
 
 .galleryItem{
-background:#fff;
-border-radius:17px;
-padding:9px;
+    background:#fff;
+
+    border-radius:17px;
+
+    padding:9px;
 }
 
 .galleryItem img{
-width:100%;
-max-height:65vh;
-object-fit:contain;
-border-radius:12px;
+    width:100%;
+
+    max-height:65vh;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    display:block;
 }
 
 .galleryCaption{
-padding:10px 5px 4px;
-font-size:10px;
-color:#537987;
+    padding:
+    12px 5px 7px;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    color:#537987;
+
+    text-align:center;
+
+    line-height:1.5;
 }
 
+
+/* ==================================================
+   PROJECT WINNER TITLE
+================================================== */
+
+.projectWinnerHeading{
+    margin-bottom:20px;
+}
+
+.projectWinnerTop{
+    font-family:
+    "Libre Baskerville",serif;
+
+    font-size:24px;
+
+    line-height:1.4;
+
+    color:#175b76;
+}
+
+.projectWinnerBeautiful{
+    margin-top:7px;
+
+    font-size:9px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    color:#7899a5;
+
+    text-transform:uppercase;
+}
+
+
+/* ==================================================
+   DETAIL
+================================================== */
+
 .detailImage{
-width:100%;
-max-height:68vh;
-object-fit:contain;
-background:#c8e9f3;
-border-radius:17px;
-margin-bottom:15px;
+    width:100%;
+
+    max-height:68vh;
+
+    object-fit:contain;
+
+    background:#c8e9f3;
+
+    border-radius:17px;
+
+    margin-bottom:15px;
 }
 
 .detailBox{
-background:#fff;
-border-radius:18px;
-padding:15px;
-margin-bottom:14px;
-text-align:left;
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:15px;
+
+    margin-bottom:14px;
+
+    text-align:left;
 }
 
 .detailLabel{
-font-size:7px;
-font-weight:700;
-letter-spacing:2px;
-color:#88a4ae;
-margin-bottom:6px;
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    color:#88a4ae;
+
+    margin-bottom:6px;
 }
 
 .detailValue{
-font-size:14px;
-font-weight:600;
-color:#285e73;
-line-height:1.55;
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#285e73;
+
+    line-height:1.55;
 }
 
 .detailDescription{
-font-size:11px;
-line-height:1.95;
-color:#688792;
-white-space:pre-line;
+    font-size:11px;
+
+    line-height:1.95;
+
+    color:#688792;
+
+    white-space:pre-line;
 }
 
 .viewerBottomClose{
-margin:22px auto 0;
-padding:11px 25px;
-border:1px solid rgba(255,255,255,.95);
-border-radius:30px;
-background:#fff;
-color:#4d8191;
-font-size:8px;
-font-weight:700;
-letter-spacing:2px;
-cursor:pointer;
+    margin:
+    22px auto 0;
+
+    padding:
+    11px 25px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.95);
+
+    border-radius:30px;
+
+    background:#fff;
+
+    color:#4d8191;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
 }
 
 
-/* =========================
-RESPONSIVE
-========================= */
+/* ==================================================
+   MOBILE
+================================================== */
 
 @media(max-width:420px){
 
-.mainTitle{
-font-size:36px;
-}
+    .mainTitle{
+        font-size:36px;
+    }
 
-.contestantPhoto{
-height:225px;
-}
+    .contestantPhoto{
+        height:225px;
+    }
 
-.cardName{
-font-size:13px;
-}
-
-.projectTopTitle{
-font-size:23px;
-}
+    .cardName{
+        font-size:13px;
+    }
 
 }
+
+
+/* ==================================================
+   DESKTOP
+================================================== */
 
 @media(min-width:700px){
 
-.adCard{
-flex-basis:58%;
-height:185px;
-}
+    .adCard{
+        flex-basis:58%;
+        height:185px;
+    }
 
-.contestantGrid{
-grid-template-columns:repeat(3,1fr);
-}
+    .contestantGrid{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
 
-.section{
-max-width:1000px;
-margin:auto;
-}
+    .section{
+        max-width:1000px;
+        margin:auto;
+    }
 
-.siteHeader{
-max-width:1000px;
-margin:auto;
-}
+    .siteHeader{
+        max-width:1000px;
+        margin:auto;
+    }
 
-.nav{
-max-width:700px;
-margin:auto;
-}
+    .nav{
+        max-width:700px;
+        margin:auto;
+    }
 
 }
 
 </style>
-
 </head>
 
 
@@ -861,609 +1097,1795 @@ margin:auto;
 
 
 <!-- ==================================================
-LOADING
+     LOADING SCREEN
 ================================================== -->
 
 <div id="loadingScreen">
 
-<div class="loadingInner">
+    <div class="loadingInner">
 
-<img
-class="loadingLogo"
-src="IMG_20260912_123927_081.jpg"
-alt="Miss Ocean Logo"
->
+        <img
+            class="loadingLogo"
+            src="IMG_20260912_123927_081.jpg"
+            alt="Miss Ocean Logo"
+        >
 
-<div class="loadingSmall">
-OFFICIAL ONLINE COMPETITION
-</div>
+        <div class="loadingSmall">
+            OFFICIAL ONLINE COMPETITION
+        </div>
 
-<div class="loadingTitle">
-MISS OCEAN
-</div>
+        <div class="loadingTitle">
+            MISS OCEAN
+        </div>
 
-<div
-class="loadingNumber"
-id="loadingNumber"
->
-1
-</div>
+        <div
+            class="loadingNumber"
+            id="loadingNumber"
+        >
+            1
+        </div>
 
-<div class="loadingBar">
+        <div class="loadingBar">
 
-<div
-class="loadingProgress"
-id="loadingProgress"
-></div>
+            <div
+                class="loadingProgress"
+                id="loadingProgress"
+            ></div>
 
-</div>
+        </div>
 
-<div class="loadingText">
-PREPARING THE OCEAN
-</div>
+        <div class="loadingText">
+            PREPARING THE OCEAN
+        </div>
 
-</div>
+    </div>
 
 </div>
 
 
 <!-- ==================================================
-MUSIC
+     MUSIC
 ================================================== -->
 
 <video
-id="music"
-preload="auto"
-playsinline
-loop
+    id="music"
+    preload="auto"
+    playsinline
+    loop
 >
 
-<source
-src="VID_20260912_122734_458.mp4"
-type="video/mp4"
->
+    <source
+        src="VID_20260912_122734_458.mp4"
+        type="video/mp4"
+    >
 
 </video>
 
 
 <!-- ==================================================
-WEBSITE
+     WEBSITE
 ================================================== -->
 
 <div id="website">
 
 
+<!-- ==================================================
+     HEADER
+================================================== -->
+
 <header class="siteHeader">
 
-<img
-class="headerLogo"
-src="IMG_20260912_123927_081.jpg"
-alt="Miss Ocean Logo"
->
+    <img
+        class="headerLogo"
+        src="IMG_20260912_123927_081.jpg"
+        alt="Miss Ocean Logo"
+    >
 
-<div class="headerSmall">
-OFFICIAL ONLINE COMPETITION
-</div>
+    <div class="headerSmall">
+        OFFICIAL ONLINE COMPETITION
+    </div>
 
-<h1 class="mainTitle">
-MISS OCEAN
-</h1>
+    <h1 class="mainTitle">
+        MISS OCEAN
+    </h1>
 
-<div class="titleDecoration">
+    <div class="titleDecoration">
 
-<span></span>
-<i></i>
-<span></span>
+        <span></span>
 
-</div>
+        <i></i>
+
+        <span></span>
+
+    </div>
 
 </header>
 
 
 <!-- ==================================================
-ADVERTISEMENT
+     ADVERTISEMENT
 ================================================== -->
 
 <div class="adWrapper">
 
-<div class="adSlider">
+    <div class="adSlider">
 
 
-<!-- FIRST ADVERTISEMENT -->
+        <!-- FIRST ADVERTISEMENT
+             CHANGED IMAGE
+        -->
 
-<div
-class="adCard"
-data-ad-title="THE BEST CITY DIRECTOR VOTING WINNER"
-data-ad-image="Screenshot_2026-09-14-20-36-37-251_com.ss.android.ugc.trill-edit.jpg"
-data-ad-text="Ocean Event Production - City Director KO Khant"
->
+        <div
+            class="adCard"
+            data-ad-title="Miss Ocean Final Evening Gown"
+            data-ad-image="IMG_20260913_185237_340.png"
+        >
 
-<img
-src="Screenshot_2026-09-14-20-36-37-251_com.ss.android.ugc.trill-edit.jpg"
-alt="THE BEST CITY DIRECTOR VOTING WINNER"
->
+            <img
+                src="IMG_20260913_185237_340.png"
+                alt="Miss Ocean Final Evening Gown"
+            >
 
-<div class="adTap">
-VIEW
-</div>
+            <div class="adTap">
+                VIEW
+            </div>
 
-</div>
-
-
-<!-- SECOND AD -->
-
-<div
-class="adCard"
-data-ad-title="Miss Ocean Official Tiktok Account"
-data-ad-image="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
->
-
-<img
-src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
-alt="Miss Ocean Official Tiktok"
->
-
-<div class="adTap">
-VIEW
-</div>
-
-</div>
+        </div>
 
 
-<!-- THIRD AD -->
+        <!-- SECOND -->
 
-<div
-class="adCard"
-data-ad-title="Miss Ocean 2025 Winner"
-data-ad-image="IMG_20260912_131710_045.jpg"
->
+        <div
+            class="adCard"
+            data-ad-title="Miss Ocean Official Tiktok Account"
+            data-ad-image="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
+        >
 
-<img
-src="IMG_20260912_131710_045.jpg"
-alt="Miss Ocean Winner"
->
+            <img
+                src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
+                alt="Miss Ocean Official Tiktok"
+            >
 
-<div class="adTap">
-VIEW
-</div>
+            <div class="adTap">
+                VIEW
+            </div>
 
-</div>
-
-
-<!-- FOURTH AD -->
-
-<div
-class="adCard"
-data-gallery="poster"
->
-
-<img
-src="IMG_20260912_131934_287.jpg"
-alt="Project Poster"
->
-
-<div class="adTap">
-VIEW
-</div>
-
-</div>
+        </div>
 
 
-<!-- FIFTH AD -->
+        <!-- THIRD -->
 
-<div
-class="adCard"
-data-ad-title="Miss Ocean 2025"
-data-ad-image="IMG_20260912_133011_088.jpg"
->
+        <div
+            class="adCard"
+            data-ad-title="Miss Ocean 2025 Winner"
+            data-ad-image="IMG_20260912_131710_045.jpg"
+        >
 
-<img
-src="IMG_20260912_133011_088.jpg"
-alt="Miss Ocean 2025"
->
+            <img
+                src="IMG_20260912_131710_045.jpg"
+                alt="Miss Ocean 2025 Winner"
+            >
 
-<div class="adTap">
-VIEW
-</div>
+            <div class="adTap">
+                VIEW
+            </div>
 
-</div>
+        </div>
 
 
-</div>
+        <!-- FOURTH -->
+
+        <div
+            class="adCard"
+            data-gallery="poster"
+        >
+
+            <img
+                src="IMG_20260912_131934_287.jpg"
+                alt="Project Poster"
+            >
+
+            <div class="adTap">
+                VIEW
+            </div>
+
+        </div>
+
+
+        <!-- FIFTH -->
+
+        <div
+            class="adCard"
+            data-ad-title="Miss Ocean 2025"
+            data-ad-image="IMG_20260912_133011_088.jpg"
+        >
+
+            <img
+                src="IMG_20260912_133011_088.jpg"
+                alt="Miss Ocean 2025"
+            >
+
+            <div class="adTap">
+                VIEW
+            </div>
+
+        </div>
+
+
+    </div>
 
 </div>
 
 
 <!-- ==================================================
-NAVIGATION
+     NAVIGATION
 ================================================== -->
 
 <div class="nav">
 
-<button
-class="active"
-data-section="contestants"
->
 
-<span class="navRoman">
-I
-</span>
+    <button
+        class="active"
+        data-section="contestants"
+    >
 
-<span class="navText">
-CONTESTANTS
-</span>
+        <span class="navRoman">
+            I
+        </span>
 
-</button>
+        <span class="navText">
+            CONTESTANTS
+        </span>
 
-
-<button
-data-section="updates"
->
-
-<span class="navRoman">
-II
-</span>
-
-<span class="navText">
-UPDATES
-</span>
-
-</button>
+    </button>
 
 
-<button
-data-section="results"
->
+    <button
+        data-section="updates"
+    >
 
-<span class="navRoman">
-III
-</span>
+        <span class="navRoman">
+            II
+        </span>
 
-<span class="navText">
-RESULTS
-</span>
+        <span class="navText">
+            UPDATES
+        </span>
 
-</button>
+    </button>
+
+
+    <button
+        data-section="results"
+    >
+
+        <span class="navRoman">
+            III
+        </span>
+
+        <span class="navText">
+            RESULTS
+        </span>
+
+    </button>
+
 
 </div>
 
 
 <!-- ==================================================
-CONTESTANTS
+     CONTESTANTS SECTION
 ================================================== -->
 
 <section
-id="contestants"
-class="section active"
+    id="contestants"
+    class="section active"
 >
 
-<div class="sectionIntro">
+    <div class="sectionIntro">
 
-<div class="sectionEyebrow">
-MISS OCEAN 2026
-</div>
+        <div class="sectionEyebrow">
+            MISS OCEAN 2026
+        </div>
 
-<h2 class="sectionTitle">
-Contestants
-</h2>
+        <h2 class="sectionTitle">
+            Contestants
+        </h2>
 
-<p class="sectionDescription">
-Meet the contestants representing their cities in Miss Ocean 2026.
-</p>
+        <p class="sectionDescription">
+            Meet the contestants representing their cities in Miss Ocean 2026.
+        </p>
 
-</div>
+    </div>
 
-<div
-id="contestantGrid"
-class="contestantGrid"
-></div>
+
+    <div
+        id="contestantGrid"
+        class="contestantGrid"
+    ></div>
 
 </section>
 
 
 <!-- ==================================================
-UPDATES
+     UPDATES SECTION
 ================================================== -->
 
 <section
-id="updates"
-class="section"
+    id="updates"
+    class="section"
 >
 
-<div class="sectionIntro">
+    <div class="sectionIntro">
 
-<div class="sectionEyebrow">
-LATEST NEWS
-</div>
+        <div class="sectionEyebrow">
+            LATEST NEWS
+        </div>
 
-<h2 class="sectionTitle">
-Updates
-</h2>
+        <h2 class="sectionTitle">
+            Updates
+        </h2>
 
-<p class="sectionDescription">
-Latest updates and moments from Miss Ocean.
-</p>
+        <p class="sectionDescription">
+            Latest updates and moments from Miss Ocean.
+        </p>
 
-</div>
+    </div>
 
 
-<div class="updateList">
+    <div class="updateList">
 
 
-<!-- ==================================================
-CITY DIRECTOR WINNER UPDATE
-================================================== -->
+        <!-- ==================================================
+             FINAL EVENING GOWN
+        ================================================== -->
 
-<div
-class="updateCard"
-data-ad-title="THE BEST CITY DIRECTOR VOTING WINNER"
-data-ad-image="Screenshot_2026-09-14-20-36-37-251_com.ss.android.ugc.trill-edit.jpg"
-data-ad-text="Ocean Event Production - City Director KO Khant"
->
+        <div
+            class="updateCard"
+            data-ad-title="Miss Ocean Final Evening Gown"
+            data-ad-image="IMG_20260913_185237_340.png"
+            data-ad-text="16 September | 7:00 PM&#10;&#10;Tiktok - @missoceanofficial"
+        >
 
-<div class="updateImage">
+            <div class="updateImage">
 
-<img
-src="Screenshot_2026-09-14-20-36-37-251_com.ss.android.ugc.trill-edit.jpg"
-alt="THE BEST CITY DIRECTOR VOTING WINNER"
->
+                <img
+                    src="IMG_20260913_185237_340.png"
+                    alt="Miss Ocean Final Evening Gown"
+                >
 
-</div>
+            </div>
 
-<div class="updateContent">
 
-<div class="updateLabel">
-MISS OCEAN UPDATE
-</div>
+            <div class="updateContent">
 
-<div class="updateTitle">
-THE BEST CITY DIRECTOR VOTING WINNER
-</div>
+                <div class="updateLabel">
+                    MISS OCEAN UPDATE
+                </div>
 
-<div class="updateLine"></div>
+                <div class="updateTitle">
+                    Miss Ocean Final Evening Gown
+                </div>
 
-<div class="updateText">
-Ocean Event Production - City Director KO Khant
-</div>
+                <div class="updateLine"></div>
 
-</div>
+                <div class="updateText">
 
-</div>
+                    16 September | 7:00 PM
 
+                    <br><br>
 
-<!-- ==================================================
-POPULAR VOTE
-================================================== -->
+                    Tiktok - @missoceanofficial
 
-<div
-class="updateCard"
-data-ad-title="Popular Vote Top 5"
-data-ad-image="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
-data-ad-text="ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။"
->
+                </div>
 
-<div class="updateImage">
+            </div>
 
-<img
-src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
-alt="Popular Vote Top 5"
->
+        </div>
 
-</div>
 
-<div class="updateContent">
+        <!-- ==================================================
+             POPULAR VOTE
+        ================================================== -->
 
-<div class="updateLabel">
-POPULAR VOTE
-</div>
+        <div
+            class="updateCard"
+            data-ad-title="Popular Vote Top 5"
+            data-ad-image="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
+            data-ad-text="ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။"
+        >
 
-<div class="updateTitle">
-Popular Vote Top 5
-</div>
+            <div class="updateImage">
 
-<div class="updateLine"></div>
+                <img
+                    src="Screenshot_2026-09-12-13-01-21-580_com.ss.android.ugc.trill-edit.jpg"
+                    alt="Popular Vote Top 5"
+                >
 
-<div class="updateText">
-ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။
-</div>
+            </div>
 
-</div>
 
-</div>
+            <div class="updateContent">
 
+                <div class="updateLabel">
+                    POPULAR VOTE
+                </div>
 
-<!-- ==================================================
-TIKTOK
-================================================== -->
+                <div class="updateTitle">
+                    Popular Vote Top 5
+                </div>
 
-<div
-class="updateCard"
-data-ad-title="Miss Ocean Official Tiktok Account"
-data-ad-image="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
-data-ad-text="Follow the official Miss Ocean Tiktok account for the latest updates and announcements."
->
+                <div class="updateLine"></div>
 
-<div class="updateImage">
+                <div class="updateText">
+                    ရမှတ်အများဆုံးရရှိထားသော Top 5 ဖြစ်ပါသည်။
+                </div>
 
-<img
-src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
-alt="Miss Ocean Official Tiktok"
->
+            </div>
 
-</div>
+        </div>
 
-<div class="updateContent">
 
-<div class="updateLabel">
-OFFICIAL ACCOUNT
-</div>
+        <!-- ==================================================
+             OFFICIAL TIKTOK
+        ================================================== -->
 
-<div class="updateTitle">
-Miss Ocean Official Tiktok Account
-</div>
+        <div
+            class="updateCard"
+            data-ad-title="Miss Ocean Official Tiktok Account"
+            data-ad-image="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
+            data-ad-text="Follow the official Miss Ocean Tiktok account for the latest updates and announcements."
+        >
 
-<div class="updateLine"></div>
+            <div class="updateImage">
 
-<div class="updateText">
-Follow the official Miss Ocean Tiktok account for the latest updates and announcements.
-</div>
+                <img
+                    src="Screenshot_2026-09-11-19-22-45-441_com.ss.android.ugc.trill-edit.jpg"
+                    alt="Miss Ocean Official Tiktok"
+                >
 
-</div>
+            </div>
 
-</div>
 
+            <div class="updateContent">
 
-<!-- ==================================================
-MISS OCEAN WINNER 2025
-================================================== -->
+                <div class="updateLabel">
+                    OFFICIAL ACCOUNT
+                </div>
 
-<div
-class="updateCard"
-data-gallery="winner2025"
->
+                <div class="updateTitle">
+                    Miss Ocean Official Tiktok Account
+                </div>
 
-<div class="updateImage">
+                <div class="updateLine"></div>
 
-<img
-src="IMG_20260912_133051_561.jpg"
-alt="Miss Ocean Winner 2025"
->
+                <div class="updateText">
+                    Follow the official Miss Ocean Tiktok account for the latest updates and announcements.
+                </div>
 
-</div>
+            </div>
 
-<div class="updateContent">
+        </div>
 
-<div class="updateLabel">
-MISS OCEAN 2025
-</div>
 
-<div class="updateTitle">
-Miss Ocean Winner 2025
-</div>
+        <!-- ==================================================
+             MISS OCEAN WINNER 2025
+        ================================================== -->
 
-<div class="updateLine"></div>
+        <div
+            class="updateCard"
+            data-gallery="winner"
+        >
 
-<div class="updateText">
-Miss Ocean Winner 2025 moments.
-</div>
+            <div class="updateImage">
 
-</div>
+                <img
+                    src="IMG_20260912_131710_045.jpg"
+                    alt="Miss Ocean Winner 2025"
+                >
 
-</div>
+            </div>
 
 
-<!-- ==================================================
-PROJECT POSTER
-================================================== -->
+            <div class="updateContent">
 
-<div
-class="updateCard"
-data-gallery="poster"
->
+                <div class="updateLabel">
+                    MISS OCEAN 2025
+                </div>
 
-<div class="updateImage">
+                <div class="updateTitle">
+                    Miss Ocean Winner 2025
+                </div>
 
-<img
-src="IMG_20260912_131934_287.jpg"
-alt="Project Poster"
->
+                <div class="updateLine"></div>
 
-</div>
+                <div class="updateText">
+                    Miss Ocean Winner 2025 moments.
+                </div>
 
-<div class="updateContent">
+            </div>
 
-<div class="updateLabel">
-PROJECT
-</div>
+        </div>
 
-<div class="updateTitle">
-Project Poster
-</div>
 
-<div class="updateLine"></div>
+        <!-- ==================================================
+             PROJECT POSTER
+        ================================================== -->
 
-<div class="updateText">
-Miss Ocean contestant projects.
-</div>
+        <div
+            class="updateCard"
+            data-gallery="poster"
+        >
 
-</div>
+            <div class="updateImage">
 
-</div>
+                <img
+                    src="IMG_20260912_131934_287.jpg"
+                    alt="Project Poster"
+                >
 
+            </div>
 
-<!-- ==================================================
-PROJECT WINNERS
-================================================== -->
 
-<div
-class="updateCard"
-data-gallery="projectWinners"
->
+            <div class="updateContent">
 
-<div class="updateImage">
+                <div class="updateLabel">
+                    PROJECT
+                </div>
 
-<img
-src="IMG_20260912_132348_017.jpg"
-alt="Project Winner Top 3"
->
+                <div class="updateTitle">
+                    Project Poster
+                </div>
 
-</div>
+                <div class="updateLine"></div>
 
-<div class="updateContent">
+                <div class="updateText">
+                    Miss Ocean contestant projects.
+                </div>
 
-<div class="updateLabel">
-PROJECT
-</div>
+            </div>
 
-<div class="updateTitle">
-Project Winners
-</div>
+        </div>
 
-<div class="updateLine"></div>
 
-<div class="updateText">
-Project Winner Top 3 — Beautiful Moments.
-</div>
+        <!-- ==================================================
+             PROJECT WINNERS
+        ================================================== -->
 
-</div>
+        <div
+            class="updateCard"
+            data-gallery="projectWinners"
+        >
 
-</div>
+            <div class="updateImage">
 
+                <img
+                    src="IMG_20260912_132348_017.jpg"
+                    alt="Project Winners"
+                >
 
-</div>
+            </div>
+
+
+            <div class="updateContent">
+
+                <div class="updateLabel">
+                    PROJECT
+                </div>
+
+                <div class="updateTitle">
+                    Project Winners
+                </div>
+
+                <div class="updateLine"></div>
+
+                <div class="updateText">
+                    Miss Ocean Project Winners.
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 </section>
 
 
 <!-- ==================================================
-RESULTS
+     RESULTS
 ================================================== -->
 
 <section
-id="results"
-class="section"
+    id="results"
+    class="section"
 >
 
-<div class="sectionIntro">
+    <div class="sectionIntro">
 
-<div class="sectionEyebrow">
-OFFICIAL RESULT
+        <div class="sectionEyebrow">
+            OFFICIAL RESULT
+        </div>
+
+        <h2 class="sectionTitle">
+            Results
+        </h2>
+
+        <p class="sectionDescription">
+            Official Miss Ocean result.
+        </p>
+
+    </div>
+
+
+    <div class="resultsOnly">
+
+        <div>
+
+            <div class="resultsOcean">
+                MISS OCEAN
+            </div>
+
+            <div class="resultsSmallLine"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 </div>
 
-<h2 class="sectionTitle">
-Results
-</h2>
 
-<p class="sectionDescription">
-Official Miss Ocean result.
-</p>
+<!-- ==================================================
+     FULL SCREEN VIEWER
+================================================== -->
+
+<div
+    class="viewer"
+    id="viewer"
+>
+
+    <div class="viewerHeader">
+
+
+        <img
+            class="viewerLogo"
+            src="IMG_20260912_123927_081.jpg"
+            alt="Miss Ocean Logo"
+        >
+
+
+        <div class="viewerBrand">
+
+            <div class="viewerBrandSmall">
+                OFFICIAL ONLINE COMPETITION
+            </div>
+
+            <div class="viewerBrandTitle">
+                MISS OCEAN
+            </div>
+
+        </div>
+
+
+        <button
+            class="viewerClose"
+            id="viewerClose"
+        >
+            ×
+        </button>
+
+
+    </div>
+
+
+    <div
+        id="viewerContent"
+        class="viewerContent"
+    ></div>
 
 </div>
 
 
-<div class="resultsOnly">
+<script>
 
-<div>
 
-<div class="resultsOcean">
-  
+/* ==================================================
+   CONTESTANTS DATA
+================================================== */
+
+const contestantsData = [
+
+    {
+        city:"Sittwe",
+        name:"Pyae Sai Maung",
+        image:"IMG_20260912_122016_208.jpg",
+
+        project:
+        "တိရစ္ဆာန်များအပေါ် ညှဉ်းပန်းနှိပ်စက်မှု လျော့ချရေး",
+
+        description:
+        `ကျွန်မတို့ရဲ့ တိရစ္ဆာန် ညှဉ်းပန်းနှိပ်စက်မှု လျော့ချရေး Project ဟာ လွန်ခဲ့တဲ့ ၄ နှစ်ကတည်းက စတင်အကောင်အထည်ဖော် ဆောင်ရွက်ခဲ့တာ ဖြစ်ပါတယ်။
+
+ကျွန်မတို့ လူသားတွေနဲ့ တန်းတူဆက်ဆံခံရအောင် တိရစ္ဆာန်ဆိုပြီး ခွဲခြားတာတွေ ရပ်တန့်ပေးဖို့ တောင်းဆိုချင်ပါတယ်။ တိရစ္ဆာန်လေးတွေလည်း အသွေးအသားနဲ့ ခန္ဓာကိုယ်တည်ဆောက်ထားတဲ့ သက်ရှိသတ္တဝါလေးတွေ ဖြစ်ပါတယ်။
+
+ဒါကြောင့် တိရစ္ဆာန်လေးတွေကို ခွဲခြားဆက်ဆံတာတွေ ရပ်တန့်ပေးဖို့ ကျွန်မ Miss Ocean Sittwe အလှမယ်မှ မေတ္တာရပ်ခံအပ်ပါတယ်။`
+    },
+
+
+    {
+        city:"Yangon South",
+        name:"Amara Lin Lin",
+        image:"IMG_20260912_123008_671.jpg",
+
+        project:
+        "နှလုံးသားဖြင့် ခင်းသောလမ်း (The Path Paved with Heart)",
+
+        description:
+        `မင်္ဂလာပါရှင်။ ကျွန်မတို့ သွားလာနေတဲ့ လမ်းမတွေပေါ်မှာ အဆောက်အဦးတွေ ဘယ်လောက်ပဲ မြင့်မားလာပါစေ၊ လမ်းဘေးမှာ ပင်ပန်းနွမ်းနယ်နေတဲ့ အဖိုးအဖွားတွေ၊ စာအုပ်ကိုင်ရမယ့်အစား တောင်းရမ်းနေရတဲ့ ကလေးငယ်တွေကို မြင်ရတာဟာ ရင်နာစရာကောင်းလှပါတယ်။
+
+ဒါကြောင့် ကျွန်မဟာ “နှလုံးသားဖြင့် ခင်းသောလမ်း” ဆိုတဲ့ စိတ်ကူးလေးနဲ့အတူ ကျွန်မဖြတ်သန်းရာ လမ်းတစ်လျှောက်မှာ မေတ္တာတရားတွေကို ချန်ထားခဲ့ချင်ပါတယ်။
+
+လူတစ်ယောက်ရဲ့ ဘဝကို ကျွန်မတစ်ယောက်တည်းနဲ့ ပြောင်းလဲပစ်ဖို့ မလွယ်ပေမယ့် သူတို့ရဲ့ တစ်နေ့တာလေးကိုတော့ ကျွန်မရဲ့ ပေးကမ်းမှုနဲ့ လှပအောင် လုပ်ပေးနိုင်ပါတယ်။`
+    },
+
+
+    {
+        city:"Meiktila",
+        name:"Naung",
+        image:"IMG_20260912_123106_628.jpg",
+
+        project:
+        "သက်ငယ်လုပ်သား လျော့ချရေးနှင့် ကလေးငယ်တိုင်း ပညာသင်ကြားနိုင်ရေး စီမံကိန်း",
+
+        description:
+        `ကျွန်မ ဒီ Project ကို လုပ်ဆောင်ရတဲ့ ရည်ရွယ်ချက်က မြန်မာနိုင်ငံရဲ့ နယ်ပယ်အသီးသီးမှာရှိကြတဲ့ မိဘမဲ့ကလေးငယ်များ၊ ပညာသင်ကြားခွင့် မရရှိကြတဲ့ ကလေးငယ်များနဲ့ တိုင်းရင်းသားလူငယ်များအတွက် အခွင့်အလမ်းတွေ ဖန်တီးပေးပြီး ရဲရင့်တဲ့ အနာဂတ်မျိုးဆက်သစ်တွေ ပေါ်ထွန်းလာစေရန် ဖြစ်ပါတယ်။
+
+ကလေးငယ်တိုင်း ကလေးသူငယ်အခွင့်အရေးတွေ ရရှိစေဖို့နဲ့ အနာဂတ်ကို တန်ဖိုးထားတတ်စေဖို့ ရည်ရွယ်ပါတယ်ရှင်။`
+    },
+
+
+    {
+        city:"Shwe Pyi Thar",
+        name:"Nan Cherry",
+        image:"IMG_20260912_123203_731.jpg",
+
+        project:
+        "ရဲရင့်မှု၏ အရောင်များ",
+
+        description:
+        `ဒီ Project ဟာ LGBTQ+ community အတွင်းရှိ လူငယ်များ မိမိကိုယ်ကို ယုံကြည်မှုရှိလာစေရန်၊ လူမှုအသိုင်းအဝိုင်းအတွင်း အပြန်အလှန်လေးစားမှုနဲ့ နားလည်မှု ပိုမိုရရှိလာစေရန် ရည်ရွယ်ထားတဲ့ empowerment project တစ်ခု ဖြစ်ပါတယ်။
+
+လူတိုင်းမှာ မတူညီတဲ့ identity၊ dream နဲ့ personality တွေရှိကြပေမယ့် အားလုံးဟာ တန်းတူလေးစားမှုနဲ့ ချစ်ခြင်းမေတ္တာကို ရရှိထိုက်သူများ ဖြစ်ကြောင်း message ပေးချင်ပါတယ်။`
+    },
+
+
+    {
+        city:"Htone Aing",
+        name:"Marrita",
+        image:"IMG_20260912_123642_733.jpg",
+
+        project:
+        "လူ့ပတ်ဝန်းကျင်နှင့် လူ့စည်းကမ်း",
+
+        description:
+        `ကျွန်မဟာ လက်ရှိအချိန်မှာ သဘာဝပတ်ဝန်းကျင်ကို အကျိုးပြုစေမယ့် လုပ်ငန်းတွေကို လုပ်ဆောင်နေပါတယ်ရှင်။
+
+သဘာဝပတ်ဝန်းကျင်အတွက် လိုအပ်တဲ့နေရာတွေမှာ အသုံးပြုနိုင်ဖို့ တတ်နိုင်သလောက် လစဉ်အလှူငွေတွေကိုလည်း ထောက်ပံ့ပေးနေပါတယ်ရှင်။
+
+လူ့ပတ်ဝန်းကျင်နဲ့ လူ့စည်းကမ်းကို တန်ဖိုးထားပြီး ပိုမိုကောင်းမွန်တဲ့ ပတ်ဝန်းကျင်တစ်ခု ဖြစ်လာစေရန် ပါဝင်ကူညီဆောင်ရွက်သွားမှာ ဖြစ်ပါတယ်။`
+    },
+
+
+    {
+        city:"Hpakant",
+        name:"Chit Tu Tu",
+        image:"IMG_20260912_123257_302.jpg",
+
+        project:
+        "HIV၊ ရပ်ရွာအသိပညာပေးခြင်းနှင့် ကာကွယ်ရေး",
+
+        description:
+        `လူသားတိုင်း HIV အကြောင်း သိရှိနားလည်ပြီး ကာကွယ်နိုင်ရန်နှင့် HIV ရှိနေသူများအနေဖြင့် လိုအပ်သော ကျန်းမာရေးဝန်ဆောင်မှုများ ရရှိနိုင်ရန် ရည်ရွယ်ထားပါတယ်။
+
+HIV နှင့်ပတ်သက်တဲ့ မှန်ကန်သောအသိပညာတွေ ပိုမိုရရှိလာစေရန်နဲ့ ခွဲခြားဆက်ဆံမှုတွေ လျော့နည်းလာစေရန်လည်း အဓိကထား ဆောင်ရွက်သွားမှာ ဖြစ်ပါတယ်။`
+    },
+
+
+    {
+        city:"Myawaddy",
+        name:"Lawi Mon",
+        image:"IMG_20260912_123455_423.jpg",
+
+        project:
+        "ကာကွယ်ခြင်းဖြင့် စတင်တဲ့ လှပသော အနာဂတ်",
+
+        description:
+        `မင်္ဂလာပါရှင်။
+
+ဒီနေ့ ကျွန်မတို့ကမ္ဘာကြီးမှာ HIV နဲ့ပတ်သက်ပြီး ဆေးဝါးနည်းပညာတွေ ဘယ်လောက်ပဲ တိုးတက်နေပါစေ၊ လူတွေရဲ့ စိတ်ဓာတ်နဲ့ အသိပညာကြောင့် HIV ရှိသူတွေကို ဆေးကုသမှုခံယူဖို့ တွန့်ဆုတ်စေပြီး ရောဂါပြန့်ပွားမှုကို ပိုမိုဆိုးရွားစေနိုင်ပါတယ်။
+
+ဒီပြဿနာကို ဖြေရှင်းဖို့အတွက် အဓိကအချက် ၃ ချက်ရှိပါတယ်။ ပထမချက်က အသိပညာပေးခြင်း၊ ဒုတိယချက်က Undetectable = Untransmittable (U=U) ဆိုတဲ့ အယူအဆကို နားလည်စေခြင်း၊ တတိယချက်က တန်းတူညီမျှမှုကို မြှင့်တင်ပေးခြင်းတို့ ဖြစ်ပါတယ်။
+
+ဒါကြောင့် HIV ကင်းစင်ပြီး လှပတဲ့အနာဂတ်တစ်ခုဆီကို ကျွန်မနဲ့အတူတူ လျှောက်လှမ်းကြပါစို့။`
+    },
+
+
+    {
+        city:"Mudon",
+        name:"Moe Yan",
+        image:"IMG_20260912_123552_309.jpg",
+
+        project:
+        "အိပ်မက်ဆီသို့ ခြေလှမ်းများ",
+
+        description:
+        `မိုးတို့မြို့မှာရှိတဲ့ ကလေးတွေရဲ့ အိပ်မက်တွေကို တတ်နိုင်သလောက် အကောင်အထည်ဖော်ပေးဖို့ ရည်ရွယ်ထားတဲ့ Project လေး ဖြစ်ပါတယ်။
+
+ကလေးတွေရဲ့ စိတ်ကူးအိပ်မက်တွေနဲ့ သူတို့စိတ်ဝင်စားတဲ့ အရာတွေကို အကောင်အထည်ဖော်နိုင်အောင် အခွင့်အလမ်းတွေ ဖန်တီးပေးသွားမှာ ဖြစ်ပါတယ်။
+
+Catwalk၊ Make-up အစရှိတဲ့ ကလေးတွေရဲ့ စိတ်ဝင်စားမှုနဲ့ အိပ်မက်တွေကို အကောင်အထည်ဖော်နိုင်ဖို့ လိုအပ်သလို ကူညီပံ့ပိုးပေးခြင်းဟာ ဒီ Project ရဲ့ အဓိကရည်ရွယ်ချက် ဖြစ်ပါတယ်။`
+    },
+
+
+    {
+        city:"Kyaikkhami",
+        name:"Luvisiyarna",
+        image:"IMG_20260912_123401_345.jpg",
+
+        project:
+        "သဘာဝပတ်ဝန်းကျင် ထိန်းသိမ်းရေး",
+
+        description:
+        `သဘာဝပတ်ဝန်းကျင်သည် လူသားတို့အတွက် အသက်ရှင်နေထိုင်ရေးတွင် အရေးပါသော အရာတစ်ခု ဖြစ်ပါတယ်။
+
+သဘာဝပတ်ဝန်းကျင် မကောင်းမွန်ပါက လူသားတို့၏ ကျန်းမာရေးနဲ့ လူမှုဘဝများကိုပါ ထိခိုက်နိုင်ပါတယ်။
+
+ဒါကြောင့် သဘာဝပတ်ဝန်းကျင်ကို ထိန်းသိမ်းစောင့်ရှောက်ခြင်းဟာ လူတိုင်းမှာ တာဝန်ရှိတဲ့ အရေးကြီးသော လုပ်ဆောင်ချက်တစ်ခု ဖြစ်ပါတယ်။`
+    },
+
+
+    {
+        city:"Thamanya",
+        name:"Htike Htike",
+        image:"IMG_20260912_123733_547.jpg",
+
+        project:
+        "ကမ္ဘာမြေကြီးကို ချစ်ရင် ဒီကနေ စကြရအောင်လား",
+
+        description:
+        `ကမ္ဘာမြေကြီးကို ချစ်ရင် ဒီကနေ စကြရအောင်လား ဆိုတဲ့ Project လေး ဖြစ်ပါတယ်။
+
+ကမ္ဘာမြေကြီးနဲ့ သဘာဝပတ်ဝန်းကျင်ကို တန်ဖိုးထားပြီး လူတိုင်းတတ်နိုင်တဲ့နေရာကနေ ပါဝင်ကူညီနိုင်စေဖို့ ရည်ရွယ်ထားပါတယ်။`
+    },
+
+
+    {
+        city:"Yangon North",
+        name:"Iris",
+        image:"IMG_20260912_123824_414.jpg",
+
+        project:
+        "အိပ်မက်များဆီသို့ (To The Dreams)",
+
+        description:
+        `“To The Dreams” သည် အိပ်မက်တစ်ခုကို အကောင်အထည်ဖော်နိုင်ရန် ကြိုးစားခဲ့တဲ့ လွန်ခဲ့သော ၇ နှစ်တာ ခရီးစဉ်ကို ဖော်ပြထားတဲ့ Project ဖြစ်ပါတယ်။
+
+ဒီ Project မှာ အိပ်မက်ကို စတင်ခဲ့တဲ့အချိန်ကနေ ယနေ့အထိ ကြုံတွေ့ခဲ့ရတဲ့ အခက်အခဲတွေ၊ ကြိုးစားအားထုတ်မှုတွေနဲ့ အတွေ့အကြုံတွေကို ပြန်လည်ဖော်ပြထားပါတယ်။
+
+အဓိကရည်ရွယ်ချက်ကတော့ အခက်အခဲတွေရှိပေမယ့် ကိုယ့်ရဲ့အိပ်မက်ကို မစွန့်လွှတ်ဘဲ ဆက်လက်ကြိုးစားသွားရင် ရည်မှန်းချက်ကို ရောက်ရှိနိုင်တယ်ဆိုတဲ့ message ကို ပေးချင်တာ ဖြစ်ပါတယ်။`
+    }
+
+];
+
+
+/* ==================================================
+   CREATE CONTESTANT CARDS
+================================================== */
+
+const contestantGrid =
+document.getElementById(
+    "contestantGrid"
+);
+
+
+contestantsData.forEach(
+    (person,index)=>{
+
+        const card =
+        document.createElement("div");
+
+        card.className =
+        "contestantCard";
+
+        card.innerHTML = `
+
+            <div class="contestantPhoto">
+
+                <img
+                    src="${person.image}"
+                    alt="${person.name}"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="contestantInfo">
+
+                <div class="cardCity">
+                    ${person.city}
+                </div>
+
+                <div class="cardName">
+                    ${person.name}
+                </div>
+
+            </div>
+
+        `;
+
+
+        card.addEventListener(
+            "click",
+            ()=>{
+                openContestant(index);
+            }
+        );
+
+
+        contestantGrid.appendChild(
+            card
+        );
+
+    }
+);
+
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+document
+.querySelectorAll(".nav button")
+.forEach(button=>{
+
+    button.addEventListener(
+        "click",
+        ()=>{
+
+            document
+            .querySelectorAll(".nav button")
+            .forEach(btn=>{
+                btn.classList.remove("active");
+            });
+
+
+            document
+            .querySelectorAll(".section")
+            .forEach(section=>{
+                section.classList.remove("active");
+            });
+
+
+            button.classList.add("active");
+
+
+            const section =
+            document.getElementById(
+                button.dataset.section
+            );
+
+
+            if(section){
+                section.classList.add("active");
+            }
+
+
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+
+        }
+    );
+
+});
+
+
+/* ==================================================
+   VIEWER
+================================================== */
+
+const viewer =
+document.getElementById("viewer");
+
+const viewerContent =
+document.getElementById("viewerContent");
+
+const viewerClose =
+document.getElementById("viewerClose");
+
+
+function showViewer(html){
+
+    viewerContent.innerHTML =
+    html;
+
+    viewer.classList.add("show");
+
+    document.body.style.overflow =
+    "hidden";
+
+}
+
+
+function closeViewer(){
+
+    viewer.classList.remove(
+        "show"
+    );
+
+    document.body.style.overflow =
+    "";
+
+    viewerContent.innerHTML =
+    "";
+
+}
+
+
+viewerClose.addEventListener(
+    "click",
+    closeViewer
+);
+
+
+viewer.addEventListener(
+    "click",
+    event=>{
+
+        if(
+            event.target === viewer
+        ){
+
+            closeViewer();
+
+        }
+
+    }
+);
+
+
+/* ==================================================
+   ADVERTISEMENT CLICK
+================================================== */
+
+document
+.querySelectorAll(".adCard")
+.forEach(card=>{
+
+    card.addEventListener(
+        "click",
+        ()=>{
+
+            if(
+                card.dataset.gallery
+            ){
+
+                openGallery(
+                    card.dataset.gallery
+                );
+
+                return;
+
+            }
+
+
+            const title =
+            card.dataset.adTitle ||
+            "Miss Ocean";
+
+
+            const image =
+            card.dataset.adImage ||
+            "";
+
+
+            showViewer(`
+
+                <div class="viewerEyebrow">
+                    MISS OCEAN
+                </div>
+
+                <div class="viewerTitle">
+                    ${title}
+                </div>
+
+                <div class="viewerRule"></div>
+
+                <img
+                    class="singleViewerImage"
+                    src="${image}"
+                    alt="${title}"
+                >
+
+                <button
+                    class="viewerBottomClose"
+                    onclick="closeViewer()"
+                >
+                    CLOSE
+                </button>
+
+            `);
+
+        }
+    );
+
+});
+
+
+/* ==================================================
+   UPDATE CLICK
+================================================== */
+
+document
+.querySelectorAll(".updateCard")
+.forEach(card=>{
+
+    card.addEventListener(
+        "click",
+        ()=>{
+
+            if(
+                card.dataset.gallery
+            ){
+
+                openGallery(
+                    card.dataset.gallery
+                );
+
+                return;
+
+            }
+
+
+            const title =
+            card.dataset.adTitle ||
+            "Miss Ocean";
+
+
+            const image =
+            card.dataset.adImage ||
+            "";
+
+
+            const text =
+            card.dataset.adText ||
+            "";
+
+
+            showViewer(`
+
+                <div class="viewerEyebrow">
+                    MISS OCEAN UPDATE
+                </div>
+
+                <div class="viewerTitle">
+                    ${title}
+                </div>
+
+                <div class="viewerRule"></div>
+
+                <img
+                    class="singleViewerImage"
+                    src="${image}"
+                    alt="${title}"
+                >
+
+                <div class="viewerText">
+                    ${text}
+                </div>
+
+                <button
+                    class="viewerBottomClose"
+                    onclick="closeViewer()"
+                >
+                    CLOSE
+                </button>
+
+            `);
+
+        }
+    );
+
+});
+
+
+/* ==================================================
+   GALLERIES
+================================================== */
+
+const galleries = {
+
+
+    /* ==================================================
+       MISS OCEAN WINNER 2025
+    ================================================== */
+
+    winner:[
+        {
+            image:
+            "IMG_20260912_133051_561.jpg",
+
+            caption:
+            "Miss Ocean Winner 2025"
+        },
+
+        {
+            image:
+            "IMG_20260912_133128_876.jpg",
+
+            caption:
+            "Miss Ocean Winner 2025"
+        },
+
+        {
+            image:
+            "IMG_20260912_133210_986.jpg",
+
+            caption:
+            "Miss Ocean Winner 2025"
+        }
+    ],
+
+
+    /* ==================================================
+       PROJECT POSTER
+    ================================================== */
+
+    poster:[
+        {
+            image:
+            "IMG_20260912_131934_287.jpg",
+
+            caption:
+            "Miss Ocean Project Poster"
+        },
+
+        {
+            image:
+            "IMG_20260912_132024_973.jpg",
+
+            caption:
+            "Miss Ocean Project"
+        }
+    ],
+
+
+    /* ==================================================
+       PROJECT WINNERS TOP 3
+    ================================================== */
+
+    projectWinners:[
+
+        {
+            image:
+            "IMG_20260912_132348_017.jpg",
+
+            caption:
+            "Sittwe - Pyae Sai Maung"
+        },
+
+        {
+            image:
+            "IMG_20260912_132624_143.jpg",
+
+            caption:
+            "Meiktila - Naung"
+        },
+
+        {
+            image:
+            "IMG_20260912_132818_365.jpg",
+
+            caption:
+            "Hpakant - Chit Tu Tu"
+        }
+
+    ]
+
+};
+
+
+/* ==================================================
+   OPEN GALLERY
+================================================== */
+
+function openGallery(type){
+
+    const images =
+    galleries[type] || [];
+
+
+    /* ----------------------------------------------
+       MISS OCEAN WINNER 2025
+    ---------------------------------------------- */
+
+    if(type === "winner"){
+
+        let html = `
+
+            <div class="viewerEyebrow">
+                MISS OCEAN 2025
+            </div>
+
+            <div class="viewerTitle">
+                Miss Ocean Winner 2025
+            </div>
+
+            <div class="viewerRule"></div>
+
+            <div class="gallery">
+
+        `;
+
+
+        images.forEach(item=>{
+
+            html += `
+
+                <div class="galleryItem">
+
+                    <img
+                        src="${item.image}"
+                        alt="Miss Ocean Winner 2025"
+                    >
+
+                    <div class="galleryCaption">
+                        Miss Ocean Winner 2025
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+        html += `
+
+            </div>
+
+            <button
+                class="viewerBottomClose"
+                onclick="closeViewer()"
+            >
+                CLOSE
+            </button>
+
+        `;
+
+
+        showViewer(html);
+
+        return;
+    }
+
+
+    /* ----------------------------------------------
+       PROJECT WINNERS
+    ---------------------------------------------- */
+
+    if(type === "projectWinners"){
+
+        let html = `
+
+            <div class="projectWinnerHeading">
+
+                <div class="projectWinnerTop">
+                    Project Winner Top 3
+                </div>
+
+                <div class="projectWinnerBeautiful">
+                    Beautiful Moments
+                </div>
+
+            </div>
+
+            <div class="viewerRule"></div>
+
+            <div class="gallery">
+
+        `;
+
+
+        images.forEach(item=>{
+
+            html += `
+
+                <div class="galleryItem">
+
+                    <img
+                        src="${item.image}"
+                        alt="${item.caption}"
+                    >
+
+                    <div class="galleryCaption">
+                        ${item.caption}
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+        html += `
+
+            </div>
+
+            <button
+                class="viewerBottomClose"
+                onclick="closeViewer()"
+            >
+                CLOSE
+            </button>
+
+        `;
+
+
+        showViewer(html);
+
+        return;
+    }
+
+
+    /* ----------------------------------------------
+       PROJECT POSTER
+    ---------------------------------------------- */
+
+    if(type === "poster"){
+
+        let html = `
+
+            <div class="viewerEyebrow">
+                MISS OCEAN
+            </div>
+
+            <div class="viewerTitle">
+                Project Poster
+            </div>
+
+            <div class="viewerRule"></div>
+
+            <div class="gallery">
+
+        `;
+
+
+        images.forEach(item=>{
+
+            html += `
+
+                <div class="galleryItem">
+
+                    <img
+                        src="${item.image}"
+                        alt="${item.caption}"
+                    >
+
+                    <div class="galleryCaption">
+                        ${item.caption}
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+        html += `
+
+            </div>
+
+            <button
+                class="viewerBottomClose"
+                onclick="closeViewer()"
+            >
+                CLOSE
+            </button>
+
+        `;
+
+
+        showViewer(html);
+
+        return;
+    }
+
+}
+
+
+/* ==================================================
+   CONTESTANT DETAIL
+================================================== */
+
+function openContestant(index){
+
+    const person =
+    contestantsData[index];
+
+
+    showViewer(`
+
+        <div class="viewerEyebrow">
+            MISS OCEAN 2026
+        </div>
+
+
+        <div class="viewerTitle">
+            ${person.name}
+        </div>
+
+
+        <div class="viewerRule"></div>
+
+
+        <img
+            class="detailImage"
+            src="${person.image}"
+            alt="${person.name}"
+        >
+
+
+        <div class="detailBox">
+
+            <div class="detailLabel">
+                CITY
+            </div>
+
+            <div class="detailValue">
+                ${person.city}
+            </div>
+
+        </div>
+
+
+        <div class="detailBox">
+
+            <div class="detailLabel">
+                CONTESTANT NAME
+            </div>
+
+            <div class="detailValue">
+                ${person.name}
+            </div>
+
+        </div>
+
+
+        <div class="detailBox">
+
+            <div class="detailLabel">
+                PROJECT TITLE
+            </div>
+
+            <div class="detailValue">
+                ${person.project}
+            </div>
+
+        </div>
+
+
+        <div class="detailBox">
+
+            <div class="detailLabel">
+                PROJECT DESCRIPTION
+            </div>
+
+            <div class="detailDescription">
+                ${person.description}
+            </div>
+
+        </div>
+
+
+        <button
+            class="viewerBottomClose"
+            onclick="closeViewer()"
+        >
+            CLOSE
+        </button>
+
+    `);
+
+}
+
+
+/* ==================================================
+   LOADING 1 - 100
+================================================== */
+
+let loadingNumber = 1;
+
+
+const loadingNumberElement =
+document.getElementById(
+    "loadingNumber"
+);
+
+
+const loadingProgress =
+document.getElementById(
+    "loadingProgress"
+);
+
+
+const loadingScreen =
+document.getElementById(
+    "loadingScreen"
+);
+
+
+const website =
+document.getElementById(
+    "website"
+);
+
+
+const music =
+document.getElementById(
+    "music"
+);
+
+
+const loadingInterval =
+setInterval(()=>{
+
+    loadingNumber++;
+
+
+    loadingNumberElement.textContent =
+    loadingNumber;
+
+
+    loadingProgress.style.width =
+    loadingNumber + "%";
+
+
+    if(
+        loadingNumber >= 100
+    ){
+
+        clearInterval(
+            loadingInterval
+        );
+
+
+        setTimeout(()=>{
+
+            loadingScreen.style.transition =
+            "opacity .7s ease";
+
+
+            loadingScreen.style.opacity =
+            "0";
+
+
+            website.style.display =
+            "block";
+
+
+            setTimeout(()=>{
+
+                loadingScreen.style.display =
+                "none";
+
+            },700);
+
+
+            /* --------------------------------------
+               MUSIC AUTOPLAY
+            -------------------------------------- */
+
+            music.volume = 1;
+
+
+            const playPromise =
+            music.play();
+
+
+            if(playPromise){
+
+                playPromise.catch(()=>{
+
+                    document.addEventListener(
+                        "click",
+                        startMusic,
+                        {
+                            once:true
+                        }
+                    );
+
+                });
+
+            }
+
+        },450);
+
+    }
+
+},50);
+
+
+/* ==================================================
+   MUSIC FALLBACK
+================================================== */
+
+function startMusic(){
+
+    music.play().catch(()=>{});
+
+}
+
+
+/* ==================================================
+   ESCAPE KEY
+================================================== */
+
+document.addEventListener(
+    "keydown",
+    event=>{
+
+        if(
+            event.key === "Escape" &&
+            viewer.classList.contains("show")
+        ){
+
+            closeViewer();
+
+        }
+
+    }
+);
+
+
+/* ==================================================
+   LOADING FALLBACK
+================================================== */
+
+setTimeout(()=>{
+
+    if(
+        loadingScreen.style.display !==
+        "none"
+    ){
+
+        loadingScreen.style.opacity =
+        "0";
+
+
+        setTimeout(()=>{
+
+            loadingScreen.style.display =
+            "none";
+
+            website.style.display =
+            "block";
+
+        },700);
+
+    }
+
+},8000);
+
+
+</script>
+
+</body>
+</html> 
